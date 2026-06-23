@@ -1,0 +1,174 @@
+IMPORTANT PROJECT STRUCTURE RULES
+
+Before making any changes, inspect the existing project structure.
+
+This project is NOT a React project.
+This project is NOT a Vite project.
+This project is NOT a Next.js project.
+
+Do NOT create:
+
+- vite.config.js
+- package.json
+- src/
+- components/
+- app/
+- pages/
+- artifacts/
+- mockup-sandbox/
+- dist/
+- build/
+
+Do NOT generate a new project structure.
+
+======================================================
+EXISTING PROJECT STRUCTURE
+======================================================
+
+The website is a traditional static HTML website.
+
+Current files:
+
+index.html
+about-us.html
+contact-us.html
+market.html
+ppc-sales.html
+pricing.html
+
+Assets are loaded from:
+
+assets/css/
+assets/js/
+assets/images/
+assets/fonts/
+
+PHP mail functionality already exists:
+
+contact-mail.php
+PHPMailer/
+
+======================================================
+WHAT TO MODIFY
+======================================================
+
+Only modify:
+
+- index.html
+- existing CSS files
+- existing JS files
+
+If new files are required:
+
+Create them ONLY inside:
+
+assets/css/
+assets/js/
+assets/images/
+
+Never create files outside the existing structure.
+
+======================================================
+LANDING PAGE REDESIGN RULES
+======================================================
+
+Implement the landing page improvements directly inside:
+
+index.html
+
+using plain HTML, CSS and JavaScript.
+
+Use:
+
+- Semantic HTML
+- Vanilla JavaScript
+- Existing CSS architecture
+- Existing asset folders
+
+Do not convert the website into React.
+
+Do not convert the website into Vite.
+
+Do not create reusable React components.
+
+Do not generate JSX.
+
+Do not generate TSX.
+
+Do not create npm dependencies.
+
+======================================================
+SECTION IMPROVEMENTS
+======================================================
+
+Update existing sections only:
+
+1. Hero Section
+2. Buttons
+3. Typography
+4. Feature Showcase
+5. Feature Slider
+6. Trust Section
+7. Product Screenshots
+8. Pricing Section
+9. Dark/Light Mode Toggle
+
+Everything should work inside plain HTML.
+
+======================================================
+DARK/LIGHT MODE
+======================================================
+
+Implement using:
+
+CSS Variables
+
+Example:
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+}
+
+[data-theme="dark"] {
+  --bg: #020617;
+  --text: #ffffff;
+}
+
+Store theme in localStorage.
+
+Do not use React state.
+
+======================================================
+ANIMATIONS
+======================================================
+
+Use only:
+
+- CSS animations
+- CSS transitions
+- Vanilla JavaScript
+
+Do not use:
+
+- Framer Motion
+- React libraries
+- npm packages
+
+======================================================
+FINAL REQUIREMENT
+======================================================
+
+This is an existing static HTML website.
+
+Enhance the current landing page while preserving the existing file structure.
+
+Do NOT create a new application.
+
+Do NOT create a Vite setup.
+
+Do NOT create an artifacts folder.
+
+Do NOT create React code.
+
+All work must be implemented directly in root-level HTML pages and existing assets folders.
