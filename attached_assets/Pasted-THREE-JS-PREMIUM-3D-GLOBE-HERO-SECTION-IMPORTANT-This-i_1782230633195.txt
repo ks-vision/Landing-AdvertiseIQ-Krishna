@@ -1,0 +1,262 @@
+THREE.JS PREMIUM 3D GLOBE HERO SECTION
+
+IMPORTANT:
+
+This is a traditional static HTML website.
+
+Do NOT use React.
+Do NOT use Next.js.
+Do NOT use Vite.
+Do NOT create package.json.
+Do NOT install npm packages.
+
+Use only:
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- Three.js CDN
+
+====================================================
+OBJECTIVE
+====================================================
+
+Replace the current hero section with a premium futuristic 3D globe experience.
+
+The goal is to make the website look like a $100M+ enterprise AI platform.
+
+Inspiration:
+
+- Stripe
+- Datadog
+- Palantir
+- Vercel
+- Linear
+- Salesforce Einstein
+- IBM Watson
+
+====================================================
+HERO LAYOUT
+====================================================
+
+Create a split hero layout.
+
+LEFT SIDE:
+
+Headline:
+
+Scale Your Amazon Ads
+With AI-Powered Precision
+
+Subheadline:
+
+AdvertiseIQ combines Amazon Ads automation, keyword intelligence, inventory protection, dayparting, budget management, and profit analytics into one powerful platform.
+
+Buttons:
+
+Primary:
+Start Free Trial
+
+Secondary:
+Book Live Demo
+
+Trust Indicators:
+
+✓ 500K+ Automated Optimizations
+✓ $2.8B+ Ad Spend Managed
+✓ 50K+ Keywords Optimized
+
+====================================================
+RIGHT SIDE
+====================================================
+
+Create a large animated 3D globe using Three.js.
+
+The globe should feel like:
+
+"AI controlling Amazon advertising across the world."
+
+====================================================
+3D GLOBE DESIGN
+====================================================
+
+Build:
+
+✓ Rotating Globe
+✓ Particle Sphere
+✓ Neon Glow
+✓ Global Connection Lines
+✓ Orbiting Nodes
+✓ Floating Data Points
+✓ Smooth Rotation
+✓ Mouse Interaction
+
+Color Theme:
+
+Primary:
+#3B82F6
+
+Secondary:
+#8B5CF6
+
+Accent:
+#06B6D4
+
+Background:
+#020617
+
+Glow Effects:
+Blue + Purple
+
+====================================================
+FLOATING METRIC CARDS
+====================================================
+
+Around the globe create floating cards:
+
+Card 1:
+ROAS +32%
+
+Card 2:
+ACoS -18%
+
+Card 3:
+Revenue +41%
+
+Card 4:
+Keywords Optimized 50K+
+
+Card 5:
+Campaigns Managed 10K+
+
+Cards should:
+
+✓ Float slowly
+✓ Have glassmorphism effect
+✓ Cast soft shadows
+✓ Animate continuously
+
+====================================================
+ANIMATED CONNECTIONS
+====================================================
+
+Create glowing connection lines between locations.
+
+Represent:
+
+USA
+Canada
+UK
+Germany
+France
+India
+Japan
+Australia
+
+Connections should pulse continuously.
+
+====================================================
+PARTICLE SYSTEM
+====================================================
+
+Add:
+
+✓ Thousands of particles
+✓ Floating stars
+✓ Data particles
+✓ Animated movement
+
+Background should feel alive.
+
+====================================================
+INTERACTION
+====================================================
+
+Mouse movement should:
+
+✓ Slightly rotate globe
+✓ Create parallax effect
+✓ Move particles subtly
+
+Do NOT create aggressive movement.
+
+Must feel premium.
+
+====================================================
+VISUAL EFFECTS
+====================================================
+
+Add:
+
+✓ Outer glow
+✓ Atmospheric glow
+✓ Pulse effects
+✓ Orbit rings
+✓ Data streams
+✓ Light streaks
+
+====================================================
+PERFORMANCE
+====================================================
+
+Target:
+
+60 FPS
+
+Optimize rendering.
+
+Use requestAnimationFrame.
+
+Pause unnecessary animations when tab is inactive.
+
+====================================================
+RESPONSIVE
+====================================================
+
+Desktop:
+
+Large globe
+
+Tablet:
+
+Medium globe
+
+Mobile:
+
+Smaller globe
+Position below hero content
+
+Maintain smooth performance.
+
+====================================================
+TECHNICAL RULES
+====================================================
+
+Use CDN:
+
+https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js
+
+Create:
+
+assets/js/globe.js
+assets/css/globe.css
+
+Integrate into existing index.html.
+
+Do not change project architecture.
+
+Do not create React code.
+
+Do not create JSX.
+
+Do not create TSX.
+
+Do not create package.json.
+
+====================================================
+FINAL GOAL
+====================================================
+
+The result should look like a futuristic AI-powered Amazon advertising platform where a glowing intelligent globe represents global campaign automation and data intelligence.
+
+The hero section should immediately impress visitors and become the strongest visual elemen

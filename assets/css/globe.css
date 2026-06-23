@@ -1,0 +1,285 @@
+/* ==========================================================================
+   GLOBE HERO — Premium 3D Globe Section
+   ========================================================================== */
+
+/* ── Globe Visual Wrapper ── */
+.globe-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+#globeCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  cursor: grab;
+}
+
+#globeCanvas:active { cursor: grabbing; }
+
+/* ── Globe Container (bounds the canvas) ── */
+.globe-canvas-wrap {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  flex-shrink: 0;
+}
+
+/* ── Outer atmospheric glow ring ── */
+.globe-canvas-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -32px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(59, 130, 246, 0.10) 0%,
+    rgba(139, 92, 246, 0.08) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: globeAtmosPulse 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes globeAtmosPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.04); }
+}
+
+/* ── AI Core glow overlay (CSS amplification) ── */
+.ai-core-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.55) 0%,
+    rgba(59, 130, 246, 0.30) 40%,
+    transparent 70%
+  );
+  animation: aiCorePulse 2.8s ease-in-out infinite;
+  filter: blur(6px);
+}
+
+@keyframes aiCorePulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.35); }
+}
+
+/* ── AI Core label ── */
+.ai-core-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, calc(-50% + 58px));
+  z-index: 4;
+  text-align: center;
+  pointer-events: none;
+}
+
+.ai-core-label span {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(139, 92, 246, 0.9);
+  text-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+  white-space: nowrap;
+}
+
+/* ── Floating Metric Cards ── */
+.globe-card {
+  position: absolute;
+  background: rgba(12, 20, 44, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 12px;
+  padding: 11px 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  z-index: 5;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .globe-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.globe-card-val {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.globe-card-lbl {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+  letter-spacing: 0.2px;
+}
+
+.globe-card-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+  margin-right: 5px;
+  vertical-align: middle;
+  animation: pulseDot 2s infinite;
+}
+
+/* Card positions */
+.gc-top-left    { top: 22px;  left: -60px;  animation: floatGc1 7s ease-in-out infinite; }
+.gc-top-right   { top: 38px;  right: -64px; animation: floatGc2 8s ease-in-out infinite; }
+.gc-mid-left    { top: 50%;   left: -72px;  transform: translateY(-50%); animation: floatGc3 6.5s ease-in-out infinite; }
+.gc-mid-right   { top: 50%;   right: -76px; transform: translateY(-50%); animation: floatGc4 7.5s ease-in-out infinite; }
+.gc-bot-left    { bottom: 42px; left: -52px; animation: floatGc5 9s ease-in-out infinite; }
+
+@keyframes floatGc1 { 0%,100%{transform:translateY(0px);}  50%{transform:translateY(-10px);} }
+@keyframes floatGc2 { 0%,100%{transform:translateY(-6px);} 50%{transform:translateY(8px);} }
+@keyframes floatGc3 { 0%,100%{transform:translateY(-50%) translateX(0);} 50%{transform:translateY(calc(-50% - 8px)) translateX(-4px);} }
+@keyframes floatGc4 { 0%,100%{transform:translateY(-50%) translateX(0);} 50%{transform:translateY(calc(-50% + 10px)) translateX(4px);} }
+@keyframes floatGc5 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+
+/* ── Orbit rings (decorative CSS) ── */
+.globe-orbit-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: center;
+}
+
+.globe-orbit-ring.ring1 {
+  width: 420px; height: 420px;
+  margin-top: -210px; margin-left: -210px;
+  border-color: rgba(59, 130, 246, 0.10);
+  animation: orbitSpin1 24s linear infinite;
+}
+
+.globe-orbit-ring.ring2 {
+  width: 490px; height: 490px;
+  margin-top: -245px; margin-left: -245px;
+  border-color: rgba(139, 92, 246, 0.08);
+  animation: orbitSpin2 32s linear infinite reverse;
+}
+
+.globe-orbit-ring.ring3 {
+  width: 560px; height: 560px;
+  margin-top: -280px; margin-left: -280px;
+  border-color: rgba(6, 182, 212, 0.06);
+  animation: orbitSpin1 48s linear infinite;
+}
+
+/* Orbit dot on ring1 */
+.globe-orbit-ring.ring1::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: 50%;
+  width: 7px; height: 7px;
+  margin-left: -3.5px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 12px #3b82f6, 0 0 4px #3b82f6;
+}
+
+.globe-orbit-ring.ring2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 30%;
+  width: 5px; height: 5px;
+  margin-left: -2.5px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+@keyframes orbitSpin1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes orbitSpin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ── Trust indicators in hero (extended) ── */
+.hero-trust-ext {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.hero-trust-item i {
+  color: var(--success);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .globe-canvas-wrap { width: 440px; height: 440px; }
+  .globe-orbit-ring.ring1 { width: 360px; height: 360px; margin-top: -180px; margin-left: -180px; }
+  .globe-orbit-ring.ring2 { width: 420px; height: 420px; margin-top: -210px; margin-left: -210px; }
+  .globe-orbit-ring.ring3 { width: 480px; height: 480px; margin-top: -240px; margin-left: -240px; }
+  .gc-top-left    { left: -40px; }
+  .gc-top-right   { right: -44px; }
+  .gc-mid-left    { left: -44px; }
+  .gc-mid-right   { right: -48px; }
+  .gc-bot-left    { left: -32px; }
+}
+
+@media (max-width: 900px) {
+  .globe-wrap { min-height: 360px; }
+  .globe-canvas-wrap { width: 340px; height: 340px; }
+  .globe-orbit-ring.ring1 { width: 280px; height: 280px; margin-top: -140px; margin-left: -140px; }
+  .globe-orbit-ring.ring2 { width: 330px; height: 330px; margin-top: -165px; margin-left: -165px; }
+  .globe-orbit-ring.ring3 { width: 380px; height: 380px; margin-top: -190px; margin-left: -190px; }
+  .gc-mid-left, .gc-mid-right { display: none; }
+  .gc-top-left  { top: 10px; left: -10px; }
+  .gc-top-right { top: 10px; right: -10px; }
+  .gc-bot-left  { bottom: 16px; left: -10px; }
+  .ai-core-label { display: none; }
+}
+
+@media (max-width: 600px) {
+  .globe-canvas-wrap { width: 280px; height: 280px; }
+  .globe-orbit-ring { display: none; }
+  .globe-card { padding: 8px 12px; }
+  .globe-card-val { font-size: 0.95rem; }
+  .globe-card-lbl { font-size: 0.60rem; }
+  .gc-top-left, .gc-top-right { top: 0; }
+  .gc-bot-left { display: none; }
+}
