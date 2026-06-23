@@ -8,7 +8,9 @@
     <link rel="icon" href="./assets/img/favicon.svg" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
     <style>
         /* ── Page Hero ── */
@@ -18,15 +20,19 @@
             position: relative;
             overflow: hidden;
         }
+
         .page-hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 50%;
+            top: 0;
+            left: 50%;
             transform: translateX(-50%);
-            width: 800px; height: 600px;
-            background: radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .page-hero h1 {
             font-family: 'Manrope', sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
@@ -36,6 +42,7 @@
             margin: 16px 0 20px;
             color: var(--text);
         }
+
         .page-hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
@@ -52,6 +59,7 @@
             flex-wrap: wrap;
             margin-bottom: 56px;
         }
+
         .filter-btn {
             padding: 8px 20px;
             border-radius: 30px;
@@ -67,12 +75,17 @@
             align-items: center;
             gap: 7px;
         }
-        .filter-btn:hover, .filter-btn.active {
+
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--accent-glow);
             border-color: var(--accent);
             color: var(--accent);
         }
-        .filter-btn i { font-size: 0.9rem; }
+
+        .filter-btn i {
+            font-size: 0.9rem;
+        }
 
         /* ── Features Grid ── */
         .features-page-grid {
@@ -81,6 +94,7 @@
             gap: 20px;
             margin-bottom: 80px;
         }
+
         .fp-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -92,11 +106,13 @@
             flex-direction: column;
             gap: 14px;
         }
+
         .fp-card:hover {
             transform: translateY(-4px);
             border-color: var(--border-hover);
-            box-shadow: 0 16px 40px rgba(59,130,246,0.1);
+            box-shadow: 0 16px 40px rgba(59, 130, 246, 0.1);
         }
+
         .fp-card-icon {
             width: 48px;
             height: 48px;
@@ -107,6 +123,7 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
+
         .fp-card h4 {
             font-family: 'Manrope', sans-serif;
             font-size: 0.95rem;
@@ -114,6 +131,7 @@
             color: var(--text);
             margin: 0;
         }
+
         .fp-card p {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -121,6 +139,7 @@
             margin: 0;
             flex: 1;
         }
+
         .fp-card-tag {
             font-size: 0.7rem;
             font-weight: 700;
@@ -130,22 +149,83 @@
             border-radius: 20px;
             align-self: flex-start;
         }
-        .fp-card[data-hidden="true"] { display: none; }
+
+        .fp-card[data-hidden="true"] {
+            display: none;
+        }
 
         /* icon colour sets */
-        .ic-purple { background: rgba(168,85,247,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.25); }
-        .ic-orange  { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.25); }
-        .ic-blue    { background: rgba(59,130,246,0.12);  color: #3b82f6; border: 1px solid rgba(59,130,246,0.25); }
-        .ic-green   { background: rgba(16,185,129,0.12);  color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
-        .ic-cyan    { background: rgba(6,182,212,0.12);   color: #06b6d4; border: 1px solid rgba(6,182,212,0.25); }
-        .ic-pink    { background: rgba(236,72,153,0.12);  color: #ec4899; border: 1px solid rgba(236,72,153,0.25); }
+        .ic-purple {
+            background: rgba(168, 85, 247, 0.12);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
 
-        .tag-purple { background: rgba(168,85,247,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.2); }
-        .tag-orange { background: rgba(249,115,22,0.12);  color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
-        .tag-blue   { background: rgba(59,130,246,0.12);   color: #3b82f6; border: 1px solid rgba(59,130,246,0.2); }
-        .tag-green  { background: rgba(16,185,129,0.12);   color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
-        .tag-cyan   { background: rgba(6,182,212,0.12);    color: #06b6d4; border: 1px solid rgba(6,182,212,0.2); }
-        .tag-pink   { background: rgba(236,72,153,0.12);   color: #ec4899; border: 1px solid rgba(236,72,153,0.2); }
+        .ic-orange {
+            background: rgba(249, 115, 22, 0.12);
+            color: #f97316;
+            border: 1px solid rgba(249, 115, 22, 0.25);
+        }
+
+        .ic-blue {
+            background: rgba(59, 130, 246, 0.12);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .ic-green {
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .ic-cyan {
+            background: rgba(6, 182, 212, 0.12);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.25);
+        }
+
+        .ic-pink {
+            background: rgba(236, 72, 153, 0.12);
+            color: #ec4899;
+            border: 1px solid rgba(236, 72, 153, 0.25);
+        }
+
+        .tag-purple {
+            background: rgba(168, 85, 247, 0.12);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .tag-orange {
+            background: rgba(249, 115, 22, 0.12);
+            color: #f97316;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .tag-blue {
+            background: rgba(59, 130, 246, 0.12);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .tag-green {
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .tag-cyan {
+            background: rgba(6, 182, 212, 0.12);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .tag-pink {
+            background: rgba(236, 72, 153, 0.12);
+            color: #ec4899;
+            border: 1px solid rgba(236, 72, 153, 0.2);
+        }
 
         /* ── Highlight Row ── */
         .highlight-row {
@@ -154,6 +234,7 @@
             gap: 24px;
             margin-bottom: 0;
         }
+
         .highlight-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -163,10 +244,12 @@
             position: relative;
             overflow: hidden;
         }
+
         .highlight-card.accent-card {
-            border-color: rgba(59,130,246,0.3);
-            background: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, var(--bg-card) 100%);
+            border-color: rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, var(--bg-card) 100%);
         }
+
         .highlight-card h3 {
             font-family: 'Manrope', sans-serif;
             font-size: 1.6rem;
@@ -174,12 +257,14 @@
             color: var(--text);
             margin: 16px 0 12px;
         }
+
         .highlight-card p {
             color: var(--text-muted);
             line-height: 1.7;
             font-size: 0.95rem;
             margin: 0 0 24px;
         }
+
         .highlight-big-icon {
             width: 60px;
             height: 60px;
@@ -189,6 +274,7 @@
             justify-content: center;
             font-size: 1.6rem;
         }
+
         .check-list {
             list-style: none;
             padding: 0;
@@ -197,6 +283,7 @@
             flex-direction: column;
             gap: 8px;
         }
+
         .check-list li {
             display: flex;
             align-items: center;
@@ -204,47 +291,75 @@
             font-size: 0.875rem;
             color: var(--text-dim);
         }
-        .check-list li i { color: var(--accent); font-size: 1rem; }
+
+        .check-list li i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
 
         /* ── Responsive ── */
         @media (max-width: 900px) {
-            .features-page-grid { grid-template-columns: 1fr 1fr; }
-            .highlight-row { grid-template-columns: 1fr; }
+            .features-page-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .highlight-row {
+                grid-template-columns: 1fr;
+            }
         }
+
         @media (max-width: 580px) {
-            .features-page-grid { grid-template-columns: 1fr; }
+            .features-page-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-logo">
+            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading AdvertiseIQ...</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
     <!-- NAV -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" onerror="this.style.display='none'">
-                <span class="logo-text">AdvertiseIQ</span>
+                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+                    onerror="this.style.display='none'">
             </a>
             <div class="nav-links">
-                <a href="features.html" style="color:var(--text);">Features</a>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="market.html">Case Studies</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
-                <a href="#" class="btn-nav-secondary">Log In</a>
-                <a href="#" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-sun-fill" id="themeIcon"></i>
+                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
         </div>
         <div class="nav-mobile" id="navMobile">
+            <a href="index.html">Home</a>
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
-            <a href="market.html">Case Studies</a>
             <a href="contact-us.html">Contact</a>
-            <a href="#" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
         </div>
     </nav>
 
@@ -252,9 +367,10 @@
     <section class="page-hero">
         <div class="section-tag">PLATFORM FEATURES</div>
         <h1>Every Tool You Need to<br><span class="gradient-text">Win on Amazon</span></h1>
-        <p>One platform with everything required to automate, optimize, and scale your Amazon advertising — from first campaign to market leadership.</p>
+        <p>One platform with everything required to automate, optimize, and scale your Amazon advertising from first
+            campaign to market leadership.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-            <a href="#" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+            <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
             <a href="pricing.html" class="btn-secondary">View Pricing</a>
         </div>
     </section>
@@ -265,13 +381,20 @@
 
             <!-- Filter Tabs -->
             <div class="filter-bar" id="filterBar">
-                <button class="filter-btn active" data-cat="all"><i class="bi bi-grid-3x3-gap"></i> All Features</button>
-                <button class="filter-btn" data-cat="campaign"><i class="bi bi-lightning-charge-fill" style="color:#a855f7;"></i> Campaigns</button>
-                <button class="filter-btn" data-cat="keywords"><i class="bi bi-search" style="color:#f97316;"></i> Keywords</button>
-                <button class="filter-btn" data-cat="analytics"><i class="bi bi-graph-up-arrow" style="color:#3b82f6;"></i> Analytics</button>
-                <button class="filter-btn" data-cat="inventory"><i class="bi bi-shield-check" style="color:#10b981;"></i> Inventory</button>
-                <button class="filter-btn" data-cat="automation"><i class="bi bi-robot" style="color:#06b6d4;"></i> Automation</button>
-                <button class="filter-btn" data-cat="ai"><i class="bi bi-cpu" style="color:#ec4899;"></i> AI & ML</button>
+                <button class="filter-btn active" data-cat="all"><i class="bi bi-grid-3x3-gap"></i> All
+                    Features</button>
+                <button class="filter-btn" data-cat="campaign"><i class="bi bi-lightning-charge-fill"
+                        style="color:#a855f7;"></i> Campaigns</button>
+                <button class="filter-btn" data-cat="keywords"><i class="bi bi-search" style="color:#f97316;"></i>
+                    Keywords</button>
+                <button class="filter-btn" data-cat="analytics"><i class="bi bi-graph-up-arrow"
+                        style="color:#3b82f6;"></i> Analytics</button>
+                <button class="filter-btn" data-cat="inventory"><i class="bi bi-shield-check"
+                        style="color:#10b981;"></i> Inventory</button>
+                <button class="filter-btn" data-cat="automation"><i class="bi bi-robot" style="color:#06b6d4;"></i>
+                    Automation</button>
+                <button class="filter-btn" data-cat="ai"><i class="bi bi-cpu" style="color:#ec4899;"></i> AI &
+                    ML</button>
             </div>
 
             <!-- Features Grid -->
@@ -284,7 +407,8 @@
                         <h4>Campaign Builder</h4>
                         <span class="fp-card-tag tag-purple">Campaigns</span>
                     </div>
-                    <p>Build and structure high-performing Sponsored Products, Brands, and Display campaigns from a single interface.</p>
+                    <p>Build and structure high-performing Sponsored Products, Brands, and Display campaigns from a
+                        single interface.</p>
                 </div>
                 <div class="fp-card" data-cat="campaign">
                     <div class="fp-card-icon ic-purple"><i class="bi bi-currency-dollar"></i></div>
@@ -334,7 +458,8 @@
                         <h4>Search Term Mining</h4>
                         <span class="fp-card-tag tag-orange">Keywords</span>
                     </div>
-                    <p>Automatically harvest converting search terms from auto campaigns and surface them in reports.</p>
+                    <p>Automatically harvest converting search terms from auto campaigns and surface them in reports.
+                    </p>
                 </div>
                 <div class="fp-card" data-cat="keywords">
                     <div class="fp-card-icon ic-orange"><i class="bi bi-binoculars"></i></div>
@@ -384,7 +509,8 @@
                         <h4>Real-Time Dashboard</h4>
                         <span class="fp-card-tag tag-blue">Analytics</span>
                     </div>
-                    <p>Live view of all campaigns, ad groups, and keywords with every metric that matters to your business.</p>
+                    <p>Live view of all campaigns, ad groups, and keywords with every metric that matters to your
+                        business.</p>
                 </div>
                 <div class="fp-card" data-cat="analytics">
                     <div class="fp-card-icon ic-blue"><i class="bi bi-file-earmark-bar-graph"></i></div>
@@ -400,7 +526,7 @@
                         <h4>Profitability Analytics</h4>
                         <span class="fp-card-tag tag-blue">Analytics</span>
                     </div>
-                    <p>See true profit margin after all Amazon fees, COGS, and ad costs — not just ad metrics.</p>
+                    <p>See true profit margin after all Amazon fees, COGS, and ad costs not just ad metrics.</p>
                 </div>
                 <div class="fp-card" data-cat="analytics">
                     <div class="fp-card-icon ic-blue"><i class="bi bi-graph-up-arrow"></i></div>
@@ -484,7 +610,8 @@
                         <h4>Rule Builder</h4>
                         <span class="fp-card-tag tag-cyan">Automation</span>
                     </div>
-                    <p>Create IF/THEN logic rules for any metric — bids, budgets, status, labels — with no code required.</p>
+                    <p>Create IF/THEN logic rules for any metric bids, budgets, status, labels with no code
+                        required.</p>
                 </div>
                 <div class="fp-card" data-cat="automation">
                     <div class="fp-card-icon ic-cyan"><i class="bi bi-arrow-up-right-circle"></i></div>
@@ -534,7 +661,8 @@
                         <h4>AI Bid Optimizer</h4>
                         <span class="fp-card-tag tag-pink">AI & ML</span>
                     </div>
-                    <p>Machine learning continuously improves bid efficiency using patterns from millions of auctions.</p>
+                    <p>Machine learning continuously improves bid efficiency using patterns from millions of auctions.
+                    </p>
                 </div>
                 <div class="fp-card" data-cat="ai">
                     <div class="fp-card-icon ic-pink"><i class="bi bi-eye"></i></div>
@@ -542,7 +670,8 @@
                         <h4>Anomaly Detection</h4>
                         <span class="fp-card-tag tag-pink">AI & ML</span>
                     </div>
-                    <p>Automatically flag unusual spend spikes, CTR drops, or conversion collapses before they cost you.</p>
+                    <p>Automatically flag unusual spend spikes, CTR drops, or conversion collapses before they cost you.
+                    </p>
                 </div>
                 <div class="fp-card" data-cat="ai">
                     <div class="fp-card-icon ic-pink"><i class="bi bi-lightbulb"></i></div>
@@ -574,7 +703,8 @@
                         <h4>Performance Forecasting</h4>
                         <span class="fp-card-tag tag-pink">AI & ML</span>
                     </div>
-                    <p>See projected ROAS, spend, and revenue for the next 7, 14, and 30 days based on current trends.</p>
+                    <p>See projected ROAS, spend, and revenue for the next 7, 14, and 30 days based on current trends.
+                    </p>
                 </div>
 
             </div>
@@ -584,7 +714,8 @@
                 <div class="highlight-card accent-card">
                     <div class="highlight-big-icon ic-blue"><i class="bi bi-shield-lock-fill"></i></div>
                     <h3>Enterprise-Grade Security</h3>
-                    <p>Your Amazon account credentials are encrypted end-to-end. We use official Amazon Advertising API — no scraping, no third-party access risks.</p>
+                    <p>Your Amazon account credentials are encrypted end-to-end. We use official Amazon Advertising API
+                        no scraping, no third-party access risks.</p>
                     <ul class="check-list">
                         <li><i class="bi bi-check2-circle"></i> SOC 2 Type II Compliant</li>
                         <li><i class="bi bi-check2-circle"></i> Amazon Advertising API Partner</li>
@@ -595,7 +726,8 @@
                 <div class="highlight-card">
                     <div class="highlight-big-icon ic-green"><i class="bi bi-headset"></i></div>
                     <h3>World-Class Support</h3>
-                    <p>Onboarding, training, and ongoing strategic support from a team that knows Amazon advertising inside out.</p>
+                    <p>Onboarding, training, and ongoing strategic support from a team that knows Amazon advertising
+                        inside out.</p>
                     <ul class="check-list">
                         <li><i class="bi bi-check2-circle"></i> Dedicated onboarding specialist</li>
                         <li><i class="bi bi-check2-circle"></i> Live chat & email support</li>
@@ -617,7 +749,8 @@
                 <h2>Try Every Feature<br>Free for 14 Days</h2>
                 <p>No credit card required. Full access to all features from day one.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn-primary btn-lg">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i
+                            class="bi bi-arrow-right"></i></a>
                     <a href="pricing.html" class="btn-secondary">View Pricing</a>
                 </div>
                 <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Cancel anytime</p>
@@ -629,9 +762,9 @@
     <footer class="footer-section">
         <div class="footer-inner">
             <div class="footer-col brand-col">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" onerror="this.style.display='none'">
-                    <span class="footer-logo-text">AdvertiseIQ</span>
+                <a href="/" class="footer-logo-link">
+                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+                        onerror="this.style.display='none'">
                 </a>
                 <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
                 <div class="social-icons">
@@ -646,25 +779,22 @@
                 <ul>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#">Integrations</a></li>
-                    <li><a href="#">Changelog</a></li>
+                    <li><a href="market.html">Case Studies</a></li>
+                    <li><a href="ppc-sales.html">Sales</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>
                 <ul>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -674,19 +804,48 @@
     </footer>
 
     <script>
-        // Theme
+        // ── Hide Loader on Page Load ──
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            // Small delay to ensure smooth transition
+            setTimeout(function () {
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
+        // ── Dark/Light Mode ──
         const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
         const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
-        document.getElementById('themeToggle').addEventListener('click', () => {
+        updateLoaderLogo(savedTheme);
+        themeToggle.addEventListener('click', () => {
             const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
             localStorage.setItem('aiq-theme', next);
             setIcon(next);
+            updateLoaderLogo(next);
         });
-        function setIcon(t) { document.getElementById('themeIcon').className = t === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill'; }
+        function setIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+            const navLogo = document.getElementById('navLogo');
+            if (navLogo) {
+                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (footerLogo) {
+                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
 
+        function updateLoaderLogo(theme) {
+            const loaderLogo = document.getElementById('loaderLogo');
+            if (loaderLogo) {
+                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
         // Mobile nav
         document.getElementById('navHamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
         window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20));
@@ -708,4 +867,5 @@
     </script>
 
 </body>
+
 </html>

@@ -8,7 +8,9 @@
     <link rel="icon" href="./assets/img/favicon.svg" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
     <style>
         .page-hero {
@@ -17,15 +19,19 @@
             position: relative;
             overflow: hidden;
         }
+
         .page-hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 50%;
+            top: 0;
+            left: 50%;
             transform: translateX(-50%);
-            width: 800px; height: 500px;
-            background: radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .page-hero h1 {
             font-family: 'Manrope', sans-serif;
             font-size: clamp(2.5rem, 5vw, 3.75rem);
@@ -35,6 +41,7 @@
             margin: 16px 0 20px;
             color: var(--text);
         }
+
         .page-hero p {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -46,7 +53,7 @@
         /* ── Featured Case Study ── */
         .featured-case {
             background: var(--bg-card);
-            border: 1px solid rgba(59,130,246,0.25);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             border-radius: 24px;
             padding: 48px;
             display: grid;
@@ -58,14 +65,18 @@
             overflow: hidden;
             backdrop-filter: blur(20px);
         }
+
         .featured-case::before {
             content: '';
             position: absolute;
-            top: -100px; right: -100px;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .fc-label {
             font-family: 'Manrope', sans-serif;
             font-size: 0.7rem;
@@ -75,6 +86,7 @@
             color: var(--accent);
             margin-bottom: 12px;
         }
+
         .fc-company {
             font-family: 'Manrope', sans-serif;
             font-size: 2rem;
@@ -83,17 +95,19 @@
             margin: 0 0 8px;
             letter-spacing: -0.5px;
         }
+
         .fc-industry {
             display: inline-block;
             font-size: 0.78rem;
             font-weight: 700;
             padding: 4px 12px;
             border-radius: 20px;
-            background: rgba(59,130,246,0.12);
+            background: rgba(59, 130, 246, 0.12);
             color: var(--accent);
-            border: 1px solid rgba(59,130,246,0.25);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             margin-bottom: 20px;
         }
+
         .fc-quote {
             font-size: 1.05rem;
             color: var(--text-dim);
@@ -101,11 +115,13 @@
             font-style: italic;
             margin: 0 0 24px;
         }
+
         .fc-author {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .fc-avatar {
             width: 44px;
             height: 44px;
@@ -119,13 +135,26 @@
             color: #fff;
             flex-shrink: 0;
         }
-        .fc-author-name { font-family: 'Manrope',sans-serif; font-size:0.9rem; font-weight:700; color:var(--text); }
-        .fc-author-role { font-size:0.78rem; color:var(--text-muted); margin-top:2px; }
+
+        .fc-author-name {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .fc-author-role {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
         .fc-metrics {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+
         .fc-metric-card {
             background: var(--input-bg);
             border: 1px solid var(--border);
@@ -133,6 +162,7 @@
             padding: 24px;
             text-align: center;
         }
+
         .fc-metric-number {
             font-family: 'Manrope', sans-serif;
             font-size: 2.5rem;
@@ -144,7 +174,12 @@
             line-height: 1;
             margin-bottom: 6px;
         }
-        .fc-metric-label { font-size:0.82rem; color:var(--text-muted); font-weight:500; }
+
+        .fc-metric-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
 
         /* ── Case Studies Grid ── */
         .cases-grid {
@@ -153,6 +188,7 @@
             gap: 24px;
             margin-bottom: 80px;
         }
+
         .case-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -163,16 +199,25 @@
             display: flex;
             flex-direction: column;
         }
+
         .case-card:hover {
             transform: translateY(-6px);
             border-color: var(--border-hover);
-            box-shadow: 0 20px 40px rgba(59,130,246,0.12);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
         }
+
         .case-card-header {
             padding: 28px 28px 20px;
             border-bottom: 1px solid var(--border);
         }
-        .case-card-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+
+        .case-card-body {
+            padding: 24px 28px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
         .case-industry-tag {
             display: inline-block;
             font-size: 0.7rem;
@@ -183,6 +228,7 @@
             border-radius: 20px;
             margin-bottom: 12px;
         }
+
         .case-company {
             font-family: 'Manrope', sans-serif;
             font-size: 1.2rem;
@@ -190,7 +236,14 @@
             color: var(--text);
             margin: 0 0 8px;
         }
-        .case-tagline { font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0; }
+
+        .case-tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
         .case-metrics {
             display: flex;
             gap: 16px;
@@ -198,7 +251,12 @@
             flex: 1;
             align-items: flex-end;
         }
-        .case-metric { flex: 1; text-align: center; }
+
+        .case-metric {
+            flex: 1;
+            text-align: center;
+        }
+
         .case-metric-val {
             font-family: 'Manrope', sans-serif;
             font-size: 1.6rem;
@@ -206,7 +264,13 @@
             line-height: 1;
             margin-bottom: 4px;
         }
-        .case-metric-lbl { font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; }
+
+        .case-metric-lbl {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
         .case-quote {
             font-size: 0.875rem;
             color: var(--text-dim);
@@ -215,6 +279,7 @@
             margin: 0 0 20px;
             flex: 1;
         }
+
         .case-link {
             display: inline-flex;
             align-items: center;
@@ -225,20 +290,64 @@
             color: var(--accent);
             transition: gap 0.2s;
         }
-        .case-link:hover { gap: 10px; color: var(--accent); }
+
+        .case-link:hover {
+            gap: 10px;
+            color: var(--accent);
+        }
 
         /* colour helpers */
-        .tag-ecom    { background: rgba(59,130,246,0.12); color:#3b82f6; border:1px solid rgba(59,130,246,0.25); }
-        .tag-agency  { background: rgba(168,85,247,0.12); color:#a855f7; border:1px solid rgba(168,85,247,0.25); }
-        .tag-brand   { background: rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.25); }
-        .tag-beauty  { background: rgba(236,72,153,0.12); color:#ec4899; border:1px solid rgba(236,72,153,0.25); }
-        .tag-health  { background: rgba(6,182,212,0.12);  color:#06b6d4; border:1px solid rgba(6,182,212,0.25); }
-        .tag-sports  { background: rgba(245,158,11,0.12); color:#f59e0b; border:1px solid rgba(245,158,11,0.25); }
+        .tag-ecom {
+            background: rgba(59, 130, 246, 0.12);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
 
-        .mval-blue   { color: #3b82f6; }
-        .mval-green  { color: #10b981; }
-        .mval-orange { color: #f97316; }
-        .mval-purple { color: #a855f7; }
+        .tag-agency {
+            background: rgba(168, 85, 247, 0.12);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        .tag-brand {
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .tag-beauty {
+            background: rgba(236, 72, 153, 0.12);
+            color: #ec4899;
+            border: 1px solid rgba(236, 72, 153, 0.25);
+        }
+
+        .tag-health {
+            background: rgba(6, 182, 212, 0.12);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.25);
+        }
+
+        .tag-sports {
+            background: rgba(245, 158, 11, 0.12);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        .mval-blue {
+            color: #3b82f6;
+        }
+
+        .mval-green {
+            color: #10b981;
+        }
+
+        .mval-orange {
+            color: #f97316;
+        }
+
+        .mval-purple {
+            color: #a855f7;
+        }
 
         /* testimonial row */
         .testi-row {
@@ -249,45 +358,78 @@
         }
 
         @media (max-width: 960px) {
-            .featured-case { grid-template-columns: 1fr; }
-            .cases-grid, .testi-row { grid-template-columns: 1fr 1fr; }
-            .fc-metrics { grid-template-columns: repeat(4, 1fr); }
+            .featured-case {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid,
+            .testi-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .fc-metrics {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
+
         @media (max-width: 640px) {
-            .cases-grid, .testi-row { grid-template-columns: 1fr; }
-            .fc-metrics { grid-template-columns: 1fr 1fr; }
+
+            .cases-grid,
+            .testi-row {
+                grid-template-columns: 1fr;
+            }
+
+            .fc-metrics {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-logo">
+            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading AdvertiseIQ...</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
     <!-- NAV -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" onerror="this.style.display='none'">
-                <span class="logo-text">AdvertiseIQ</span>
+                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+                    onerror="this.style.display='none'">
             </a>
             <div class="nav-links">
+                <a href="index.html">Home</a>
                 <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="market.html" style="color:var(--text);">Case Studies</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
-                <a href="#" class="btn-nav-secondary">Log In</a>
-                <a href="#" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-sun-fill" id="themeIcon"></i>
+                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
         </div>
         <div class="nav-mobile" id="navMobile">
+            <a href="index.html">Home</a>
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
-            <a href="market.html">Case Studies</a>
             <a href="contact-us.html">Contact</a>
-            <a href="#" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
         </div>
     </nav>
 
@@ -295,9 +437,10 @@
     <section class="page-hero" style="background:var(--bg);">
         <div class="section-tag">CASE STUDIES</div>
         <h1>Real Brands,<br><span class="gradient-text">Real Results</span></h1>
-        <p>See how Amazon brands across every category use AdvertiseIQ to cut ACOS, scale revenue, and reclaim their time.</p>
+        <p>See how Amazon brands across every category use AdvertiseIQ to cut ACOS, scale revenue, and reclaim their
+            time.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-            <a href="#" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+            <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
             <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
         </div>
     </section>
@@ -339,7 +482,9 @@
                     <div class="fc-label">Featured Case Study</div>
                     <div class="fc-company">NovaBrand</div>
                     <div class="fc-industry">Consumer Electronics</div>
-                    <p class="fc-quote">"AdvertiseIQ transformed how we manage our entire Amazon advertising operation. We went from spending 40+ hours a week on manual optimizations to spending 5 hours reviewing dashboards — and our results improved dramatically."</p>
+                    <p class="fc-quote">"AdvertiseIQ transformed how we manage our entire Amazon advertising operation.
+                        We went from spending 40+ hours a week on manual optimizations to spending 5 hours reviewing
+                        dashboards, and our results improved dramatically."</p>
                     <div class="fc-author">
                         <div class="fc-avatar" style="background:linear-gradient(135deg,#1e40af,#3b82f6);">SM</div>
                         <div>
@@ -378,7 +523,8 @@
                         <p class="case-tagline">Managing 12 brand accounts across 4 Amazon marketplaces</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"We scaled to 12 clients with the same team size — AdvertiseIQ's bulk rule management made it possible."</p>
+                        <p class="case-quote">"We scaled to 12 clients with the same team size, AdvertiseIQ's bulk rule
+                            management made it possible."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-blue">12x</div>
@@ -406,7 +552,8 @@
                         <p class="case-tagline">Premium home décor brand scaling from $500K to $3M ARR</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"Inventory-aware ad pausing alone saved us thousands in wasted spend during two major stockout events."</p>
+                        <p class="case-quote">"Inventory-aware ad pausing alone saved us thousands in wasted spend
+                            during two major stockout events."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-purple">6x</div>
@@ -434,7 +581,8 @@
                         <p class="case-tagline">DTC skincare brand competing in a crowded category</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"Competitor keyword discovery helped us find $200K worth of untapped search terms we were completely missing."</p>
+                        <p class="case-quote">"Competitor keyword discovery helped us find $200K worth of untapped
+                            search terms we were completely missing."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-blue">+156%</div>
@@ -462,7 +610,8 @@
                         <p class="case-tagline">Supplement brand managing 80+ ASINs across 3 markets</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"Managing 80 ASINs manually was impossible. AdvertiseIQ's bulk automation cut our management time by 70%."</p>
+                        <p class="case-quote">"Managing 80 ASINs manually was impossible. AdvertiseIQ's bulk automation
+                            cut our management time by 70%."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-green">-70%</div>
@@ -490,7 +639,8 @@
                         <p class="case-tagline">Outdoor gear brand with extreme seasonal demand swings</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"Dayparting and seasonal scheduling rules let us maximize spend during peak windows and cut waste overnight."</p>
+                        <p class="case-quote">"Dayparting and seasonal scheduling rules let us maximize spend during
+                            peak windows and cut waste overnight."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-purple">+210%</div>
@@ -518,7 +668,8 @@
                         <p class="case-tagline">B2C electronics brand launching into a competitive space</p>
                     </div>
                     <div class="case-card-body">
-                        <p class="case-quote">"AI recommendations surfaced campaign optimizations we'd never have spotted manually. Our launch was our best ever."</p>
+                        <p class="case-quote">"AI recommendations surfaced campaign optimizations we'd never have
+                            spotted manually. Our launch was our best ever."</p>
                         <div class="case-metrics">
                             <div class="case-metric">
                                 <div class="case-metric-val mval-blue">$1.2M</div>
@@ -548,8 +699,11 @@
             </div>
             <div class="testi-row">
                 <div class="testimonial-card">
-                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    <p>"The best Amazon advertising tool we've ever used. The AI recommendations alone improved our ROAS by 60%."</p>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>"The best Amazon advertising tool we've ever used. The AI recommendations alone improved our ROAS
+                        by 60%."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-blue">MK</div>
                         <div>
@@ -559,8 +713,11 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    <p>"Switching from manual to AdvertiseIQ was the single biggest ROI decision we made in 2025. Wish we found it sooner."</p>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>"Switching from manual to AdvertiseIQ was the single biggest ROI decision we made in 2025. Wish
+                        we found it sooner."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-green">TR</div>
                         <div>
@@ -570,8 +727,11 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                    <p>"Their support team is exceptional. They helped us set up rules and strategies specific to our business in the first week."</p>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>"Their support team is exceptional. They helped us set up rules and strategies specific to our
+                        business in the first week."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-purple">DL</div>
                         <div>
@@ -593,7 +753,8 @@
                 <h2>Ready to Write Your<br>Success Story?</h2>
                 <p>Join 500+ brands using AdvertiseIQ to scale their Amazon revenue profitably.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn-primary btn-lg">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i
+                            class="bi bi-arrow-right"></i></a>
                     <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
                 </div>
                 <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Cancel anytime</p>
@@ -605,9 +766,9 @@
     <footer class="footer-section">
         <div class="footer-inner">
             <div class="footer-col brand-col">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" onerror="this.style.display='none'">
-                    <span class="footer-logo-text">AdvertiseIQ</span>
+                <a href="/" class="footer-logo-link">
+                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+                        onerror="this.style.display='none'">
                 </a>
                 <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
                 <div class="social-icons">
@@ -622,45 +783,76 @@
                 <ul>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#">Integrations</a></li>
-                    <li><a href="#">Changelog</a></li>
+                    <li><a href="market.html">Case Studies</a></li>
+                    <li><a href="ppc-sales.html">Sales</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>
                 <ul>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 AdvertiseIQ. All rights reserved.</p></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
+        // ── Hide Loader on Page Load ──
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            // Small delay to ensure smooth transition
+            setTimeout(function () {
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
+        // ── Dark/Light Mode ──
         const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
         const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
-        document.getElementById('themeToggle').addEventListener('click', () => {
+        updateLoaderLogo(savedTheme);
+        themeToggle.addEventListener('click', () => {
             const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
             localStorage.setItem('aiq-theme', next);
             setIcon(next);
+            updateLoaderLogo(next);
         });
-        function setIcon(t) { document.getElementById('themeIcon').className = t === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill'; }
+        function setIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+            const navLogo = document.getElementById('navLogo');
+            if (navLogo) {
+                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (footerLogo) {
+                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
+
+        function updateLoaderLogo(theme) {
+            const loaderLogo = document.getElementById('loaderLogo');
+            if (loaderLogo) {
+                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
         document.getElementById('navHamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
         window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20));
     </script>
 </body>
+
 </html>

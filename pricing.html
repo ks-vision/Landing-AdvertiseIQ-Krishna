@@ -8,7 +8,9 @@
     <link rel="icon" href="./assets/img/favicon.svg" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
     <style>
         .page-hero {
@@ -17,15 +19,19 @@
             position: relative;
             overflow: hidden;
         }
+
         .page-hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 50%;
+            top: 0;
+            left: 50%;
             transform: translateX(-50%);
-            width: 800px; height: 500px;
-            background: radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .page-hero h1 {
             font-family: 'Manrope', sans-serif;
             font-size: clamp(2.5rem, 5vw, 3.75rem);
@@ -35,6 +41,7 @@
             margin: 16px 0 20px;
             color: var(--text);
         }
+
         .page-hero p {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -44,19 +51,24 @@
         }
 
         /* ── Comparison Table ── */
-        .comp-section { background: var(--bg-2); }
+        .comp-section {
+            background: var(--bg-2);
+        }
+
         .comp-table-wrap {
             overflow-x: auto;
             border-radius: 18px;
             border: 1px solid var(--border);
             box-shadow: var(--card-shadow);
         }
+
         .comp-table {
             width: 100%;
             border-collapse: collapse;
             background: var(--bg-card);
             min-width: 640px;
         }
+
         .comp-table thead tr th {
             padding: 22px 24px;
             font-family: 'Manrope', sans-serif;
@@ -67,12 +79,18 @@
             color: var(--text-muted);
             background: var(--input-bg);
         }
-        .comp-table thead tr th:first-child { text-align: left; width: 35%; }
+
+        .comp-table thead tr th:first-child {
+            text-align: left;
+            width: 35%;
+        }
+
         .comp-table thead tr th.th-featured {
             color: var(--accent);
-            background: rgba(37,99,235,0.06);
+            background: rgba(37, 99, 235, 0.06);
             position: relative;
         }
+
         .comp-table thead tr th.th-featured::after {
             content: 'MOST POPULAR';
             display: block;
@@ -81,6 +99,7 @@
             color: #3b82f6;
             margin-top: 3px;
         }
+
         .comp-table .cat-row td {
             padding: 10px 24px;
             font-family: 'Manrope', sans-serif;
@@ -92,6 +111,7 @@
             background: var(--input-bg);
             border-bottom: 1px solid var(--border);
         }
+
         .comp-table tbody tr td {
             padding: 15px 24px;
             font-size: 0.875rem;
@@ -100,20 +120,44 @@
             border-bottom: 1px solid var(--border);
             transition: background 0.2s;
         }
+
         .comp-table tbody tr td:first-child {
             text-align: left;
             font-weight: 500;
             color: var(--text);
         }
-        .comp-table tbody tr:last-child td { border-bottom: none; }
-        .comp-table tbody tr:hover td { background: var(--accent-glow); }
-        .comp-table .col-featured {
-            background: rgba(37,99,235,0.04);
+
+        .comp-table tbody tr:last-child td {
+            border-bottom: none;
         }
-        .comp-table .col-featured:hover { background: rgba(37,99,235,0.08); }
-        .ci-yes  { color: #10b981; font-size: 1rem; }
-        .ci-no   { color: #ef4444; font-size: 1rem; }
-        .ci-part { color: var(--text-muted); font-size: 0.85rem; font-weight: 600; }
+
+        .comp-table tbody tr:hover td {
+            background: var(--accent-glow);
+        }
+
+        .comp-table .col-featured {
+            background: rgba(37, 99, 235, 0.04);
+        }
+
+        .comp-table .col-featured:hover {
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .ci-yes {
+            color: #10b981;
+            font-size: 1rem;
+        }
+
+        .ci-no {
+            color: #ef4444;
+            font-size: 1rem;
+        }
+
+        .ci-part {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
 
         /* ── Trust logos ── */
         .trust-strip {
@@ -121,6 +165,7 @@
             padding: 48px 24px;
             border-bottom: 1px solid var(--border);
         }
+
         .trust-strip p {
             font-size: 0.8rem;
             letter-spacing: 2px;
@@ -129,6 +174,7 @@
             margin-bottom: 24px;
             font-weight: 600;
         }
+
         .trust-logos {
             display: flex;
             justify-content: center;
@@ -136,6 +182,7 @@
             gap: 40px;
             flex-wrap: wrap;
         }
+
         .trust-logo-item {
             font-family: 'Manrope', sans-serif;
             font-size: 0.95rem;
@@ -145,7 +192,10 @@
             opacity: 0.55;
             transition: opacity 0.2s;
         }
-        .trust-logo-item:hover { opacity: 0.9; }
+
+        .trust-logo-item:hover {
+            opacity: 0.9;
+        }
 
         /* guarantee strip */
         .guarantee-strip {
@@ -157,6 +207,7 @@
             border-top: 1px solid var(--border);
             margin-top: 40px;
         }
+
         .guarantee-item {
             display: flex;
             align-items: center;
@@ -165,38 +216,58 @@
             color: var(--text-muted);
             font-weight: 600;
         }
-        .guarantee-item i { color: var(--accent); font-size: 1.1rem; }
+
+        .guarantee-item i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-logo">
+            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading AdvertiseIQ...</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
     <!-- NAV -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" onerror="this.style.display='none'">
-                <span class="logo-text">AdvertiseIQ</span>
+                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+                    onerror="this.style.display='none'">
             </a>
             <div class="nav-links">
+                <a href="index.html">Home</a>
                 <a href="features.html">Features</a>
-                <a href="pricing.html" style="color:var(--text);">Pricing</a>
-                <a href="market.html">Case Studies</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun-fill" id="themeIcon"></i></button>
-                <a href="#" class="btn-nav-secondary">Log In</a>
-                <a href="#" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-sun-fill" id="themeIcon"></i>
+                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
         </div>
         <div class="nav-mobile" id="navMobile">
+            <a href="index.html">Home</a>
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
-            <a href="market.html">Case Studies</a>
             <a href="contact-us.html">Contact</a>
-            <a href="#" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
         </div>
     </nav>
 
@@ -237,7 +308,7 @@
                         <li><i class="bi bi-check2-circle"></i> Email support</li>
                         <li><i class="bi bi-check2-circle"></i> Up to 10 automation rules</li>
                     </ul>
-                    <a href="#" class="btn-plan btn-plan-outline">Start Free Trial</a>
+                    <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
                 </div>
                 <div class="pricing-card premium featured">
                     <div class="featured-badge">Most Popular</div>
@@ -247,7 +318,8 @@
                         <span class="price-amount" data-monthly="299" data-annual="239">299</span>
                         <span class="price-period">/mo</span>
                     </div>
-                    <p class="plan-desc">For established brands ready to dominate their category with full automation.</p>
+                    <p class="plan-desc">For established brands ready to dominate their category with full automation.
+                    </p>
                     <ul class="plan-features">
                         <li><i class="bi bi-check2-circle"></i> Up to 20 marketplace accounts</li>
                         <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
@@ -258,7 +330,7 @@
                         <li><i class="bi bi-check2-circle"></i> Priority support + strategy calls</li>
                         <li><i class="bi bi-check2-circle"></i> AI bid optimizer (full)</li>
                     </ul>
-                    <a href="#" class="btn-plan btn-plan-primary">Get Premium</a>
+                    <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
                 </div>
                 <div class="pricing-card enterprise">
                     <div class="plan-name">Enterprise</div>
@@ -291,21 +363,6 @@
         </div>
     </section>
 
-    <!-- TRUST LOGOS -->
-    <section style="background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-        <div class="trust-strip">
-            <p>Trusted by 500+ Amazon brands worldwide</p>
-            <div class="trust-logos">
-                <span class="trust-logo-item">NovaBrand</span>
-                <span class="trust-logo-item">SkyHigh Co.</span>
-                <span class="trust-logo-item">Apex Agency</span>
-                <span class="trust-logo-item">Vertex Goods</span>
-                <span class="trust-logo-item">PeakSellers</span>
-                <span class="trust-logo-item">BlueLine Inc.</span>
-            </div>
-        </div>
-    </section>
-
     <!-- FEATURE COMPARISON TABLE -->
     <section class="comp-section">
         <div class="section-wrapper">
@@ -325,7 +382,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="cat-row"><td colspan="4">Campaign Management</td></tr>
+                        <tr class="cat-row">
+                            <td colspan="4">Campaign Management</td>
+                        </tr>
                         <tr>
                             <td>Marketplace accounts</td>
                             <td>Up to 5</td>
@@ -363,7 +422,9 @@
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
                         </tr>
 
-                        <tr class="cat-row"><td colspan="4">Keyword Intelligence</td></tr>
+                        <tr class="cat-row">
+                            <td colspan="4">Keyword Intelligence</td>
+                        </tr>
                         <tr>
                             <td>Search term mining</td>
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
@@ -383,7 +444,9 @@
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
                         </tr>
 
-                        <tr class="cat-row"><td colspan="4">Analytics & Reporting</td></tr>
+                        <tr class="cat-row">
+                            <td colspan="4">Analytics & Reporting</td>
+                        </tr>
                         <tr>
                             <td>Real-time dashboard</td>
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
@@ -409,7 +472,9 @@
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
                         </tr>
 
-                        <tr class="cat-row"><td colspan="4">Inventory & AI</td></tr>
+                        <tr class="cat-row">
+                            <td colspan="4">Inventory & AI</td>
+                        </tr>
                         <tr>
                             <td>Inventory alerts</td>
                             <td><i class="bi bi-x-circle ci-no"></i></td>
@@ -435,7 +500,9 @@
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
                         </tr>
 
-                        <tr class="cat-row"><td colspan="4">Support & Access</td></tr>
+                        <tr class="cat-row">
+                            <td colspan="4">Support & Access</td>
+                        </tr>
                         <tr>
                             <td>Email support</td>
                             <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
@@ -475,24 +542,44 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">Is there a free trial? <i class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer"><p>Yes — 14 days, full feature access, no credit card required. Cancel any time before the trial ends and you won't be charged.</p></div>
+                    <button class="faq-question">Is there a free trial? <i
+                            class="bi bi-plus-circle faq-icon"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, 14 days, full feature access, no credit card required. Cancel any time before the trial
+                            ends and you won't be charged.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Can I switch plans later? <i class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer"><p>Absolutely. Upgrade or downgrade at any time. Upgrades take effect immediately and you'll be prorated. Downgrades take effect at the next billing cycle.</p></div>
+                    <button class="faq-question">Can I switch plans later? <i
+                            class="bi bi-plus-circle faq-icon"></i></button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Upgrade or downgrade at any time. Upgrades take effect immediately and you'll be
+                            prorated. Downgrades take effect at the next billing cycle.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What counts as a "marketplace account"? <i class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer"><p>Each Amazon Seller Central or Vendor Central account you connect is one marketplace account. Multiple countries under the same account typically count as one.</p></div>
+                    <button class="faq-question">What counts as a "marketplace account"? <i
+                            class="bi bi-plus-circle faq-icon"></i></button>
+                    <div class="faq-answer">
+                        <p>Each Amazon Seller Central or Vendor Central account you connect is one marketplace account.
+                            Multiple countries under the same account typically count as one.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Do you offer discounts for agencies? <i class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer"><p>Yes — agencies managing multiple client accounts get special volume pricing. Contact our sales team to discuss an agency partnership.</p></div>
+                    <button class="faq-question">Do you offer discounts for agencies? <i
+                            class="bi bi-plus-circle faq-icon"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, agencies managing multiple client accounts get special volume pricing. Contact our
+                            sales team to discuss an agency partnership.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What payment methods do you accept? <i class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer"><p>We accept all major credit cards (Visa, Mastercard, Amex). Enterprise customers can also arrange ACH/wire transfer and receive invoices.</p></div>
+                    <button class="faq-question">What payment methods do you accept? <i
+                            class="bi bi-plus-circle faq-icon"></i></button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, Mastercard, Amex). Enterprise customers can also
+                            arrange ACH/wire transfer and receive invoices.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,7 +594,8 @@
                 <h2>Start Scaling Today</h2>
                 <p>14-day free trial. No credit card. Full access from day one.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn-primary btn-lg">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i
+                            class="bi bi-arrow-right"></i></a>
                     <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
                 </div>
                 <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Cancel anytime</p>
@@ -519,9 +607,9 @@
     <footer class="footer-section">
         <div class="footer-inner">
             <div class="footer-col brand-col">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" onerror="this.style.display='none'">
-                    <span class="footer-logo-text">AdvertiseIQ</span>
+                <a href="/" class="footer-logo-link">
+                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+                        onerror="this.style.display='none'">
                 </a>
                 <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
                 <div class="social-icons">
@@ -536,43 +624,73 @@
                 <ul>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#">Integrations</a></li>
-                    <li><a href="#">Changelog</a></li>
+                    <li><a href="market.html">Case Studies</a></li>
+                    <li><a href="ppc-sales.html">Sales</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>
                 <ul>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 AdvertiseIQ. All rights reserved.</p></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
+        // ── Hide Loader on Page Load ──
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            // Small delay to ensure smooth transition
+            setTimeout(function () {
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
+        // ── Dark/Light Mode ──
         const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
         const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
-        document.getElementById('themeToggle').addEventListener('click', () => {
+        updateLoaderLogo(savedTheme);
+        themeToggle.addEventListener('click', () => {
             const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
             localStorage.setItem('aiq-theme', next);
             setIcon(next);
+            updateLoaderLogo(next);
         });
-        function setIcon(t) { document.getElementById('themeIcon').className = t === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill'; }
+        function setIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+            const navLogo = document.getElementById('navLogo');
+            if (navLogo) {
+                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (footerLogo) {
+                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
+
+        function updateLoaderLogo(theme) {
+            const loaderLogo = document.getElementById('loaderLogo');
+            if (loaderLogo) {
+                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
         document.getElementById('navHamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
         window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20));
 
@@ -597,4 +715,5 @@
         });
     </script>
 </body>
+
 </html>

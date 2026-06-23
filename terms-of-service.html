@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — AdvertiseIQ</title>
+    <link rel="icon" href="./assets/img/favicon.svg" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <style>
+        .legal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px 56px;
+            backdrop-filter: blur(16px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .legal-content h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        .legal-content .last-updated {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        .legal-content h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 28px 0 12px;
+        }
+
+        .legal-content h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 20px 0 8px;
+        }
+
+        .legal-content p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin: 0 0 16px;
+        }
+
+        .legal-content ul {
+            padding-left: 24px;
+            margin: 0 0 16px;
+        }
+
+        .legal-content ul li {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        .legal-content ul li strong {
+            color: var(--text);
+        }
+
+        .legal-content .highlight-box {
+            background: var(--accent-glow);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .legal-content .highlight-box p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .legal-section {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            .legal-content {
+                padding: 32px 24px;
+            }
+
+            .legal-content h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .legal-content {
+                padding: 24px 16px;
+            }
+
+            .legal-content h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-logo">
+            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading AdvertiseIQ...</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+                    onerror="this.style.display='none'">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact-us.html">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-sun-fill" id="themeIcon"></i>
+                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="navMobile">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact-us.html">Contact</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+        </div>
+    </nav>
+
+    <!-- ===== TERMS OF SERVICE CONTENT ===== -->
+    <section class="legal-section">
+        <div class="section-wrapper">
+            <div class="legal-content">
+                <h1>Terms of Service</h1>
+                <span class="last-updated">Last Updated: June 23, 2026</span>
+
+                <p>Welcome to AdvertiseIQ. These Terms of Service ("Terms") govern your access to and use of the
+                    AdvertiseIQ platform, website, and services (collectively, the "Services"). By using our Services,
+                    you agree to be bound by these Terms. If you do not agree, please do not use the Services.</p>
+
+                <div class="highlight-box">
+                    <p><strong>In short:</strong> We provide AI-powered Amazon advertising automation. You own your
+                        data. We provide the tool. Use it responsibly.</p>
+                </div>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>By creating an account or using the Services, you acknowledge that you have read, understood, and
+                    agree to be bound by these Terms, including any future modifications. If you are using the Services
+                    on behalf of an organization, you represent that you have the authority to bind that organization to
+                    these Terms.</p>
+
+                <h2>2. Description of Service</h2>
+                <p>AdvertiseIQ provides an AI-driven platform for Amazon advertising management, including but not
+                    limited to:</p>
+                <ul>
+                    <li>Bid and budget automation</li>
+                    <li>Keyword intelligence and discovery</li>
+                    <li>Inventory protection alerts</li>
+                    <li>Campaign analytics and reporting</li>
+                    <li>Custom automation rules</li>
+                </ul>
+                <p>We may update, modify, or discontinue any feature of the Services at any time with reasonable notice.
+                </p>
+
+                <h2>3. Account Registration</h2>
+                <ul>
+                    <li><strong>Eligibility:</strong> You must be at least 18 years old and capable of forming a binding
+                        contract.</li>
+                    <li><strong>Accuracy:</strong> You agree to provide accurate and complete registration information
+                        and to update it promptly.</li>
+                    <li><strong>Security:</strong> You are responsible for maintaining the confidentiality of your
+                        account credentials and for all activities that occur under your account.</li>
+                    <li><strong>Amazon Authorization:</strong> You authorize AdvertiseIQ to access your Amazon Seller or
+                        Vendor Central data via API to provide the Services.</li>
+                </ul>
+
+                <h2>4. User Data &amp; Privacy</h2>
+                <p>Your data is yours. We process your Amazon advertising data solely to deliver the Services. Our <a
+                        href="privacy-policy.html" style="color: var(--accent);">Privacy Policy</a> explains how we
+                    collect, use, and protect your personal information.</p>
+
+                <h2>5. Subscription &amp; Billing</h2>
+                <ul>
+                    <li><strong>Plans:</strong> Services are offered on a subscription basis (monthly or annual).</li>
+                    <li><strong>Pricing:</strong> Fees are clearly stated at the time of purchase. We reserve the right
+                        to change pricing with 30 days' notice.</li>
+                    <li><strong>Billing:</strong> You authorize us to charge your payment method for recurring
+                        subscription fees. All fees are non-refundable unless otherwise required by law.</li>
+                    <li><strong>Cancellation:</strong> You may cancel your subscription at any time. Cancellation will
+                        take effect at the end of your current billing cycle.</li>
+                </ul>
+
+                <h2>6. Free Trial</h2>
+                <p>We offer a 14-day free trial. At the end of the trial, your account will automatically convert to a
+                    paid subscription unless you cancel before the trial ends. No credit card is required to start the
+                    trial.</p>
+
+                <h2>7. Acceptable Use Policy</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the Services for any unlawful purpose or in violation of Amazon's terms of service.</li>
+                    <li>Attempt to gain unauthorized access to the Services or related systems.</li>
+                    <li>Interfere with or disrupt the integrity or performance of the Services.</li>
+                    <li>Reverse engineer, decompile, or disassemble any part of the platform.</li>
+                    <li>Use the Services to distribute spam, malware, or harmful content.</li>
+                </ul>
+
+                <h2>8. Intellectual Property</h2>
+                <ul>
+                    <li><strong>Our IP:</strong> The AdvertiseIQ platform, software, algorithms, design, and content are
+                        owned by AdvertiseIQ and are protected by copyright, trademark, and other intellectual property
+                        laws.</li>
+                    <li><strong>Your IP:</strong> You retain all rights to your data and content. You grant us a limited
+                        license to use your data solely to provide the Services.</li>
+                    <li><strong>Feedback:</strong> Any feedback, suggestions, or ideas you provide may be used without
+                        restriction or compensation.</li>
+                </ul>
+
+                <h2>9. Confidentiality</h2>
+                <p>Both parties agree to keep confidential any non-public information received from the other party,
+                    including business strategies, technical data, and customer information.</p>
+
+                <h2>10. Third-Party Services</h2>
+                <p>The Services may integrate with third-party tools (e.g., Amazon APIs). We are not responsible for the
+                    availability, accuracy, or security of third-party services. Your use of third-party services is
+                    subject to their terms.</p>
+
+                <h2>11. Disclaimer of Warranties</h2>
+                <p>The Services are provided "as is" and "as available." To the fullest extent permitted by law,
+                    AdvertiseIQ disclaims all warranties, express or implied, including but not limited to implied
+                    warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not
+                    guarantee that the Services will be error-free, uninterrupted, or meet your specific objectives.</p>
+
+                <h2>12. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, AdvertiseIQ shall not be liable for any indirect, incidental,
+                    special, consequential, or punitive damages, or any loss of profits, revenue, data, or business
+                    opportunities, even if we have been advised of the possibility of such damages. Our total liability
+                    to you shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+
+                <h2>13. Indemnification</h2>
+                <p>You agree to indemnify and hold harmless AdvertiseIQ, its officers, directors, employees, and agents
+                    from any claims, liabilities, damages, losses, or expenses (including reasonable legal fees) arising
+                    out of your use of the Services, violation of these Terms, or infringement of any third-party
+                    rights.</p>
+
+                <h2>14. Termination</h2>
+                <ul>
+                    <li><strong>By You:</strong> You may terminate your account at any time by contacting support or
+                        through the platform.</li>
+                    <li><strong>By Us:</strong> We may suspend or terminate your account with notice if you violate
+                        these Terms or fail to pay fees. We may also terminate for convenience with 30 days' notice.
+                    </li>
+                    <li><strong>Effect:</strong> Upon termination, your access to the Services will cease. We will
+                        retain your data for a reasonable period as required by law or for legitimate business purposes.
+                    </li>
+                </ul>
+
+                <h2>15. Governing Law &amp; Dispute Resolution</h2>
+                <ul>
+                    <li><strong>Governing Law:</strong> These Terms are governed by the laws of the State of California,
+                        without regard to conflict of law principles.</li>
+                    <li><strong>Dispute Resolution:</strong> Any disputes arising from these Terms or the Services shall
+                        be resolved through confidential binding arbitration in San Francisco, California, in accordance
+                        with the rules of the American Arbitration Association. Both parties waive the right to a jury
+                        trial and class actions.</li>
+                </ul>
+
+                <h2>16. Changes to Terms</h2>
+                <p>We may revise these Terms from time to time. We will notify you of significant changes via email or
+                    through the platform. Your continued use of the Services after changes constitute your acceptance of
+                    the updated Terms.</p>
+
+                <h2>17. Miscellaneous</h2>
+                <ul>
+                    <li><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and
+                        AdvertiseIQ.</li>
+                    <li><strong>Waiver:</strong> Our failure to enforce any provision does not waive our right to
+                        enforce it later.</li>
+                    <li><strong>Severability:</strong> If any provision is found invalid or unenforceable, the remaining
+                        provisions remain in full effect.</li>
+                    <li><strong>Assignment:</strong> You may not assign these Terms without our prior written consent.
+                        We may assign them without restriction.</li>
+                </ul>
+
+                <h2>18. Contact Information</h2>
+                <p>If you have questions about these Terms, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> legal@advertiseiq.co</li>
+                    <li><strong>Address:</strong> AdvertiseIQ, 123 Innovation Drive, San Francisco, CA 94105</li>
+                </ul>
+
+                <p
+                    style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="bi bi-file-check" style="color: var(--accent);"></i>
+                    By using AdvertiseIQ, you acknowledge that you have read and understood these Terms of Service.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-col brand-col">
+                <a href="/" class="footer-logo-link">
+                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+                        onerror="this.style.display='none'">
+                </a>
+                <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h5>Product</h5>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="market.html">Case Studies</a></li>
+                    <li><a href="ppc-sales.html">Sales</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Hide Loader on Page Load ──
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            // Small delay to ensure smooth transition
+            setTimeout(function () {
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
+        // ── Dark/Light Mode ──
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        setIcon(savedTheme);
+        updateLoaderLogo(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('aiq-theme', next);
+            setIcon(next);
+            updateLoaderLogo(next);
+        });
+        function setIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+            const navLogo = document.getElementById('navLogo');
+            if (navLogo) {
+                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (footerLogo) {
+                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
+
+        function updateLoaderLogo(theme) {
+            const loaderLogo = document.getElementById('loaderLogo');
+            if (loaderLogo) {
+                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
+
+        // ── Mobile Nav ──
+        document.getElementById('navHamburger').addEventListener('click', () => {
+            document.getElementById('navMobile').classList.toggle('open');
+        });
+
+        // ── Sticky Nav shadow ──
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+
+</body>
+
+</html>

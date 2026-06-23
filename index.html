@@ -8,42 +8,62 @@
     <link rel="icon" href="./assets/img/favicon.svg" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+
+    <!-- Owl Carousel JS (add before closing body) -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
 </head>
 
 <body>
 
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-logo">
+            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading AdvertiseIQ...</div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
+    </div>
+
     <!-- ===== NAVIGATION ===== -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-inner">
-            <a href="/" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" onerror="this.style.display='none'">
-                <span class="logo-text">AdvertiseIQ</span>
+            <a href="index.html" class="nav-logo">
+                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+                    onerror="this.style.display='none'">
             </a>
             <div class="nav-links">
-                <a href="#">Features</a>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="market.html">Case Studies</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="bi bi-sun-fill" id="themeIcon"></i>
                 </button>
-                <a href="#" class="btn-nav-secondary">Log In</a>
-                <a href="#" class="btn-nav-primary">Start Free Trial</a>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
                 <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
         </div>
         <div class="nav-mobile" id="navMobile">
-            <a href="#">Features</a>
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
-            <a href="market.html">Case Studies</a>
             <a href="contact-us.html">Contact</a>
-            <a href="#" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
         </div>
     </nav>
 
@@ -56,10 +76,12 @@
                     Trusted by 500+ Amazon Brands
                 </div>
                 <h1>Scale Your Amazon Ads<br>with <span class="gradient-text">AI-Powered</span> Precision</h1>
-                <p class="hero-sub">From smart bidding and inventory protection to advanced analytics and automation rules — everything you need to dominate Amazon advertising.</p>
+                <p class="hero-sub">From smart bidding and inventory protection to advanced analytics and automation
+                    rules, everything you need to dominate Amazon advertising.</p>
                 <div class="hero-ctas">
-                    <a href="#" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" class="btn-secondary"><i class="bi bi-play-circle-fill"></i> Watch Demo</a>
+                    <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+                    <a href="contact-us.html" class="btn-secondary"><i class="bi bi-play-circle-fill"></i> Watch
+                        Demo</a>
                 </div>
                 <div class="hero-trust">
                     <span>No credit card required</span>
@@ -112,7 +134,8 @@
             <div class="section-header">
                 <div class="section-tag">PLATFORM CAPABILITIES</div>
                 <h2>Everything You Need to<br>Scale on Amazon</h2>
-                <p>Manage campaigns, optimize keywords, protect inventory, and maximize profitability from a single intelligent platform.</p>
+                <p>Manage campaigns, optimize keywords, protect inventory, and maximize profitability from a single
+                    intelligent platform.</p>
             </div>
             <div class="features-grid">
 
@@ -152,7 +175,8 @@
                     <div class="feature-card-body">
                         <div class="feature-icon orange"><i class="bi bi-search"></i></div>
                         <h3>Keyword Intelligence</h3>
-                        <p>Discover profitable search terms, identify wasted spend, and uncover new keyword opportunities.</p>
+                        <p>Discover profitable search terms, identify wasted spend, and uncover new keyword
+                            opportunities.</p>
                         <ul class="feature-list">
                             <li><i class="bi bi-check2-circle"></i> Search Term Analysis</li>
                             <li><i class="bi bi-check2-circle"></i> Keyword Suggestions</li>
@@ -173,7 +197,8 @@
                     <div class="feature-card-body">
                         <div class="feature-icon green"><i class="bi bi-shield-check"></i></div>
                         <h3>Inventory Protection</h3>
-                        <p>Monitor FBA and FBM inventory levels and receive proactive alerts before stock issues impact sales.</p>
+                        <p>Monitor FBA and FBM inventory levels and receive proactive alerts before stock issues impact
+                            sales.</p>
                         <ul class="feature-list">
                             <li><i class="bi bi-check2-circle"></i> Low Stock Alerts</li>
                             <li><i class="bi bi-check2-circle"></i> Sales Drop Detection</li>
@@ -195,8 +220,11 @@
                 <div class="timeline-left">
                     <div class="section-tag">HOW IT WORKS</div>
                     <h2>Automate Every<br><span class="gradient-text">Optimization<br>Decision</span></h2>
-                    <p>Set your logic once, and let our engine handle the heavy lifting. Watch your campaigns optimize themselves in real-time, 24/7.</p>
-                    <a href="#" class="btn-primary mt-4" style="display:inline-flex; align-items:center; gap:8px;">See How It Works <i class="bi bi-arrow-right"></i></a>
+                    <p>Set your logic once, and let our engine handle the heavy lifting. Watch your campaigns optimize
+                        themselves in real-time, 24/7.</p>
+                    <a href="contact-us.html" class="btn-primary mt-4"
+                        style="display:inline-flex; align-items:center; gap:8px;">See
+                        How It Works <i class="bi bi-arrow-right"></i></a>
                 </div>
                 <div class="timeline-right">
                     <div class="timeline-item">
@@ -249,55 +277,68 @@
                     <p class="showcase-sub">Drag or use arrows to explore every feature.</p>
                 </div>
                 <div class="showcase-arrows">
-                    <button class="showcase-arrow" id="showcasePrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
-                    <button class="showcase-arrow" id="showcaseNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+                    <button class="showcase-arrow prev-arrow" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="showcase-arrow next-arrow" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
                 </div>
             </div>
-            <div class="showcase-slider" id="showcaseSlider">
+
+            <!-- Owl Carousel -->
+            <div class="owl-carousel showcase-carousel" id="showcaseCarousel">
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(74,144,226,0.12); --ibc: rgba(74,144,226,0.3); --icc: #4a90e2;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(74,144,226,0.12); --ibc: rgba(74,144,226,0.3); --icc: #4a90e2;">
                         <i class="bi bi-megaphone"></i>
                     </div>
                     <h4>Campaign Manager</h4>
                     <p>Build, structure and manage high-performing campaigns with ease.</p>
                 </div>
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(168,85,247,0.12); --ibc: rgba(168,85,247,0.3); --icc: #a855f7;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(168,85,247,0.12); --ibc: rgba(168,85,247,0.3); --icc: #a855f7;">
                         <i class="bi bi-robot"></i>
                     </div>
                     <h4>Bid Automation</h4>
                     <p>AI adjusts bids automatically to hit target ACOS and maximize ROI.</p>
                 </div>
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(14,165,233,0.12); --ibc: rgba(14,165,233,0.3); --icc: #0ea5e9;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(14,165,233,0.12); --ibc: rgba(14,165,233,0.3); --icc: #0ea5e9;">
                         <i class="bi bi-grid"></i>
                     </div>
                     <h4>Placement Rules</h4>
                     <p>Win Top of Search and outperform your competitors consistently.</p>
                 </div>
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(249,115,22,0.12); --ibc: rgba(249,115,22,0.3); --icc: #f97316;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(249,115,22,0.12); --ibc: rgba(249,115,22,0.3); --icc: #f97316;">
                         <i class="bi bi-wallet2"></i>
                     </div>
                     <h4>Budget Automation</h4>
                     <p>Pause and enable campaigns automatically based on budget rules.</p>
                 </div>
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(16,185,129,0.12); --ibc: rgba(16,185,129,0.3); --icc: #10b981;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(16,185,129,0.12); --ibc: rgba(16,185,129,0.3); --icc: #10b981;">
                         <i class="bi bi-graph-up-arrow"></i>
                     </div>
                     <h4>Analytics Dashboard</h4>
                     <p>Real-time visibility into every metric that drives your business.</p>
                 </div>
                 <div class="showcase-card">
-                    <div class="showcase-icon" style="--ic: rgba(245,158,11,0.12); --ibc: rgba(245,158,11,0.3); --icc: #f59e0b;">
+                    <div class="showcase-icon"
+                        style="--ic: rgba(245,158,11,0.12); --ibc: rgba(245,158,11,0.3); --icc: #f59e0b;">
                         <i class="bi bi-bell"></i>
                     </div>
                     <h4>Smart Alerts</h4>
                     <p>Get notified about critical changes before they impact revenue.</p>
                 </div>
             </div>
-            <div class="slider-dots" id="sliderDots"></div>
+
+            <!-- Dots will be auto-generated by Owl Carousel -->
         </div>
     </section>
 
@@ -307,7 +348,8 @@
             <div class="section-header">
                 <div class="section-tag">PRODUCT OVERVIEW</div>
                 <h2>Your Command Center<br>for Amazon Growth</h2>
-                <p>A unified dashboard that gives you complete visibility and control over every campaign, keyword, and dollar spent.</p>
+                <p>A unified dashboard that gives you complete visibility and control over every campaign, keyword, and
+                    dollar spent.</p>
             </div>
             <div class="screenshot-container">
                 <div class="screenshot-glow"></div>
@@ -414,7 +456,8 @@
                         <span class="price-amount" data-monthly="349" data-annual="279">349</span>
                         <span class="price-period">/mo</span>
                     </div>
-                    <p class="plan-desc">Perfect for growing brands just getting started with Amazon advertising automation.</p>
+                    <p class="plan-desc">Perfect for growing brands just getting started with Amazon advertising
+                        automation.</p>
                     <ul class="plan-features">
                         <li><i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts</li>
                         <li><i class="bi bi-check2-circle"></i> Campaign automation & rules</li>
@@ -422,17 +465,17 @@
                         <li><i class="bi bi-check2-circle"></i> Basic analytics dashboard</li>
                         <li><i class="bi bi-check2-circle"></i> Email support</li>
                     </ul>
-                    <a href="#" class="btn-plan btn-plan-outline">Start Free Trial</a>
+                    <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
                 </div>
                 <div class="pricing-card premium featured">
                     <div class="featured-badge">Most Popular</div>
-                    <div class="plan-name">Premium</div>
                     <div class="plan-price">
                         <span class="price-currency">$</span>
                         <span class="price-amount" data-monthly="299" data-annual="239">299</span>
                         <span class="price-period">/mo</span>
                     </div>
-                    <p class="plan-desc">For established brands ready to dominate their category with full automation.</p>
+                    <p class="plan-desc">For established brands ready to dominate their category with full automation.
+                    </p>
                     <ul class="plan-features">
                         <li><i class="bi bi-check2-circle"></i> Up to 20 marketplace accounts</li>
                         <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
@@ -441,10 +484,9 @@
                         <li><i class="bi bi-check2-circle"></i> Competitor intelligence</li>
                         <li><i class="bi bi-check2-circle"></i> Priority support</li>
                     </ul>
-                    <a href="#" class="btn-plan btn-plan-primary">Get Premium</a>
+                    <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
                 </div>
                 <div class="pricing-card enterprise">
-                    <div class="plan-name">Enterprise</div>
                     <div class="plan-price">
                         <span class="price-currency">$</span>
                         <span class="price-amount" data-monthly="249" data-annual="199">249</span>
@@ -459,7 +501,7 @@
                         <li><i class="bi bi-check2-circle"></i> Custom onboarding</li>
                         <li><i class="bi bi-check2-circle"></i> SLA guarantees</li>
                     </ul>
-                    <a href="#" class="btn-plan btn-plan-outline">Contact Sales</a>
+                    <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -475,9 +517,11 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p>"AdvertiseIQ cut our ACOS from 38% down to 19% in just 6 weeks. The bid automation alone paid for itself in the first month."</p>
+                    <p>"AdvertiseIQ cut our ACOS from 38% down to 19% in just 6 weeks. The bid automation alone paid for
+                        itself in the first month."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-blue">SM</div>
                         <div>
@@ -488,9 +532,11 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p>"We manage 12 brands and AdvertiseIQ made it possible to scale all of them simultaneously. Our team saves 30+ hours per week."</p>
+                    <p>"We manage 12 brands and AdvertiseIQ made it possible to scale all of them simultaneously. Our
+                        team saves 30+ hours per week."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-purple">JR</div>
                         <div>
@@ -501,9 +547,11 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p>"The inventory protection feature alone is worth it. We used to lose thousands in wasted ad spend during stockouts. Not anymore."</p>
+                    <p>"The inventory protection feature alone is worth it. We used to lose thousands in wasted ad spend
+                        during stockouts. Not anymore."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar av-green">EK</div>
                         <div>
@@ -530,7 +578,8 @@
                         <i class="bi bi-plus-circle faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Most brands see measurable improvements within the first 2 weeks. Full optimization typically takes 30–45 days as the AI learns your product catalog and campaign history.</p>
+                        <p>Most brands see measurable improvements within the first 2 weeks. Full optimization typically
+                            takes 30–45 days as the AI learns your product catalog and campaign history.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -539,7 +588,8 @@
                         <i class="bi bi-plus-circle faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. AdvertiseIQ supports both Amazon Seller Central and Vendor Central accounts, as well as multiple marketplaces including US, UK, EU, Canada, and more.</p>
+                        <p>Yes. AdvertiseIQ supports both Amazon Seller Central and Vendor Central accounts, as well as
+                            multiple marketplaces including US, UK, EU, Canada, and more.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -548,7 +598,8 @@
                         <i class="bi bi-plus-circle faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely. We offer a 14-day free trial with full access to all features. No credit card required. You can cancel at any time during the trial period.</p>
+                        <p>Absolutely. We offer a 14-day free trial with full access to all features. No credit card
+                            required. You can cancel at any time during the trial period.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -557,7 +608,9 @@
                         <i class="bi bi-plus-circle faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Our AI analyzes your campaign performance data in real-time and adjusts bids based on your target ACOS, ROAS, and custom rules you define. The system optimizes bids every few hours to maximize your advertising efficiency.</p>
+                        <p>Our AI analyzes your campaign performance data in real-time and adjusts bids based on your
+                            target ACOS, ROAS, and custom rules you define. The system optimizes bids every few hours to
+                            maximize your advertising efficiency.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -566,7 +619,9 @@
                         <i class="bi bi-plus-circle faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>All plans include email support and access to our knowledge base. Premium plans get priority support with faster response times. Enterprise plans include a dedicated customer success manager.</p>
+                        <p>All plans include email support and access to our knowledge base. Premium plans get priority
+                            support with faster response times. Enterprise plans include a dedicated customer success
+                            manager.</p>
                     </div>
                 </div>
             </div>
@@ -582,10 +637,12 @@
                 <h2>Ready to Scale Your<br>Amazon Revenue?</h2>
                 <p>Join 500+ brands using AdvertiseIQ to automate Amazon advertising and grow profitably.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn-primary btn-lg">Start Free Trial — No Card Needed <i class="bi bi-arrow-right"></i></a>
+                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial - No Card Needed <i
+                            class="bi bi-arrow-right"></i></a>
                     <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
                 </div>
-                <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp; Cancel anytime</p>
+                <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp; Cancel anytime
+                </p>
             </div>
         </div>
     </section>
@@ -595,8 +652,8 @@
         <div class="footer-inner">
             <div class="footer-col brand-col">
                 <a href="/" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" onerror="this.style.display='none'">
-                    <span class="footer-logo-text">AdvertiseIQ</span>
+                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+                        onerror="this.style.display='none'">
                 </a>
                 <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
                 <div class="social-icons">
@@ -609,27 +666,24 @@
             <div class="footer-col">
                 <h5>Product</h5>
                 <ul>
-                    <li><a href="#">Features</a></li>
+                    <li><a href="features.html">Features</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#">Integrations</a></li>
-                    <li><a href="#">Changelog</a></li>
+                    <li><a href="market.html">Case Studies</a></li>
+                    <li><a href="ppc-sales.html">Sales</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Company</h5>
                 <ul>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -643,6 +697,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
+        // ── Hide Loader on Page Load ──
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            // Small delay to ensure smooth transition
+            setTimeout(function () {
+                loader.classList.add('hidden');
+            }, 300);
+        });
+
         // ── Dark/Light Mode ──
         const html = document.documentElement;
         const themeToggle = document.getElementById('themeToggle');
@@ -650,14 +713,31 @@
         const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
+        updateLoaderLogo(savedTheme);
         themeToggle.addEventListener('click', () => {
             const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
             localStorage.setItem('aiq-theme', next);
             setIcon(next);
+            updateLoaderLogo(next);
         });
         function setIcon(theme) {
             themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+            const navLogo = document.getElementById('navLogo');
+            if (navLogo) {
+                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (footerLogo) {
+                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
+        }
+
+        function updateLoaderLogo(theme) {
+            const loaderLogo = document.getElementById('loaderLogo');
+            if (loaderLogo) {
+                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+            }
         }
 
         // ── Mobile Nav ──
@@ -698,64 +778,167 @@
             const prevBtn = document.getElementById('showcasePrev');
             const nextBtn = document.getElementById('showcaseNext');
             if (!slider) return;
+
             const cards = slider.querySelectorAll('.showcase-card');
-            const total = cards.length;
+            const total = cards.length; // This should be 6
 
-            function gap() { return 20; }
-            function cardW() { return cards[0] ? cards[0].offsetWidth + gap() : 280; }
-            function getIdx() { return Math.round(slider.scrollLeft / Math.max(1, cardW())); }
-
-            function goTo(i) {
-                i = Math.max(0, Math.min(total - 1, i));
-                slider.scrollTo({ left: i * cardW(), behavior: 'smooth' });
+            // Get the actual width of a card including gap
+            function getCardWidth() {
+                if (cards.length === 0) return 280;
+                const card = cards[0];
+                // Get margin/gap from CSS
+                const style = window.getComputedStyle(slider);
+                const gap = parseFloat(style.gap) || 20;
+                return card.offsetWidth + gap;
             }
 
+            // Get current visible slide index
+            function getCurrentIndex() {
+                const cardWidth = getCardWidth();
+                if (cardWidth === 0) return 0;
+                const scrollLeft = slider.scrollLeft;
+                // Round to nearest whole number
+                return Math.round(scrollLeft / cardWidth);
+            }
+
+            // Navigate to a specific slide
+            function goTo(index) {
+                // Clamp index between 0 and total-1
+                index = Math.max(0, Math.min(total - 1, index));
+                const cardWidth = getCardWidth();
+                slider.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                });
+                // Update UI after scroll animation completes
+                setTimeout(updateUI, 350);
+            }
+
+            // Update dots and arrows state
             function updateUI() {
-                const idx = getIdx();
-                dotsContainer && dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
-                if (prevBtn) prevBtn.disabled = idx === 0;
-                if (nextBtn) nextBtn.disabled = idx >= total - 1;
+                const currentIndex = getCurrentIndex();
+
+                // Update dots
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.slider-dot');
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentIndex);
+                    });
+                }
+
+                // Update arrows
+                if (prevBtn) {
+                    prevBtn.disabled = currentIndex === 0;
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = currentIndex >= total - 1;
+                }
             }
 
-            // Build dots
+            // Build dots for ALL cards (6 dots)
             if (dotsContainer) {
-                cards.forEach((_, i) => {
-                    const d = document.createElement('button');
-                    d.className = 'slider-dot' + (i === 0 ? ' active' : '');
-                    d.setAttribute('aria-label', 'Slide ' + (i + 1));
-                    d.addEventListener('click', () => goTo(i));
-                    dotsContainer.appendChild(d);
+                dotsContainer.innerHTML = ''; // Clear any existing dots
+                for (let i = 0; i < total; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // Arrow click handlers
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const current = getCurrentIndex();
+                    goTo(current - 1);
                 });
             }
 
-            slider.addEventListener('scroll', updateUI);
-            if (prevBtn) prevBtn.addEventListener('click', () => goTo(getIdx() - 1));
-            if (nextBtn) nextBtn.addEventListener('click', () => goTo(getIdx() + 1));
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    const current = getCurrentIndex();
+                    goTo(current + 1);
+                });
+            }
 
-            // Mouse drag
-            let down = false, startX = 0, scrollStart = 0;
-            slider.addEventListener('mousedown', e => {
-                down = true;
+            // Update UI on scroll with debounce
+            let scrollTimeout;
+            slider.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateUI, 100);
+            }, { passive: true });
+
+            // Mouse drag support
+            let isDown = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
                 slider.classList.add('dragging');
                 startX = e.pageX - slider.offsetLeft;
-                scrollStart = slider.scrollLeft;
+                scrollLeft = slider.scrollLeft;
                 e.preventDefault();
             });
-            slider.addEventListener('mousemove', e => {
-                if (!down) return;
-                e.preventDefault();
-                slider.scrollLeft = scrollStart - (e.pageX - slider.offsetLeft - startX) * 1.3;
-            });
-            function stopDrag() {
-                if (!down) return;
-                down = false;
-                slider.classList.remove('dragging');
-                goTo(getIdx());
-            }
-            slider.addEventListener('mouseup', stopDrag);
-            slider.addEventListener('mouseleave', stopDrag);
 
-            updateUI();
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            slider.addEventListener('mouseup', () => {
+                if (isDown) {
+                    isDown = false;
+                    slider.classList.remove('dragging');
+                    // Snap to nearest slide
+                    const current = getCurrentIndex();
+                    goTo(current);
+                }
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                if (isDown) {
+                    isDown = false;
+                    slider.classList.remove('dragging');
+                    const current = getCurrentIndex();
+                    goTo(current);
+                }
+            });
+
+            // Touch support
+            let touchStartX = 0;
+            let touchScrollLeft = 0;
+
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].pageX - slider.offsetLeft;
+                touchScrollLeft = slider.scrollLeft;
+            }, { passive: true });
+
+            slider.addEventListener('touchend', () => {
+                const current = getCurrentIndex();
+                goTo(current);
+            }, { passive: true });
+
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    const current = getCurrentIndex();
+                    if (current >= total) {
+                        goTo(total - 1);
+                    } else {
+                        updateUI();
+                    }
+                }, 200);
+            });
+
+            // Initialize
+            setTimeout(updateUI, 150);
         })();
 
         // ── GSAP Scroll Animations ──
@@ -782,6 +965,78 @@
                 });
             });
         }
+
+        // ── Showcase Slider with Owl Carousel ──
+        $(document).ready(function () {
+            const carousel = $('#showcaseCarousel');
+
+            if (carousel.length) {
+                carousel.owlCarousel({
+                    loop: false,
+                    margin: 20,
+                    nav: false, // We use custom arrows
+                    dots: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            margin: 10
+                        },
+                        576: {
+                            items: 1,
+                            margin: 15
+                        },
+                        768: {
+                            items: 2,
+                            margin: 15
+                        },
+                        992: {
+                            items: 2,
+                            margin: 20
+                        },
+                        1200: {
+                            items: 3,
+                            margin: 20
+                        }
+                    }
+                });
+
+                // Custom arrow controls
+                $('.prev-arrow').on('click', function () {
+                    carousel.trigger('prev.owl.carousel');
+                });
+
+                $('.next-arrow').on('click', function () {
+                    carousel.trigger('next.owl.carousel');
+                });
+
+                // Update arrow states
+                carousel.on('changed.owl.carousel', function (event) {
+                    const current = event.item.index;
+                    const total = event.item.count;
+                    const itemsPerPage = event.page.size;
+                    const isFirst = current === 0;
+                    const isLast = current >= total - itemsPerPage;
+
+                    $('.prev-arrow').prop('disabled', isFirst);
+                    $('.next-arrow').prop('disabled', isLast);
+                });
+
+                // Initial arrow states
+                setTimeout(function () {
+                    const info = carousel.data('owl.carousel');
+                    if (info) {
+                        const current = info.current();
+                        const total = info.items().length;
+                        const itemsPerPage = info.settings.items;
+                        const isFirst = current === 0;
+                        const isLast = current >= total - itemsPerPage;
+
+                        $('.prev-arrow').prop('disabled', isFirst);
+                        $('.next-arrow').prop('disabled', isLast);
+                    }
+                }, 300);
+            }
+        });
     </script>
 
 </body>
