@@ -242,10 +242,16 @@
     <!-- ===== FEATURE SHOWCASE SLIDER ===== -->
     <section class="showcase-section">
         <div class="section-wrapper">
-            <div class="section-header">
-                <div class="section-tag">FULL TOOLKIT</div>
-                <h2>Everything You Need to<br>Scale Amazon Sales</h2>
-                <p>A complete toolkit for the modern Amazon brand. Swipe to explore.</p>
+            <div class="showcase-header-row">
+                <div>
+                    <div class="section-tag">FULL TOOLKIT</div>
+                    <h2 class="showcase-title">Everything You Need to<br>Scale Amazon Sales</h2>
+                    <p class="showcase-sub">Drag or use arrows to explore every feature.</p>
+                </div>
+                <div class="showcase-arrows">
+                    <button class="showcase-arrow" id="showcasePrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+                    <button class="showcase-arrow" id="showcaseNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+                </div>
             </div>
             <div class="showcase-slider" id="showcaseSlider">
                 <div class="showcase-card">
@@ -685,29 +691,72 @@
             });
         });
 
-        // ── Showcase Slider Dots ──
-        const slider = document.getElementById('showcaseSlider');
-        const dotsContainer = document.getElementById('sliderDots');
-        if (slider && dotsContainer) {
+        // ── Showcase Slider — drag + arrows ──
+        (function () {
+            const slider = document.getElementById('showcaseSlider');
+            const dotsContainer = document.getElementById('sliderDots');
+            const prevBtn = document.getElementById('showcasePrev');
+            const nextBtn = document.getElementById('showcaseNext');
+            if (!slider) return;
             const cards = slider.querySelectorAll('.showcase-card');
-            cards.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-                dot.addEventListener('click', () => {
-                    const cardW = cards[0].offsetWidth + 24;
-                    slider.scrollTo({ left: i * cardW, behavior: 'smooth' });
+            const total = cards.length;
+
+            function gap() { return 20; }
+            function cardW() { return cards[0] ? cards[0].offsetWidth + gap() : 280; }
+            function getIdx() { return Math.round(slider.scrollLeft / Math.max(1, cardW())); }
+
+            function goTo(i) {
+                i = Math.max(0, Math.min(total - 1, i));
+                slider.scrollTo({ left: i * cardW(), behavior: 'smooth' });
+            }
+
+            function updateUI() {
+                const idx = getIdx();
+                dotsContainer && dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+                if (prevBtn) prevBtn.disabled = idx === 0;
+                if (nextBtn) nextBtn.disabled = idx >= total - 1;
+            }
+
+            // Build dots
+            if (dotsContainer) {
+                cards.forEach((_, i) => {
+                    const d = document.createElement('button');
+                    d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                    d.setAttribute('aria-label', 'Slide ' + (i + 1));
+                    d.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(d);
                 });
-                dotsContainer.appendChild(dot);
+            }
+
+            slider.addEventListener('scroll', updateUI);
+            if (prevBtn) prevBtn.addEventListener('click', () => goTo(getIdx() - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => goTo(getIdx() + 1));
+
+            // Mouse drag
+            let down = false, startX = 0, scrollStart = 0;
+            slider.addEventListener('mousedown', e => {
+                down = true;
+                slider.classList.add('dragging');
+                startX = e.pageX - slider.offsetLeft;
+                scrollStart = slider.scrollLeft;
+                e.preventDefault();
             });
-            slider.addEventListener('scroll', () => {
-                const cardW = Math.max(1, cards[0].offsetWidth + 24);
-                const idx = Math.round(slider.scrollLeft / cardW);
-                dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
-                    d.classList.toggle('active', i === idx);
-                });
+            slider.addEventListener('mousemove', e => {
+                if (!down) return;
+                e.preventDefault();
+                slider.scrollLeft = scrollStart - (e.pageX - slider.offsetLeft - startX) * 1.3;
             });
-        }
+            function stopDrag() {
+                if (!down) return;
+                down = false;
+                slider.classList.remove('dragging');
+                goTo(getIdx());
+            }
+            slider.addEventListener('mouseup', stopDrag);
+            slider.addEventListener('mouseleave', stopDrag);
+
+            updateUI();
+        })();
 
         // ── GSAP Scroll Animations ──
         if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
