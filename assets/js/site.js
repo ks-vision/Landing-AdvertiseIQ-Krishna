@@ -111,33 +111,88 @@
     new MutationObserver(() => {}).observe(html, { attributes: true, attributeFilter: ['data-theme'] });
   })();
 
-  /* ── Text Generate / Typewriter Effect ── */
-  (function initTypewriter() {
+  /* ── Text Type — ReactBits-style scramble/decode effect ── */
+  (function initTextType() {
     const el = document.getElementById('heroTypewriter');
     if (!el) return;
 
-    const words = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Results'];
-    let wi = 0, ci = 0, deleting = false, pauseTicks = 0;
+    const words  = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Growth'];
+    const POOL   = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!%&';
+    const SCRAMBLE_MS = 38;   /* speed of each scramble frame          */
+    const REVEAL_MS   = 52;   /* ms between each character being locked */
+    const HOLD_MS     = 2400; /* pause after word is fully revealed     */
 
-    function tick() {
-      const word = words[wi];
-      if (deleting) {
-        ci--;
-        el.textContent = word.slice(0, ci);
-        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
-        setTimeout(tick, 55);
-      } else {
-        ci++;
-        el.textContent = word.slice(0, ci);
-        if (ci === word.length) {
-          if (pauseTicks < 18) { pauseTicks++; setTimeout(tick, 100); }
-          else { pauseTicks = 0; deleting = true; setTimeout(tick, 55); }
+    let wi = 0;
+    let timer = null;
+
+    function rndChar() {
+      return POOL[Math.floor(Math.random() * POOL.length)];
+    }
+
+    /* Build the span structure: one .tt-char span per character */
+    function buildSpans(word) {
+      el.innerHTML = '';
+      return Array.from(word).map(function (ch) {
+        var span = document.createElement('span');
+        span.className = 'tt-char';
+        span.textContent = rndChar();
+        el.appendChild(span);
+        return span;
+      });
+    }
+
+    function scrambleWord(word, onDone) {
+      var spans   = buildSpans(word);
+      var locked  = new Array(word.length).fill(false);
+      var current = 0;
+
+      /* Phase 1: scramble all chars while revealing left-to-right */
+      function scrambleTick() {
+        spans.forEach(function (s, i) {
+          if (!locked[i]) s.textContent = rndChar();
+        });
+
+        /* Lock the next char every REVEAL_MS */
+        if (current < word.length) {
+          locked[current] = true;
+          spans[current].textContent = word[current];
+          spans[current].classList.add('tt-locked');
+          current++;
+        }
+
+        if (current < word.length) {
+          timer = setTimeout(function () {
+            timer = setTimeout(scrambleTick, SCRAMBLE_MS);
+          }, current === 1 ? REVEAL_MS : REVEAL_MS);
         } else {
-          setTimeout(tick, 68);
+          /* All locked — hold then move to next word */
+          timer = setTimeout(onDone, HOLD_MS);
         }
       }
+
+      timer = setTimeout(scrambleTick, 60);
     }
-    setTimeout(tick, 800);
+
+    function cycle() {
+      var word = words[wi];
+      scrambleWord(word, function () {
+        /* Quick scramble-out before next word */
+        var spans = el.querySelectorAll('.tt-char');
+        var count = { v: 0 };
+        var total = spans.length * SCRAMBLE_MS * 2;
+        spans.forEach(function (s, i) {
+          setTimeout(function () {
+            s.classList.remove('tt-locked');
+          }, i * 18);
+        });
+        timer = setTimeout(function () {
+          wi = (wi + 1) % words.length;
+          cycle();
+        }, spans.length * 18 + 120);
+      });
+    }
+
+    timer = setTimeout(cycle, 700);
   })();
 
   /* ── Billing Tab Toggle ── */
