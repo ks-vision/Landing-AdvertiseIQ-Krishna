@@ -1,0 +1,491 @@
+ADVERTISEIQ LANDING PAGE COMPLETE REDESIGN
+
+IMPORTANT:
+Do not make small UI changes. Perform a complete conversion-focused redesign of the landing page.
+
+Current issues that must be solved:
+
+1. First section (Hero Section) feels empty and weak.
+2. Value proposition is not clear in first 5 seconds.
+3. CTA buttons look basic and not premium.
+4. Typography feels generic and inconsistent.
+5. Feature section does not showcase the actual platform capabilities.
+6. Feature slider feels outdated and not engaging.
+7. Product screenshots are missing or underutilized.
+8. Platform looks like a generic SaaS template instead of an enterprise Amazon Ads platform.
+9. Light mode is missing.
+10. Landing page does not communicate enough trust and authority.
+
+=========================================================
+OVERALL DESIGN DIRECTION
+=========================================================
+
+Create a premium SaaS landing page similar to:
+
+- Perpetua
+- Pacvue
+- Quartile
+- Helium10
+- Triple Whale
+- Stripe
+- Linear
+
+Requirements:
+
+- Dark Mode
+- Light Mode
+- Theme Toggle
+- Smooth Animations
+- Enterprise SaaS Feel
+- Glassmorphism
+- Premium Typography
+- Fully Responsive
+- Mobile Optimized
+- SEO Friendly
+
+Use:
+
+Heading Font:
+Manrope or Sora
+
+Body Font:
+Inter
+
+=========================================================
+SECTION 1 - HERO SECTION (COMPLETE REDESIGN)
+=========================================================
+
+Current hero section is too empty.
+
+Replace with:
+
+Headline:
+
+Stop Managing Amazon Ads.
+Start Automating Growth.
+
+Subheadline:
+
+AdvertiseIQ combines Amazon Ads, Seller Central, AI automation, inventory intelligence, keyword optimization, dayparting, budget management, and profit analytics into one powerful platform.
+
+Primary CTA:
+
+Start Free Trial
+
+Secondary CTA:
+
+Book Live Demo
+
+Hero should include:
+
+- Real dashboard preview
+- Live ROAS card
+- ACoS card
+- Spend trend chart
+- Sales trend chart
+- Active automation rules
+- Inventory alerts
+- Floating metrics
+- Animated dashboard elements
+
+Add subtle background effects.
+
+Hero section should immediately communicate:
+
+"Everything needed to scale Amazon sales."
+
+=========================================================
+SECTION 2 - TRUST & SOCIAL PROOF
+=========================================================
+
+Add animated statistics:
+
+100M+
+Ad Spend Managed
+
+500K+
+Automated Optimizations
+
+25%
+Average ROAS Improvement
+
+99.9%
+Platform Uptime
+
+50K+
+Keywords Optimized
+
+Add trusted Amazon seller style logos.
+
+=========================================================
+SECTION 3 - PROBLEMS WE SOLVE
+=========================================================
+
+Create split layout.
+
+Left:
+
+Common Seller Problems
+
+- High ACoS
+- Budget Waste
+- Manual Bid Changes
+- Poor Keyword Management
+- Inventory Stockouts
+- Scaling Difficulties
+
+Right:
+
+AdvertiseIQ Solutions
+
+- AI Bid Automation
+- Smart Budget Rules
+- Inventory Protection
+- Search Term Intelligence
+- Dayparting Automation
+- Profit Optimization
+
+Use animated comparison cards.
+
+=========================================================
+SECTION 4 - INTERACTIVE AUTOMATION WORKFLOW
+=========================================================
+
+Create animated timeline:
+
+Connect Amazon Account
+
+↓
+
+Sync Campaign Data
+
+↓
+
+AI Analysis
+
+↓
+
+Automation Rules Trigger
+
+↓
+
+Campaign Optimization
+
+↓
+
+Revenue Growth
+
+Each step should animate while scrolling.
+
+=========================================================
+SECTION 5 - PLATFORM FEATURES
+=========================================================
+
+Current feature cards are not enough.
+
+Show ALL platform capabilities.
+
+Use modern expandable cards.
+
+NO BASIC CAROUSEL.
+
+Use:
+
+Horizontal Scroll Experience
+
+OR
+
+Apple Style Sticky Scroll Animation
+
+Feature Categories:
+
+1. Campaign Automation
+- Bid Automation
+- Budget Automation
+- Rule Engine
+- Campaign Monitoring
+- Campaign Scheduling
+
+2. Keyword Intelligence
+- Keyword Discovery
+- Search Term Mining
+- Negative Keywords
+- Keyword Tracking
+- Keyword Suggestions
+
+3. AI Recommendations
+- Growth Opportunities
+- Wasted Spend Detection
+- Scaling Suggestions
+- Daily Recommendations
+
+4. Inventory Protection
+- Low Stock Alerts
+- Inventory Forecasting
+- FBA Monitoring
+- FBM Monitoring
+- Stockout Prevention
+
+5. Placement Optimization
+- Top Of Search Optimization
+- Product Page Optimization
+- Placement Bid Automation
+
+6. Dayparting
+- Hourly Analysis
+- Peak Hour Detection
+- Time-Based Automation
+
+7. Profit Analytics
+- Break-Even ACoS
+- Profit Calculator
+- Margin Tracking
+
+8. Promotions & Coupons
+- Coupon Analytics
+- Promotion Tracking
+- Deal Monitoring
+
+9. Multi Account Management
+- Multiple Seller Accounts
+- Marketplace Switching
+- Team Access
+
+10. Audit & History
+- Change Tracking
+- Rule History
+- Budget History
+- Full Audit Logs
+
+11. Holiday Protection
+- Prime Day Protection
+- Black Friday Protection
+- Rule Suspension
+
+12. Cron Automation Engine
+- Background Jobs
+- Data Sync
+- Rule Scheduling
+- Monitoring
+
+=========================================================
+SECTION 6 - PRODUCT SHOWCASE
+=========================================================
+
+Create interactive tabs.
+
+Tabs:
+
+Dashboard
+Campaigns
+Keywords
+Inventory
+Recommendations
+Dayparting
+Profit Analytics
+
+When tab changes:
+
+- Smooth screenshot transition
+- Animated mockups
+- Premium laptop/device frames
+
+=========================================================
+SECTION 7 - WHY ADVERTISEIQ
+=========================================================
+
+Create comparison table.
+
+AdvertiseIQ vs Manual Optimization
+
+Compare:
+
+Campaign Management
+Bid Changes
+Budget Optimization
+Keyword Discovery
+Inventory Protection
+Dayparting
+AI Recommendations
+Profit Analytics
+Audit Logs
+
+Show clear advantage.
+
+=========================================================
+SECTION 8 - ROI CALCULATOR
+=========================================================
+
+Interactive calculator.
+
+Inputs:
+
+Monthly Ad Spend
+Current ACoS
+Revenue
+
+Outputs:
+
+Potential Savings
+Expected Revenue Growth
+Expected ROAS Improvement
+
+=========================================================
+SECTION 9 - TESTIMONIALS
+=========================================================
+
+Modern testimonial carousel.
+
+Include:
+
+Agency Owner
+Amazon Brand Owner
+Marketing Manager
+
+Display:
+
+Profile
+Company
+Revenue Growth %
+Review
+
+=========================================================
+SECTION 10 - PRICING
+=========================================================
+
+Improve pricing UI significantly.
+
+Requirements:
+
+- Monthly / Yearly Toggle
+- Recommended Badge
+- Better CTA Buttons
+- Feature Comparison
+- Enterprise Contact Plan
+
+Highlight Professional Plan.
+
+=========================================================
+SECTION 11 - FAQ
+=========================================================
+
+Add expandable FAQ section.
+
+Questions:
+
+How does AdvertiseIQ work?
+
+Can I connect multiple Amazon accounts?
+
+What marketplaces are supported?
+
+How does automation work?
+
+Can I disable automations?
+
+Is there a free trial?
+
+=========================================================
+SECTION 12 - FINAL CTA
+=========================================================
+
+Headline:
+
+Ready To Scale Your Amazon Business?
+
+Subheadline:
+
+Manage campaigns, keywords, inventory, budgets, placements, and profitability from one intelligent platform.
+
+Buttons:
+
+Start Free Trial
+
+Book Demo
+
+=========================================================
+NAVBAR IMPROVEMENTS
+=========================================================
+
+Navbar must include:
+
+Features
+Solutions
+Pricing
+Customers
+Documentation
+Resources
+Contact
+
+Right Side:
+
+Theme Toggle
+Login
+Start Free Trial
+
+Sticky Navbar
+
+Glassmorphism Background
+
+=========================================================
+LIGHT / DARK MODE
+=========================================================
+
+Create complete Light and Dark mode support.
+
+Theme toggle should:
+
+- Animate smoothly
+- Save preference in local storage
+- Apply to all components
+
+=========================================================
+BUTTON DESIGN
+=========================================================
+
+Current buttons look basic.
+
+Create premium SaaS buttons.
+
+Requirements:
+
+- Gradient background
+- Hover animation
+- Glow effect
+- Better padding
+- Better typography
+- Modern shadows
+
+=========================================================
+ANIMATIONS
+=========================================================
+
+Use Framer Motion.
+
+Add:
+
+- Scroll reveal
+- Parallax effects
+- Counter animations
+- Hover animations
+- Section transitions
+- Smooth page interactions
+
+=========================================================
+FINAL GOAL
+=========================================================
+
+The final landing page should feel like a premium enterprise Amazon advertising platform worth $100M+, not a template SaaS website.
+
+Prioritize:
+
+1. Better Hero Section
+2. Better Typography
+3. Better Buttons
+4. More Platform Features
+5. Better Feature Showcase
+6. More Product Visuals
+7. Better Trust Building
+8. Higher Conversion Rate
+9. Light + Dark Mode
+10. Premium SaaS Experience
