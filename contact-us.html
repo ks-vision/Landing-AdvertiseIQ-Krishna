@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <title>Contact Us – Advertise IQ</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Contact Us – Advertise IQ">
+    <meta name="description" content="Contact Us – Advertise IQ">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ===========Favicon-icon============ -->
+    <link type="image/x-icon" rel="shortcut icon" href="./assets/img/favicon.svg" />
+    <!-- ===========Bootstarp-file============ -->
+    <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <!-- ===========my-css-file================ -->
+    <link rel="stylesheet" href="./assets/css/market.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <!-- ===========Nunito-font================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfzFEgsAAAAAPaNZetpq1UVZeb1CscjstB2Gb6l"></script>
+</head>
+
+<body>
+	<!-- header -->
+    <header>
+        <nav class="navbar navbar-expand-lg ps-sm ps-lg-4 pe-sm pe-lg-4 nav-height">
+            <div class="container-fluid p-sm-0 p-md-0 p-lg-0 ps-xl-2 pe-xl-2 sm-padding">
+                <div class="logo-part d-flex">
+                    <a href="index.html">
+                        <img src="./assets/img/logo.svg" alt="logo" width="150" height="34" >
+                    </a>                   
+                </div>
+                <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse pb-sm-3 pb-md-3 pb-lg-0 p-btm"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-start">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-black dropdown-arrow" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Product								
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Universal</a></li>
+                                <li><a class="dropdown-item" href="#">Unbranded</a></li>
+                                <li><a class="dropdown-item" href="#">Branded</a></li>
+                                <li><a class="dropdown-item" href="#">Category</a></li>
+                                <li><a class="dropdown-item" href="#">Competitor</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-black dropdown-arrow" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Total Sales Analytics</a></li>
+                                <li><a class="dropdown-item" href="#">Retail Intelligence</a></li>
+                                <li><a class="dropdown-item" href="#">Digital Shelf Insights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-black dropdown-arrow" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Media
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Marketplace</a></li>
+                                <li><a class="dropdown-item" href="#">Eye-catching Display Ads</a></li>
+                                <li><a class="dropdown-item" href="#">Engaging Video Ads</a></li>
+                                <li><a class="dropdown-item" href="#">Actionable Market</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pricing.html" class="nav-link text-black" aria-current="page">Pricing</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex mobile-sign" style="gap: 24px;">
+                        <div class="nav-item mt-2 ms-2">
+                            <a class="nav-link text-black" aria-current="page" href="contact-us.html">Contact</a>
+                        </div>
+                        <a href="https://app.advertiseiq.co/login" target="_blank" class="btn btn-sign-in" type="submit">Sign In</a>
+                        <!-- <button class="btn btn-color" type="submit">Sign Up</button> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- section-1 -->
+
+    <section class="sec-margin">
+        <div class="container">
+            <div class="row justify-content-center">
+                 <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <h2 class="sec-3-heading">Contact Us</h2>
+                        <p class="sec-sub-text">Have questions? Fill out the form and we’ll get back to you shortly.</p>
+                    </div>
+                    <div id="success-message" class="alert alert-success text-center" style="display:none;">
+                        Thank you! Your message has been sent successfully.
+                    </div>
+
+                    <div id="error-message" class="alert alert-danger text-center" style="display:none;">
+                        Sorry, we could not send your message right now. Please try again later.
+                    </div>
+                    <form action="contact-mail.php" method="post" class="p-4 shadow rounded bg-white">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" name="first_name" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" name="last_name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Email *</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Contact Number *</label>
+                                <input type="tel" name="phone" class="form-control" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10 digit number" />
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Message *</label>
+                            <textarea name="message" rows="5" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                            <button type="submit" class="btn btn-color btn-lg px-5 fw-bold">
+                                Send Message
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <!-- footer -->
+	<footer class="ps-4 pe-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-main-part p-4">
+                        <div class="f-logo d-flex">
+                            <a href="index.html">
+                                <img src="./assets/img/logo.svg" alt="logo" width="150" height="34"/>
+                            </a>                            
+                        </div>
+                        <div class="f-contant-1 mt-4">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan
+                                porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing
+                                fermentum.</p>
+                        </div>
+                        <div class="f-icon-all mt-4 d-flex">
+							<div class="f-icon1 me-3">
+                                <a href="https://twitter.com" target="_blank"><img src="./assets/img/twitter.svg" alt="twitter" height="30" width="30"></a>
+                            </div>
+                            <div class="f-icon1 me-3">
+                                <a href="https://www.facebook.com" target="_blank"><img src="./assets/img/facebook.svg" alt="facebook" height="30" width="30"></a>
+                            </div>
+                            <div class="f-icon1 me-3">
+                                <a href="https://www.instagram.com" target="_blank"><img src="./assets/img/instagram.svg" alt="instagarm" height="30" width="30"></a>
+                            </div>
+                            <div class="f-icon1">
+                                <a href="https://github.com/" target="_blank"><img src="./assets/img/github.svg" alt="icon" height="30" width="30"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-main-part p-4">
+                        <div class="f-heading">
+                            <h5 class="blue-text fw-bold">Resources</h5>
+                        </div>
+                        <div class="f-name mt-4">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Ad School</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Help Centre</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Videos</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Amazon Advertising Benchmark Tool</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Amazon Profit Calculator by Perpetuav</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Helium 10 alternative</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Agencies</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-main-part p-4">
+                        <div class="f-heading">
+                            <h5 class="blue-text fw-bold">Company</h5>
+                        </div>
+                        <div class="f-name mt-4">						
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								 <li class="nav-item mb-2"><a href="about-us.html" class="nav-link p-0 text-body-secondary">About Us</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Brand and Media</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Affiliate Program</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Referral Program</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Careers</a></li>
+								 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sellics joins forces with Perpetua</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-main-part p-4">
+                        <div class="f-heading">
+                            <h5 class="blue-text fw-bold">Download</h5>
+                        </div>
+                        <div class="f-name mt-4">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">IOS</a></li>
+								<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Android</a></li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="f-last-line p-4 text-center border-top">
+                    <p class="mb-0 aq-copyrigt">© Copyright 2026, All Rights Reserved by Advertise IQ Website </p>
+                </div>
+            </div>
+        </div>
+        <script>
+        jQuery(document).ready(function ($) {
+
+            // Get URL parameter by name
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(window.location.search);
+                return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+
+            var success = getUrlParameter('success');
+            var error   = getUrlParameter('error');
+
+            if (success === '1') {
+                $('#success-message').fadeIn();
+
+                setTimeout(function () {
+                    $('#success-message').fadeOut();
+                }, 5000);
+            }
+
+            if (error === '1') {
+                $('#error-message').fadeIn();
+
+                setTimeout(function () {
+                    $('#error-message').fadeOut();
+                }, 5000);
+            }
+
+            $('input[name="phone"]').on('input', function () {
+                // Remove non-numeric characters
+                this.value = this.value.replace(/[^0-9]/g, '');
+
+                // Limit to 10 digits
+                if (this.value.length > 10) {
+                    this.value = this.value.slice(0, 10);
+                }
+            });
+        });
+        </script>
+
+    </footer>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/Chart.js"></script>
+    <script src="./assets/js/custom.js"></script>
+
+   <script>
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LfzFEgsAAAAAPaNZetpq1UVZeb1CscjstB2Gb6l', { action: 'contact_form' }).then(function (token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                });
+            });
+        }
+    </script>
+</body>
+</html>

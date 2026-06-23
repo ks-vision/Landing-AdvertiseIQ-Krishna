@@ -1,0 +1,650 @@
+
+@media only screen and (max-width: 1024px) {
+	.section-3 .sec-3-text{
+		padding:0 !important;
+	}
+	.sec-6-main-part-2{
+		width: 100%;
+	}
+	.sec-7-img {
+		min-height: 490px;		
+	}
+	/* about page*/
+	.mission-img4,
+	.mission-img3{
+		float: none;
+	}
+	.sec-5-main-part-2 .sec-5-img-1{
+		max-width: 280px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+    /***************************** Home-page *****************************/
+    /* Header */
+	.navbar-toggler:focus {
+		box-shadow: none;
+	}
+	.navbar-collapse {
+		background-color: #fff;
+	}
+	.mobile-sign .nav-item ,
+	.navbar-collapse .navbar-nav li {
+		border-bottom: 1px solid rgba(226, 232, 240, 1);
+	}
+	ul.dropdown-menu li:last-child,    
+	ul.dropdown-menu {
+		border: 0;
+	}
+	.dropdown-arrow:after{
+		right: 30px;
+	}
+    .m-start {
+        margin: 10px 0 0 10px;
+        gap: 15px;
+    }	
+	a.dropdown-item{
+		padding: 8px 0 8px 25px;
+	}
+    /* section-4 */
+    .sec-4-main-part1,
+    .sec-4-main-part2 {
+        min-height: 500px;
+    }	
+	.mobile-sign{
+		display: inline-block !important;
+		width: 100%;
+	}
+	.mobile-sign .nav-item{
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+	}
+    /* section-6 */
+    .sec-6-sub-box-1 {
+        width: 600px;
+        padding: 30px;
+    }
+    .sec-6-sub-in-sub-box {
+        width: 100%;
+        margin-left: 0;
+    }
+    .sec-6-btn {
+        width: 100%;
+    }
+    .sec-6-sub-box-2 {
+        width: 100%;
+        margin-right: 0;
+    }
+    .sec-6-sub-box-3 {
+        width: 100%;
+    }
+	
+	
+    /* section-9 */
+    .sec-9-round-1 {
+        max-width: 800px;
+        min-height: 700px;
+    }
+    .sec-9-round-2 {
+        max-width: 600px;
+        min-height: 500px;
+        margin: 90px;
+    }
+    .sec-9-round-3 {
+        max-width: 400px;
+        min-height: 300px;
+        margin: 90px;
+    }
+    .sec-9-round-4 {
+        max-width: 200px;
+        min-height: 200px;
+        margin: 96px;
+    }
+    .content-part {
+        top: 45%;
+        right: 330px;
+    }
+    .img1-part {
+        height: 250px;
+        width: 340px;
+    }
+	.sec-9 {
+		padding: 40px 14px;
+	}
+    /***************************** Market-page *****************************/
+
+    /* section-1 */
+    .hero-sec-main-part1 {
+        padding: 2em 50px;
+    }
+    .right-part {
+        height: 90px;
+        margin-bottom: 10px;
+    }
+    .long-box {
+        height: 140px;
+        margin-bottom: 10px;
+    }
+    .icon-part {
+        display: flex;
+        justify-content: space-between;
+    }
+	
+    /* section-4 */
+    .market-sec .sec-4-main-box-part1,
+    .market-sec .sec-4-main-box-part2 {
+        min-height: 400px;
+    }
+    .dashed-border-box,
+    .sec-4-sub-box {
+        width: 100%;
+    }
+    .sec-4-right-part {
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    .right-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .sec-5-main-part {
+        min-height: 240px;
+    }
+	
+    /* section-7 */
+    .sec-7-main-box {
+        min-height: auto;
+        max-width: auto;
+    }
+	.sec-7-img {
+		min-height: 380px;
+	}
+    .sub-box-1 {
+        width: 280px;
+        margin: 80px 0 0 -140px;
+    }
+    .sub-box-3 {
+        margin: 80px -140px 0 0;
+    }
+    .sec-9-main-part1,
+    .sec-9-main-part2 {
+        min-height: 450px;
+    }
+
+    /*************************** ppc-sales - page ***************************/
+    .auto-part {
+        padding: 0;
+    }
+	
+	.mission-img3 img,
+    .mission-img4 img {
+        width: 100%;
+    }
+	.pcc-sec8 .sucess-sec2{
+		padding-top:70px;
+	}
+	.sec-margin .position-absolute{
+		position: unset !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	body h1 { font-size: 35px;}
+	body h2 { 
+		font-size: 30px;
+		Line-height: 40px;		
+	}
+	body h3 { font-size: 25px;}
+	
+	.aq-button {
+		font-size: 18px;
+	}
+    /***************************** Home-page *****************************/
+    .sec-sub-text {
+        font-size: 16px;
+    }
+    .sec-3-heading {
+        font-size: 30px;
+    }
+
+    /* header */
+    .sm-padding {
+        padding: 0;
+    }
+    .p-btm {
+        padding-bottom: 20px;
+    }
+    .sec-3-main-part1,
+    .sec-3-main-part2 {
+        min-height: 200px;
+    }
+	
+    /* section-4 */
+    .sec-4-first-box,
+    .sec-4-slide-part {
+        max-width: 100%;
+    }
+
+    /* section-6 */
+    .sec-6-main-part-1 {
+        padding: 30px 20px;
+    }
+    .sec-6-main-part-2 {
+        width: 500px;
+    }
+    .sec-6-sub-box-1 {
+        width: 400px;
+        padding: 30px;
+    }
+	.sec-6-main-part-1 .sec-sub-text,
+	.sec-4-text {
+		max-width: 100%;
+	}
+	
+	  /* section-7 */
+	.sec-7-img {
+		min-height: 180px;
+	}
+
+    /* section-9 */
+    .sec-9-round-1 {
+        max-width: 650px;
+        min-height: 555px;
+    }
+    .sec-9-img-4 {
+        left: 99px;
+        bottom: 0;
+    }
+    .sec-9-round-2 {
+        max-width: 450px;
+        min-height: 350px;
+        margin: 95px;
+    }
+    .sec-9-round-3 {
+        max-width: 275px;
+        min-height: 250px;
+        margin: 90px;
+    }
+    .sec-9-round-4 {
+        max-width: 150px;
+        min-height: 135px;
+        margin: 56px;
+    }
+    .content-part {
+        top: 45%;
+        right: 275px;
+    }
+    .sec-9-logo-name {
+        font-size: 16px;
+    }
+
+    /***************************** Market-page *****************************/
+
+    /* section-1 */
+    .hero-sec-main-part1 {
+        padding: 1em 50px;
+    }
+    .right-part {
+        height: 90px;
+        margin-bottom: 10px;
+    }
+    .long-box {
+        height: 140px;
+        margin-bottom: 10px;
+    }
+    .icon-part {
+        display: flex;
+        justify-content: space-between;
+    }
+    .f-1-box {
+        margin-bottom: 10px;
+    }
+
+    /* all-heading-text */
+    .sec-heading {
+        font-size: 30px;
+    }
+
+    /* section-3 */
+    .sec-3-first-box,
+    .sec-3-slide-part {
+        max-width: 100%;
+    }
+
+    /* section-4 */
+    .dashed-border-box,
+    .sec-4-sub-box {
+        width: 100%;
+    }
+    .sec-4-right-part {
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    .right-box {
+        display: block;
+    }
+    .right-box-1,
+    .last-box {
+        width: 100%;
+        text-align: center;
+    }
+    .arrow-part {
+        justify-content: center;
+    }
+    .sec-4-sub-box {
+        left: 15px;
+    }
+    .text-sub-box {
+        width: 100%;
+    }
+	
+    /* section-5   */
+    .sec-5-main-part {
+        min-height: 250px;
+    }
+	
+    /* section-7 */
+    .sec-7-sub-box-3-main-part {
+        display: block;
+    }
+    .sub-box-1,
+    .sub-box-2,
+    .sub-box-3 {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+    .sub-box-2 {
+        justify-content: center;
+        display: flex;
+    }
+	
+	 /* section-8 */
+	.sec-8-img-part {
+		padding: 20px 10px;
+	}
+
+    /* section-9 */
+    .sec-9-main-part1,
+    .sec-9-main-part2 {
+        min-height: 350px;
+    }
+    .box-down-part {
+        display: block;
+    }
+    .right-box-part,
+    .left-box-part {
+        display: block;
+        margin: 25px auto;
+    }
+    .sec-9-line-1,
+    .right-line-1,
+    .left-line-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+    .sec-9-line {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* section-10 */
+    .cloth-right-box-part {
+        display: block;
+        margin: 25px 0;
+    }
+    .sec-10-line {
+        width: 100%;
+        margin-left: 0;
+    }
+    .cloth-box-1 {
+        width: 100%;
+    }
+    .line-part-2,
+    .cloth-1-part {
+        margin-top: 20px;
+    }
+    .cloth-right-box-part {
+        max-width: 100%;
+    }
+    .box-3 {
+        display: block;
+    }
+    .cloth-1-part,
+    .cloth-1-box,
+    .cloth-2-part,
+    .cloth-line-1,
+    .c-line-2 {
+        width: 100%;
+    }
+    .cloth-sec {
+        padding-bottom: 60px;
+    }
+	
+    /*************************** ppc-sales - page ***************************/
+    .main-content1,
+    .main-content2 {
+        width: 100%;
+    }
+    .line1 {
+        width: 100%;
+    }
+    .list-line1 {
+        width: 430px;
+    }
+    .sec-heading {
+        font-size: 25px;
+    }
+    .mission-img1,
+    .mission-img4 {
+        padding-top: 0;
+    }    
+    .target-box {
+        margin-left: 0em;
+    }
+    .pro-box {
+        width: 100%;
+    }
+    .chart-box {
+        width: 390px;
+    }
+    .color-box {
+        margin-left: 0;
+        margin-top: 0;
+    }
+	
+	/*price*/
+	.aq-save-price {
+		bottom: -20px;
+		right: -50px;
+	}
+	.aq-save-price img{
+		max-width: 24%;
+	}
+	.aq-save-price span{
+		font-size: 12px;
+		line-height: 1;
+	}
+	
+	footer.ps-4 {
+		padding: 10px 0 !important;
+	}	
+	
+	.mob-p-5{
+		padding: 20px 10px !important;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    /***************************** Home-page *****************************/
+    .sec-1-main-part {
+        padding: 60px 20px;
+    }
+
+    /* section-6 */
+    .sec-6-main-part-2 {
+        width: 300px;
+    }
+    .sec-6-sub-box-1 {
+        width: 260px;
+        padding: 30px 20px 20px;
+    }
+
+    /* section-9 */
+    .sec-9-round-part {
+        display: none;
+    }
+    /***************************** Market-page *****************************/
+
+    /* section-1 */
+    .product-chart-box {
+        display: none;
+    }
+    .input-box {
+        width: 100%;
+    }
+    .hero-sec-main-part1 {
+        padding: 2em 30px;
+    }
+    .sec-3-main-part1,
+    .sec-3-main-part2 {
+        min-height: 200px;
+    }
+	
+    /* section-4 */
+    .dashed-border-box,
+    .sec-4-sub-box {
+        width: 100%;
+    }
+    .sec-4-sub-box {
+        top: 0px;
+        left: 0px;
+        min-height: 440px;
+    }
+    .line-1 {
+        width: 100%;
+    }
+
+    /* section-5 */
+    .sec-5-img-2 {
+        display: none;
+    }
+
+    /* section-7 */
+    .sec-7-last-box {
+        max-width: 100%;
+        display: block;
+    }
+    .input-w {
+        width: 100%;
+    }
+
+    /* section-9 */
+    .box-down-part {
+        display: block;
+    }
+    .right-box-part,
+    .left-box-part {
+        display: block;
+        margin: 25px auto;
+    }
+    .sec-9-line-1,
+    .right-line-1,
+    .left-line-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+    .sec-9-line {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* section-10 */
+    .cloth-right-box-part {
+        display: block;
+        margin: 25px auto;
+    }
+    .sec-10-line {
+        width: 100%;
+        margin-left: 0;
+    }
+	
+    /*************************** About us - page ***************************/
+
+
+    /*************************** ppc-sales - page ***************************/
+    .list-line1 {
+        width: 175px;
+    }
+    .color-box {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .graph-box {
+        width: 200px;
+        padding-top: 20px;
+    }
+    .graph-box1,
+    .graph-box2,
+    .graph-box3,
+    .graph-box4 {
+        width: 100px;
+        height: 30px;
+    }
+    .graph-box1 {
+        top: -7px;
+    }
+    .graph-box2 {
+        left: -17px;
+    }
+    .graph-box3 {
+        right: -28px;
+    }
+    .graph-box4 {
+        top: 144px;
+    }
+    .chart-box {
+        width: 270px;
+    }	
+}
+
+@media only screen and (max-width: 320px) {
+	body h1 {
+		font-size: 30px;
+	}
+	
+	.sec-3-heading {
+		font-size: 20px;
+		line-height: 25px;
+	}
+    /***************************** Home-page *****************************/
+    /* section-6 */    
+    .sec-6-main-part-2 {
+        width: 100%;
+    }
+    .sec-6-sub-box-1 {
+        width: 100%;
+        padding: 0;
+    }
+	/***************************** Market-page *****************************/
+    /* section-4 */
+    .line-1 {
+        width: 100%;
+    }
+
+    /* section-5 */
+    .sec-5-img-2 {
+        top: 350px;
+        left: 0;
+    }
+	
+	/* section-7 */
+	.sec-7-img {
+		min-height: 155px;
+	}
+	
+	/*price*/
+	.aq-save-price {
+		bottom: -15px;
+		right: -35px;
+	}
+}
