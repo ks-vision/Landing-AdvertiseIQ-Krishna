@@ -1,254 +1,286 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — AdvertiseIQ</title>
-    <link rel="icon" href="./assets/img/favicon.svg" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/aboutus.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <style>
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — AdvertiseIQ</title>
+  <meta name="description" content="Learn about AdvertiseIQ — the team of Amazon advertising experts on a mission to give every brand the power to scale intelligently.">
+  <link rel="icon" href="./assets/img/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
-
 <body>
 
-    <!-- ===== PAGE LOADER ===== -->
-    <div id="page-loader">
-        <div class="loader-logo">
-            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
-        </div>
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading AdvertiseIQ...</div>
-        <div class="loader-progress-bar">
-            <div class="loader-progress-fill"></div>
-        </div>
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo"><img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo"></div>
+  <div class="loader-spinner"></div>
+  <div class="loader-text">Loading AdvertiseIQ…</div>
+  <div class="loader-progress-bar"><div class="loader-progress-fill"></div></div>
+</div>
+
+<!-- AURORA -->
+<div class="aurora-bg">
+  <div class="aurora-blob blob1"></div>
+  <div class="aurora-blob blob2"></div>
+  <div class="aurora-blob blob3"></div>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo" onerror="this.style.display='none'">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
     </div>
-
-    <!-- ===== NAVIGATION (identical to index) ===== -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-                    onerror="this.style.display='none'">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="features.html">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact-us.html">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="bi bi-sun-fill" id="themeIcon"></i>
-                </button>
-                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-                    <i class="bi bi-list"></i>
-                </button>
-            </div>
-        </div>
-        <div class="nav-mobile" id="navMobile">
-            <a href="index.html">Home</a>
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
-        </div>
-    </nav>
-
-    <!-- ===== ABOUT HERO ===== -->
-    <section class="about-hero">
-        <div class="about-hero-inner">
-            <div class="section-tag" style="margin-bottom:12px;">ABOUT US</div>
-            <h1>We're <span class="gradient-text">AdvertiseIQ</span></h1>
-            <p class="sub">Transforming the advertising landscape for online sellers. We combine AI-driven intelligence
-                with human creativity to help brands scale beyond limits.</p>
-            <div class="badge-group">
-                <span><i class="bi bi-people"></i> 500+ brands</span>
-                <span><i class="bi bi-graph-up-arrow"></i> 3.2x avg ROAS</span>
-                <span><i class="bi bi-globe"></i> 15+ marketplaces</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== STATS ===== -->
-    <div class="section-wrapper" style="padding-top:0;">
-        <div class="about-stats">
-            <div class="about-stat">
-                <div class="number">$2.8B+</div>
-                <div class="label">Ad Spend Managed</div>
-            </div>
-            <div class="about-stat">
-                <div class="number">500+</div>
-                <div class="label">Active Brands</div>
-            </div>
-            <div class="about-stat">
-                <div class="number">47%</div>
-                <div class="label">Avg. ACOS Reduction</div>
-            </div>
-            <div class="about-stat">
-                <div class="number">30+</div>
-                <div class="label">Hours Saved / Week</div>
-            </div>
-        </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="bi bi-sun-fill" id="themeIcon"></i>
+      </button>
+      <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+      <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
     </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about-us.html">About</a>
+    <a href="contact-us.html">Contact</a>
+    <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+  </div>
+</nav>
 
-    <!-- ===== MISSION & VISION ===== -->
-    <section class="section-wrapper" style="padding-top:20px;">
-        <div class="section-header">
-            <div class="section-tag">OUR FOUNDATION</div>
-            <h2>Mission &amp; Vision</h2>
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="about-hero-inner">
+    <div class="section-tag" data-aos="fade-up">ABOUT US</div>
+    <h1 data-aos="fade-up" data-aos-delay="60">We're <span class="gradient-text">AdvertiseIQ</span></h1>
+    <p class="sub" data-aos="fade-up" data-aos-delay="120">Transforming the advertising landscape for online sellers. We combine AI-driven intelligence with deep Amazon expertise to help brands scale beyond limits.</p>
+    <div class="badge-group" data-aos="fade-up" data-aos-delay="180">
+      <span><i class="bi bi-people"></i> 500+ brands</span>
+      <span><i class="bi bi-graph-up-arrow"></i> 3.2x avg ROAS</span>
+      <span><i class="bi bi-globe"></i> 15+ marketplaces</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="position:relative;z-index:1;background:var(--bg);">
+  <div class="section-wrapper" style="padding-top:0;padding-bottom:60px;">
+    <div class="about-stats">
+      <div class="about-stat" data-aos="fade-up" data-aos-delay="0">
+        <div class="number">$2.8B+</div>
+        <div class="label">Ad Spend Managed</div>
+      </div>
+      <div class="about-stat" data-aos="fade-up" data-aos-delay="80">
+        <div class="number">500+</div>
+        <div class="label">Active Brands</div>
+      </div>
+      <div class="about-stat" data-aos="fade-up" data-aos-delay="160">
+        <div class="number">47%</div>
+        <div class="label">Avg. ACOS Reduction</div>
+      </div>
+      <div class="about-stat" data-aos="fade-up" data-aos-delay="240">
+        <div class="number">30+</div>
+        <div class="label">Hours Saved / Week</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="timeline-section">
+  <div class="section-wrapper">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">OUR FOUNDATION</div>
+      <h2>Mission &amp; Vision</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon-wrap"><i class="bi bi-rocket-takeoff"></i></div>
+        <h3>Mission</h3>
+        <p>Empower online sellers with the superpowers they need to achieve remarkable growth. Through innovative solutions, we equip clients with tools and insights to make data-driven decisions and capitalize on new opportunities.</p>
+      </div>
+      <div class="mv-card anti-gravity" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-wrap"><i class="bi bi-eye"></i></div>
+        <h3>Vision</h3>
+        <p>Revolutionize e-commerce by unleashing the full potential of every online seller. We envision a future where businesses navigate advertising complexities effortlessly and achieve exponential growth through intelligent automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE BUILT IT -->
+<section style="position:relative;z-index:1;background:var(--bg);">
+  <div class="section-wrapper">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">OUR STORY</div>
+      <h2>Why We Built AdvertiseIQ</h2>
+      <p>We were Amazon sellers before we were a software company. We felt the pain firsthand.</p>
+    </div>
+    <div style="max-width:780px;margin:0 auto;" data-aos="fade-up" data-aos-delay="80">
+      <div class="timeline-right" style="padding-left:40px;">
+        <div class="timeline-item">
+          <div class="timeline-marker"><span>2019</span></div>
+          <div class="timeline-card">
+            <h4>The Problem</h4>
+            <p>Our founding team was managing Amazon ads manually — spending 30+ hours a week on bid adjustments, keyword research, and reporting. There had to be a better way.</p>
+          </div>
         </div>
-        <div class="mv-grid">
-            <div class="mv-card">
-                <div class="icon-wrap"><i class="bi bi-rocket-takeoff"></i></div>
-                <h3>Mission</h3>
-                <p>Empower online sellers with the superpowers they need to achieve remarkable growth. Through
-                    innovative solutions, we equip clients with tools and insights to make data-driven decisions and
-                    capitalize on new opportunities.</p>
-            </div>
-            <div class="mv-card">
-                <div class="icon-wrap"><i class="bi bi-eye"></i></div>
-                <h3>Vision</h3>
-                <p>Revolutionize e-commerce by unleashing the full potential of every online seller. We envision a
-                    future where businesses navigate advertising complexities effortlessly and achieve exponential
-                    growth.</p>
-            </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"><span>2020</span></div>
+          <div class="timeline-card">
+            <h4>The Prototype</h4>
+            <p>We built the first internal tool to automate bid adjustments based on ACOS targets. Our own accounts saw a 28% ACOS reduction in the first month.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== FINAL CTA (matches index) ===== -->
-    <section class="section-wrapper">
-        <div class="final-cta-card"
-            style="position:relative; background:var(--bg-card); border:1px solid rgba(59,130,246,0.25); border-radius:28px; padding:60px 40px; text-align:center; backdrop-filter:blur(20px); box-shadow:var(--card-shadow);">
-            <div class="cta-glow"
-                style="position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:600px; height:400px; background:radial-gradient(ellipse, rgba(37,99,235,0.18) 0%, transparent 70%); pointer-events:none;">
-            </div>
-            <div class="section-tag" style="margin-bottom:12px;">JOIN THE MOVEMENT</div>
-            <h2
-                style="font-family:'Manrope',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; letter-spacing:-0.5px;">
-                Ready to Scale Your<br>Amazon Revenue?</h2>
-            <p style="font-size:1.05rem; color:var(--text-muted); max-width:500px; margin:16px auto 36px;">Join 500+
-                brands using AdvertiseIQ to automate Amazon advertising and grow profitably.</p>
-            <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
-                <a href="contact-us.html" class="btn-primary">Start Free Trial - No Card Needed <i
-                        class="bi bi-arrow-right"></i></a>
-                <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
-            </div>
-            <p style="font-size:0.8rem; color:var(--text-muted);">14-day free trial &nbsp;·&nbsp; Full feature access
-                &nbsp;·&nbsp; Cancel anytime</p>
+        <div class="timeline-item">
+          <div class="timeline-marker"><span>2021</span></div>
+          <div class="timeline-card">
+            <h4>First Customers</h4>
+            <p>We opened AdvertiseIQ to 20 beta brands. Within 90 days, all 20 had renewed and brought referrals. We knew we had something.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== FOOTER ===== (matches index) -->
-    <footer class="footer-section">
-        <div class="footer-inner">
-            <div class="footer-col brand-col">
-                <a href="/" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
-                        onerror="this.style.display='none'">
-                </a>
-                <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h5>Product</h5>
-                <ul>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="market.html">Case Studies</a></li>
-                    <li><a href="ppc-sales.html">Sales</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Company</h5>
-                <ul>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Legal</h5>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                </ul>
-            </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"><span>2023</span></div>
+          <div class="timeline-card">
+            <h4>AI Platform Launch</h4>
+            <p>We launched the full machine learning bid optimizer and keyword intelligence suite — the product you see today.</p>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+        <div class="timeline-item last">
+          <div class="timeline-marker"><span>Now</span></div>
+          <div class="timeline-card">
+            <h4>500+ Brands & Growing</h4>
+            <p>AdvertiseIQ manages over $2.8B in Amazon ad spend for brands across 15+ marketplaces. The mission continues.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script>
-        // ── Hide Loader on Page Load ──
-        window.addEventListener('load', function () {
-            const loader = document.getElementById('page-loader');
-            // Small delay to ensure smooth transition
-            setTimeout(function () {
-                loader.classList.add('hidden');
-            }, 300);
-        });
+<!-- VALUES -->
+<section class="testimonials-section">
+  <div class="section-wrapper">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">OUR VALUES</div>
+      <h2>What We Stand For</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+        <div style="font-size:2.2rem;margin-bottom:16px;">⚡</div>
+        <p style="font-style:normal;">"We move fast and ship often. Every week there are new features, new improvements, new ways to help our customers grow faster."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-blue"><i class="bi bi-lightning-charge-fill" style="font-size:.9rem;"></i></div>
+          <div>
+            <div class="author-name">Speed</div>
+            <div class="author-role">We iterate relentlessly</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <div style="font-size:2.2rem;margin-bottom:16px;">🎯</div>
+        <p style="font-style:normal;">"Every decision is measured against one question: does this make our customers' ads more profitable? If yes, we ship it. If no, we don't."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-purple"><i class="bi bi-bullseye" style="font-size:.9rem;"></i></div>
+          <div>
+            <div class="author-name">Customer Focus</div>
+            <div class="author-role">Results above all</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <div style="font-size:2.2rem;margin-bottom:16px;">🔍</div>
+        <p style="font-style:normal;">"We believe transparency builds trust. No hidden fees, no opaque algorithms — you always know exactly what AdvertiseIQ is doing and why."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-green"><i class="bi bi-search" style="font-size:.9rem;"></i></div>
+          <div>
+            <div class="author-name">Transparency</div>
+            <div class="author-role">No black boxes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // ── Dark/Light Mode ──
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        setIcon(savedTheme);
-        updateLoaderLogo(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('aiq-theme', next);
-            setIcon(next);
-            updateLoaderLogo(next);
-        });
-        function setIcon(theme) {
-            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-            const navLogo = document.getElementById('navLogo');
-            if (navLogo) {
-                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-            const footerLogo = document.getElementById('footerLogo');
-            if (footerLogo) {
-                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <div class="section-wrapper">
+    <div class="final-cta-card" data-aos="fade-up">
+      <div class="cta-glow"></div>
+      <div class="section-tag">JOIN THE MOVEMENT</div>
+      <h2>Ready to Scale Your<br>Amazon Revenue?</h2>
+      <p>Join 500+ brands using AdvertiseIQ to automate Amazon advertising and grow profitably.</p>
+      <div class="cta-actions">
+        <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial — No Card Needed <i class="bi bi-arrow-right"></i></a>
+        <a href="contact-us.html" class="btn-secondary btn-lg">Talk to Sales</a>
+      </div>
+      <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp; Cancel anytime</p>
+    </div>
+  </div>
+</section>
 
-        function updateLoaderLogo(theme) {
-            const loaderLogo = document.getElementById('loaderLogo');
-            if (loaderLogo) {
-                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-inner">
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-logo-link">
+        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo" onerror="this.style.display='none'">
+      </a>
+      <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="market.html">Case Studies</a></li>
+        <li><a href="ppc-sales.html">PPC Sales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+    </div>
+  </div>
+</footer>
 
-        // Mobile nav
-        document.getElementById('navHamburger').addEventListener('click', () => {
-            document.getElementById('navMobile').classList.toggle('open');
-        });
-
-        // Sticky nav shadow
-        window.addEventListener('scroll', () => {
-            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
-        });
-    </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/site.js"></script>
+<script>AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
-
 </html>

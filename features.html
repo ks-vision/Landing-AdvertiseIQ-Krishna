@@ -1,871 +1,383 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features — AdvertiseIQ</title>
-    <link rel="icon" href="./assets/img/favicon.svg" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <style>
-        /* ── Page Hero ── */
-        .page-hero {
-            padding: 160px 24px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 600px;
-            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .page-hero h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin: 16px 0 20px;
-            color: var(--text);
-        }
-
-        .page-hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 580px;
-            margin: 0 auto 36px;
-            line-height: 1.7;
-        }
-
-        /* ── Filter Tabs ── */
-        .filter-bar {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 56px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            background: var(--input-bg);
-            color: var(--text-muted);
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--accent-glow);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .filter-btn i {
-            font-size: 0.9rem;
-        }
-
-        /* ── Features Grid ── */
-        .features-page-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 80px;
-        }
-
-        .fp-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(16px);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .fp-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-hover);
-            box-shadow: 0 16px 40px rgba(59, 130, 246, 0.1);
-        }
-
-        .fp-card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .fp-card h4 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text);
-            margin: 0;
-        }
-
-        .fp-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0;
-            flex: 1;
-        }
-
-        .fp-card-tag {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 20px;
-            align-self: flex-start;
-        }
-
-        .fp-card[data-hidden="true"] {
-            display: none;
-        }
-
-        /* icon colour sets */
-        .ic-purple {
-            background: rgba(168, 85, 247, 0.12);
-            color: #a855f7;
-            border: 1px solid rgba(168, 85, 247, 0.25);
-        }
-
-        .ic-orange {
-            background: rgba(249, 115, 22, 0.12);
-            color: #f97316;
-            border: 1px solid rgba(249, 115, 22, 0.25);
-        }
-
-        .ic-blue {
-            background: rgba(59, 130, 246, 0.12);
-            color: #3b82f6;
-            border: 1px solid rgba(59, 130, 246, 0.25);
-        }
-
-        .ic-green {
-            background: rgba(16, 185, 129, 0.12);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.25);
-        }
-
-        .ic-cyan {
-            background: rgba(6, 182, 212, 0.12);
-            color: #06b6d4;
-            border: 1px solid rgba(6, 182, 212, 0.25);
-        }
-
-        .ic-pink {
-            background: rgba(236, 72, 153, 0.12);
-            color: #ec4899;
-            border: 1px solid rgba(236, 72, 153, 0.25);
-        }
-
-        .tag-purple {
-            background: rgba(168, 85, 247, 0.12);
-            color: #a855f7;
-            border: 1px solid rgba(168, 85, 247, 0.2);
-        }
-
-        .tag-orange {
-            background: rgba(249, 115, 22, 0.12);
-            color: #f97316;
-            border: 1px solid rgba(249, 115, 22, 0.2);
-        }
-
-        .tag-blue {
-            background: rgba(59, 130, 246, 0.12);
-            color: #3b82f6;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .tag-green {
-            background: rgba(16, 185, 129, 0.12);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        .tag-cyan {
-            background: rgba(6, 182, 212, 0.12);
-            color: #06b6d4;
-            border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-
-        .tag-pink {
-            background: rgba(236, 72, 153, 0.12);
-            color: #ec4899;
-            border: 1px solid rgba(236, 72, 153, 0.2);
-        }
-
-        /* ── Highlight Row ── */
-        .highlight-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 0;
-        }
-
-        .highlight-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(16px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-card.accent-card {
-            border-color: rgba(59, 130, 246, 0.3);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, var(--bg-card) 100%);
-        }
-
-        .highlight-card h3 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--text);
-            margin: 16px 0 12px;
-        }
-
-        .highlight-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 0.95rem;
-            margin: 0 0 24px;
-        }
-
-        .highlight-big-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-        }
-
-        .check-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .check-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.875rem;
-            color: var(--text-dim);
-        }
-
-        .check-list li i {
-            color: var(--accent);
-            font-size: 1rem;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 900px) {
-            .features-page-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .highlight-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 580px) {
-            .features-page-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — AdvertiseIQ</title>
+  <meta name="description" content="Explore all AdvertiseIQ features: campaign automation, keyword intelligence, analytics, inventory protection, and AI-powered optimization for Amazon advertising.">
+  <link rel="icon" href="./assets/img/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
-
 <body>
 
-    <!-- ===== PAGE LOADER ===== -->
-    <div id="page-loader">
-        <div class="loader-logo">
-            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
-        </div>
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading AdvertiseIQ...</div>
-        <div class="loader-progress-bar">
-            <div class="loader-progress-fill"></div>
-        </div>
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo"><img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo"></div>
+  <div class="loader-spinner"></div>
+  <div class="loader-text">Loading AdvertiseIQ…</div>
+  <div class="loader-progress-bar"><div class="loader-progress-fill"></div></div>
+</div>
+
+<!-- AURORA -->
+<div class="aurora-bg">
+  <div class="aurora-blob blob1"></div>
+  <div class="aurora-blob blob2"></div>
+  <div class="aurora-blob blob3"></div>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo" onerror="this.style.display='none'">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="bi bi-sun-fill" id="themeIcon"></i>
+      </button>
+      <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+      <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about-us.html">About</a>
+    <a href="contact-us.html">Contact</a>
+    <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background:var(--bg);">
+  <div class="section-tag" data-aos="fade-up">PLATFORM FEATURES</div>
+  <h1 data-aos="fade-up" data-aos-delay="60">Every Tool You Need to<br><span class="gradient-text">Win on Amazon</span></h1>
+  <p data-aos="fade-up" data-aos-delay="120">One platform with everything required to automate, optimize, and scale your Amazon advertising from first campaign to market leadership.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" data-aos="fade-up" data-aos-delay="180">
+    <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+    <a href="pricing.html" class="btn-secondary">View Pricing</a>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section style="background:var(--bg);padding-bottom:100px;">
+  <div class="section-wrapper" style="padding-top:0;">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filterBar" data-aos="fade-up">
+      <button class="filter-btn active" data-cat="all"><i class="bi bi-grid-3x3-gap"></i> All Features</button>
+      <button class="filter-btn" data-cat="campaign"><i class="bi bi-lightning-charge-fill" style="color:#a855f7;"></i> Campaigns</button>
+      <button class="filter-btn" data-cat="keywords"><i class="bi bi-search" style="color:#f97316;"></i> Keywords</button>
+      <button class="filter-btn" data-cat="analytics"><i class="bi bi-graph-up-arrow" style="color:#3b82f6;"></i> Analytics</button>
+      <button class="filter-btn" data-cat="inventory"><i class="bi bi-shield-check" style="color:#10b981;"></i> Inventory</button>
+      <button class="filter-btn" data-cat="automation"><i class="bi bi-robot" style="color:#06b6d4;"></i> Automation</button>
+      <button class="filter-btn" data-cat="ai"><i class="bi bi-cpu" style="color:#ec4899;"></i> AI & ML</button>
     </div>
 
-    <!-- NAV -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-                    onerror="this.style.display='none'">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="features.html">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact-us.html">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="bi bi-sun-fill" id="themeIcon"></i>
-                </button>
-                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-                    <i class="bi bi-list"></i>
-                </button>
-            </div>
-        </div>
-        <div class="nav-mobile" id="navMobile">
-            <a href="index.html">Home</a>
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
-        </div>
-    </nav>
+    <!-- Features Grid -->
+    <div class="features-page-grid" id="featuresGrid">
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-        <div class="section-tag">PLATFORM FEATURES</div>
-        <h1>Every Tool You Need to<br><span class="gradient-text">Win on Amazon</span></h1>
-        <p>One platform with everything required to automate, optimize, and scale your Amazon advertising from first
-            campaign to market leadership.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-            <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
-            <a href="pricing.html" class="btn-secondary">View Pricing</a>
-        </div>
-    </section>
+      <!-- CAMPAIGN -->
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-megaphone-fill"></i></div>
+        <div><h4>Campaign Builder</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>Build and structure high-performing Sponsored Products, Brands, and Display campaigns from a single interface.</p>
+      </div>
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-currency-dollar"></i></div>
+        <div><h4>Bid Automation</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>AI adjusts bids hourly based on live ROAS, ACOS, and conversion data to keep you profitable.</p>
+      </div>
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-wallet2"></i></div>
+        <div><h4>Budget Automation</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>Auto pause and resume campaigns based on budget thresholds so you never over or underspend.</p>
+      </div>
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-grid"></i></div>
+        <div><h4>Placement Rules</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>Target Top of Search, Rest of Search, and Product Pages with precision bid modifiers.</p>
+      </div>
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-calendar3"></i></div>
+        <div><h4>Campaign Scheduling</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>Run campaigns at specific hours or days to concentrate spend when your customers shop.</p>
+      </div>
+      <div class="fp-card" data-cat="campaign" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-purple"><i class="bi bi-clock-history"></i></div>
+        <div><h4>Dayparting</h4><span class="fp-card-tag tag-purple">Campaigns</span></div>
+        <p>Automatically increase bids during peak shopping hours and reduce them overnight.</p>
+      </div>
 
-    <!-- FEATURES SECTION -->
-    <section style="background:var(--bg);padding-bottom:100px;">
-        <div class="section-wrapper" style="padding-top:0;">
+      <!-- KEYWORDS -->
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-search"></i></div>
+        <div><h4>Search Term Mining</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Automatically harvest converting search terms from auto campaigns and surface them in reports.</p>
+      </div>
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-binoculars"></i></div>
+        <div><h4>Keyword Discovery</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Uncover profitable keywords your competitors rank for and capitalize on missed opportunities.</p>
+      </div>
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-x-circle"></i></div>
+        <div><h4>Negative Keyword Manager</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Block irrelevant searches that waste spend and dilute your ACOS with one-click negation.</p>
+      </div>
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-arrow-right-circle"></i></div>
+        <div><h4>Auto-to-Manual Migration</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Promote top-performing auto keywords to manual campaigns with a single click.</p>
+      </div>
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-bar-chart-line"></i></div>
+        <div><h4>Keyword Rank Tracker</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Monitor where your products appear for target keywords and track rank movement over time.</p>
+      </div>
+      <div class="fp-card" data-cat="keywords" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-orange"><i class="bi bi-funnel"></i></div>
+        <div><h4>Match Type Optimizer</h4><span class="fp-card-tag tag-orange">Keywords</span></div>
+        <p>Intelligently manage broad, phrase, and exact match types to maximize reach and efficiency.</p>
+      </div>
 
-            <!-- Filter Tabs -->
-            <div class="filter-bar" id="filterBar">
-                <button class="filter-btn active" data-cat="all"><i class="bi bi-grid-3x3-gap"></i> All
-                    Features</button>
-                <button class="filter-btn" data-cat="campaign"><i class="bi bi-lightning-charge-fill"
-                        style="color:#a855f7;"></i> Campaigns</button>
-                <button class="filter-btn" data-cat="keywords"><i class="bi bi-search" style="color:#f97316;"></i>
-                    Keywords</button>
-                <button class="filter-btn" data-cat="analytics"><i class="bi bi-graph-up-arrow"
-                        style="color:#3b82f6;"></i> Analytics</button>
-                <button class="filter-btn" data-cat="inventory"><i class="bi bi-shield-check"
-                        style="color:#10b981;"></i> Inventory</button>
-                <button class="filter-btn" data-cat="automation"><i class="bi bi-robot" style="color:#06b6d4;"></i>
-                    Automation</button>
-                <button class="filter-btn" data-cat="ai"><i class="bi bi-cpu" style="color:#ec4899;"></i> AI &
-                    ML</button>
-            </div>
+      <!-- ANALYTICS -->
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-speedometer2"></i></div>
+        <div><h4>Real-Time Dashboard</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>Live view of all campaigns, ad groups, and keywords with every metric that matters to your business.</p>
+      </div>
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-file-earmark-bar-graph"></i></div>
+        <div><h4>Custom Reports</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>Build and schedule automated reports tailored to your KPIs and deliver to your inbox.</p>
+      </div>
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-cash-stack"></i></div>
+        <div><h4>Profitability Analytics</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>See true profit margin after all Amazon fees, COGS, and ad costs — not just ad metrics.</p>
+      </div>
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-graph-up-arrow"></i></div>
+        <div><h4>Trend Analysis</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>Identify seasonal patterns, spot demand shifts, and plan ahead with historical trend data.</p>
+      </div>
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-trophy"></i></div>
+        <div><h4>Competitive Benchmarking</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>Compare your ACOS, CTR, and conversion rates against category averages and top performers.</p>
+      </div>
+      <div class="fp-card" data-cat="analytics" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-blue"><i class="bi bi-share"></i></div>
+        <div><h4>Report Sharing</h4><span class="fp-card-tag tag-blue">Analytics</span></div>
+        <p>Export to CSV, PDF, or share live report links with your team, agency, or clients.</p>
+      </div>
 
-            <!-- Features Grid -->
-            <div class="features-page-grid" id="featuresGrid">
+      <!-- INVENTORY -->
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-green"><i class="bi bi-exclamation-triangle"></i></div>
+        <div><h4>Low Stock Alerts</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>Get notified before you run out so you can reduce bids or pause ads before sales suffer.</p>
+      </div>
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-green"><i class="bi bi-boxes"></i></div>
+        <div><h4>FBA & FBM Monitoring</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>Track inventory levels across all fulfillment channels from one unified view.</p>
+      </div>
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-green"><i class="bi bi-activity"></i></div>
+        <div><h4>Sales Velocity Tracking</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>Understand how fast each ASIN is selling and how that rate is changing over time.</p>
+      </div>
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-green"><i class="bi bi-calendar-check"></i></div>
+        <div><h4>Inventory Forecasting</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>AI predicts when you'll run out based on velocity and seasonality so you can restock in time.</p>
+      </div>
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-green"><i class="bi bi-pause-circle"></i></div>
+        <div><h4>Auto-Pause on Stockout</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>Campaigns automatically pause when inventory hits critical thresholds to prevent wasted spend.</p>
+      </div>
+      <div class="fp-card" data-cat="inventory" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-green"><i class="bi bi-bell"></i></div>
+        <div><h4>Restock Notifications</h4><span class="fp-card-tag tag-green">Inventory</span></div>
+        <p>Automated email and Slack alerts when any ASIN crosses your defined stock thresholds.</p>
+      </div>
 
-                <!-- CAMPAIGN -->
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-megaphone-fill"></i></div>
-                    <div>
-                        <h4>Campaign Builder</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>Build and structure high-performing Sponsored Products, Brands, and Display campaigns from a
-                        single interface.</p>
-                </div>
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-currency-dollar"></i></div>
-                    <div>
-                        <h4>Bid Automation</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>AI adjusts bids hourly based on live ROAS, ACOS, and conversion data to keep you profitable.</p>
-                </div>
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-wallet2"></i></div>
-                    <div>
-                        <h4>Budget Automation</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>Auto pause and resume campaigns based on budget thresholds so you never over or underspend.</p>
-                </div>
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-grid"></i></div>
-                    <div>
-                        <h4>Placement Rules</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>Target Top of Search, Rest of Search, and Product Pages with precision bid modifiers.</p>
-                </div>
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-calendar3"></i></div>
-                    <div>
-                        <h4>Campaign Scheduling</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>Run campaigns at specific hours or days to concentrate spend when your customers shop.</p>
-                </div>
-                <div class="fp-card" data-cat="campaign">
-                    <div class="fp-card-icon ic-purple"><i class="bi bi-clock-history"></i></div>
-                    <div>
-                        <h4>Dayparting</h4>
-                        <span class="fp-card-tag tag-purple">Campaigns</span>
-                    </div>
-                    <p>Automatically increase bids during peak shopping hours and reduce them overnight.</p>
-                </div>
+      <!-- AUTOMATION -->
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-robot"></i></div>
+        <div><h4>Rule Engine</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Build custom if-then rules that trigger actions based on any metric in your account.</p>
+      </div>
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-arrow-repeat"></i></div>
+        <div><h4>Recurring Optimizations</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Schedule daily, weekly, or monthly optimization routines that run automatically.</p>
+      </div>
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-broadcast"></i></div>
+        <div><h4>Bulk Operations</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Apply changes to hundreds of campaigns, ad groups, or keywords in a single action.</p>
+      </div>
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-diagram-3"></i></div>
+        <div><h4>Campaign Templates</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Launch new campaigns using proven structures without rebuilding from scratch each time.</p>
+      </div>
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-lightning"></i></div>
+        <div><h4>Trigger-Based Alerts</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Get notified instantly when any campaign metric breaches the thresholds you define.</p>
+      </div>
+      <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-cyan"><i class="bi bi-plug"></i></div>
+        <div><h4>API & Webhooks</h4><span class="fp-card-tag tag-cyan">Automation</span></div>
+        <p>Integrate AdvertiseIQ data with your existing tools, dashboards, and workflows via API.</p>
+      </div>
 
-                <!-- KEYWORDS -->
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-search"></i></div>
-                    <div>
-                        <h4>Search Term Mining</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Automatically harvest converting search terms from auto campaigns and surface them in reports.
-                    </p>
-                </div>
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-binoculars"></i></div>
-                    <div>
-                        <h4>Keyword Discovery</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Uncover profitable keywords your competitors rank for and capitalize on missed opportunities.</p>
-                </div>
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-x-circle"></i></div>
-                    <div>
-                        <h4>Negative Keyword Manager</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Block irrelevant searches that waste spend and dilute your ACOS with one-click negation.</p>
-                </div>
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-arrow-right-circle"></i></div>
-                    <div>
-                        <h4>Auto-to-Manual Migration</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Promote top-performing auto keywords to manual campaigns with a single click.</p>
-                </div>
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-bar-chart-line"></i></div>
-                    <div>
-                        <h4>Keyword Rank Tracker</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Monitor where your products appear for target keywords and track rank movement over time.</p>
-                </div>
-                <div class="fp-card" data-cat="keywords">
-                    <div class="fp-card-icon ic-orange"><i class="bi bi-funnel"></i></div>
-                    <div>
-                        <h4>Match Type Optimizer</h4>
-                        <span class="fp-card-tag tag-orange">Keywords</span>
-                    </div>
-                    <p>Intelligently manage broad, phrase, and exact match types to maximize reach and efficiency.</p>
-                </div>
+      <!-- AI & ML -->
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-cpu"></i></div>
+        <div><h4>AI Bid Optimizer</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>Machine learning models trained on billions of Amazon auction signals adjust bids in real-time.</p>
+      </div>
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-binoculars-fill"></i></div>
+        <div><h4>Anomaly Detection</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>AI flags unusual changes in spend, ACOS, or sales before they become costly problems.</p>
+      </div>
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-stars"></i></div>
+        <div><h4>Predictive Forecasting</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>AI forecasts future sales, spend, and profitability so you can plan with confidence.</p>
+      </div>
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-chat-dots"></i></div>
+        <div><h4>Smart Recommendations</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>Context-aware suggestions for budget, bids, and new keywords surfaced directly in your dashboard.</p>
+      </div>
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="50">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-diagram-2"></i></div>
+        <div><h4>Audience Segmentation</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>AI segments your customer base to identify high-LTV segments worth targeting more aggressively.</p>
+      </div>
+      <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="100">
+        <div class="fp-card-icon ic-pink"><i class="bi bi-translate"></i></div>
+        <div><h4>Cross-Market Intelligence</h4><span class="fp-card-tag tag-pink">AI & ML</span></div>
+        <p>AI learns from performance patterns across marketplaces and applies insights globally.</p>
+      </div>
 
-                <!-- ANALYTICS -->
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-speedometer2"></i></div>
-                    <div>
-                        <h4>Real-Time Dashboard</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>Live view of all campaigns, ad groups, and keywords with every metric that matters to your
-                        business.</p>
-                </div>
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-file-earmark-bar-graph"></i></div>
-                    <div>
-                        <h4>Custom Reports</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>Build and schedule automated reports tailored to your KPIs and deliver to your inbox.</p>
-                </div>
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-cash-stack"></i></div>
-                    <div>
-                        <h4>Profitability Analytics</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>See true profit margin after all Amazon fees, COGS, and ad costs not just ad metrics.</p>
-                </div>
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-graph-up-arrow"></i></div>
-                    <div>
-                        <h4>Trend Analysis</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>Identify seasonal patterns, spot demand shifts, and plan ahead with historical trend data.</p>
-                </div>
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-trophy"></i></div>
-                    <div>
-                        <h4>Competitive Benchmarking</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>Compare your ACOS, CTR, and conversion rates against category averages and top performers.</p>
-                </div>
-                <div class="fp-card" data-cat="analytics">
-                    <div class="fp-card-icon ic-blue"><i class="bi bi-share"></i></div>
-                    <div>
-                        <h4>Report Sharing</h4>
-                        <span class="fp-card-tag tag-blue">Analytics</span>
-                    </div>
-                    <p>Export to CSV, PDF, or share live report links with your team, agency, or clients.</p>
-                </div>
+    </div><!-- /features-page-grid -->
 
-                <!-- INVENTORY -->
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-exclamation-triangle"></i></div>
-                    <div>
-                        <h4>Low Stock Alerts</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Get notified before you run out so you can reduce bids or pause ads before sales suffer.</p>
-                </div>
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-boxes"></i></div>
-                    <div>
-                        <h4>FBA & FBM Monitoring</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Track inventory levels across all fulfillment channels from one unified view.</p>
-                </div>
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-activity"></i></div>
-                    <div>
-                        <h4>Sales Velocity Tracking</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Understand how fast each ASIN is selling and how that rate is changing over time.</p>
-                </div>
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-calendar-check"></i></div>
-                    <div>
-                        <h4>Inventory Forecasting</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Predict when to reorder based on sales trends and average fulfillment lead times.</p>
-                </div>
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-pause-circle"></i></div>
-                    <div>
-                        <h4>Auto-Pause on Stockout</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Automatically stop all ads for a product the moment its inventory hits zero.</p>
-                </div>
-                <div class="fp-card" data-cat="inventory">
-                    <div class="fp-card-icon ic-green"><i class="bi bi-bell"></i></div>
-                    <div>
-                        <h4>Reorder Reminders</h4>
-                        <span class="fp-card-tag tag-green">Inventory</span>
-                    </div>
-                    <p>Smart reminders triggered at your custom reorder point to keep you always in stock.</p>
-                </div>
+    <!-- Highlight row -->
+    <div class="highlight-row" data-aos="fade-up">
+      <div class="highlight-card accent-card">
+        <div class="highlight-big-icon ic-blue"><i class="bi bi-speedometer2"></i></div>
+        <h3>Real-Time Optimization Engine</h3>
+        <p>Our proprietary engine processes millions of data points every hour to make micro-adjustments that add up to dramatically better performance.</p>
+        <ul class="check-list">
+          <li><i class="bi bi-check2-circle"></i> Hourly bid adjustments across all campaigns</li>
+          <li><i class="bi bi-check2-circle"></i> Keyword-level profit attribution</li>
+          <li><i class="bi bi-check2-circle"></i> Placement performance split testing</li>
+          <li><i class="bi bi-check2-circle"></i> Cross-campaign budget reallocation</li>
+        </ul>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-big-icon ic-green"><i class="bi bi-shield-check"></i></div>
+        <h3>Enterprise-Grade Security</h3>
+        <p>Your data and your customers' data are protected by bank-grade security standards and compliance frameworks.</p>
+        <ul class="check-list">
+          <li><i class="bi bi-check2-circle"></i> SOC 2 Type II certified</li>
+          <li><i class="bi bi-check2-circle"></i> AES-256 encryption at rest and in transit</li>
+          <li><i class="bi bi-check2-circle"></i> Role-based access controls</li>
+          <li><i class="bi bi-check2-circle"></i> Full audit log history</li>
+        </ul>
+      </div>
+    </div>
 
-                <!-- AUTOMATION -->
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-gear-wide-connected"></i></div>
-                    <div>
-                        <h4>Rule Builder</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Create IF/THEN logic rules for any metric bids, budgets, status, labels with no code
-                        required.</p>
-                </div>
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-arrow-up-right-circle"></i></div>
-                    <div>
-                        <h4>ROAS-Based Actions</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Trigger automatic bid changes when ROAS drops below or rises above your target range.</p>
-                </div>
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-clock"></i></div>
-                    <div>
-                        <h4>Schedule-Based Rules</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Run automation on an hourly, daily, or weekly schedule to fit your business workflow.</p>
-                </div>
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-diagram-3"></i></div>
-                    <div>
-                        <h4>Multi-Condition Logic</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Chain multiple conditions (AND/OR) for sophisticated automation that handles edge cases.</p>
-                </div>
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-send"></i></div>
-                    <div>
-                        <h4>Alert Notifications</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Get Slack, email, or in-app alerts the moment a rule fires or a metric hits a threshold.</p>
-                </div>
-                <div class="fp-card" data-cat="automation">
-                    <div class="fp-card-icon ic-cyan"><i class="bi bi-layers"></i></div>
-                    <div>
-                        <h4>Bulk Rule Application</h4>
-                        <span class="fp-card-tag tag-cyan">Automation</span>
-                    </div>
-                    <p>Apply the same rule across hundreds of campaigns simultaneously in a single click.</p>
-                </div>
+  </div>
+</section>
 
-                <!-- AI -->
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-cpu"></i></div>
-                    <div>
-                        <h4>AI Bid Optimizer</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>Machine learning continuously improves bid efficiency using patterns from millions of auctions.
-                    </p>
-                </div>
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-eye"></i></div>
-                    <div>
-                        <h4>Anomaly Detection</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>Automatically flag unusual spend spikes, CTR drops, or conversion collapses before they cost you.
-                    </p>
-                </div>
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-lightbulb"></i></div>
-                    <div>
-                        <h4>Smart Recommendations</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>AI-powered suggestions for budget reallocation, bid changes, and keyword opportunities.</p>
-                </div>
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-bar-chart-steps"></i></div>
-                    <div>
-                        <h4>Predictive Analytics</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>Forecast performance and revenue before you commit spend with confidence intervals.</p>
-                </div>
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-arrow-repeat"></i></div>
-                    <div>
-                        <h4>Learning Engine</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>The platform gets smarter every day by continuously learning from your campaign outcomes.</p>
-                </div>
-                <div class="fp-card" data-cat="ai">
-                    <div class="fp-card-icon ic-pink"><i class="bi bi-stars"></i></div>
-                    <div>
-                        <h4>Performance Forecasting</h4>
-                        <span class="fp-card-tag tag-pink">AI & ML</span>
-                    </div>
-                    <p>See projected ROAS, spend, and revenue for the next 7, 14, and 30 days based on current trends.
-                    </p>
-                </div>
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <div class="section-wrapper">
+    <div class="final-cta-card" data-aos="fade-up">
+      <div class="cta-glow"></div>
+      <div class="section-tag">GET STARTED TODAY</div>
+      <h2>Ready to Put These<br>Features to Work?</h2>
+      <p>Start your free trial and experience the full power of AdvertiseIQ — no credit card required.</p>
+      <div class="cta-actions">
+        <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+        <a href="pricing.html" class="btn-secondary btn-lg">See Pricing</a>
+      </div>
+      <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp; Cancel anytime</p>
+    </div>
+  </div>
+</section>
 
-            </div>
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-inner">
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-logo-link">
+        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo" onerror="this.style.display='none'">
+      </a>
+      <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="market.html">Case Studies</a></li>
+        <li><a href="ppc-sales.html">PPC Sales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+    </div>
+  </div>
+</footer>
 
-            <!-- Highlight Cards -->
-            <div class="highlight-row">
-                <div class="highlight-card accent-card">
-                    <div class="highlight-big-icon ic-blue"><i class="bi bi-shield-lock-fill"></i></div>
-                    <h3>Enterprise-Grade Security</h3>
-                    <p>Your Amazon account credentials are encrypted end-to-end. We use official Amazon Advertising API
-                        no scraping, no third-party access risks.</p>
-                    <ul class="check-list">
-                        <li><i class="bi bi-check2-circle"></i> SOC 2 Type II Compliant</li>
-                        <li><i class="bi bi-check2-circle"></i> Amazon Advertising API Partner</li>
-                        <li><i class="bi bi-check2-circle"></i> GDPR & CCPA Ready</li>
-                        <li><i class="bi bi-check2-circle"></i> 99.9% Uptime SLA</li>
-                    </ul>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-big-icon ic-green"><i class="bi bi-headset"></i></div>
-                    <h3>World-Class Support</h3>
-                    <p>Onboarding, training, and ongoing strategic support from a team that knows Amazon advertising
-                        inside out.</p>
-                    <ul class="check-list">
-                        <li><i class="bi bi-check2-circle"></i> Dedicated onboarding specialist</li>
-                        <li><i class="bi bi-check2-circle"></i> Live chat & email support</li>
-                        <li><i class="bi bi-check2-circle"></i> Strategy calls on Premium+</li>
-                        <li><i class="bi bi-check2-circle"></i> Extensive knowledge base & video library</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="final-cta-section">
-        <div class="section-wrapper">
-            <div class="final-cta-card">
-                <div class="cta-glow"></div>
-                <div class="section-tag">START TODAY</div>
-                <h2>Try Every Feature<br>Free for 14 Days</h2>
-                <p>No credit card required. Full access to all features from day one.</p>
-                <div class="cta-actions">
-                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i
-                            class="bi bi-arrow-right"></i></a>
-                    <a href="pricing.html" class="btn-secondary">View Pricing</a>
-                </div>
-                <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Cancel anytime</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer-section">
-        <div class="footer-inner">
-            <div class="footer-col brand-col">
-                <a href="/" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
-                        onerror="this.style.display='none'">
-                </a>
-                <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h5>Product</h5>
-                <ul>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="market.html">Case Studies</a></li>
-                    <li><a href="ppc-sales.html">Sales</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Company</h5>
-                <ul>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Legal</h5>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // ── Hide Loader on Page Load ──
-        window.addEventListener('load', function () {
-            const loader = document.getElementById('page-loader');
-            // Small delay to ensure smooth transition
-            setTimeout(function () {
-                loader.classList.add('hidden');
-            }, 300);
-        });
-
-        // ── Dark/Light Mode ──
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        setIcon(savedTheme);
-        updateLoaderLogo(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('aiq-theme', next);
-            setIcon(next);
-            updateLoaderLogo(next);
-        });
-        function setIcon(theme) {
-            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-            const navLogo = document.getElementById('navLogo');
-            if (navLogo) {
-                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-            const footerLogo = document.getElementById('footerLogo');
-            if (footerLogo) {
-                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
-
-        function updateLoaderLogo(theme) {
-            const loaderLogo = document.getElementById('loaderLogo');
-            if (loaderLogo) {
-                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
-        // Mobile nav
-        document.getElementById('navHamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
-        window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20));
-
-        // Feature filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const featureCards = document.querySelectorAll('.fp-card');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const cat = btn.dataset.cat;
-                featureCards.forEach(card => {
-                    card.dataset.hidden = (cat !== 'all' && card.dataset.cat !== cat) ? 'true' : 'false';
-                    card.style.display = (cat !== 'all' && card.dataset.cat !== cat) ? 'none' : 'flex';
-                });
-            });
-        });
-    </script>
-
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/site.js"></script>
+<script>AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
-
 </html>

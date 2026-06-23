@@ -1,0 +1,430 @@
+FULL WEBSITE REDESIGN (STATIC HTML PROJECT)
+
+IMPORTANT:
+
+This is NOT a bug-fix task.
+This is NOT a UI refresh task.
+
+I want a COMPLETE PROFESSIONAL REDESIGN of the entire website.
+
+The current website looks outdated, basic, and lacks a modern premium feel.
+
+Your goal is to transform the website into a modern, high-converting, visually impressive, enterprise-grade website while preserving existing functionality.
+
+=================================================
+PROJECT ANALYSIS FIRST
+=================================================
+
+Before making any changes:
+
+1. Analyze the complete project structure.
+2. Analyze all existing HTML pages.
+3. Analyze all CSS files.
+4. Analyze all JavaScript files.
+5. Understand current navigation and functionality.
+6. Identify outdated UI patterns.
+7. Identify duplicate styles and unused code.
+8. Understand the business purpose of the website.
+
+Only after analysis, start redesigning.
+
+=================================================
+CRITICAL PROJECT RULES
+=================================================
+
+This is a traditional static HTML website.
+
+DO NOT CONVERT THE PROJECT TO:
+
+- React
+- Next.js
+- Vue
+- Nuxt
+- Angular
+- Vite
+- TypeScript
+
+DO NOT CREATE:
+
+- package.json
+- vite.config.js
+- node_modules
+- src/
+- components/
+- app/
+- pages/
+- dist/
+- build/
+- artifacts/
+
+Preserve the existing project structure.
+
+=================================================
+ALLOWED TECHNOLOGIES
+=================================================
+
+Use only:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+External CDN libraries are allowed only when necessary.
+
+Examples:
+
+- GSAP CDN
+- AOS CDN
+- Swiper CDN
+- Lenis CDN
+- Chart.js CDN
+- Font Awesome CDN
+
+Do not install packages.
+
+=================================================
+DESIGN GOAL
+=================================================
+
+Redesign the website to feel similar in quality to:
+
+- Stripe
+- Linear
+- Framer
+- Webflow
+- Notion
+- Perplexity
+- Apple
+- Arc Browser
+- Vercel
+
+The website should look like a modern 2026 premium SaaS/product/company website.
+
+=================================================
+VISUAL DESIGN REQUIREMENTS
+=================================================
+
+Create:
+
+✓ Premium UI
+✓ Modern Layout
+✓ Better Visual Hierarchy
+✓ Better Typography
+✓ Better Spacing
+✓ Better Color System
+✓ Better Card Design
+✓ Better Buttons
+✓ Better Navigation
+✓ Better Mobile Experience
+✓ Better Accessibility
+✓ Better Conversion Focus
+
+Use:
+
+Heading Font:
+Manrope or Sora
+
+Body Font:
+Inter
+
+=================================================
+GLOBAL DESIGN SYSTEM
+=================================================
+
+Create a professional design system:
+
+Typography Scale:
+
+- Display
+- H1
+- H2
+- H3
+- H4
+- Body
+- Small Text
+
+Spacing Scale:
+
+- Consistent spacing system
+- Proper section spacing
+- Better content breathing room
+
+Border Radius:
+
+- Modern rounded corners
+
+Shadows:
+
+- Soft premium shadows
+
+Gradients:
+
+- Modern gradients
+- Subtle usage only
+
+=================================================
+HEADER / NAVIGATION
+=================================================
+
+Redesign the navbar completely.
+
+Requirements:
+
+✓ Sticky Navigation
+✓ Scroll Effects
+✓ Mobile Menu
+✓ Better CTA Button
+✓ Modern Layout
+✓ Active Link States
+✓ Glassmorphism Background
+✓ Smooth Transitions
+
+=================================================
+HERO SECTION
+=================================================
+
+The hero section must immediately communicate:
+
+1. What the company does.
+2. Why users should care.
+3. Why it is better than alternatives.
+4. Clear call-to-action.
+
+Requirements:
+
+✓ Strong headline
+✓ Clear subheadline
+✓ Primary CTA
+✓ Secondary CTA
+✓ Product Visual
+✓ Dashboard Mockup
+✓ Illustration
+✓ Modern Background Effects
+✓ Floating Elements
+✓ Trust Indicators
+
+The hero should feel premium and memorable.
+
+=================================================
+SECTIONS TO IMPROVE
+=================================================
+
+Redesign every section.
+
+Improve:
+
+✓ About Section
+✓ Services Section
+✓ Features Section
+✓ Products Section
+✓ Solutions Section
+✓ Process Section
+✓ Pricing Section
+✓ Testimonials Section
+✓ FAQ Section
+✓ Contact Section
+✓ Footer Section
+
+Do not leave any old section design unchanged.
+
+=================================================
+FEATURES PRESENTATION
+=================================================
+
+Replace outdated layouts.
+
+Use:
+
+✓ Interactive Cards
+✓ Expandable Content
+✓ Sticky Scroll Sections
+✓ Modern Grid Layouts
+✓ Hover Effects
+✓ Animated Statistics
+✓ Visual Demonstrations
+
+Avoid boring feature lists.
+
+=================================================
+VISUAL CONTENT
+=================================================
+
+Add:
+
+✓ Product Mockups
+✓ Device Frames
+✓ Dashboard Previews
+✓ Data Visualizations
+✓ Modern Illustrations
+✓ Icons
+✓ Trust Badges
+✓ Statistics
+
+The site should feel visually rich.
+
+=================================================
+ANIMATIONS
+=================================================
+
+Add tasteful modern animations.
+
+Use:
+
+✓ Scroll Reveal
+✓ Fade Effects
+✓ Slide Effects
+✓ Hover Animations
+✓ Counter Animations
+✓ Parallax Effects
+✓ Smooth Page Interactions
+
+Avoid excessive animations.
+
+Performance must remain excellent.
+
+=================================================
+BUTTONS
+=================================================
+
+Redesign all buttons.
+
+Requirements:
+
+✓ Premium Design
+✓ Better Typography
+✓ Better Padding
+✓ Hover Effects
+✓ Smooth Transitions
+✓ Modern Shadows
+✓ Gradient Accents
+
+Buttons should feel clickable and premium.
+
+=================================================
+CARDS
+=================================================
+
+Redesign all cards.
+
+Requirements:
+
+✓ Glassmorphism Elements
+✓ Better Shadows
+✓ Better Borders
+✓ Better Hover States
+✓ Consistent Styling
+
+=================================================
+LIGHT / DARK MODE
+=================================================
+
+Implement complete theme support.
+
+Requirements:
+
+✓ Light Mode
+✓ Dark Mode
+✓ Theme Toggle
+✓ Save Preference in LocalStorage
+✓ Smooth Theme Transition
+
+Use CSS variables.
+
+Example:
+
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+}
+
+[data-theme="dark"] {
+  --bg: #020617;
+  --text: #ffffff;
+}
+
+=================================================
+RESPONSIVE DESIGN
+=================================================
+
+The redesign must work perfectly on:
+
+✓ Desktop
+✓ Laptop
+✓ Tablet
+✓ Mobile
+
+Requirements:
+
+✓ No horizontal scrolling
+✓ Proper spacing
+✓ Responsive typography
+✓ Responsive images
+✓ Mobile-first improvements
+
+=================================================
+SEO REQUIREMENTS
+=================================================
+
+Improve:
+
+✓ Semantic HTML
+✓ Heading Structure
+✓ Meta Tags
+✓ Accessibility
+✓ Alt Tags
+✓ Page Performance
+
+=================================================
+CODE QUALITY
+=================================================
+
+Requirements:
+
+✓ Clean HTML
+✓ Clean CSS
+✓ Clean JavaScript
+✓ Remove Unused Code
+✓ Reuse Existing Assets When Possible
+✓ Optimize Performance
+
+=================================================
+FILE STRUCTURE RULES
+=================================================
+
+Only modify existing files.
+
+If new files are needed:
+
+Create them only inside existing folders such as:
+
+assets/css/
+assets/js/
+assets/images/
+assets/fonts/
+
+Never create a new framework structure.
+
+=================================================
+FINAL OBJECTIVE
+=================================================
+
+Transform the website from an outdated HTML website into a modern, premium, professional, enterprise-quality website.
+
+The final result should feel comparable to websites built by top-tier product design agencies.
+
+Focus heavily on:
+
+1. First Impression
+2. Visual Quality
+3. Typography
+4. Conversion Rate
+5. Trust Building
+6. Responsiveness
+7. Modern UI/UX
+8. Performance
+9. Accessibility
+10. Professional Design Consistency
+
+Do not perform a partial redesign.
+
+Perform a complete professional redesign of the entire website while preserving existing functionality and project structure.

@@ -1,719 +1,405 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing — AdvertiseIQ</title>
-    <link rel="icon" href="./assets/img/favicon.svg" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <style>
-        .page-hero {
-            padding: 160px 24px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 500px;
-            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .page-hero h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 3.75rem);
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin: 16px 0 20px;
-            color: var(--text);
-        }
-
-        .page-hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 520px;
-            margin: 0 auto 32px;
-            line-height: 1.7;
-        }
-
-        /* ── Comparison Table ── */
-        .comp-section {
-            background: var(--bg-2);
-        }
-
-        .comp-table-wrap {
-            overflow-x: auto;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            box-shadow: var(--card-shadow);
-        }
-
-        .comp-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-card);
-            min-width: 640px;
-        }
-
-        .comp-table thead tr th {
-            padding: 22px 24px;
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-muted);
-            background: var(--input-bg);
-        }
-
-        .comp-table thead tr th:first-child {
-            text-align: left;
-            width: 35%;
-        }
-
-        .comp-table thead tr th.th-featured {
-            color: var(--accent);
-            background: rgba(37, 99, 235, 0.06);
-            position: relative;
-        }
-
-        .comp-table thead tr th.th-featured::after {
-            content: 'MOST POPULAR';
-            display: block;
-            font-size: 0.62rem;
-            letter-spacing: 1.5px;
-            color: #3b82f6;
-            margin-top: 3px;
-        }
-
-        .comp-table .cat-row td {
-            padding: 10px 24px;
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            background: var(--input-bg);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .comp-table tbody tr td {
-            padding: 15px 24px;
-            font-size: 0.875rem;
-            color: var(--text-dim);
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-
-        .comp-table tbody tr td:first-child {
-            text-align: left;
-            font-weight: 500;
-            color: var(--text);
-        }
-
-        .comp-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comp-table tbody tr:hover td {
-            background: var(--accent-glow);
-        }
-
-        .comp-table .col-featured {
-            background: rgba(37, 99, 235, 0.04);
-        }
-
-        .comp-table .col-featured:hover {
-            background: rgba(37, 99, 235, 0.08);
-        }
-
-        .ci-yes {
-            color: #10b981;
-            font-size: 1rem;
-        }
-
-        .ci-no {
-            color: #ef4444;
-            font-size: 1rem;
-        }
-
-        .ci-part {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* ── Trust logos ── */
-        .trust-strip {
-            text-align: center;
-            padding: 48px 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trust-strip p {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-weight: 600;
-        }
-
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .trust-logo-item {
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: var(--text-muted);
-            letter-spacing: -0.3px;
-            opacity: 0.55;
-            transition: opacity 0.2s;
-        }
-
-        .trust-logo-item:hover {
-            opacity: 0.9;
-        }
-
-        /* guarantee strip */
-        .guarantee-strip {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 32px 24px;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .guarantee-item i {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — AdvertiseIQ</title>
+  <meta name="description" content="Simple, transparent pricing for AdvertiseIQ. Choose the plan that fits your Amazon advertising scale. No hidden fees, no contracts.">
+  <link rel="icon" href="./assets/img/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
-
 <body>
 
-    <!-- ===== PAGE LOADER ===== -->
-    <div id="page-loader">
-        <div class="loader-logo">
-            <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
-        </div>
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Loading AdvertiseIQ...</div>
-        <div class="loader-progress-bar">
-            <div class="loader-progress-fill"></div>
-        </div>
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo"><img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo"></div>
+  <div class="loader-spinner"></div>
+  <div class="loader-text">Loading AdvertiseIQ…</div>
+  <div class="loader-progress-bar"><div class="loader-progress-fill"></div></div>
+</div>
+
+<!-- AURORA -->
+<div class="aurora-bg">
+  <div class="aurora-blob blob1"></div>
+  <div class="aurora-blob blob2"></div>
+  <div class="aurora-blob blob3"></div>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo" onerror="this.style.display='none'">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
     </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="bi bi-sun-fill" id="themeIcon"></i>
+      </button>
+      <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+      <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about-us.html">About</a>
+    <a href="contact-us.html">Contact</a>
+    <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+  </div>
+</nav>
 
-    <!-- NAV -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-                    onerror="this.style.display='none'">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="features.html">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact-us.html">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="bi bi-sun-fill" id="themeIcon"></i>
-                </button>
-                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-                <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-                    <i class="bi bi-list"></i>
-                </button>
-            </div>
+<!-- PAGE HERO -->
+<section class="page-hero" style="background:var(--bg);">
+  <div class="section-tag" data-aos="fade-up">PRICING</div>
+  <h1 data-aos="fade-up" data-aos-delay="60">Simple, Transparent<br><span class="gradient-text">Pricing</span></h1>
+  <p data-aos="fade-up" data-aos-delay="120">No hidden fees, no contracts. Choose the plan that fits your scale and grow from there.</p>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="pricing-section" style="padding-top:0; background:var(--bg);">
+  <div class="section-wrapper" style="padding-top:0;">
+    <div class="section-header" style="margin-bottom:40px;" data-aos="fade-up">
+      <div class="billing-toggle">
+        <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="billingToggle">
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
+      </div>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="349" data-annual="279">349</span>
+          <span class="price-period">/mo</span>
         </div>
-        <div class="nav-mobile" id="navMobile">
-            <a href="index.html">Home</a>
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+        <p class="plan-desc">For growing brands just getting started with Amazon advertising automation.</p>
+        <ul class="plan-features">
+          <li><i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts</li>
+          <li><i class="bi bi-check2-circle"></i> Campaign automation & rules</li>
+          <li><i class="bi bi-check2-circle"></i> Keyword intelligence tools</li>
+          <li><i class="bi bi-check2-circle"></i> Basic analytics dashboard</li>
+          <li><i class="bi bi-check2-circle"></i> Email support</li>
+          <li><i class="bi bi-check2-circle"></i> Up to 10 automation rules</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
+      </div>
+      <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="featured-badge">Most Popular</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="299" data-annual="239">299</span>
+          <span class="price-period">/mo</span>
         </div>
-    </nav>
-
-    <!-- PAGE HERO -->
-    <section class="page-hero" style="background:var(--bg);">
-        <div class="section-tag">PRICING</div>
-        <h1>Simple, Transparent<br><span class="gradient-text">Pricing</span></h1>
-        <p>No hidden fees, no contracts. Choose the plan that fits your scale and grow from there.</p>
-    </section>
-
-    <!-- PRICING CARDS -->
-    <section class="pricing-section" style="padding-top:0; background:var(--bg);">
-        <div class="section-wrapper" style="padding-top:0;">
-            <div class="section-header" style="margin-bottom:40px;">
-                <div class="billing-toggle">
-                    <span class="toggle-label active" id="monthlyLabel">Monthly</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="billingToggle">
-                        <span class="toggle-slider"></span>
-                    </label>
-                    <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
-                </div>
-            </div>
-            <div class="pricing-cards">
-                <div class="pricing-card starter">
-                    <div class="plan-name">Starter</div>
-                    <div class="plan-price">
-                        <span class="price-currency">$</span>
-                        <span class="price-amount" data-monthly="349" data-annual="279">349</span>
-                        <span class="price-period">/mo</span>
-                    </div>
-                    <p class="plan-desc">For growing brands just getting started with Amazon advertising automation.</p>
-                    <ul class="plan-features">
-                        <li><i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts</li>
-                        <li><i class="bi bi-check2-circle"></i> Campaign automation & rules</li>
-                        <li><i class="bi bi-check2-circle"></i> Keyword intelligence tools</li>
-                        <li><i class="bi bi-check2-circle"></i> Basic analytics dashboard</li>
-                        <li><i class="bi bi-check2-circle"></i> Email support</li>
-                        <li><i class="bi bi-check2-circle"></i> Up to 10 automation rules</li>
-                    </ul>
-                    <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
-                </div>
-                <div class="pricing-card premium featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="plan-name">Premium</div>
-                    <div class="plan-price">
-                        <span class="price-currency">$</span>
-                        <span class="price-amount" data-monthly="299" data-annual="239">299</span>
-                        <span class="price-period">/mo</span>
-                    </div>
-                    <p class="plan-desc">For established brands ready to dominate their category with full automation.
-                    </p>
-                    <ul class="plan-features">
-                        <li><i class="bi bi-check2-circle"></i> Up to 20 marketplace accounts</li>
-                        <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
-                        <li><i class="bi bi-check2-circle"></i> Inventory protection & alerts</li>
-                        <li><i class="bi bi-check2-circle"></i> Advanced analytics & reporting</li>
-                        <li><i class="bi bi-check2-circle"></i> Competitor intelligence</li>
-                        <li><i class="bi bi-check2-circle"></i> Unlimited automation rules</li>
-                        <li><i class="bi bi-check2-circle"></i> Priority support + strategy calls</li>
-                        <li><i class="bi bi-check2-circle"></i> AI bid optimizer (full)</li>
-                    </ul>
-                    <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
-                </div>
-                <div class="pricing-card enterprise">
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-price">
-                        <span class="price-currency">$</span>
-                        <span class="price-amount" data-monthly="249" data-annual="199">249</span>
-                        <span class="price-period">/mo per seat</span>
-                    </div>
-                    <p class="plan-desc">Custom solutions for agencies and large brands managing at scale.</p>
-                    <ul class="plan-features">
-                        <li><i class="bi bi-check2-circle"></i> Unlimited marketplace accounts</li>
-                        <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
-                        <li><i class="bi bi-check2-circle"></i> Custom API integrations</li>
-                        <li><i class="bi bi-check2-circle"></i> Dedicated success manager</li>
-                        <li><i class="bi bi-check2-circle"></i> Custom onboarding & training</li>
-                        <li><i class="bi bi-check2-circle"></i> SLA guarantees (99.9%)</li>
-                        <li><i class="bi bi-check2-circle"></i> White-label options available</li>
-                        <li><i class="bi bi-check2-circle"></i> Custom billing & invoicing</li>
-                    </ul>
-                    <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
-                </div>
-            </div>
-            <div class="guarantee-strip">
-                <div class="guarantee-item"><i class="bi bi-shield-check"></i> 14-day free trial</div>
-                <div class="guarantee-item"><i class="bi bi-credit-card"></i> No credit card required</div>
-                <div class="guarantee-item"><i class="bi bi-arrow-counterclockwise"></i> Cancel anytime</div>
-                <div class="guarantee-item"><i class="bi bi-lock"></i> SOC 2 compliant</div>
-                <div class="guarantee-item"><i class="bi bi-headset"></i> Onboarding included</div>
-            </div>
+        <p class="plan-desc">For established brands ready to dominate their category with full automation.</p>
+        <ul class="plan-features">
+          <li><i class="bi bi-check2-circle"></i> Up to 20 marketplace accounts</li>
+          <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
+          <li><i class="bi bi-check2-circle"></i> Inventory protection & alerts</li>
+          <li><i class="bi bi-check2-circle"></i> Advanced analytics & reporting</li>
+          <li><i class="bi bi-check2-circle"></i> Competitor intelligence</li>
+          <li><i class="bi bi-check2-circle"></i> Unlimited automation rules</li>
+          <li><i class="bi bi-check2-circle"></i> Priority support + strategy calls</li>
+          <li><i class="bi bi-check2-circle"></i> AI bid optimizer (full)</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
+      </div>
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="249" data-annual="199">249</span>
+          <span class="price-period">/mo per seat</span>
         </div>
-    </section>
+        <p class="plan-desc">Custom solutions for agencies and large brands managing at scale.</p>
+        <ul class="plan-features">
+          <li><i class="bi bi-check2-circle"></i> Unlimited marketplace accounts</li>
+          <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
+          <li><i class="bi bi-check2-circle"></i> Custom API integrations</li>
+          <li><i class="bi bi-check2-circle"></i> Dedicated success manager</li>
+          <li><i class="bi bi-check2-circle"></i> Custom onboarding & training</li>
+          <li><i class="bi bi-check2-circle"></i> SLA guarantees (99.9%)</li>
+          <li><i class="bi bi-check2-circle"></i> White-label options</li>
+          <li><i class="bi bi-check2-circle"></i> Custom billing & invoicing</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
+      </div>
+    </div>
+    <div class="guarantee-strip" data-aos="fade-up">
+      <div class="guarantee-item"><i class="bi bi-shield-check"></i> 14-day free trial</div>
+      <div class="guarantee-item"><i class="bi bi-credit-card"></i> No credit card required</div>
+      <div class="guarantee-item"><i class="bi bi-arrow-counterclockwise"></i> Cancel anytime</div>
+      <div class="guarantee-item"><i class="bi bi-lock"></i> SOC 2 compliant</div>
+      <div class="guarantee-item"><i class="bi bi-headset"></i> Onboarding included</div>
+    </div>
+  </div>
+</section>
 
-    <!-- FEATURE COMPARISON TABLE -->
-    <section class="comp-section">
-        <div class="section-wrapper">
-            <div class="section-header">
-                <div class="section-tag">FULL COMPARISON</div>
-                <h2>Compare All Plans</h2>
-                <p>Every feature, side by side. No surprises.</p>
-            </div>
-            <div class="comp-table-wrap">
-                <table class="comp-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Starter</th>
-                            <th class="th-featured">Premium</th>
-                            <th>Enterprise</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="cat-row">
-                            <td colspan="4">Campaign Management</td>
-                        </tr>
-                        <tr>
-                            <td>Marketplace accounts</td>
-                            <td>Up to 5</td>
-                            <td class="col-featured">Up to 20</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Automation rules</td>
-                            <td>10 rules</td>
-                            <td class="col-featured">Unlimited</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Bid automation</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Budget automation</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Placement rules</td>
-                            <td><span class="ci-part">Basic</span></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Dayparting / scheduling</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
+<!-- TRUSTED BY -->
+<section style="background:var(--bg-2);position:relative;z-index:1;">
+  <div class="section-wrapper" style="padding-top:56px;padding-bottom:56px;">
+    <div class="trust-strip" data-aos="fade-up">
+      <p>Trusted by leading brands across every Amazon category</p>
+      <div class="trust-logos">
+        <span class="trust-logo-item">FBA Brands</span>
+        <span class="trust-logo-item">D2C Labels</span>
+        <span class="trust-logo-item">Private Label</span>
+        <span class="trust-logo-item">Retail Brands</span>
+        <span class="trust-logo-item">Amazon Agencies</span>
+        <span class="trust-logo-item">Enterprise Sellers</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-                        <tr class="cat-row">
-                            <td colspan="4">Keyword Intelligence</td>
-                        </tr>
-                        <tr>
-                            <td>Search term mining</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Competitor keyword discovery</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Keyword rank tracker</td>
-                            <td><span class="ci-part">Limited</span></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
+<!-- FULL COMPARISON -->
+<section class="comp-section">
+  <div class="section-wrapper">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">FULL COMPARISON</div>
+      <h2>Compare All Plans</h2>
+      <p>Every feature, side by side. No surprises.</p>
+    </div>
+    <div class="comp-table-wrap" data-aos="fade-up" data-aos-delay="80">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="th-featured">Premium</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cat-row"><td colspan="4">Campaign Management</td></tr>
+          <tr>
+            <td>Marketplace accounts</td>
+            <td>Up to 5</td>
+            <td class="col-featured">Up to 20</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Automation rules</td>
+            <td>10 rules</td>
+            <td class="col-featured">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Bid automation</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Budget automation</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Placement rules</td>
+            <td><span class="ci-part">Basic</span></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Dayparting / scheduling</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
 
-                        <tr class="cat-row">
-                            <td colspan="4">Analytics & Reporting</td>
-                        </tr>
-                        <tr>
-                            <td>Real-time dashboard</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Custom reports</td>
-                            <td><span class="ci-part">3 reports</span></td>
-                            <td class="col-featured">Unlimited</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Profitability analytics</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Data export (CSV/PDF)</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
+          <tr class="cat-row"><td colspan="4">Keyword Intelligence</td></tr>
+          <tr>
+            <td>Search term mining</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Competitor keyword discovery</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Keyword rank tracker</td>
+            <td><span class="ci-part">Limited</span></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
 
-                        <tr class="cat-row">
-                            <td colspan="4">Inventory & AI</td>
-                        </tr>
-                        <tr>
-                            <td>Inventory alerts</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Auto-pause on stockout</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>AI bid optimizer</td>
-                            <td><span class="ci-part">Basic</span></td>
-                            <td class="col-featured"><span class="ci-part">Full</span></td>
-                            <td><span class="ci-part">Advanced</span></td>
-                        </tr>
-                        <tr>
-                            <td>Anomaly detection</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
+          <tr class="cat-row"><td colspan="4">Analytics & Reporting</td></tr>
+          <tr>
+            <td>Real-time dashboard</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Custom reports</td>
+            <td><span class="ci-part">3 reports</span></td>
+            <td class="col-featured">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Profitability analytics</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Data export (CSV / PDF)</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
 
-                        <tr class="cat-row">
-                            <td colspan="4">Support & Access</td>
-                        </tr>
-                        <tr>
-                            <td>Email support</td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Priority support</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Dedicated success manager</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-x-circle ci-no"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Custom API access</td>
-                            <td><i class="bi bi-x-circle ci-no"></i></td>
-                            <td class="col-featured"><i class="bi bi-x-circle ci-no"></i></td>
-                            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+          <tr class="cat-row"><td colspan="4">Inventory & AI</td></tr>
+          <tr>
+            <td>Inventory alerts</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Auto-pause on stockout</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>AI bid optimizer</td>
+            <td><span class="ci-part">Basic</span></td>
+            <td class="col-featured"><span class="ci-part">Full</span></td>
+            <td><span class="ci-part">Advanced</span></td>
+          </tr>
+          <tr>
+            <td>Anomaly detection</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
 
-    <!-- FAQ -->
-    <section style="background:var(--bg);">
-        <div class="section-wrapper narrow">
-            <div class="section-header">
-                <div class="section-tag">FAQ</div>
-                <h2>Pricing Questions</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">Is there a free trial? <i
-                            class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer">
-                        <p>Yes, 14 days, full feature access, no credit card required. Cancel any time before the trial
-                            ends and you won't be charged.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Can I switch plans later? <i
-                            class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer">
-                        <p>Absolutely. Upgrade or downgrade at any time. Upgrades take effect immediately and you'll be
-                            prorated. Downgrades take effect at the next billing cycle.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">What counts as a "marketplace account"? <i
-                            class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer">
-                        <p>Each Amazon Seller Central or Vendor Central account you connect is one marketplace account.
-                            Multiple countries under the same account typically count as one.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do you offer discounts for agencies? <i
-                            class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer">
-                        <p>Yes, agencies managing multiple client accounts get special volume pricing. Contact our
-                            sales team to discuss an agency partnership.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">What payment methods do you accept? <i
-                            class="bi bi-plus-circle faq-icon"></i></button>
-                    <div class="faq-answer">
-                        <p>We accept all major credit cards (Visa, Mastercard, Amex). Enterprise customers can also
-                            arrange ACH/wire transfer and receive invoices.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          <tr class="cat-row"><td colspan="4">Support & Access</td></tr>
+          <tr>
+            <td>Email support</td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Priority support</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-check-circle-fill ci-yes"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Dedicated success manager</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-x-circle ci-no"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>Custom API access</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-x-circle ci-no"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+          <tr>
+            <td>SLA guarantee</td>
+            <td><i class="bi bi-x-circle ci-no"></i></td>
+            <td class="col-featured"><i class="bi bi-x-circle ci-no"></i></td>
+            <td><i class="bi bi-check-circle-fill ci-yes"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <section class="final-cta-section">
-        <div class="section-wrapper">
-            <div class="final-cta-card">
-                <div class="cta-glow"></div>
-                <div class="section-tag">GET STARTED</div>
-                <h2>Start Scaling Today</h2>
-                <p>14-day free trial. No credit card. Full access from day one.</p>
-                <div class="cta-actions">
-                    <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i
-                            class="bi bi-arrow-right"></i></a>
-                    <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
-                </div>
-                <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Cancel anytime</p>
-            </div>
-        </div>
-    </section>
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <div class="section-wrapper">
+    <div class="final-cta-card" data-aos="fade-up">
+      <div class="cta-glow"></div>
+      <div class="section-tag">START TODAY</div>
+      <h2>Ready to Scale Your<br>Amazon Advertising?</h2>
+      <p>Start your 14-day free trial. No credit card required, no contracts, full feature access from day one.</p>
+      <div class="cta-actions">
+        <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial — No Card Needed <i class="bi bi-arrow-right"></i></a>
+        <a href="contact-us.html" class="btn-secondary btn-lg">Talk to Sales</a>
+      </div>
+      <p class="cta-footnote">14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp; Cancel anytime</p>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer-section">
-        <div class="footer-inner">
-            <div class="footer-col brand-col">
-                <a href="/" class="footer-logo-link">
-                    <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
-                        onerror="this.style.display='none'">
-                </a>
-                <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h5>Product</h5>
-                <ul>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="market.html">Case Studies</a></li>
-                    <li><a href="ppc-sales.html">Sales</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Company</h5>
-                <ul>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Legal</h5>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-inner">
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-logo-link">
+        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo" onerror="this.style.display='none'">
+      </a>
+      <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="market.html">Case Studies</a></li>
+        <li><a href="ppc-sales.html">PPC Sales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+    </div>
+  </div>
+</footer>
 
-    <script>
-        // ── Hide Loader on Page Load ──
-        window.addEventListener('load', function () {
-            const loader = document.getElementById('page-loader');
-            // Small delay to ensure smooth transition
-            setTimeout(function () {
-                loader.classList.add('hidden');
-            }, 300);
-        });
-
-        // ── Dark/Light Mode ──
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const savedTheme = localStorage.getItem('aiq-theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        setIcon(savedTheme);
-        updateLoaderLogo(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('aiq-theme', next);
-            setIcon(next);
-            updateLoaderLogo(next);
-        });
-        function setIcon(theme) {
-            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-            const navLogo = document.getElementById('navLogo');
-            if (navLogo) {
-                navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-            const footerLogo = document.getElementById('footerLogo');
-            if (footerLogo) {
-                footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
-
-        function updateLoaderLogo(theme) {
-            const loaderLogo = document.getElementById('loaderLogo');
-            if (loaderLogo) {
-                loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-            }
-        }
-        document.getElementById('navHamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
-        window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20));
-
-        // Billing toggle
-        document.getElementById('billingToggle').addEventListener('change', function () {
-            const annual = this.checked;
-            document.getElementById('monthlyLabel').classList.toggle('active', !annual);
-            document.getElementById('annualLabel').classList.toggle('active', annual);
-            document.querySelectorAll('.price-amount').forEach(el => {
-                el.textContent = annual ? el.dataset.annual : el.dataset.monthly;
-            });
-        });
-
-        // FAQ
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.faq-item');
-                const open = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                if (!open) item.classList.add('open');
-            });
-        });
-    </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/site.js"></script>
+<script>AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
-
 </html>
