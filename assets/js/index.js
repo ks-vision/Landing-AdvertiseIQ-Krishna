@@ -1,5 +1,12 @@
 
 const container = document.getElementById('canvas-container');
+if (!container) { console.warn('canvas-container not found, skipping Three.js init'); throw new Error('canvas-container missing'); }
+
+// Check WebGL support before proceeding
+const testCanvas = document.createElement('canvas');
+const gl = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
+if (!gl) { console.warn('WebGL not supported, skipping Three.js init'); throw new Error('WebGL unavailable'); }
+
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x020205, 0.002);
 
