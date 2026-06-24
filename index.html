@@ -1,1426 +1,1278 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdvertiseIQ — AI-Powered Amazon Advertising Platform</title>
-    <meta
-      name="description"
-      content="AdvertiseIQ is the AI-powered Amazon advertising platform that helps brands scale faster with smart bidding, keyword intelligence, and inventory protection."
-    />
-    <link rel="icon" href="./assets/img/favicon.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/globe.css" />
-  </head>
-  <body>
-    <!-- ===== PAGE LOADER ===== -->
-    <div id="page-loader">
-      <div class="loader-logo">
-        <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo" />
-      </div>
-      <div class="loader-spinner"></div>
-      <div class="loader-text">Loading AdvertiseIQ…</div>
-      <div class="loader-progress-bar">
-        <div class="loader-progress-fill"></div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdvertiseIQ — AI-Powered Amazon Advertising Platform</title>
+  <meta name="description"
+    content="AdvertiseIQ is the AI-powered Amazon advertising platform that helps brands scale faster with smart bidding, keyword intelligence, and inventory protection." />
+  <link rel="icon" href="./assets/img/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/globe.css" />
+</head>
+
+<body>
+  <!-- ===== PAGE LOADER ===== -->
+  <div id="page-loader">
+    <div class="loader-logo">
+      <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo" />
     </div>
-
-    <!-- ===== WAVY BACKGROUND ===== -->
-    <canvas id="wavyBgCanvas" class="wavy-bg-canvas"></canvas>
-
-    <!-- ===== AURORA BG ===== -->
-    <div class="aurora-bg">
-      <div class="aurora-blob blob1"></div>
-      <div class="aurora-blob blob2"></div>
-      <div class="aurora-blob blob3"></div>
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading AdvertiseIQ…</div>
+    <div class="loader-progress-bar">
+      <div class="loader-progress-fill"></div>
     </div>
+  </div>
 
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="main-nav" id="mainNav">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img
-            src="assets/img/logo.svg"
-            alt="AdvertiseIQ"
-            class="logo-img"
-            id="navLogo"
-            onerror="this.style.display='none'"
-          />
-        </a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about-us.html">About</a>
-          <a href="contact-us.html">Contact</a>
-        </div>
-        <div class="nav-actions">
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            aria-label="Toggle theme"
-          >
-            <i class="bi bi-sun-fill" id="themeIcon"></i>
-          </button>
-          <a
-            target="_blank"
-            href="https://app.advertiseiq.co"
-            class="btn-nav-secondary"
-            >Log In</a
-          >
-          <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-          <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
-      </div>
-      <div class="nav-mobile" id="navMobile">
+  <!-- ===== WAVY BACKGROUND ===== -->
+  <canvas id="wavyBgCanvas" class="wavy-bg-canvas"></canvas>
+
+  <!-- ===== AURORA BG ===== -->
+  <div class="aurora-bg">
+    <div class="aurora-blob blob1"></div>
+    <div class="aurora-blob blob2"></div>
+    <div class="aurora-blob blob3"></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+          onerror="this.style.display='none'" />
+      </a>
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="pricing.html">Pricing</a>
         <a href="about-us.html">About</a>
         <a href="contact-us.html">Contact</a>
-        <a
-          href="contact-us.html"
-          class="btn-nav-primary"
-          style="text-align: center"
-          >Start Free Trial</a
-        >
       </div>
-    </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="bi bi-sun-fill" id="themeIcon"></i>
+        </button>
+        <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+        <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="contact-us.html" class="btn-nav-primary" style="text-align: center">Start Free Trial</a>
+    </div>
+  </nav>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero-section">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Trusted by 500+ Amazon Brands
-          </div>
-          <h1>
-            Scale Your Amazon Ads with
-            <span class="gradient-text">AI-Powered</span>
-            <span id="heroTypewriter" class="gradient-text typewriter-wrap"
-              >Precision</span
-            >
-          </h1>
-          <p class="hero-sub">
-            Smart bidding, keyword intelligence, inventory protection, and
-            analytics — all in one platform built to maximize your Amazon ROI.
-          </p>
-          <div class="hero-ctas">
-            <a href="contact-us.html" class="btn-primary btn-lg"
-              >Start Free Trial <i class="bi bi-arrow-right"></i
-            ></a>
-            <a href="features.html" class="btn-secondary btn-lg"
-              ><i class="bi bi-play-circle-fill"></i> See Features</a
-            >
-          </div>
-          <div class="hero-trust">
-            <span>No credit card required</span>
-            <span class="trust-dot"></span>
-            <span>14-day free trial</span>
-            <span class="trust-dot"></span>
-            <span>Cancel anytime</span>
-          </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Trusted by 500+ Amazon Brands
         </div>
-        <div class="hero-visual globe-wrap">
-          <!-- Orbit rings (CSS decorative) -->
-          <div class="globe-orbit-ring ring1"></div>
-          <div class="globe-orbit-ring ring2"></div>
-          <div class="globe-orbit-ring ring3"></div>
-
-          <!-- Globe canvas container -->
-          <div class="globe-canvas-wrap">
-            <canvas id="globeCanvas"></canvas>
-
-            <!-- AI Core CSS glow overlay -->
-            <div class="ai-core-glow"></div>
-
-            <!-- AI Core label -->
-            <div class="ai-core-label">
-              <span>AI&nbsp;ENGINE&nbsp;ACTIVE</span>
-            </div>
-
-            <!-- Floating metric cards -->
-            <div class="globe-card gc-top-left">
-              <div class="globe-card-val">ROAS +32%</div>
-              <div class="globe-card-lbl">
-                <span class="globe-card-dot"></span>Live bidding
-              </div>
-            </div>
-            <div class="globe-card gc-top-right">
-              <div class="globe-card-val">ACoS −18%</div>
-              <div class="globe-card-lbl">
-                <span class="globe-card-dot"></span>Optimized
-              </div>
-            </div>
-            <div class="globe-card gc-mid-left">
-              <div class="globe-card-val">50K+</div>
-              <div class="globe-card-lbl">Keywords</div>
-            </div>
-            <div class="globe-card gc-mid-right">
-              <div class="globe-card-val">10K+</div>
-              <div class="globe-card-lbl">Campaigns</div>
-            </div>
-            <div class="globe-card gc-bot-left">
-              <div class="globe-card-val">Rev +41%</div>
-              <div class="globe-card-lbl">
-                <span class="globe-card-dot"></span>This month
-              </div>
-            </div>
-          </div>
+        <h1>
+          Scale Your Amazon Ads with
+          <span class="gradient-text">AI-Powered</span>
+          <span id="heroTypewriter" class="gradient-text typewriter-wrap">Precision</span>
+        </h1>
+        <p class="hero-sub">
+          Smart bidding, keyword intelligence, inventory protection, and
+          analytics — all in one platform built to maximize your Amazon ROI.
+        </p>
+        <div class="hero-ctas">
+          <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+          <a href="features.html" class="btn-secondary btn-lg"><i class="bi bi-play-circle-fill"></i> See Features</a>
+        </div>
+        <div class="hero-trust">
+          <span>No credit card required</span>
+          <span class="trust-dot"></span>
+          <span>14-day free trial</span>
+          <span class="trust-dot"></span>
+          <span>Cancel anytime</span>
         </div>
       </div>
-    </section>
+      <div class="hero-visual globe-wrap">
+        <!-- Orbit rings (CSS decorative) -->
+        <div class="globe-orbit-ring ring1"></div>
+        <div class="globe-orbit-ring ring2"></div>
+        <div class="globe-orbit-ring ring3"></div>
 
-    <!-- ===== STATS BAR ===== -->
-    <section class="stats-section">
-      <div class="stats-wrapper">
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
-          <div class="stat-number">$2.8B+</div>
-          <div class="stat-label">Ad Spend Managed</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="80">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Active Brands</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="160">
-          <div class="stat-number">3.2x</div>
-          <div class="stat-label">Average ROAS</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="240">
-          <div class="stat-number">47%</div>
-          <div class="stat-label">ACOS Reduction</div>
-        </div>
-      </div>
-    </section>
+        <!-- Globe canvas container -->
+        <div class="globe-canvas-wrap">
+          <canvas id="globeCanvas"></canvas>
 
-    <!-- ===== MARQUEE ===== -->
-    <div class="marquee-section">
-      <p class="marquee-label">
-        Trusted by brands across every Amazon category
-      </p>
-      <div class="marquee-track-wrap">
-        <div class="marquee-track">
-          <span class="marquee-item">Amazon Sellers</span>
-          <span class="marquee-item">FBA Brands</span>
-          <span class="marquee-item">D2C Labels</span>
-          <span class="marquee-item">Private Label</span>
-          <span class="marquee-item">Retail Brands</span>
-          <span class="marquee-item">Agencies</span>
-          <span class="marquee-item">Enterprise</span>
-          <span class="marquee-item">Startups</span>
-          <span class="marquee-item">Health & Beauty</span>
-          <span class="marquee-item">Electronics</span>
-          <span class="marquee-item">Home & Garden</span>
-          <span class="marquee-item">Sports & Outdoors</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="marquee-item">Amazon Sellers</span>
-          <span class="marquee-item">FBA Brands</span>
-          <span class="marquee-item">D2C Labels</span>
-          <span class="marquee-item">Private Label</span>
-          <span class="marquee-item">Retail Brands</span>
-          <span class="marquee-item">Agencies</span>
-          <span class="marquee-item">Enterprise</span>
-          <span class="marquee-item">Startups</span>
-          <span class="marquee-item">Health & Beauty</span>
-          <span class="marquee-item">Electronics</span>
-          <span class="marquee-item">Home & Garden</span>
-          <span class="marquee-item">Sports & Outdoors</span>
+          <!-- AI Core CSS glow overlay -->
+          <div class="ai-core-glow"></div>
+
+          <!-- AI Core label -->
+          <div class="ai-core-label">
+            <span>AI&nbsp;ENGINE&nbsp;ACTIVE</span>
+          </div>
+
+          <!-- Floating metric cards -->
+          <div class="globe-card gc-top-left">
+            <div class="globe-card-val">ROAS +32%</div>
+            <div class="globe-card-lbl">
+              <span class="globe-card-dot"></span>Live bidding
+            </div>
+          </div>
+          <div class="globe-card gc-top-right">
+            <div class="globe-card-val">ACoS −18%</div>
+            <div class="globe-card-lbl">
+              <span class="globe-card-dot"></span>Optimized
+            </div>
+          </div>
+          <div class="globe-card gc-mid-left">
+            <div class="globe-card-val">50K+</div>
+            <div class="globe-card-lbl">Keywords</div>
+          </div>
+          <div class="globe-card gc-mid-right">
+            <div class="globe-card-val">10K+</div>
+            <div class="globe-card-lbl">Campaigns</div>
+          </div>
+          <div class="globe-card gc-bot-left">
+            <div class="globe-card-val">Rev +41%</div>
+            <div class="globe-card-lbl">
+              <span class="globe-card-dot"></span>This month
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ===== PROS & CONS (VS SECTION) ===== -->
-    <section class="vs-section">
-      <div class="vs-wrapper">
-        <div class="vs-header" data-aos="fade-up">
-          <div class="section-tag">THE PROBLEM &amp; THE SOLUTION</div>
-          <h2>Stop Losing Money on <span class="gradient-text">Guesswork</span></h2>
-          <p>Most Amazon sellers manage ads manually. AdvertiseIQ replaces every manual task with intelligent automation.</p>
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-section">
+    <div class="stats-wrapper">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-number">$2.8B+</div>
+        <div class="stat-label">Ad Spend Managed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="80">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Active Brands</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="160">
+        <div class="stat-number">3.2x</div>
+        <div class="stat-label">Average ROAS</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="240">
+        <div class="stat-number">47%</div>
+        <div class="stat-label">ACOS Reduction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-section">
+    <p class="marquee-label">
+      Trusted by brands across every Amazon category
+    </p>
+    <div class="marquee-track-wrap">
+      <div class="marquee-track">
+        <span class="marquee-item">Amazon Sellers</span>
+        <span class="marquee-item">FBA Brands</span>
+        <span class="marquee-item">D2C Labels</span>
+        <span class="marquee-item">Private Label</span>
+        <span class="marquee-item">Retail Brands</span>
+        <span class="marquee-item">Agencies</span>
+        <span class="marquee-item">Enterprise</span>
+        <span class="marquee-item">Startups</span>
+        <span class="marquee-item">Health & Beauty</span>
+        <span class="marquee-item">Electronics</span>
+        <span class="marquee-item">Home & Garden</span>
+        <span class="marquee-item">Sports & Outdoors</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item">Amazon Sellers</span>
+        <span class="marquee-item">FBA Brands</span>
+        <span class="marquee-item">D2C Labels</span>
+        <span class="marquee-item">Private Label</span>
+        <span class="marquee-item">Retail Brands</span>
+        <span class="marquee-item">Agencies</span>
+        <span class="marquee-item">Enterprise</span>
+        <span class="marquee-item">Startups</span>
+        <span class="marquee-item">Health & Beauty</span>
+        <span class="marquee-item">Electronics</span>
+        <span class="marquee-item">Home & Garden</span>
+        <span class="marquee-item">Sports & Outdoors</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROS & CONS (VS SECTION) ===== -->
+  <section class="vs-section">
+    <div class="vs-wrapper">
+      <div class="vs-header" data-aos="fade-up">
+        <div class="section-tag">THE PROBLEM &amp; THE SOLUTION</div>
+        <h2>Stop Losing Money on <span class="gradient-text">Guesswork</span></h2>
+        <p>Most Amazon sellers manage ads manually. AdvertiseIQ replaces every manual task with intelligent automation.
+        </p>
+      </div>
+
+      <div class="vs-layout">
+        <!-- LEFT — Challenges -->
+        <div class="vs-col vs-col-challenges" data-aos="fade-right">
+          <div class="vs-col-head">
+            <i class="bi bi-x-circle-fill"></i>
+            <h3>The Challenges You Face</h3>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-graph-down-arrow"></i></div>
+            <div class="vs-item-text">High ACoS &amp; Low ROAS eating into your margins</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-currency-dollar"></i></div>
+            <div class="vs-item-text">Budget waste &amp; overspending on poor-performing keywords</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-sliders"></i></div>
+            <div class="vs-item-text">Manual bid adjustments consuming hours every week</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-search"></i></div>
+            <div class="vs-item-text">Poor keyword management missing profitable opportunities</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-box-seam"></i></div>
+            <div class="vs-item-text">Inventory stockouts killing your ranking &amp; revenue</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <div class="vs-item-text">Difficult to scale profitably beyond a handful of campaigns</div>
+          </div>
         </div>
 
-        <div class="vs-layout">
-          <!-- LEFT — Challenges -->
-          <div class="vs-col vs-col-challenges" data-aos="fade-right">
-            <div class="vs-col-head">
-              <i class="bi bi-x-circle-fill"></i>
-              <h3>The Challenges You Face</h3>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-graph-down-arrow"></i></div>
-              <div class="vs-item-text">High ACoS &amp; Low ROAS eating into your margins</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-currency-dollar"></i></div>
-              <div class="vs-item-text">Budget waste &amp; overspending on poor-performing keywords</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-sliders"></i></div>
-              <div class="vs-item-text">Manual bid adjustments consuming hours every week</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-search"></i></div>
-              <div class="vs-item-text">Poor keyword management missing profitable opportunities</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-box-seam"></i></div>
-              <div class="vs-item-text">Inventory stockouts killing your ranking &amp; revenue</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-bar-chart-line"></i></div>
-              <div class="vs-item-text">Difficult to scale profitably beyond a handful of campaigns</div>
-            </div>
+        <!-- CENTER — Orb -->
+        <div class="vs-center" data-aos="zoom-in">
+          <div class="vs-arrows">
+            <div class="vs-arrow vs-arrow-left"></div>
           </div>
-
-          <!-- CENTER — Orb -->
-          <div class="vs-center" data-aos="zoom-in">
-            <div class="vs-arrows">
-              <div class="vs-arrow vs-arrow-left"></div>
-            </div>
-            <div class="vs-orb">
-              <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" class="vs-orb-logo" onerror="this.style.display='none'">
-              <span class="vs-orb-name">AdvertiseIQ</span>
-              <span class="vs-orb-sub">AI-Powered<br>Automation</span>
-            </div>
-            <div class="vs-arrows">
-              <div class="vs-arrow vs-arrow-right"></div>
-            </div>
+          <div class="vs-orb">
+            <span class="vs-orb-name">AdvertiseIQ</span>
+            <span class="vs-orb-sub">AI-Powered<br>Automation</span>
           </div>
+          <div class="vs-arrows">
+            <div class="vs-arrow vs-arrow-right"></div>
+          </div>
+        </div>
 
-          <!-- RIGHT — How AIQ Helps -->
-          <div class="vs-col vs-col-helps" data-aos="fade-left">
-            <div class="vs-col-head">
-              <i class="bi bi-check-circle-fill"></i>
-              <h3>How AdvertiseIQ Helps</h3>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-lightning-charge-fill"></i></div>
-              <div class="vs-item-text">AI Bid Automation — smart bids set and adjusted in real-time</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-pie-chart-fill"></i></div>
-              <div class="vs-item-text">Smart Budget Optimization — zero waste, maximum ROI</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-cpu-fill"></i></div>
-              <div class="vs-item-text">Advanced Keyword Intelligence — discover high-value terms automatically</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-shield-fill-check"></i></div>
-              <div class="vs-item-text">Inventory &amp; Stock Protection — proactive alerts before stockouts</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-clock-fill"></i></div>
-              <div class="vs-item-text">Dayparting &amp; Placement Automation — show ads at peak hours only</div>
-            </div>
-            <div class="vs-item">
-              <div class="vs-item-icon"><i class="bi bi-rocket-fill"></i></div>
-              <div class="vs-item-text">Profit-Driven Growth Strategies — scale revenue without scaling costs</div>
-            </div>
+        <!-- RIGHT — How AIQ Helps -->
+        <div class="vs-col vs-col-helps" data-aos="fade-left">
+          <div class="vs-col-head">
+            <i class="bi bi-check-circle-fill"></i>
+            <h3>How AdvertiseIQ Helps</h3>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+            <div class="vs-item-text">AI Bid Automation — smart bids set and adjusted in real-time</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-pie-chart-fill"></i></div>
+            <div class="vs-item-text">Smart Budget Optimization — zero waste, maximum ROI</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-cpu-fill"></i></div>
+            <div class="vs-item-text">Advanced Keyword Intelligence — discover high-value terms automatically</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-shield-fill-check"></i></div>
+            <div class="vs-item-text">Inventory &amp; Stock Protection — proactive alerts before stockouts</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-clock-fill"></i></div>
+            <div class="vs-item-text">Dayparting &amp; Placement Automation — show ads at peak hours only</div>
+          </div>
+          <div class="vs-item">
+            <div class="vs-item-icon"><i class="bi bi-rocket-fill"></i></div>
+            <div class="vs-item-text">Profit-Driven Growth Strategies — scale revenue without scaling costs</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== PROCESS FLOW ===== -->
-    <section class="flow-section">
-      <div class="flow-wrapper">
-        <div class="flow-header" data-aos="fade-up">
-          <div class="section-tag">AUTOMATION THAT WORKS FOR YOU</div>
-          <h2>Smarter Automation. <span class="gradient-text">Better Results.</span></h2>
-          <p>Six steps from connection to profit — fully automated, zero manual effort.</p>
-        </div>
-
-        <div class="flow-track" data-aos="fade-up" data-aos-delay="100">
-
-          <!-- Step 1 -->
-          <div class="flow-step">
-            <div class="flow-step-num">01</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-plug-fill"></i>
-            </div>
-            <div class="flow-step-title">Connect Amazon Account</div>
-            <div class="flow-step-desc">One-click secure OAuth connection to your Seller Central</div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="flow-step">
-            <div class="flow-step-num">02</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-arrow-repeat"></i>
-            </div>
-            <div class="flow-step-title">Sync Your Data</div>
-            <div class="flow-step-desc">Campaigns, keywords, budgets and sales imported automatically</div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="flow-step">
-            <div class="flow-step-num">03</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-cpu"></i>
-            </div>
-            <div class="flow-step-title">AI Analysis</div>
-            <div class="flow-step-desc">Our engine identifies opportunities, waste and growth signals</div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="flow-step">
-            <div class="flow-step-num">04</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-toggles"></i>
-            </div>
-            <div class="flow-step-title">Automation Triggers</div>
-            <div class="flow-step-desc">Rules fire 24/7 — bids, budgets and placements self-adjust</div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="flow-step">
-            <div class="flow-step-num">05</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-graph-up-arrow"></i>
-            </div>
-            <div class="flow-step-title">Optimize Campaigns</div>
-            <div class="flow-step-desc">Continuous improvement loop — every decision gets smarter</div>
-          </div>
-
-          <!-- Step 6 -->
-          <div class="flow-step">
-            <div class="flow-step-num">06</div>
-            <div class="flow-icon-wrap">
-              <i class="bi bi-currency-dollar"></i>
-            </div>
-            <div class="flow-step-title">Revenue Growth</div>
-            <div class="flow-step-desc">Higher ROAS, lower ACoS, more profit — on autopilot</div>
-          </div>
-
-        </div>
+  <!-- ===== PROCESS FLOW ===== -->
+  <section class="flow-section">
+    <div class="flow-wrapper">
+      <div class="flow-header" data-aos="fade-up">
+        <div class="section-tag">AUTOMATION THAT WORKS FOR YOU</div>
+        <h2>Smarter Automation. <span class="gradient-text">Better Results.</span></h2>
+        <p>Six steps from connection to profit — fully automated, zero manual effort.</p>
       </div>
-    </section>
 
-    <!-- ===== FEATURES ===== -->
-    <section class="features-section">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">PLATFORM CAPABILITIES</div>
-          <h2>Everything You Need to<br />Scale on Amazon</h2>
-          <p>
-            Manage campaigns, optimize keywords, protect inventory, and maximize
-            profitability from a single intelligent platform.
-          </p>
+      <div class="flow-track" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Step 1 -->
+        <div class="flow-step">
+          <div class="flow-step-num">01</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-plug-fill"></i>
+          </div>
+          <div class="flow-step-title">Connect Amazon Account</div>
+          <div class="flow-step-desc">One-click secure OAuth connection to your Seller Central</div>
         </div>
-        <div class="features-bento">
-          <!-- Feature Card 1 -->
-          <div
-            class="feature-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="0"
-          >
-            <div class="feature-card-viz viz-campaign">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
-            <div class="feature-card-body">
-              <div class="feature-icon purple">
-                <i class="bi bi-lightning-charge-fill"></i>
-              </div>
-              <h3>Campaign Automation</h3>
-              <p>
-                AI automatically manages bids, budgets, placements, and campaign
-                optimization 24/7 without manual intervention.
-              </p>
-              <ul class="feature-list">
-                <li>
-                  <i class="bi bi-check2-circle"></i> Smart Bid Adjustments
-                </li>
-                <li><i class="bi bi-check2-circle"></i> Budget Automation</li>
-                <li><i class="bi bi-check2-circle"></i> Campaign Scheduling</li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> Performance-Based Rules
-                </li>
-              </ul>
-              <div class="feature-metric purple-metric">+32% ROAS</div>
-            </div>
-          </div>
 
-          <!-- Feature Card 2 -->
-          <div
-            class="feature-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="80"
-          >
-            <div class="feature-card-viz viz-keyword">
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="line line-1"></div>
-              <div class="line line-2"></div>
-            </div>
-            <div class="feature-card-body">
-              <div class="feature-icon orange">
-                <i class="bi bi-search"></i>
-              </div>
-              <h3>Keyword Intelligence</h3>
-              <p>
-                Discover profitable search terms, identify wasted spend, and
-                uncover competitor keyword opportunities.
-              </p>
-              <ul class="feature-list">
-                <li>
-                  <i class="bi bi-check2-circle"></i> Search Term Analysis
-                </li>
-                <li><i class="bi bi-check2-circle"></i> Keyword Suggestions</li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> Auto Targeting Insights
-                </li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> Competitor Discovery
-                </li>
-              </ul>
-              <div class="feature-metric orange-metric">-41% Wasted Spend</div>
-            </div>
+        <!-- Step 2 -->
+        <div class="flow-step">
+          <div class="flow-step-num">02</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-arrow-repeat"></i>
           </div>
-
-          <!-- Feature Card 3 -->
-          <div
-            class="feature-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="160"
-          >
-            <div class="feature-card-viz viz-inventory">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
-            <div class="feature-card-body">
-              <div class="feature-icon green">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h3>Inventory Protection</h3>
-              <p>
-                Monitor FBA and FBM inventory levels and receive proactive
-                alerts before stock issues impact sales.
-              </p>
-              <ul class="feature-list">
-                <li><i class="bi bi-check2-circle"></i> Low Stock Alerts</li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> Sales Drop Detection
-                </li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> FBA & FBM Monitoring
-                </li>
-                <li>
-                  <i class="bi bi-check2-circle"></i> Inventory Forecasting
-                </li>
-              </ul>
-              <div class="feature-metric green-metric">-28% Stockouts</div>
-            </div>
-          </div>
+          <div class="flow-step-title">Sync Your Data</div>
+          <div class="flow-step-desc">Campaigns, keywords, budgets and sales imported automatically</div>
         </div>
+
+        <!-- Step 3 -->
+        <div class="flow-step">
+          <div class="flow-step-num">03</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-cpu"></i>
+          </div>
+          <div class="flow-step-title">AI Analysis</div>
+          <div class="flow-step-desc">Our engine identifies opportunities, waste and growth signals</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flow-step">
+          <div class="flow-step-num">04</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-toggles"></i>
+          </div>
+          <div class="flow-step-title">Automation Triggers</div>
+          <div class="flow-step-desc">Rules fire 24/7 — bids, budgets and placements self-adjust</div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flow-step">
+          <div class="flow-step-num">05</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <div class="flow-step-title">Optimize Campaigns</div>
+          <div class="flow-step-desc">Continuous improvement loop — every decision gets smarter</div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="flow-step">
+          <div class="flow-step-num">06</div>
+          <div class="flow-icon-wrap">
+            <i class="bi bi-currency-dollar"></i>
+          </div>
+          <div class="flow-step-title">Revenue Growth</div>
+          <div class="flow-step-desc">Higher ROAS, lower ACoS, more profit — on autopilot</div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== WORKFLOW TIMELINE ===== -->
-    <section class="timeline-section">
-      <div class="section-wrapper">
-        <div class="timeline-layout">
-          <div class="timeline-left" data-aos="fade-right">
-            <div class="section-tag">HOW IT WORKS</div>
-            <h2>
-              Automate Every
-              <span class="gradient-text">Optimization Decision</span>
-            </h2>
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">PLATFORM CAPABILITIES</div>
+        <h2>Everything You Need to<br />Scale on Amazon</h2>
+        <p>
+          Manage campaigns, optimize keywords, protect inventory, and maximize
+          profitability from a single intelligent platform.
+        </p>
+      </div>
+      <div class="features-bento">
+        <!-- Feature Card 1 -->
+        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
+          <div class="feature-card-viz viz-campaign">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="feature-card-body">
+            <div class="feature-icon purple">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <h3>Campaign Automation</h3>
             <p>
-              Set your logic once, and let our engine handle the heavy lifting.
-              Watch your campaigns optimize themselves in real-time, 24/7.
+              AI automatically manages bids, budgets, placements, and campaign
+              optimization 24/7 without manual intervention.
             </p>
-            <a
-              href="contact-us.html"
-              class="btn-primary"
-              style="
+            <ul class="feature-list">
+              <li>
+                <i class="bi bi-check2-circle"></i> Smart Bid Adjustments
+              </li>
+              <li><i class="bi bi-check2-circle"></i> Budget Automation</li>
+              <li><i class="bi bi-check2-circle"></i> Campaign Scheduling</li>
+              <li>
+                <i class="bi bi-check2-circle"></i> Performance-Based Rules
+              </li>
+            </ul>
+            <div class="feature-metric purple-metric">+32% ROAS</div>
+          </div>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="80">
+          <div class="feature-card-viz viz-keyword">
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+          </div>
+          <div class="feature-card-body">
+            <div class="feature-icon orange">
+              <i class="bi bi-search"></i>
+            </div>
+            <h3>Keyword Intelligence</h3>
+            <p>
+              Discover profitable search terms, identify wasted spend, and
+              uncover competitor keyword opportunities.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <i class="bi bi-check2-circle"></i> Search Term Analysis
+              </li>
+              <li><i class="bi bi-check2-circle"></i> Keyword Suggestions</li>
+              <li>
+                <i class="bi bi-check2-circle"></i> Auto Targeting Insights
+              </li>
+              <li>
+                <i class="bi bi-check2-circle"></i> Competitor Discovery
+              </li>
+            </ul>
+            <div class="feature-metric orange-metric">-41% Wasted Spend</div>
+          </div>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="160">
+          <div class="feature-card-viz viz-inventory">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="feature-card-body">
+            <div class="feature-icon green">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3>Inventory Protection</h3>
+            <p>
+              Monitor FBA and FBM inventory levels and receive proactive
+              alerts before stock issues impact sales.
+            </p>
+            <ul class="feature-list">
+              <li><i class="bi bi-check2-circle"></i> Low Stock Alerts</li>
+              <li>
+                <i class="bi bi-check2-circle"></i> Sales Drop Detection
+              </li>
+              <li>
+                <i class="bi bi-check2-circle"></i> FBA & FBM Monitoring
+              </li>
+              <li>
+                <i class="bi bi-check2-circle"></i> Inventory Forecasting
+              </li>
+            </ul>
+            <div class="feature-metric green-metric">-28% Stockouts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORKFLOW TIMELINE ===== -->
+  <section class="timeline-section">
+    <div class="section-wrapper">
+      <div class="timeline-layout">
+        <div class="timeline-left" data-aos="fade-right">
+          <div class="section-tag">HOW IT WORKS</div>
+          <h2>
+            Automate Every
+            <span class="gradient-text">Optimization Decision</span>
+          </h2>
+          <p>
+            Set your logic once, and let our engine handle the heavy lifting.
+            Watch your campaigns optimize themselves in real-time, 24/7.
+          </p>
+          <a href="contact-us.html" class="btn-primary" style="
                 margin-top: 32px;
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-              "
-            >
-              See How It Works <i class="bi bi-arrow-right"></i>
-            </a>
+              ">
+            See How It Works <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+        <div class="timeline-right" data-aos="fade-left">
+          <div class="timeline-item">
+            <div class="timeline-marker"><span>01</span></div>
+            <div class="timeline-card">
+              <h4>Keyword Found</h4>
+              <p>
+                AI identifies a high-converting search term from your live
+                campaign data.
+              </p>
+            </div>
           </div>
-          <div class="timeline-right" data-aos="fade-left">
-            <div class="timeline-item">
-              <div class="timeline-marker"><span>01</span></div>
-              <div class="timeline-card">
-                <h4>Keyword Found</h4>
-                <p>
-                  AI identifies a high-converting search term from your live
-                  campaign data.
-                </p>
-              </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"><span>02</span></div>
+            <div class="timeline-card">
+              <h4>Rule Triggered</h4>
+              <p>
+                Your custom ROAS rules automatically evaluate the search term
+                performance.
+              </p>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-marker"><span>02</span></div>
-              <div class="timeline-card">
-                <h4>Rule Triggered</h4>
-                <p>
-                  Your custom ROAS rules automatically evaluate the search term
-                  performance.
-                </p>
-              </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"><span>03</span></div>
+            <div class="timeline-card">
+              <h4>Bid Optimized</h4>
+              <p>
+                System calculates and applies the perfect bid in real-time,
+                without delay.
+              </p>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-marker"><span>03</span></div>
-              <div class="timeline-card">
-                <h4>Bid Optimized</h4>
-                <p>
-                  System calculates and applies the perfect bid in real-time,
-                  without delay.
-                </p>
-              </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"><span>04</span></div>
+            <div class="timeline-card">
+              <h4>Top Placement</h4>
+              <p>
+                Your ad secures a Page 1 position at the optimal
+                cost-per-click.
+              </p>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-marker"><span>04</span></div>
-              <div class="timeline-card">
-                <h4>Top Placement</h4>
-                <p>
-                  Your ad secures a Page 1 position at the optimal
-                  cost-per-click.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item last">
-              <div class="timeline-marker"><span>05</span></div>
-              <div class="timeline-card">
-                <h4>Sales Increased</h4>
-                <p>
-                  Conversions skyrocket while ACOS drops consistently over time.
-                </p>
-              </div>
+          </div>
+          <div class="timeline-item last">
+            <div class="timeline-marker"><span>05</span></div>
+            <div class="timeline-card">
+              <h4>Sales Increased</h4>
+              <p>
+                Conversions skyrocket while ACOS drops consistently over time.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== SCROLL STACK (PLATFORM DEEP DIVE) ===== -->
-    <section class="sstack-outer" id="sstackSection">
-      <div class="sstack-header section-wrapper" data-aos="fade-up">
-        <div class="section-tag">THE PLATFORM</div>
-        <h2>
-          One Platform.<br />Every <span class="gradient-text">Advantage</span>.
-        </h2>
-        <p>
-          Scroll through each pillar of AdvertiseIQ and see exactly how the
-          system works for your Amazon business.
-        </p>
-      </div>
+  <!-- ===== SCROLL STACK (PLATFORM DEEP DIVE) ===== -->
+  <section class="sstack-outer" id="sstackSection">
+    <div class="sstack-header section-wrapper" data-aos="fade-up">
+      <div class="section-tag">THE PLATFORM</div>
+      <h2>
+        One Platform.<br />Every <span class="gradient-text">Advantage</span>.
+      </h2>
+      <p>
+        Scroll through each pillar of AdvertiseIQ and see exactly how the
+        system works for your Amazon business.
+      </p>
+    </div>
 
-      <!-- Tall scroll track (5 panels × 100vh) -->
-      <div class="sstack-track" style="height: 500vh">
-        <div class="sstack-sticky">
-          <div class="sstack-grid">
-            <!-- Left nav panel -->
-            <div class="sstack-left-panel">
-              <div class="sstack-nav" id="sstackNav">
-                <div class="sstack-nav-item active" data-idx="0">
-                  <span class="sni-dot"></span> Campaign Automation
-                </div>
-                <div class="sstack-nav-item" data-idx="1">
-                  <span class="sni-dot"></span> Bid Optimization
-                </div>
-                <div class="sstack-nav-item" data-idx="2">
-                  <span class="sni-dot"></span> Keyword Intelligence
-                </div>
-                <div class="sstack-nav-item" data-idx="3">
-                  <span class="sni-dot"></span> Inventory Protection
-                </div>
-                <div class="sstack-nav-item" data-idx="4">
-                  <span class="sni-dot"></span> Analytics & Reporting
-                </div>
+    <!-- Tall scroll track (5 panels × 100vh) -->
+    <div class="sstack-track" style="height: 500vh">
+      <div class="sstack-sticky">
+        <div class="sstack-grid">
+          <!-- Left nav panel -->
+          <div class="sstack-left-panel">
+            <div class="sstack-nav" id="sstackNav">
+              <div class="sstack-nav-item active" data-idx="0">
+                <span class="sni-dot"></span> Campaign Automation
               </div>
-              <a
-                href="features.html"
-                class="btn-secondary"
-                style="
+              <div class="sstack-nav-item" data-idx="1">
+                <span class="sni-dot"></span> Bid Optimization
+              </div>
+              <div class="sstack-nav-item" data-idx="2">
+                <span class="sni-dot"></span> Keyword Intelligence
+              </div>
+              <div class="sstack-nav-item" data-idx="3">
+                <span class="sni-dot"></span> Inventory Protection
+              </div>
+              <div class="sstack-nav-item" data-idx="4">
+                <span class="sni-dot"></span> Analytics & Reporting
+              </div>
+            </div>
+            <a href="features.html" class="btn-secondary" style="
                   margin-top: 32px;
                   display: inline-flex;
                   align-items: center;
                   gap: 8px;
                   font-size: 0.875rem;
-                "
-              >
-                View All Features <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
+                ">
+              View All Features <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
 
-            <!-- Right card stage -->
-            <div class="sstack-card-stage">
-              <!-- Card 0: Campaign Automation -->
-              <div class="sstack-card scard-active">
-                <div class="sc-num">01 / 05</div>
-                <div class="sc-icon ic-purple">
-                  <i class="bi bi-lightning-charge-fill"></i>
+          <!-- Right card stage -->
+          <div class="sstack-card-stage">
+            <!-- Card 0: Campaign Automation -->
+            <div class="sstack-card scard-active">
+              <div class="sc-num">01 / 05</div>
+              <div class="sc-icon ic-purple">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <h4>Campaign Automation</h4>
+              <p class="sc-desc">
+                AI manages bids, budgets, placements, and rules 24/7 —
+                adjusting in real-time so you always stay profitable without
+                lifting a finger.
+              </p>
+              <div class="sc-pills">
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Smart Bid Rules
                 </div>
-                <h4>Campaign Automation</h4>
-                <p class="sc-desc">
-                  AI manages bids, budgets, placements, and rules 24/7 —
-                  adjusting in real-time so you always stay profitable without
-                  lifting a finger.
-                </p>
-                <div class="sc-pills">
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Smart Bid Rules
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Budget Automation
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Dayparting
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Campaign Scheduling
-                  </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Budget Automation
                 </div>
-                <div class="sc-metric-row">
-                  <div class="sc-metric-val">+32%</div>
-                  <div class="sc-metric-lbl">
-                    Average ROAS<br />improvement in 30 days
-                  </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Dayparting
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Campaign Scheduling
                 </div>
               </div>
-
-              <!-- Card 1: Bid Optimization -->
-              <div class="sstack-card scard-behind-1">
-                <div class="sc-num">02 / 05</div>
-                <div class="sc-icon ic-blue"><i class="bi bi-robot"></i></div>
-                <h4>Bid Optimization</h4>
-                <p class="sc-desc">
-                  Our AI bidding engine adjusts your keyword and product bids in
-                  real-time based on conversion data, competition, and your
-                  target ACOS goals.
-                </p>
-                <div class="sc-pills">
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Real-Time Bidding
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Target ACOS
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Placement Boosts
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> AI Decision Engine
-                  </div>
-                </div>
-                <div class="sc-metric-row">
-                  <div class="sc-metric-val">-21%</div>
-                  <div class="sc-metric-lbl">
-                    ACOS reduction<br />within first 2 weeks
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2: Keyword Intelligence -->
-              <div class="sstack-card scard-behind-2">
-                <div class="sc-num">03 / 05</div>
-                <div class="sc-icon ic-orange">
-                  <i class="bi bi-search"></i>
-                </div>
-                <h4>Keyword Intelligence</h4>
-                <p class="sc-desc">
-                  Discover hidden search terms, harvest converting keywords,
-                  identify wasted spend, and uncover competitor keyword gaps
-                  automatically.
-                </p>
-                <div class="sc-pills">
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Search Term Mining
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Competitor Discovery
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Negative Keyword AI
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Rank Tracking
-                  </div>
-                </div>
-                <div class="sc-metric-row">
-                  <div class="sc-metric-val">-41%</div>
-                  <div class="sc-metric-lbl">
-                    Wasted ad spend<br />eliminated on average
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3: Inventory Protection -->
-              <div class="sstack-card">
-                <div class="sc-num">04 / 05</div>
-                <div class="sc-icon ic-green">
-                  <i class="bi bi-shield-check"></i>
-                </div>
-                <h4>Inventory Protection</h4>
-                <p class="sc-desc">
-                  AdvertiseIQ monitors your FBA and FBM stock levels and
-                  automatically pauses ads before you run out — protecting your
-                  organic rank and budget.
-                </p>
-                <div class="sc-pills">
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Low Stock Alerts
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Auto-Pause Ads
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> FBA + FBM Monitor
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Stock Forecasting
-                  </div>
-                </div>
-                <div class="sc-metric-row">
-                  <div class="sc-metric-val">-28%</div>
-                  <div class="sc-metric-lbl">
-                    Stockout rate<br />reduction across brands
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 4: Analytics -->
-              <div class="sstack-card">
-                <div class="sc-num">05 / 05</div>
-                <div class="sc-icon ic-cyan">
-                  <i class="bi bi-graph-up-arrow"></i>
-                </div>
-                <h4>Analytics & Reporting</h4>
-                <p class="sc-desc">
-                  A unified dashboard gives you real-time visibility into every
-                  metric — ROAS, ACOS, sales velocity, ad spend, and
-                  profitability — all in one place.
-                </p>
-                <div class="sc-pills">
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Real-Time Dashboard
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Profit Analytics
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Custom Reports
-                  </div>
-                  <div class="sc-pill">
-                    <i class="bi bi-check2-circle"></i> Multi-Market View
-                  </div>
-                </div>
-                <div class="sc-metric-row">
-                  <div class="sc-metric-val">3.2x</div>
-                  <div class="sc-metric-lbl">
-                    Average ROAS<br />across all clients
-                  </div>
+              <div class="sc-metric-row">
+                <div class="sc-metric-val">+32%</div>
+                <div class="sc-metric-lbl">
+                  Average ROAS<br />improvement in 30 days
                 </div>
               </div>
             </div>
-            <!-- /sstack-card-stage -->
-          </div>
-          <!-- /sstack-grid -->
-        </div>
-        <!-- /sstack-sticky -->
-      </div>
-      <!-- /sstack-track -->
-    </section>
 
-    <!-- ===== FEATURE SHOWCASE SLIDER ===== -->
-    <section class="showcase-section">
-      <div class="section-wrapper">
-        <div class="showcase-header-row" data-aos="fade-up">
-          <div>
-            <div class="section-tag">FULL TOOLKIT</div>
-            <h2 class="showcase-title">
-              Everything You Need to<br />Scale Amazon Sales
-            </h2>
-            <p class="showcase-sub">
-              Drag, swipe, or use the arrows to explore all features
-            </p>
-          </div>
-          <div class="showcase-arrows">
-            <button class="showcase-arrow" id="stackPrev">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="showcase-arrow" id="stackNext">
-              <i class="bi bi-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="stack-wrapper">
-          <div class="stack-track" id="stackTrack"></div>
-        </div>
-        <div class="stack-dots" id="stackDots"></div>
-      </div>
-    </section>
-
-    <!-- ===== PRODUCT SCREENSHOT ===== -->
-    <section class="screenshot-section">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">PRODUCT OVERVIEW</div>
-          <h2>Your Command Center<br />for Amazon Growth</h2>
-          <p>
-            A unified dashboard that gives you complete visibility and control
-            over every campaign, keyword, and dollar spent.
-          </p>
-        </div>
-        <div
-          class="screenshot-container"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div class="screenshot-glow"></div>
-          <div class="screenshot-frame">
-            <div class="frame-bar">
-              <span class="fd red"></span>
-              <span class="fd yellow"></span>
-              <span class="fd green"></span>
-              <span class="frame-url">app.advertiseiq.co/dashboard</span>
+            <!-- Card 1: Bid Optimization -->
+            <div class="sstack-card scard-behind-1">
+              <div class="sc-num">02 / 05</div>
+              <div class="sc-icon ic-blue"><i class="bi bi-robot"></i></div>
+              <h4>Bid Optimization</h4>
+              <p class="sc-desc">
+                Our AI bidding engine adjusts your keyword and product bids in
+                real-time based on conversion data, competition, and your
+                target ACOS goals.
+              </p>
+              <div class="sc-pills">
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Real-Time Bidding
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Target ACOS
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Placement Boosts
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> AI Decision Engine
+                </div>
+              </div>
+              <div class="sc-metric-row">
+                <div class="sc-metric-val">-21%</div>
+                <div class="sc-metric-lbl">
+                  ACOS reduction<br />within first 2 weeks
+                </div>
+              </div>
             </div>
-            <img
-              src="assets/img/dashboard-img.png"
-              alt="AdvertiseIQ Dashboard"
-              class="dashboard-img"
-              onerror="this.style.display='none'; document.getElementById('dash-placeholder').style.display='flex'"
-            />
-            <div class="dashboard-placeholder" id="dash-placeholder">
-              <i class="bi bi-display-fill"></i>
-              <p>AdvertiseIQ Dashboard</p>
+
+            <!-- Card 2: Keyword Intelligence -->
+            <div class="sstack-card scard-behind-2">
+              <div class="sc-num">03 / 05</div>
+              <div class="sc-icon ic-orange">
+                <i class="bi bi-search"></i>
+              </div>
+              <h4>Keyword Intelligence</h4>
+              <p class="sc-desc">
+                Discover hidden search terms, harvest converting keywords,
+                identify wasted spend, and uncover competitor keyword gaps
+                automatically.
+              </p>
+              <div class="sc-pills">
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Keyword Mining
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Competitor Discovery
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Negative Keyword
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Rank Tracking
+                </div>
+              </div>
+              <div class="sc-metric-row">
+                <div class="sc-metric-val">-41%</div>
+                <div class="sc-metric-lbl">
+                  Wasted ad spend<br />eliminated on average
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Inventory Protection -->
+            <div class="sstack-card">
+              <div class="sc-num">04 / 05</div>
+              <div class="sc-icon ic-green">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4>Inventory Protection</h4>
+              <p class="sc-desc">
+                AdvertiseIQ monitors your FBA and FBM stock levels and
+                automatically pauses ads before you run out — protecting your
+                organic rank and budget.
+              </p>
+              <div class="sc-pills">
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Low Stock Alerts
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Auto-Pause Ads
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> FBA + FBM Monitor
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Stock Forecasting
+                </div>
+              </div>
+              <div class="sc-metric-row">
+                <div class="sc-metric-val">-28%</div>
+                <div class="sc-metric-lbl">
+                  Stockout rate<br />reduction across brands
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Analytics -->
+            <div class="sstack-card">
+              <div class="sc-num">05 / 05</div>
+              <div class="sc-icon ic-cyan">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h4>Analytics & Reporting</h4>
+              <p class="sc-desc">
+                A unified dashboard gives you real-time visibility into every
+                metric — ROAS, ACOS, sales velocity, ad spend, and
+                profitability — all in one place.
+              </p>
+              <div class="sc-pills">
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Real-Time Dashboard
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Profit Analytics
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Custom Reports
+                </div>
+                <div class="sc-pill">
+                  <i class="bi bi-check2-circle"></i> Multi-Market View
+                </div>
+              </div>
+              <div class="sc-metric-row">
+                <div class="sc-metric-val">3.2x</div>
+                <div class="sc-metric-lbl">
+                  Average ROAS<br />across all clients
+                </div>
+              </div>
             </div>
           </div>
+          <!-- /sstack-card-stage -->
         </div>
+        <!-- /sstack-grid -->
       </div>
-    </section>
+      <!-- /sstack-sticky -->
+    </div>
+    <!-- /sstack-track -->
+  </section>
 
-    <!-- ===== COMPARISON TABLE ===== -->
-    <section class="comparison-section">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">WHY ADVERTISEIQ</div>
-          <h2>How We Compare</h2>
-          <p>
-            See why Amazon advertisers choose AdvertiseIQ over manual management
-            and legacy tools.
-          </p>
-        </div>
-        <div
-          class="comparison-table-wrapper"
-          data-aos="fade-up"
-          data-aos-delay="80"
-        >
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th class="col-us">AdvertiseIQ</th>
-                <th>Manual</th>
-                <th>Legacy Tools</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AI-Powered Bid Optimization</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-                <td><i class="bi bi-dash-circle muted-icon"></i></td>
-              </tr>
-              <tr>
-                <td>Real-Time Rule Automation</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-                <td><i class="bi bi-dash-circle muted-icon"></i></td>
-              </tr>
-              <tr>
-                <td>Inventory-Aware Ad Pausing</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-              </tr>
-              <tr>
-                <td>Competitor Keyword Discovery</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-                <td><i class="bi bi-dash-circle muted-icon"></i></td>
-              </tr>
-              <tr>
-                <td>Profitability Analytics</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-dash-circle muted-icon"></i></td>
-                <td><i class="bi bi-dash-circle muted-icon"></i></td>
-              </tr>
-              <tr>
-                <td>24/7 Automated Optimization</td>
-                <td class="col-us">
-                  <i class="bi bi-check-circle-fill green-icon"></i>
-                </td>
-                <td><i class="bi bi-x-circle red-icon"></i></td>
-                <td><i class="bi bi-check-circle-fill green-icon"></i></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WORLD MAP ===== -->
-    <section class="worldmap-section">
-      <div class="worldmap-inner">
-        <div class="worldmap-text" data-aos="fade-right">
-          <div class="section-tag">GLOBAL REACH</div>
-          <h2>
-            Manage Every<br />Amazon Market<br />from
-            <span class="gradient-text">One Platform</span>
+  <!-- ===== FEATURE SHOWCASE SLIDER ===== -->
+  <section class="showcase-section">
+    <div class="section-wrapper">
+      <div class="showcase-header-row" data-aos="fade-up">
+        <div>
+          <div class="section-tag">FULL TOOLKIT</div>
+          <h2 class="showcase-title">
+            Everything You Need to<br />Scale Amazon Sales
           </h2>
-          <p>
-            AdvertiseIQ supports all major Amazon marketplaces worldwide —
-            giving you a single command center for global advertising, no matter
-            where your customers are.
+          <p class="showcase-sub">
+            Drag, swipe, or use the arrows to explore all features
           </p>
-          <div class="market-list">
-            <div class="market-item">
-              <i class="bi bi-check2-circle"></i> United States, Canada, Mexico
-            </div>
-            <div class="market-item">
-              <i class="bi bi-check2-circle"></i> UK, Germany, France, Italy,
-              Spain
-            </div>
-            <div class="market-item">
-              <i class="bi bi-check2-circle"></i> Japan, Australia, India,
-              Singapore
-            </div>
-            <div class="market-item">
-              <i class="bi bi-check2-circle"></i> UAE, Saudi Arabia, Brazil,
-              Poland
-            </div>
-          </div>
         </div>
-        <div class="worldmap-visual" data-aos="fade-left" data-aos-delay="100">
-          <canvas id="worldMapCanvas" class="worldmap-canvas"></canvas>
-          <div class="wm-overlay-badge">
-            <span class="wm-badge-dot"></span>
-            18+ Amazon Marketplaces Active
+        <div class="showcase-arrows">
+          <button class="showcase-arrow" id="stackPrev">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="showcase-arrow" id="stackNext">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="stack-wrapper">
+        <div class="stack-track" id="stackTrack"></div>
+      </div>
+      <div class="stack-dots" id="stackDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SCREENSHOT ===== -->
+  <section class="screenshot-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">PRODUCT OVERVIEW</div>
+        <h2>Your Command Center<br />for Amazon Growth</h2>
+        <p>
+          A unified dashboard that gives you complete visibility and control
+          over every campaign, keyword, and dollar spent.
+        </p>
+      </div>
+      <div class="screenshot-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="screenshot-glow"></div>
+        <div class="screenshot-frame">
+          <div class="frame-bar">
+            <span class="fd red"></span>
+            <span class="fd yellow"></span>
+            <span class="fd green"></span>
+            <span class="frame-url">app.advertiseiq.co/dashboard</span>
+          </div>
+          <img src="assets/img/dashboard-img.png" alt="AdvertiseIQ Dashboard" class="dashboard-img"
+            onerror="this.style.display='none'; document.getElementById('dash-placeholder').style.display='flex'" />
+          <div class="dashboard-placeholder" id="dash-placeholder">
+            <i class="bi bi-display-fill"></i>
+            <p>AdvertiseIQ Dashboard</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== PRICING ===== -->
-    <section class="pricing-section" id="pricing">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">PRICING</div>
-          <h2>The Right Plan for <span class="gradient-text">You</span></h2>
-          <p>Transparent pricing with no hidden fees. Scale as you grow.</p>
-          <div class="billing-tab-toggle">
-            <div class="bill-tab-indicator"></div>
-            <button class="bill-tab active" data-period="monthly">
-              Monthly
-            </button>
-            <button class="bill-tab" data-period="annual">
-              Annual <span class="save-badge-tab">Save 20%</span>
-            </button>
-          </div>
-        </div>
-        <div class="pricing-cards">
-          <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="plan-name">Starter</div>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-amount" data-monthly="349" data-annual="279"
-                >349</span
-              >
-              <span class="price-period">/mo</span>
-            </div>
-            <p class="plan-desc">
-              Perfect for growing brands just getting started with Amazon
-              advertising automation.
-            </p>
-            <ul class="plan-features">
-              <li>
-                <i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Campaign automation & rules
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Keyword intelligence</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Basic analytics dashboard
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Email support</li>
-            </ul>
-            <a href="contact-us.html" class="btn-plan btn-plan-outline"
-              >Start Free Trial</a
-            >
-          </div>
-          <div
-            class="pricing-card featured"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="featured-badge">Most Popular</div>
-            <div class="plan-name">Premium</div>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-amount" data-monthly="299" data-annual="239"
-                >299</span
-              >
-              <span class="price-period">/mo</span>
-            </div>
-            <p class="plan-desc">
-              For established brands ready to dominate their category with full
-              automation.
-            </p>
-            <ul class="plan-features">
-              <li>
-                <i class="bi bi-check2-circle"></i> Up to 20 marketplace
-                accounts
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Inventory protection alerts
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Advanced analytics &
-                reporting
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Competitor intelligence
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Priority support</li>
-            </ul>
-            <a href="contact-us.html" class="btn-plan btn-plan-primary"
-              >Get Premium</a
-            >
-          </div>
-          <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="plan-name">Enterprise</div>
-            <div class="plan-price">
-              <span class="price-currency">$</span>
-              <span class="price-amount" data-monthly="249" data-annual="199"
-                >249</span
-              >
-              <span class="price-period">/mo per seat</span>
-            </div>
-            <p class="plan-desc">
-              Custom solutions for agencies and large brands with complex needs.
-            </p>
-            <ul class="plan-features">
-              <li><i class="bi bi-check2-circle"></i> Unlimited accounts</li>
-              <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Custom integrations & API
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Dedicated success manager
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Custom onboarding</li>
-              <li><i class="bi bi-check2-circle"></i> SLA guarantees</li>
-            </ul>
-            <a href="contact-us.html" class="btn-plan btn-plan-outline"
-              >Contact Sales</a
-            >
-          </div>
+  <!-- ===== COMPARISON TABLE ===== -->
+  <section class="comparison-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">WHY ADVERTISEIQ</div>
+        <h2>How We Compare</h2>
+        <p>
+          See why Amazon advertisers choose AdvertiseIQ over manual management
+          and legacy tools.
+        </p>
+      </div>
+      <div class="comparison-table-wrapper" data-aos="fade-up" data-aos-delay="80">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-us">AdvertiseIQ</th>
+              <th>Manual</th>
+              <th>Legacy Tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AI-Powered Bid Optimization</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+              <td><i class="bi bi-dash-circle muted-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Real-Time Rule Automation</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+              <td><i class="bi bi-dash-circle muted-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Inventory-Aware Ad Pausing</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Competitor Keyword Discovery</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+              <td><i class="bi bi-dash-circle muted-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Profitability Analytics</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-dash-circle muted-icon"></i></td>
+              <td><i class="bi bi-dash-circle muted-icon"></i></td>
+            </tr>
+            <tr>
+              <td>24/7 Automated Optimization</td>
+              <td class="col-us">
+                <i class="bi bi-check-circle-fill green-icon"></i>
+              </td>
+              <td><i class="bi bi-x-circle red-icon"></i></td>
+              <td><i class="bi bi-check-circle-fill green-icon"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">PRICING</div>
+        <h2>The Right Plan for <span class="gradient-text">You</span></h2>
+        <p>Transparent pricing with no hidden fees. Scale as you grow.</p>
+        <div class="billing-tab-toggle">
+          <div class="bill-tab-indicator"></div>
+          <button class="bill-tab active" data-period="monthly">
+            Monthly
+          </button>
+          <button class="bill-tab" data-period="annual">
+            Annual <span class="save-badge-tab">Save 20%</span>
+          </button>
         </div>
       </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials-section">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">CUSTOMER STORIES</div>
-          <h2>Loved by Amazon<br />Advertisers</h2>
-          <p>
-            See what brands across every category are saying about AdvertiseIQ.
+      <div class="pricing-cards">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="349" data-annual="279">349</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="plan-desc">
+            Perfect for growing brands just getting started with Amazon
+            advertising automation.
           </p>
-        </div>
-        <div class="testimonials-grid">
-          <div
-            class="testimonial-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="0"
-          >
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              "AdvertiseIQ cut our ACOS by 38% in the first month. The AI bid
-              automation is genuinely impressive — it adjusts to data I couldn't
-              monitor manually."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar av-blue">JS</div>
-              <div>
-                <div class="author-name">James S.</div>
-                <div class="author-role">Head of eCommerce, NovaBrand</div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="testimonial-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              "We manage 12 brands through AdvertiseIQ. The competitor keyword
-              discovery alone saved us 20 hours a month and uncovered
-              opportunities we'd completely missed."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar av-purple">AK</div>
-              <div>
-                <div class="author-name">Alicia K.</div>
-                <div class="author-role">Amazon Agency Director</div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="testimonial-card anti-gravity"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
-              ><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              "The inventory protection feature is a game-changer. Our ads
-              automatically pause before we run out, saving us thousands in
-              wasted ad spend on stockouts."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar av-green">MR</div>
-              <div>
-                <div class="author-name">Marcus R.</div>
-                <div class="author-role">Founder, PureGoods Co.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FAQ ===== -->
-    <section class="faq-section">
-      <div class="section-wrapper">
-        <div class="section-header" data-aos="fade-up">
-          <div class="section-tag">FAQ</div>
-          <h2>Common Questions</h2>
-          <p>Everything you need to know about AdvertiseIQ.</p>
-        </div>
-        <div
-          class="faq-list"
-          style="max-width: 800px; margin: 0 auto"
-          data-aos="fade-up"
-          data-aos-delay="80"
-        >
-          <div class="faq-item">
-            <button class="faq-question">
-              How quickly can I see results?
-              <i class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Most brands see measurable improvement in ACOS and ROAS within
-                the first 2 weeks. Our AI needs about 7 days of data to fully
-                calibrate, after which optimizations accelerate.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              Do I need to be an Amazon advertising expert?
-              <i class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Not at all. AdvertiseIQ handles the complexity so you don't have
-                to. Our onboarding team will help you set up, and the platform
-                guides you through strategy with plain-language recommendations.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              Which Amazon marketplaces are supported?
-              <i class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                We support all major Amazon marketplaces including US, UK, CA,
-                DE, FR, IT, ES, JP, AU, MX, BR, and more — with
-                multi-marketplace management from a single dashboard.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              Is there a contract or long-term commitment?
-              <i class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                No contracts, ever. You can cancel your plan at any time. We
-                believe in earning your business every month with results, not
-                locking you in.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              What data does AdvertiseIQ connect to?
-              <i class="bi bi-plus-lg faq-icon"></i>
-            </button>
-            <div class="faq-answer">
-              <p>
-                We connect directly to Amazon Advertising API and Seller
-                Central/Vendor Central to access your campaign, keyword, order,
-                and inventory data — all read and write for automation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FINAL CTA ===== -->
-    <section class="final-cta-section">
-      <div class="section-wrapper">
-        <div class="final-cta-card" data-aos="fade-up">
-          <div class="cta-glow"></div>
-          <div class="section-tag">GET STARTED TODAY</div>
-          <h2>Ready to Scale Your<br />Amazon Revenue?</h2>
-          <p>
-            Join 500+ brands using AdvertiseIQ to automate their Amazon
-            advertising and grow profitably — starting today.
-          </p>
-          <div class="cta-actions">
-            <a href="contact-us.html" class="btn-primary btn-lg"
-              >Start Free Trial — No Card Needed
-              <i class="bi bi-arrow-right"></i
-            ></a>
-            <a href="contact-us.html" class="btn-secondary btn-lg"
-              >Talk to Sales</a
-            >
-          </div>
-          <p class="cta-footnote">
-            14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp;
-            Cancel anytime
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer-section">
-      <div class="footer-inner">
-        <div class="footer-col brand-col">
-          <a href="index.html" class="footer-logo-link">
-            <img
-              src="assets/img/logo.svg"
-              alt="AdvertiseIQ"
-              class="footer-logo"
-              id="footerLogo"
-              onerror="this.style.display='none'"
-            />
-          </a>
-          <p>
-            AI-powered Amazon advertising platform that helps brands scale
-            faster and profit more.
-          </p>
-          <div class="social-icons">
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="bi bi-instagram"></i
-            ></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Product</h5>
-          <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="market.html">Case Studies</a></li>
-            <li><a href="ppc-sales.html">PPC Sales</a></li>
+          <ul class="plan-features">
+            <li>
+              <i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Campaign automation & rules
+            </li>
+            <li><i class="bi bi-check2-circle"></i> Keyword intelligence</li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Basic analytics dashboard
+            </li>
+            <li><i class="bi bi-check2-circle"></i> Email support</li>
           </ul>
+          <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
         </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="contact-us.html">Contact</a></li>
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="featured-badge">Most Popular</div>
+          <div class="plan-name">Premium</div>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="299" data-annual="239">299</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="plan-desc">
+            For established brands ready to dominate their category with full
+            automation.
+          </p>
+          <ul class="plan-features">
+            <li>
+              <i class="bi bi-check2-circle"></i> Up to 20 marketplace
+              accounts
+            </li>
+            <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Inventory protection alerts
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Advanced analytics &
+              reporting
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Competitor intelligence
+            </li>
+            <li><i class="bi bi-check2-circle"></i> Priority support</li>
           </ul>
+          <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
         </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="249" data-annual="199">249</span>
+            <span class="price-period">/mo per seat</span>
+          </div>
+          <p class="plan-desc">
+            Custom solutions for agencies and large brands with complex needs.
+          </p>
+          <ul class="plan-features">
+            <li><i class="bi bi-check2-circle"></i> Unlimited accounts</li>
+            <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Custom integrations & API
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> Dedicated success manager
+            </li>
+            <li><i class="bi bi-check2-circle"></i> Custom onboarding</li>
+            <li><i class="bi bi-check2-circle"></i> SLA guarantees</li>
           </ul>
+          <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy</a>
-          <a href="terms-of-service.html">Terms</a>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="assets/js/site.js"></script>
-    <script src="assets/js/globe.js"></script>
-    <script>
-      AOS.init({
-        duration: 650,
-        easing: "ease-out-cubic",
-        once: true,
-        offset: 60,
-      });
-    </script>
-  </body>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">CUSTOMER STORIES</div>
+        <h2>Loved by Amazon<br />Advertisers</h2>
+        <p>
+          See what brands across every category are saying about AdvertiseIQ.
+        </p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
+              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            "AdvertiseIQ cut our ACOS by 38% in the first month. The AI bid
+            automation is genuinely impressive — it adjusts to data I couldn't
+            monitor manually."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-blue">JS</div>
+            <div>
+              <div class="author-name">James S.</div>
+              <div class="author-role">Head of eCommerce, NovaBrand</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
+              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            "We manage 12 brands through AdvertiseIQ. The competitor keyword
+            discovery alone saved us 20 hours a month and uncovered
+            opportunities we'd completely missed."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-purple">AK</div>
+            <div>
+              <div class="author-name">Alicia K.</div>
+              <div class="author-role">Amazon Agency Director</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
+              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            "The inventory protection feature is a game-changer. Our ads
+            automatically pause before we run out, saving us thousands in
+            wasted ad spend on stockouts."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-green">MR</div>
+            <div>
+              <div class="author-name">Marcus R.</div>
+              <div class="author-role">Founder, PureGoods Co.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">FAQ</div>
+        <h2>Common Questions</h2>
+        <p>Everything you need to know about AdvertiseIQ.</p>
+      </div>
+      <div class="faq-list" style="max-width: 800px; margin: 0 auto" data-aos="fade-up" data-aos-delay="80">
+        <div class="faq-item">
+          <button class="faq-question">
+            How quickly can I see results?
+            <i class="bi bi-plus-lg faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Most brands see measurable improvement in ACOS and ROAS within
+              the first 2 weeks. Our AI needs about 7 days of data to fully
+              calibrate, after which optimizations accelerate.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need to be an Amazon advertising expert?
+            <i class="bi bi-plus-lg faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Not at all. AdvertiseIQ handles the complexity so you don't have
+              to. Our onboarding team will help you set up, and the platform
+              guides you through strategy with plain-language recommendations.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Which Amazon marketplaces are supported?
+            <i class="bi bi-plus-lg faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We support all major Amazon marketplaces including US, UK, CA,
+              DE, FR, IT, ES, JP, AU, MX, BR, and more — with
+              multi-marketplace management from a single dashboard.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a contract or long-term commitment?
+            <i class="bi bi-plus-lg faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No contracts, ever. You can cancel your plan at any time. We
+              believe in earning your business every month with results, not
+              locking you in.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What data does AdvertiseIQ connect to?
+            <i class="bi bi-plus-lg faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We connect directly to Amazon Advertising API and Seller
+              Central/Vendor Central to access your campaign, keyword, order,
+              and inventory data — all read and write for automation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta-section">
+    <div class="section-wrapper">
+      <div class="final-cta-card" data-aos="fade-up">
+        <div class="cta-glow"></div>
+        <div class="section-tag">GET STARTED TODAY</div>
+        <h2>Ready to Scale Your<br />Amazon Revenue?</h2>
+        <p>
+          Join 500+ brands using AdvertiseIQ to automate their Amazon
+          advertising and grow profitably — starting today.
+        </p>
+        <div class="cta-actions">
+          <a href="contact-us.html" class="btn-primary btn-lg">Start Free Trial — No Card Needed
+            <i class="bi bi-arrow-right"></i></a>
+          <a href="contact-us.html" class="btn-secondary btn-lg">Talk to Sales</a>
+        </div>
+        <p class="cta-footnote">
+          14-day free trial &nbsp;·&nbsp; Full feature access &nbsp;·&nbsp;
+          Cancel anytime
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-section">
+    <div class="footer-inner">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="footer-logo-link">
+          <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+            onerror="this.style.display='none'" />
+        </a>
+        <p>
+          AI-powered Amazon advertising platform that helps brands scale
+          faster and profit more.
+        </p>
+        <div class="social-icons">
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="market.html">Case Studies</a></li>
+          <li><a href="ppc-sales.html">PPC Sales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AdvertiseIQ. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script>
+    AOS.init({
+      duration: 650,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 60,
+    });
+  </script>
+</body>
+
 </html>
