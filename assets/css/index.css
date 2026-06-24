@@ -267,12 +267,12 @@ img {
 }
 
 .loader-logo {
-  margin-bottom: 36px;
+  /* margin-bottom: 36px; */
   animation: pulseLogo 1.6s ease-in-out infinite;
 }
 
 .loader-logo img {
-  width: 160px;
+  width: 320px;
 }
 
 .loader-spinner {
@@ -405,7 +405,7 @@ img {
 }
 
 .logo-img {
-  width: 136px;
+  width: 75px;
   object-fit: contain;
 }
 
@@ -440,12 +440,13 @@ img {
 }
 
 .theme-toggle {
-  width: 36px;
-  height: 36px;
+  /* width: 36px;
+  height: 36px; */
   border-radius: 10px;
   background: var(--input-bg);
   border: 1px solid var(--border);
-  color: var(--text-muted);
+  border-color: var(--accent);
+  color: var(--accent) !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -455,8 +456,7 @@ img {
 }
 
 .theme-toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--text-muted) !important;
 }
 
 .btn-nav-secondary {
@@ -1111,7 +1111,6 @@ img {
 .features-section {
   position: relative;
   z-index: 1;
-  background: var(--bg);
 }
 
 /* Bento-style features grid */
@@ -1465,7 +1464,6 @@ img {
 .timeline-section {
   position: relative;
   z-index: 1;
-  background: var(--bg-2);
 }
 
 .timeline-layout {
@@ -1725,7 +1723,7 @@ img {
 
 .stack-card.prev {
   opacity: 0.5;
-  transform: scale(0.87) translateX(-68px) translateY(20px) rotate(-3deg);
+  transform: scale(0.87) translateX(-180px) translateY(20px) rotate(-3deg);
   filter: blur(1px);
   z-index: 5;
   pointer-events: none;
@@ -1733,7 +1731,7 @@ img {
 
 .stack-card.next {
   opacity: 0.5;
-  transform: scale(0.87) translateX(68px) translateY(20px) rotate(3deg);
+  transform: scale(0.87) translateX(180px) translateY(20px) rotate(3deg);
   filter: blur(1px);
   z-index: 5;
   pointer-events: none;
@@ -1878,7 +1876,6 @@ img {
 .screenshot-section {
   position: relative;
   z-index: 1;
-  background: var(--bg-2);
 }
 
 .screenshot-container {
@@ -2080,7 +2077,6 @@ img {
 .pricing-section {
   position: relative;
   z-index: 1;
-  background: var(--bg-2);
 }
 
 .billing-toggle {
@@ -2172,6 +2168,7 @@ img {
   position: relative;
   transition: all 0.35s ease;
   box-shadow: var(--card-shadow);
+  opacity: 1 !important;
 }
 
 .pricing-card:hover {
@@ -2432,7 +2429,6 @@ img {
 .faq-section {
   position: relative;
   z-index: 1;
-  background: var(--bg-2);
 }
 
 .faq-list {
@@ -2582,7 +2578,6 @@ img {
 .footer-section {
   position: relative;
   z-index: 1;
-  background: var(--bg-2);
   border-top: 1px solid var(--border);
 }
 
@@ -2986,7 +2981,6 @@ select.form-control {
    PRICING PAGE (comparison table)
    ========================================================================== */
 .comp-section {
-  background: var(--bg-2);
   position: relative;
   z-index: 1;
 }
@@ -3839,7 +3833,7 @@ select.form-control {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   opacity: 0.55;
 }
 
@@ -3968,7 +3962,6 @@ select.form-control {
 .sstack-outer {
   position: relative;
   z-index: 1;
-  background: var(--bg);
 }
 
 .sstack-inner {
@@ -4435,6 +4428,7 @@ select.form-control {
   position: relative;
   padding: 96px 24px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .vs-section::before {
@@ -4724,6 +4718,7 @@ select.form-control {
   position: relative;
   padding: 80px 24px 96px;
   background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
+  z-index: 1;
 }
 
 .flow-wrapper {
@@ -4764,7 +4759,7 @@ select.form-control {
 .flow-track::before {
   content: '';
   position: absolute;
-  top: 36px;
+  top: 70px;
   left: calc(36px + 2.5%);
   right: calc(36px + 2.5%);
   height: 1px;
@@ -4787,11 +4782,13 @@ select.form-control {
   position: relative;
   z-index: 1;
   padding: 0 6px;
-  transition: transform 0.2s;
+  transition: scale 0.2s;
 }
 
 .flow-step:hover {
-  transform: translateY(-4px);
+  transition: scale 0.2s;
+  /* transform: translateY(-4px); */
+  scale: 1.03;
 }
 
 .flow-step-num {
@@ -4842,7 +4839,7 @@ select.form-control {
 .flow-step:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 36px;
+  top: 68px;
   right: -2px;
   width: 16px;
   height: 16px;
@@ -4900,4 +4897,44 @@ select.form-control {
     height: 60px;
     font-size: 1.25rem;
   }
+}
+
+/* Splash Particle */
+.splash {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  animation: splashAnimation 900ms ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes splashAnimation {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(calc(-50% + var(--x)),
+        calc(-50% + var(--y))) scale(2.5);
+  }
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  /* border: 2px solid var(--text); */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: transform .08s linear;
 }

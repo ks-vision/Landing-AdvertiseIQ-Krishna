@@ -19,18 +19,12 @@
 
 	<!-- ===== PAGE LOADER ===== -->
 	<div id="page-loader">
-		<div class="loader-logo">
-			<img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo">
-		</div>
-		<div class="loader-spinner"></div>
-		<div class="loader-text">Loading AdvertiseIQ...</div>
-		<div class="loader-progress-bar">
-			<div class="loader-progress-fill"></div>
-		</div>
+		<img src="assets/img/logo_loader.gif" alt="AdvertiseIQ" style="max-width: 30%;" />
 	</div>
 
 	<!-- ===== WAVY BACKGROUND ===== -->
 	<canvas id="wavyBgCanvas" class="wavy-bg-canvas"></canvas>
+	<div class="cursor"></div>
 
 	<!-- ===== AURORA BG ===== -->
 	<div class="aurora-bg">
@@ -43,7 +37,7 @@
 	<nav class="main-nav" id="mainNav">
 		<div class="nav-inner">
 			<a href="index.html" class="nav-logo">
-				<img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+				<img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
 					onerror="this.style.display='none'">
 			</a>
 			<div class="nav-links">
@@ -53,10 +47,9 @@
 				<a href="contact-us.html">Contact</a>
 			</div>
 			<div class="nav-actions">
-				<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-					<i class="bi bi-sun-fill" id="themeIcon"></i>
+				<button class="theme-toggle" aria-label="Toggle theme">
+					<a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
 				</button>
-				<a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
 				<a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
 				<button class="nav-hamburger" id="navHamburger" aria-label="Menu">
 					<i class="bi bi-list"></i>
@@ -253,7 +246,7 @@
 		<div class="footer-inner">
 			<div class="footer-col brand-col">
 				<a href="/" class="footer-logo-link">
-					<img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+					<img src="assets/img/logo.png" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
 						onerror="this.style.display='none'">
 				</a>
 				<p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
@@ -323,18 +316,18 @@
 			themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
 			const navLogo = document.getElementById('navLogo');
 			if (navLogo) {
-				navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+				navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.png';
 			}
 			const footerLogo = document.getElementById('footerLogo');
 			if (footerLogo) {
-				footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+				footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.png';
 			}
 		}
 
 		function updateLoaderLogo(theme) {
 			const loaderLogo = document.getElementById('loaderLogo');
 			if (loaderLogo) {
-				loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+				loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.png';
 			}
 		}
 		// Mobile nav
@@ -345,6 +338,43 @@
 		// Sticky nav shadow
 		window.addEventListener('scroll', () => {
 			document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+		});
+	</script>
+	<script>
+		const cursor = document.querySelector('.cursor');
+		const colors = [
+			'#2f6fcc',
+			'#3b82f6',
+			'#60a5fa',
+			'#93c5fd',
+			'#bfdbfe'
+		];
+		let lastBubble = 0;
+		document.addEventListener('mousemove', (e) => {
+
+			cursor.style.left = e.clientX + 'px';
+			cursor.style.top = e.clientY + 'px';
+
+			const now = Date.now();
+			if (now - lastBubble < 100) return;
+			lastBubble = now;
+
+			const splash = document.createElement('div');
+			splash.className = 'splash';
+
+			splash.style.left = e.clientX + 'px';
+			splash.style.top = e.clientY + 'px';
+			splash.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+			const angle = Math.random() * Math.PI * 2;
+			const distance = 30 + Math.random() * 90;
+
+			splash.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+			splash.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+
+			document.body.appendChild(splash);
+
+			splash.addEventListener('animationend', () => splash.remove());
 		});
 	</script>
 </body>

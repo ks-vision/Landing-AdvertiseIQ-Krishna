@@ -17,16 +17,12 @@
 
   <!-- PAGE LOADER -->
   <div id="page-loader">
-    <div class="loader-logo"><img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo"></div>
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading AdvertiseIQ…</div>
-    <div class="loader-progress-bar">
-      <div class="loader-progress-fill"></div>
-    </div>
+    <img src="assets/img/logo_loader.gif" alt="AdvertiseIQ" style="max-width: 30%;" />
   </div>
 
   <!-- WAVY BACKGROUND -->
   <canvas id="wavyBgCanvas" class="wavy-bg-canvas"></canvas>
+  <div class="cursor"></div>
 
   <!-- AURORA -->
   <div class="aurora-bg">
@@ -39,7 +35,7 @@
   <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+        <img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
           onerror="this.style.display='none'">
       </a>
       <div class="nav-links">
@@ -50,10 +46,9 @@
         <a href="contact-us.html">Contact</a>
       </div>
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <i class="bi bi-sun-fill" id="themeIcon"></i>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
         </button>
-        <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
         <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
         <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
       </div>
@@ -69,7 +64,7 @@
   </nav>
 
   <!-- PAGE HERO -->
-  <section class="page-hero" style="background:var(--bg);">
+  <section class="page-hero">
     <div class="section-tag" data-aos="fade-up">PLATFORM FEATURES</div>
     <h1 data-aos="fade-up" data-aos-delay="60">Every Tool You Need to<br><span class="gradient-text">Win on
         Amazon</span></h1>
@@ -82,7 +77,7 @@
   </section>
 
   <!-- FEATURES SECTION -->
-  <section style="background:var(--bg);padding-bottom:100px;">
+  <section style="padding-bottom:100px;">
     <div class="section-wrapper">
 
       <!-- Filter Bar -->
@@ -303,26 +298,12 @@
           </div>
           <p>Apply changes to hundreds of campaigns, ad groups, or keywords in a single action.</p>
         </div>
-        <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="0">
-          <div class="fp-card-icon ic-cyan"><i class="bi bi-diagram-3"></i></div>
-          <div>
-            <h4>Campaign Templates</h4><span class="fp-card-tag tag-cyan">Automation</span>
-          </div>
-          <p>Launch new campaigns using proven structures without rebuilding from scratch each time.</p>
-        </div>
         <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="50">
           <div class="fp-card-icon ic-cyan"><i class="bi bi-lightning"></i></div>
           <div>
             <h4>Trigger-Based Alerts</h4><span class="fp-card-tag tag-cyan">Automation</span>
           </div>
           <p>Get notified instantly when any campaign metric breaches the thresholds you define.</p>
-        </div>
-        <div class="fp-card" data-cat="automation" data-aos="fade-up" data-aos-delay="100">
-          <div class="fp-card-icon ic-cyan"><i class="bi bi-plug"></i></div>
-          <div>
-            <h4>API & Webhooks</h4><span class="fp-card-tag tag-cyan">Automation</span>
-          </div>
-          <p>Integrate AdvertiseIQ data with your existing tools, dashboards, and workflows via API.</p>
         </div>
 
         <!-- AI & ML -->
@@ -333,40 +314,12 @@
           </div>
           <p>Machine learning models trained on billions of Amazon auction signals adjust bids in real-time.</p>
         </div>
-        <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="50">
-          <div class="fp-card-icon ic-pink"><i class="bi bi-binoculars-fill"></i></div>
-          <div>
-            <h4>Anomaly Detection</h4><span class="fp-card-tag tag-pink">AI & ML</span>
-          </div>
-          <p>AI flags unusual changes in spend, ACOS, or sales before they become costly problems.</p>
-        </div>
-        <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="100">
-          <div class="fp-card-icon ic-pink"><i class="bi bi-stars"></i></div>
-          <div>
-            <h4>Predictive Forecasting</h4><span class="fp-card-tag tag-pink">AI & ML</span>
-          </div>
-          <p>AI forecasts future sales, spend, and profitability so you can plan with confidence.</p>
-        </div>
         <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="0">
           <div class="fp-card-icon ic-pink"><i class="bi bi-chat-dots"></i></div>
           <div>
             <h4>Smart Recommendations</h4><span class="fp-card-tag tag-pink">AI & ML</span>
           </div>
           <p>Context-aware suggestions for budget, bids, and new keywords surfaced directly in your dashboard.</p>
-        </div>
-        <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="50">
-          <div class="fp-card-icon ic-pink"><i class="bi bi-diagram-2"></i></div>
-          <div>
-            <h4>Audience Segmentation</h4><span class="fp-card-tag tag-pink">AI & ML</span>
-          </div>
-          <p>AI segments your customer base to identify high-LTV segments worth targeting more aggressively.</p>
-        </div>
-        <div class="fp-card" data-cat="ai" data-aos="fade-up" data-aos-delay="100">
-          <div class="fp-card-icon ic-pink"><i class="bi bi-translate"></i></div>
-          <div>
-            <h4>Cross-Market Intelligence</h4><span class="fp-card-tag tag-pink">AI & ML</span>
-          </div>
-          <p>AI learns from performance patterns across marketplaces and applies insights globally.</p>
         </div>
 
       </div><!-- /features-page-grid -->
@@ -424,7 +377,7 @@
     <div class="footer-inner">
       <div class="footer-col brand-col">
         <a href="index.html" class="footer-logo-link">
-          <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+          <img src="assets/img/logo.png" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
             onerror="this.style.display='none'">
         </a>
         <p>AI-powered Amazon advertising platform that helps brands scale faster and profit more.</p>
@@ -471,6 +424,43 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/site.js"></script>
   <script>AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
+  <script>
+    const cursor = document.querySelector('.cursor');
+    const colors = [
+      '#2f6fcc',
+      '#3b82f6',
+      '#60a5fa',
+      '#93c5fd',
+      '#bfdbfe'
+    ];
+    let lastBubble = 0;
+    document.addEventListener('mousemove', (e) => {
+
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+
+      const now = Date.now();
+      if (now - lastBubble < 100) return;
+      lastBubble = now;
+
+      const splash = document.createElement('div');
+      splash.className = 'splash';
+
+      splash.style.left = e.clientX + 'px';
+      splash.style.top = e.clientY + 'px';
+      splash.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 30 + Math.random() * 90;
+
+      splash.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+      splash.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+
+      document.body.appendChild(splash);
+
+      splash.addEventListener('animationend', () => splash.remove());
+    });
+  </script>
 </body>
 
 </html>

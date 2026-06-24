@@ -22,7 +22,9 @@
   cursor: grab;
 }
 
-#globeCanvas:active { cursor: grabbing; }
+#globeCanvas:active {
+  cursor: grabbing;
+}
 
 /* ── Globe Container (bounds the canvas) ── */
 .globe-canvas-wrap {
@@ -38,50 +40,67 @@
   position: absolute;
   inset: -32px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(59, 130, 246, 0.10) 0%,
-    rgba(139, 92, 246, 0.08) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(59, 130, 246, 0.10) 0%,
+      rgba(139, 92, 246, 0.08) 40%,
+      transparent 70%);
   pointer-events: none;
   animation: globeAtmosPulse 4s ease-in-out infinite;
   z-index: 0;
 }
 
 @keyframes globeAtmosPulse {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.04); }
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
 }
 
 /* ── AI Core glow overlay (CSS amplification) ── */
 .ai-core-glow {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 90px; height: 90px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 2;
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.55) 0%,
-    rgba(59, 130, 246, 0.30) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(139, 92, 246, 0.55) 0%,
+      rgba(59, 130, 246, 0.30) 40%,
+      transparent 70%);
   animation: aiCorePulse 2.8s ease-in-out infinite;
   filter: blur(6px);
 }
 
 @keyframes aiCorePulse {
-  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.35); }
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.35);
+  }
 }
 
 /* ── AI Core label ── */
 .ai-core-label {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, calc(-50% + 58px));
   z-index: 4;
   text-align: center;
@@ -145,7 +164,8 @@
 
 .globe-card-dot {
   display: inline-block;
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--success);
   box-shadow: 0 0 8px var(--success);
@@ -155,22 +175,103 @@
 }
 
 /* Card positions */
-.gc-top-left    { top: 22px;  left: -60px;  animation: floatGc1 7s ease-in-out infinite; }
-.gc-top-right   { top: 38px;  right: -64px; animation: floatGc2 8s ease-in-out infinite; }
-.gc-mid-left    { top: 50%;   left: -72px;  transform: translateY(-50%); animation: floatGc3 6.5s ease-in-out infinite; }
-.gc-mid-right   { top: 50%;   right: -76px; transform: translateY(-50%); animation: floatGc4 7.5s ease-in-out infinite; }
-.gc-bot-left    { bottom: 42px; left: -52px; animation: floatGc5 9s ease-in-out infinite; }
+.gc-top-left {
+  top: -0px;
+  left: -0px;
+  animation: floatGc1 7s ease-in-out infinite;
+}
 
-@keyframes floatGc1 { 0%,100%{transform:translateY(0px);}  50%{transform:translateY(-10px);} }
-@keyframes floatGc2 { 0%,100%{transform:translateY(-6px);} 50%{transform:translateY(8px);} }
-@keyframes floatGc3 { 0%,100%{transform:translateY(-50%) translateX(0);} 50%{transform:translateY(calc(-50% - 8px)) translateX(-4px);} }
-@keyframes floatGc4 { 0%,100%{transform:translateY(-50%) translateX(0);} 50%{transform:translateY(calc(-50% + 10px)) translateX(4px);} }
-@keyframes floatGc5 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+.gc-top-right {
+  top: 38px;
+  right: 60px;
+  animation: floatGc2 8s ease-in-out infinite;
+}
+
+.gc-mid-left {
+  top: 50%;
+  left: -75px;
+  transform: translateY(-50%);
+  animation: floatGc3 6.5s ease-in-out infinite;
+}
+
+.gc-mid-right {
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  animation: floatGc4 7.5s ease-in-out infinite;
+}
+
+.gc-bot-left {
+  bottom: 42px;
+  left: -10px;
+  animation: floatGc5 9s ease-in-out infinite;
+}
+
+@keyframes floatGc1 {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatGc2 {
+
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes floatGc3 {
+
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 8px)) translateX(-4px);
+  }
+}
+
+@keyframes floatGc4 {
+
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  50% {
+    transform: translateY(calc(-50% + 10px)) translateX(4px);
+  }
+}
+
+@keyframes floatGc5 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
 
 /* ── Orbit rings (decorative CSS) ── */
 .globe-orbit-ring {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
   border: 1px solid rgba(59, 130, 246, 0.12);
   pointer-events: none;
@@ -179,22 +280,28 @@
 }
 
 .globe-orbit-ring.ring1 {
-  width: 420px; height: 420px;
-  margin-top: -210px; margin-left: -210px;
+  width: 420px;
+  height: 420px;
+  margin-top: -210px;
+  margin-left: -210px;
   border-color: rgba(59, 130, 246, 0.10);
   animation: orbitSpin1 24s linear infinite;
 }
 
 .globe-orbit-ring.ring2 {
-  width: 490px; height: 490px;
-  margin-top: -245px; margin-left: -245px;
+  width: 490px;
+  height: 490px;
+  margin-top: -245px;
+  margin-left: -245px;
   border-color: rgba(139, 92, 246, 0.08);
   animation: orbitSpin2 32s linear infinite reverse;
 }
 
 .globe-orbit-ring.ring3 {
-  width: 560px; height: 560px;
-  margin-top: -280px; margin-left: -280px;
+  width: 560px;
+  height: 560px;
+  margin-top: -280px;
+  margin-left: -280px;
   border-color: rgba(6, 182, 212, 0.06);
   animation: orbitSpin1 48s linear infinite;
 }
@@ -203,8 +310,10 @@
 .globe-orbit-ring.ring1::after {
   content: '';
   position: absolute;
-  top: -4px; left: 50%;
-  width: 7px; height: 7px;
+  top: -4px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
   margin-left: -3.5px;
   border-radius: 50%;
   background: #3b82f6;
@@ -214,16 +323,35 @@
 .globe-orbit-ring.ring2::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 30%;
-  width: 5px; height: 5px;
+  bottom: -4px;
+  left: 30%;
+  width: 5px;
+  height: 5px;
   margin-left: -2.5px;
   border-radius: 50%;
   background: #8b5cf6;
   box-shadow: 0 0 10px #8b5cf6;
 }
 
-@keyframes orbitSpin1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes orbitSpin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes orbitSpin1 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitSpin2 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* ── Trust indicators in hero (extended) ── */
 .hero-trust-ext {
@@ -250,36 +378,137 @@
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
-  .globe-canvas-wrap { width: 440px; height: 440px; }
-  .globe-orbit-ring.ring1 { width: 360px; height: 360px; margin-top: -180px; margin-left: -180px; }
-  .globe-orbit-ring.ring2 { width: 420px; height: 420px; margin-top: -210px; margin-left: -210px; }
-  .globe-orbit-ring.ring3 { width: 480px; height: 480px; margin-top: -240px; margin-left: -240px; }
-  .gc-top-left    { left: -40px; }
-  .gc-top-right   { right: -44px; }
-  .gc-mid-left    { left: -44px; }
-  .gc-mid-right   { right: -48px; }
-  .gc-bot-left    { left: -32px; }
+  .globe-canvas-wrap {
+    width: 440px;
+    height: 440px;
+  }
+
+  .globe-orbit-ring.ring1 {
+    width: 360px;
+    height: 360px;
+    margin-top: -180px;
+    margin-left: -180px;
+  }
+
+  .globe-orbit-ring.ring2 {
+    width: 420px;
+    height: 420px;
+    margin-top: -210px;
+    margin-left: -210px;
+  }
+
+  .globe-orbit-ring.ring3 {
+    width: 480px;
+    height: 480px;
+    margin-top: -240px;
+    margin-left: -240px;
+  }
+
+  .gc-top-left {
+    left: -40px;
+  }
+
+  .gc-top-right {
+    right: -44px;
+  }
+
+  .gc-mid-left {
+    left: -44px;
+  }
+
+  .gc-mid-right {
+    right: -48px;
+  }
+
+  .gc-bot-left {
+    left: -32px;
+  }
 }
 
 @media (max-width: 900px) {
-  .globe-wrap { min-height: 360px; }
-  .globe-canvas-wrap { width: 340px; height: 340px; }
-  .globe-orbit-ring.ring1 { width: 280px; height: 280px; margin-top: -140px; margin-left: -140px; }
-  .globe-orbit-ring.ring2 { width: 330px; height: 330px; margin-top: -165px; margin-left: -165px; }
-  .globe-orbit-ring.ring3 { width: 380px; height: 380px; margin-top: -190px; margin-left: -190px; }
-  .gc-mid-left, .gc-mid-right { display: none; }
-  .gc-top-left  { top: 10px; left: -10px; }
-  .gc-top-right { top: 10px; right: -10px; }
-  .gc-bot-left  { bottom: 16px; left: -10px; }
-  .ai-core-label { display: none; }
+  .globe-wrap {
+    min-height: 360px;
+  }
+
+  .globe-canvas-wrap {
+    width: 340px;
+    height: 340px;
+  }
+
+  .globe-orbit-ring.ring1 {
+    width: 280px;
+    height: 280px;
+    margin-top: -140px;
+    margin-left: -140px;
+  }
+
+  .globe-orbit-ring.ring2 {
+    width: 330px;
+    height: 330px;
+    margin-top: -165px;
+    margin-left: -165px;
+  }
+
+  .globe-orbit-ring.ring3 {
+    width: 380px;
+    height: 380px;
+    margin-top: -190px;
+    margin-left: -190px;
+  }
+
+  .gc-mid-left,
+  .gc-mid-right {
+    display: none;
+  }
+
+  .gc-top-left {
+    top: 10px;
+    left: -10px;
+  }
+
+  .gc-top-right {
+    top: 10px;
+    right: -10px;
+  }
+
+  .gc-bot-left {
+    bottom: 16px;
+    left: -10px;
+  }
+
+  .ai-core-label {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-  .globe-canvas-wrap { width: 280px; height: 280px; }
-  .globe-orbit-ring { display: none; }
-  .globe-card { padding: 8px 12px; }
-  .globe-card-val { font-size: 0.95rem; }
-  .globe-card-lbl { font-size: 0.60rem; }
-  .gc-top-left, .gc-top-right { top: 0; }
-  .gc-bot-left { display: none; }
+  .globe-canvas-wrap {
+    width: 280px;
+    height: 280px;
+  }
+
+  .globe-orbit-ring {
+    display: none;
+  }
+
+  .globe-card {
+    padding: 8px 12px;
+  }
+
+  .globe-card-val {
+    font-size: 0.95rem;
+  }
+
+  .globe-card-lbl {
+    font-size: 0.60rem;
+  }
+
+  .gc-top-left,
+  .gc-top-right {
+    top: 0;
+  }
+
+  .gc-bot-left {
+    display: none;
+  }
 }

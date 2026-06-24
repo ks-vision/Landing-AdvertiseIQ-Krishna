@@ -31,11 +31,9 @@
     const icon = document.getElementById('themeIcon');
     if (icon) icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
     const navLogo = document.getElementById('navLogo');
-    if (navLogo) navLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+    if (navLogo) navLogo.src = theme === 'dark' ? 'assets/img/logo.png' : 'assets/img/logo.png';
     const footerLogo = document.getElementById('footerLogo');
-    if (footerLogo) footerLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
-    const loaderLogo = document.getElementById('loaderLogo');
-    if (loaderLogo) loaderLogo.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+    if (footerLogo) footerLogo.src = theme === 'dark' ? 'assets/img/logo.png' : 'assets/img/logo.png';
   }
 
   /* ── Nav: scroll shadow + hamburger ── */
@@ -69,7 +67,7 @@
     let w, h, raf;
 
     function resize() {
-      w = canvas.width  = window.innerWidth;
+      w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
     }
     resize();
@@ -81,7 +79,7 @@
       { amp: 55, freq: 0.0018, speed: 0.008, yRatio: 0.38, alpha: 0.045 },
       { amp: 40, freq: 0.0025, speed: 0.012, yRatio: 0.52, alpha: 0.035 },
       { amp: 65, freq: 0.0014, speed: 0.006, yRatio: 0.65, alpha: 0.025 },
-      { amp: 30, freq: 0.003,  speed: 0.018, yRatio: 0.78, alpha: 0.02  }
+      { amp: 30, freq: 0.003, speed: 0.018, yRatio: 0.78, alpha: 0.02 }
     ];
 
     let t = 0;
@@ -108,7 +106,7 @@
     draw();
 
     // React to theme changes
-    new MutationObserver(() => {}).observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+    new MutationObserver(() => { }).observe(html, { attributes: true, attributeFilter: ['data-theme'] });
   })();
 
   /* ── Text Type — ReactBits-style scramble/decode effect ── */
@@ -116,11 +114,11 @@
     const el = document.getElementById('heroTypewriter');
     if (!el) return;
 
-    const words  = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Growth'];
-    const POOL   = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!%&';
+    const words = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Growth'];
+    const POOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!%&';
     const SCRAMBLE_MS = 38;   /* speed of each scramble frame          */
-    const REVEAL_MS   = 52;   /* ms between each character being locked */
-    const HOLD_MS     = 2400; /* pause after word is fully revealed     */
+    const REVEAL_MS = 52;   /* ms between each character being locked */
+    const HOLD_MS = 2400; /* pause after word is fully revealed     */
 
     let wi = 0;
     let timer = null;
@@ -142,8 +140,8 @@
     }
 
     function scrambleWord(word, onDone) {
-      var spans   = buildSpans(word);
-      var locked  = new Array(word.length).fill(false);
+      var spans = buildSpans(word);
+      var locked = new Array(word.length).fill(false);
       var current = 0;
 
       /* Phase 1: scramble all chars while revealing left-to-right */
@@ -198,15 +196,15 @@
   /* ── Billing Tab Toggle ── */
   (function initBillingTab() {
     document.querySelectorAll('.billing-tab-toggle').forEach(container => {
-      const tabs    = container.querySelectorAll('.bill-tab');
-      const indic   = container.querySelector('.bill-tab-indicator');
+      const tabs = container.querySelectorAll('.bill-tab');
+      const indic = container.querySelector('.bill-tab-indicator');
       if (!tabs.length) return;
 
       function setIndicator(activeTab) {
         if (!indic) return;
         const containerRect = container.getBoundingClientRect();
         const tabRect = activeTab.getBoundingClientRect();
-        indic.style.width  = tabRect.width + 'px';
+        indic.style.width = tabRect.width + 'px';
         indic.style.transform = `translateX(${tabRect.left - containerRect.left - 5}px)`;
       }
 
@@ -232,7 +230,7 @@
             if (isAnnual) {
               p.innerHTML = p.innerHTML.replace('/mo', '/mo <span style="font-size:.7rem;color:var(--success);">billed annually</span>');
             } else {
-              p.textContent = p.textContent.replace(' billed annually', '').trim() === '' ? '/mo' : p.textContent.split('<')[0];
+              p.textContent = p.textContent.replace('/mo billed annually', '').trim() === '' ? '/mo' : p.textContent.split('<')[0];
             }
           });
         });
@@ -378,7 +376,7 @@
     if (!section) return;
 
     const navItems = section.querySelectorAll('.sstack-nav-item');
-    const cards    = section.querySelectorAll('.sstack-card');
+    const cards = section.querySelectorAll('.sstack-card');
     if (!cards.length) return;
 
     const total = cards.length;
@@ -398,8 +396,8 @@
 
     // Scroll-driven activation
     function onScroll() {
-      const rect    = section.getBoundingClientRect();
-      const totalH  = section.offsetHeight;
+      const rect = section.getBoundingClientRect();
+      const totalH = section.offsetHeight;
       const scrolled = -rect.top;
       if (scrolled < 0 || scrolled > totalH - window.innerHeight) return;
       const progress = scrolled / (totalH - window.innerHeight);
@@ -411,14 +409,14 @@
     activate(0);
 
     // Nav click
-    navItems.forEach((item, i) => {
-      item.addEventListener('click', () => {
-        // Scroll to corresponding position
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        const targetScroll = sectionTop + (i / total) * (section.offsetHeight - window.innerHeight);
-        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-      });
-    });
+    // navItems.forEach((item, i) => {
+    //   item.addEventListener('click', () => {
+    //     // Scroll to corresponding position
+    //     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    //     const targetScroll = sectionTop + (i / total) * (section.offsetHeight - window.innerHeight);
+    //     window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    //   });
+    // });
   })();
 
   /* ── World Map Canvas ── */
@@ -428,7 +426,7 @@
     const ctx = canvas.getContext('2d');
 
     function resize() {
-      canvas.width  = canvas.offsetWidth;
+      canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
       drawMap();
     }
@@ -459,18 +457,18 @@
     // rows of [xStart, xEnd] ranges for each y level
     const dotMap = [
       // y=0.20 (N America top, Europe top, Asia top)
-      { y: 0.20, segs: [[0.10,0.22],[0.44,0.56],[0.60,0.90]] },
-      { y: 0.25, segs: [[0.09,0.24],[0.43,0.57],[0.58,0.92]] },
-      { y: 0.30, segs: [[0.10,0.26],[0.42,0.58],[0.57,0.93],[0.50,0.55]] },
-      { y: 0.35, segs: [[0.12,0.25],[0.44,0.60],[0.57,0.90]] },
-      { y: 0.40, segs: [[0.13,0.24],[0.45,0.62],[0.56,0.88],[0.84,0.88]] },
-      { y: 0.45, segs: [[0.14,0.23],[0.45,0.55],[0.60,0.72],[0.76,0.86]] },
-      { y: 0.50, segs: [[0.15,0.22],[0.10,0.14],[0.58,0.68],[0.76,0.84]] },
-      { y: 0.55, segs: [[0.16,0.20],[0.10,0.15],[0.55,0.64]] },
-      { y: 0.60, segs: [[0.17,0.21],[0.12,0.14],[0.44,0.54]] },
-      { y: 0.65, segs: [[0.18,0.24],[0.43,0.52],[0.84,0.90]] },
-      { y: 0.70, segs: [[0.20,0.26],[0.44,0.50]] },
-      { y: 0.75, segs: [[0.22,0.28],[0.44,0.48],[0.82,0.90]] },
+      { y: 0.20, segs: [[0.10, 0.22], [0.44, 0.56], [0.60, 0.90]] },
+      { y: 0.25, segs: [[0.09, 0.24], [0.43, 0.57], [0.58, 0.92]] },
+      { y: 0.30, segs: [[0.10, 0.26], [0.42, 0.58], [0.57, 0.93], [0.50, 0.55]] },
+      { y: 0.35, segs: [[0.12, 0.25], [0.44, 0.60], [0.57, 0.90]] },
+      { y: 0.40, segs: [[0.13, 0.24], [0.45, 0.62], [0.56, 0.88], [0.84, 0.88]] },
+      { y: 0.45, segs: [[0.14, 0.23], [0.45, 0.55], [0.60, 0.72], [0.76, 0.86]] },
+      { y: 0.50, segs: [[0.15, 0.22], [0.10, 0.14], [0.58, 0.68], [0.76, 0.84]] },
+      { y: 0.55, segs: [[0.16, 0.20], [0.10, 0.15], [0.55, 0.64]] },
+      { y: 0.60, segs: [[0.17, 0.21], [0.12, 0.14], [0.44, 0.54]] },
+      { y: 0.65, segs: [[0.18, 0.24], [0.43, 0.52], [0.84, 0.90]] },
+      { y: 0.70, segs: [[0.20, 0.26], [0.44, 0.50]] },
+      { y: 0.75, segs: [[0.22, 0.28], [0.44, 0.48], [0.82, 0.90]] },
     ];
 
     let pulse = 0;
@@ -567,15 +565,15 @@
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const successMsg = document.getElementById('successMsg');
-      const errorMsg   = document.getElementById('errorMsg');
-      const submitBtn  = contactForm.querySelector('.form-submit');
+      const errorMsg = document.getElementById('errorMsg');
+      const submitBtn = contactForm.querySelector('.form-submit');
 
       function showMsg(el, msg) {
         if (el) { el.innerHTML = msg; el.style.display = 'block'; }
       }
       function resetMsgs() {
         if (successMsg) successMsg.style.display = 'none';
-        if (errorMsg)   errorMsg.style.display   = 'none';
+        if (errorMsg) errorMsg.style.display = 'none';
       }
 
       resetMsgs();

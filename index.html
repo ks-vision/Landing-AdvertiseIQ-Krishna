@@ -12,23 +12,20 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="stylesheet" href="assets/css/globe.css" />
+  <link rel="stylesheet" href="assets/css/style1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
   <!-- ===== PAGE LOADER ===== -->
   <div id="page-loader">
-    <div class="loader-logo">
-      <img src="assets/img/logo-dark.svg" alt="AdvertiseIQ" id="loaderLogo" />
-    </div>
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading AdvertiseIQ…</div>
-    <div class="loader-progress-bar">
-      <div class="loader-progress-fill"></div>
-    </div>
+    <img src="assets/img/logo_loader.gif" alt="AdvertiseIQ" style="max-width: 30%;" />
   </div>
 
   <!-- ===== WAVY BACKGROUND ===== -->
   <canvas id="wavyBgCanvas" class="wavy-bg-canvas"></canvas>
+  <div class="cursor"></div>
 
   <!-- ===== AURORA BG ===== -->
   <div class="aurora-bg">
@@ -37,40 +34,7 @@
     <div class="aurora-blob blob3"></div>
   </div>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav class="main-nav" id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-          onerror="this.style.display='none'" />
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about-us.html">About</a>
-        <a href="contact-us.html">Contact</a>
-      </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <i class="bi bi-sun-fill" id="themeIcon"></i>
-        </button>
-        <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-        <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-          <i class="bi bi-list"></i>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile" id="navMobile">
-      <a href="index.html">Home</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about-us.html">About</a>
-      <a href="contact-us.html">Contact</a>
-      <a href="contact-us.html" class="btn-nav-primary" style="text-align: center">Start Free Trial</a>
-    </div>
-  </nav>
+  <div id="canvas-container"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero-section">
@@ -109,15 +73,15 @@
 
         <!-- Globe canvas container -->
         <div class="globe-canvas-wrap">
-          <canvas id="globeCanvas"></canvas>
+          <!-- <canvas id="globeCanvas"></canvas> -->
 
           <!-- AI Core CSS glow overlay -->
-          <div class="ai-core-glow"></div>
+          <!-- <div class="ai-core-glow"></div> -->
 
           <!-- AI Core label -->
-          <div class="ai-core-label">
+          <!-- <div class="ai-core-label">
             <span>AI&nbsp;ENGINE&nbsp;ACTIVE</span>
-          </div>
+          </div> -->
 
           <!-- Floating metric cards -->
           <div class="globe-card gc-top-left">
@@ -150,6 +114,442 @@
       </div>
     </div>
   </section>
+
+  <!-- Section 2: AI Operations -->
+  <section class="ai-operations-section">
+    <!-- ===== FEATURES ===== -->
+    <section class="features-section">
+      <div class="section-wrapper">
+        <div class="section-header" data-aos="fade-up">
+          <div class="section-tag">PLATFORM CAPABILITIES</div>
+          <h2>Everything You Need to<br />Scale on Amazon</h2>
+          <p>
+            Manage campaigns, optimize keywords, protect inventory, and maximize
+            profitability from a single intelligent platform.
+          </p>
+        </div>
+        <div class="features-bento">
+          <!-- Feature Card 1 -->
+          <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
+            <div class="feature-card-viz viz-campaign">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-icon purple">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <h3>Campaign Automation</h3>
+              <p>
+                AI automatically manages bids, budgets, placements, and campaign
+                optimization 24/7 without manual intervention.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check2-circle"></i> Smart Bid Adjustments
+                </li>
+                <li><i class="bi bi-check2-circle"></i> Budget Automation</li>
+                <li><i class="bi bi-check2-circle"></i> Campaign Scheduling</li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> Performance-Based Rules
+                </li>
+              </ul>
+              <div class="feature-metric purple-metric">+32% ROAS</div>
+            </div>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="80">
+            <div class="feature-card-viz viz-keyword">
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="line line-1"></div>
+              <div class="line line-2"></div>
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-icon orange">
+                <i class="bi bi-search"></i>
+              </div>
+              <h3>Keyword Intelligence</h3>
+              <p>
+                Discover profitable search terms, identify wasted spend, and
+                uncover competitor keyword opportunities.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check2-circle"></i> Search Term Analysis
+                </li>
+                <li><i class="bi bi-check2-circle"></i> Keyword Suggestions</li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> Auto Targeting Insights
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> Competitor Discovery
+                </li>
+              </ul>
+              <div class="feature-metric orange-metric">-41% Wasted Spend</div>
+            </div>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="160">
+            <div class="feature-card-viz viz-inventory">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-icon green">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3>Inventory Protection</h3>
+              <p>
+                Monitor FBA and FBM inventory levels and receive proactive
+                alerts before stock issues impact sales.
+              </p>
+              <ul class="feature-list">
+                <li><i class="bi bi-check2-circle"></i> Low Stock Alerts</li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> Sales Drop Detection
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> FBA & FBM Monitoring
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle"></i> Inventory Forecasting
+                </li>
+              </ul>
+              <div class="feature-metric green-metric">-28% Stockouts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="am-operations-section">
+    <div class="ai-content-wrapper">
+      <div class="ai-header">
+        <h2>Automate Amazon Growth On Autopilot</h2>
+        <p>Manage campaigns, inventory, keywords, budgets, and
+          performance from one intelligent platform built for
+          Amazon sellers.</p>
+        <button class="ai-cta">See How It Works <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="isometric-ai-section">
+    <div class="iso-sticky-container">
+      <div class="iso-scene">
+        <div class="iso-wrapper">
+          <!-- Glow Base -->
+          <div class="iso-glow-base"></div>
+
+          <!-- Rings -->
+          <div class="iso-rings">
+            <div class="iso-ring ring-1"></div>
+            <div class="iso-ring ring-2"></div>
+            <div class="iso-ring ring-4"></div>
+            <div class="iso-ring ring-3"></div>
+          </div>
+
+          <!-- Connection Lines (SVG) -->
+          <!-- Connection Lines (SVG) -->
+          <svg class="iso-svg-lines" viewBox="0 0 800 800">
+            <defs>
+              <filter id="isoGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <g fill="none" stroke="#00d2ff" stroke-width="2" filter="url(#isoGlow)">
+              <!-- Math coordinates for lines starting from R=100 to orbit R=280 -->
+              <path class="iso-line" id="path-top" d="M 400 300 L 400 120" /> <!-- Top -->
+              <path class="iso-line" id="path-tr" d="M 487 350 L 642 260" /> <!-- Top Right -->
+              <path class="iso-line" id="path-br" d="M 487 450 L 642 540" /> <!-- Bottom Right -->
+              <path class="iso-line" id="path-bot" d="M 400 500 L 400 680" /> <!-- Bottom -->
+              <path class="iso-line" id="path-bl" d="M 313 450 L 158 540" /> <!-- Bottom Left -->
+              <path class="iso-line" id="path-tl" d="M 313 350 L 158 260" /> <!-- Top Left -->
+            </g>
+
+            <g fill="#00d2ff" filter="url(#isoGlow)">
+              <circle r="6">
+                <animateMotion dur="2.5s" repeatCount="indefinite">
+                  <mpath href="#path-top" />
+                </animateMotion>
+              </circle>
+              <circle r="6">
+                <animateMotion dur="2.5s" begin="0.5s" repeatCount="indefinite">
+                  <mpath href="#path-tr" />
+                </animateMotion>
+              </circle>
+              <circle r="6">
+                <animateMotion dur="2.5s" begin="1.0s" repeatCount="indefinite">
+                  <mpath href="#path-br" />
+                </animateMotion>
+              </circle>
+              <circle r="6">
+                <animateMotion dur="2.5s" begin="1.5s" repeatCount="indefinite">
+                  <mpath href="#path-bot" />
+                </animateMotion>
+              </circle>
+              <circle r="6">
+                <animateMotion dur="2.5s" begin="2.0s" repeatCount="indefinite">
+                  <mpath href="#path-bl" />
+                </animateMotion>
+              </circle>
+              <circle r="6">
+                <animateMotion dur="2.5s" begin="0.2s" repeatCount="indefinite">
+                  <mpath href="#path-tl" />
+                </animateMotion>
+              </circle>
+            </g>
+          </svg>
+
+          <!-- Satellite Nodes -->
+          <div class="iso-nodes">
+            <!-- Top (Bids) -->
+            <div class="iso-node n-top" style="--clr: #a855f7;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-bar-chart-fill"></i></div>
+              <div class="iso-node-label Recommendations">Recommendations</div>
+            </div>
+            <!-- Top Right (Inventory) -->
+            <div class="iso-node n-tr" style="--clr: #10b981;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-box-seam"></i></div>
+              <div class="iso-node-label">History</div>
+            </div>
+            <!-- Bottom Right (Placements) -->
+            <div class="iso-node n-br" style="--clr: #c084fc;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-bullseye"></i></div>
+              <div class="iso-node-label">Ads</div>
+            </div>
+            <!-- Bottom (Analytics) -->
+            <div class="iso-node n-bot" style="--clr: #3b82f6;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-pie-chart-fill"></i></div>
+              <div class="iso-node-label">Rules</div>
+            </div>
+            <!-- Bottom Left (Budgets) -->
+            <div class="iso-node n-bl" style="--clr: #0ea5e9;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-currency-dollar"></i></div>
+              <div class="iso-node-label">Day Parting</div>
+            </div>
+            <!-- Top Left (Keywords) -->
+            <div class="iso-node n-tl" style="--clr: #f59e0b;">
+              <div class="iso-node-base"></div>
+              <div class="iso-node-cap"></div>
+              <div class="iso-node-icon"><i class="bi bi-search"></i></div>
+              <div class="iso-node-label">Search</div>
+            </div>
+          </div>
+
+          <!-- Central 3D Core -->
+          <div class="iso-core">
+            <div class="iso-core-base-rings">
+              <div class="cb-ring r1"></div>
+              <div class="cb-ring r2"></div>
+            </div>
+            <div class="iso-cube">
+              <div class="c-text">Feature</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="saas-right">
+      <div class="saas-card-wrapper" id="card-bids">
+        <div class="saas-card" style="z-index: 1;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              Recommendations
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Track campaign performance with actionable recommendations tailored to your advertising goals.
+            Identify opportunities to improve visibility, optimize spend, and drive better results through
+            data-backed suggestions.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Improve advertising efficiency</li>
+            <li><i class="bi bi-check2-circle"></i> Uncover growth opportunities</li>
+            <li><i class="bi bi-check2-circle"></i> Reduce wasted spend</li>
+            <li><i class="bi bi-check2-circle"></i> Simplify campaign management</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Keyword Intelligence -->
+
+      <div class="saas-card-wrapper" id="card-inventory">
+        <div class="saas-card" style="z-index: 2;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              History Management
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Maintain full visibility into every account activity. Access a detailed history of user actions,
+            campaign changes, automation events, and optimization activities to ensure transparency and
+            control.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Track all account activities</li>
+            <li><i class="bi bi-check2-circle"></i> Monitor automation actions in real time</li>
+            <li><i class="bi bi-check2-circle"></i> Review campaign and rule changes</li>
+            <li><i class="bi bi-check2-circle"></i> Audit user access and activity</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 5: Budget Automation -->
+
+      <div class="saas-card-wrapper" id="card-placements">
+        <div class="saas-card" style="z-index: 3;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              Product Ads
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Track the performance of all product advertisements in one place. See which ads are running for
+            each product and monitor key metrics including clicks, impressions, sales, spend, ACOS, and ROAS
+            to make informed advertising decisions.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Track all product ads</li>
+            <li><i class="bi bi-check2-circle"></i> Monitor clicks, impressions, sales, spend</li>
+            <li><i class="bi bi-check2-circle"></i> Real-time performance monitoring</li>
+            <li><i class="bi bi-check2-circle"></i> Simplified campaign analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4: Inventory Monitoring -->
+
+      <div class="saas-card-wrapper" id="card-analytics">
+        <div class="saas-card" style="z-index: 4;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              Search Terms
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Transform search term data into actionable insights. Analyze customer search behavior, evaluate
+            query-level performance, and identify opportunities to improve visibility, increase conversions,
+            and maximize advertising efficiency.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Detailed search term analytics</li>
+            <li><i class="bi bi-check2-circle"></i> Query-level performance analysis</li>
+            <li><i class="bi bi-check2-circle"></i> Customer behavior insights</li>
+            <li><i class="bi bi-check2-circle"></i> Conversion optimization opportunities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="saas-card-wrapper" id="card-budgets">
+        <div class="saas-card" style="z-index: 5;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              Day Parting
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Control bids based on hourly performance insights. Schedule bid adjustments using percentage or
+            multiplier rules to capture more sales during peak hours and improve advertising efficiency.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Hourly bid scheduling</li>
+            <li><i class="bi bi-check2-circle"></i> Percentage and multiplier adjustments</li>
+            <li><i class="bi bi-check2-circle"></i> Peak-hour optimization</li>
+            <li><i class="bi bi-check2-circle"></i> Performance-based automation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 6: Analytics Dashboard -->
+
+      <div class="saas-card-wrapper" id="card-keywords" style="margin-bottom: 0;">
+        <div class="saas-card" style="z-index: 6;">
+          <div class="saas-card-header">
+            <div class="saas-card-title">
+              Rules
+            </div>
+          </div>
+          <div style="padding: 20px 24px 0 24px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+            Define custom automation rules and let the platform take action based on campaign performance.
+            Automatically manage bids, budgets, campaigns, ad groups, targets, and search terms using your
+            preferred conditions.
+          </div>
+          <ul class="card-features" style="margin: 20px 0 24px 0;">
+            <li><i class="bi bi-check2-circle"></i> Create custom rules based on performance metrics</li>
+            <li><i class="bi bi-check2-circle"></i> Automatically adjust bids and budgets</li>
+            <li><i class="bi bi-check2-circle"></i> Enable or disable campaigns and ad groups</li>
+            <li><i class="bi bi-check2-circle"></i> Activate or pause targets and search terms</li>
+            <li><i class="bi bi-check2-circle"></i> Reduce manual optimization efforts</li>
+            <li><i class="bi bi-check2-circle"></i> Maintain full control over all automations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: Placement Optimization -->
+
+    </div>
+  </section>
+
+  <!-- Section 5: Continuous Growth Transformation (Rocket) -->
+  <section class="wizardly-section">
+  </section>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
+          onerror="this.style.display='none'" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about-us.html">About</a>
+        <a href="contact-us.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
+        </button>
+        <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="contact-us.html" class="btn-nav-primary" style="text-align: center">Start Free Trial</a>
+    </div>
+  </nav>
 
   <!-- ===== STATS BAR ===== -->
   <section class="stats-section">
@@ -257,16 +657,6 @@
 
         <!-- CENTER — Orb -->
         <div class="vs-center" data-aos="zoom-in">
-          <div class="vs-arrows">
-            <div class="vs-arrow vs-arrow-left"></div>
-          </div>
-          <div class="vs-orb">
-            <span class="vs-orb-name">AdvertiseIQ</span>
-            <span class="vs-orb-sub">AI-Powered<br>Automation</span>
-          </div>
-          <div class="vs-arrows">
-            <div class="vs-arrow vs-arrow-right"></div>
-          </div>
         </div>
 
         <!-- RIGHT — How AIQ Helps -->
@@ -375,120 +765,6 @@
           <div class="flow-step-desc">Higher ROAS, lower ACoS, more profit — on autopilot</div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FEATURES ===== -->
-  <section class="features-section">
-    <div class="section-wrapper">
-      <div class="section-header" data-aos="fade-up">
-        <div class="section-tag">PLATFORM CAPABILITIES</div>
-        <h2>Everything You Need to<br />Scale on Amazon</h2>
-        <p>
-          Manage campaigns, optimize keywords, protect inventory, and maximize
-          profitability from a single intelligent platform.
-        </p>
-      </div>
-      <div class="features-bento">
-        <!-- Feature Card 1 -->
-        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
-          <div class="feature-card-viz viz-campaign">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-          <div class="feature-card-body">
-            <div class="feature-icon purple">
-              <i class="bi bi-lightning-charge-fill"></i>
-            </div>
-            <h3>Campaign Automation</h3>
-            <p>
-              AI automatically manages bids, budgets, placements, and campaign
-              optimization 24/7 without manual intervention.
-            </p>
-            <ul class="feature-list">
-              <li>
-                <i class="bi bi-check2-circle"></i> Smart Bid Adjustments
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Budget Automation</li>
-              <li><i class="bi bi-check2-circle"></i> Campaign Scheduling</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Performance-Based Rules
-              </li>
-            </ul>
-            <div class="feature-metric purple-metric">+32% ROAS</div>
-          </div>
-        </div>
-
-        <!-- Feature Card 2 -->
-        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="80">
-          <div class="feature-card-viz viz-keyword">
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-          </div>
-          <div class="feature-card-body">
-            <div class="feature-icon orange">
-              <i class="bi bi-search"></i>
-            </div>
-            <h3>Keyword Intelligence</h3>
-            <p>
-              Discover profitable search terms, identify wasted spend, and
-              uncover competitor keyword opportunities.
-            </p>
-            <ul class="feature-list">
-              <li>
-                <i class="bi bi-check2-circle"></i> Search Term Analysis
-              </li>
-              <li><i class="bi bi-check2-circle"></i> Keyword Suggestions</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Auto Targeting Insights
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Competitor Discovery
-              </li>
-            </ul>
-            <div class="feature-metric orange-metric">-41% Wasted Spend</div>
-          </div>
-        </div>
-
-        <!-- Feature Card 3 -->
-        <div class="feature-card anti-gravity" data-aos="fade-up" data-aos-delay="160">
-          <div class="feature-card-viz viz-inventory">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-          </div>
-          <div class="feature-card-body">
-            <div class="feature-icon green">
-              <i class="bi bi-shield-check"></i>
-            </div>
-            <h3>Inventory Protection</h3>
-            <p>
-              Monitor FBA and FBM inventory levels and receive proactive
-              alerts before stock issues impact sales.
-            </p>
-            <ul class="feature-list">
-              <li><i class="bi bi-check2-circle"></i> Low Stock Alerts</li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Sales Drop Detection
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> FBA & FBM Monitoring
-              </li>
-              <li>
-                <i class="bi bi-check2-circle"></i> Inventory Forecasting
-              </li>
-            </ul>
-            <div class="feature-metric green-metric">-28% Stockouts</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -935,104 +1211,102 @@
 
   <!-- ===== PRICING ===== -->
   <section class="pricing-section" id="pricing">
-    <div class="section-wrapper">
-      <div class="section-header" data-aos="fade-up">
-        <div class="section-tag">PRICING</div>
-        <h2>The Right Plan for <span class="gradient-text">You</span></h2>
-        <p>Transparent pricing with no hidden fees. Scale as you grow.</p>
-        <div class="billing-tab-toggle">
-          <div class="bill-tab-indicator"></div>
-          <button class="bill-tab active" data-period="monthly">
-            Monthly
-          </button>
-          <button class="bill-tab" data-period="annual">
-            Annual <span class="save-badge-tab">Save 20%</span>
-          </button>
-        </div>
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">PRICING</div>
+      <h2>The Right Plan for <span class="gradient-text">You</span></h2>
+      <p>Transparent pricing with no hidden fees. Scale as you grow.</p>
+      <div class="billing-tab-toggle">
+        <div class="bill-tab-indicator"></div>
+        <button class="bill-tab active" data-period="monthly">
+          Monthly
+        </button>
+        <button class="bill-tab" data-period="annual">
+          Annual <span class="save-badge-tab">Save 20%</span>
+        </button>
       </div>
-      <div class="pricing-cards">
-        <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="plan-name">Starter</div>
-          <div class="plan-price">
-            <span class="price-currency">$</span>
-            <span class="price-amount" data-monthly="349" data-annual="279">349</span>
-            <span class="price-period">/mo</span>
-          </div>
-          <p class="plan-desc">
-            Perfect for growing brands just getting started with Amazon
-            advertising automation.
-          </p>
-          <ul class="plan-features">
-            <li>
-              <i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts
-            </li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Campaign automation & rules
-            </li>
-            <li><i class="bi bi-check2-circle"></i> Keyword intelligence</li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Basic analytics dashboard
-            </li>
-            <li><i class="bi bi-check2-circle"></i> Email support</li>
-          </ul>
-          <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="349" data-annual="279">349</span>
+          <span class="price-period">/mo</span>
         </div>
-        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="featured-badge">Most Popular</div>
-          <div class="plan-name">Premium</div>
-          <div class="plan-price">
-            <span class="price-currency">$</span>
-            <span class="price-amount" data-monthly="299" data-annual="239">299</span>
-            <span class="price-period">/mo</span>
-          </div>
-          <p class="plan-desc">
-            For established brands ready to dominate their category with full
-            automation.
-          </p>
-          <ul class="plan-features">
-            <li>
-              <i class="bi bi-check2-circle"></i> Up to 20 marketplace
-              accounts
-            </li>
-            <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Inventory protection alerts
-            </li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Advanced analytics &
-              reporting
-            </li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Competitor intelligence
-            </li>
-            <li><i class="bi bi-check2-circle"></i> Priority support</li>
-          </ul>
-          <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
+        <p class="plan-desc">
+          Perfect for growing brands just getting started with Amazon
+          advertising automation.
+        </p>
+        <ul class="plan-features">
+          <li>
+            <i class="bi bi-check2-circle"></i> Up to 5 marketplace accounts
+          </li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Campaign automation & rules
+          </li>
+          <li><i class="bi bi-check2-circle"></i> Keyword intelligence</li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Basic analytics dashboard
+          </li>
+          <li><i class="bi bi-check2-circle"></i> Email support</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-outline">Start Free Trial</a>
+      </div>
+      <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="featured-badge">Most Popular</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="299" data-annual="239">299</span>
+          <span class="price-period">/mo</span>
         </div>
-        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="plan-name">Enterprise</div>
-          <div class="plan-price">
-            <span class="price-currency">$</span>
-            <span class="price-amount" data-monthly="249" data-annual="199">249</span>
-            <span class="price-period">/mo per seat</span>
-          </div>
-          <p class="plan-desc">
-            Custom solutions for agencies and large brands with complex needs.
-          </p>
-          <ul class="plan-features">
-            <li><i class="bi bi-check2-circle"></i> Unlimited accounts</li>
-            <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Custom integrations & API
-            </li>
-            <li>
-              <i class="bi bi-check2-circle"></i> Dedicated success manager
-            </li>
-            <li><i class="bi bi-check2-circle"></i> Custom onboarding</li>
-            <li><i class="bi bi-check2-circle"></i> SLA guarantees</li>
-          </ul>
-          <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
+        <p class="plan-desc">
+          For established brands ready to dominate their category with full
+          automation.
+        </p>
+        <ul class="plan-features">
+          <li>
+            <i class="bi bi-check2-circle"></i> Up to 20 marketplace
+            accounts
+          </li>
+          <li><i class="bi bi-check2-circle"></i> Everything in Starter</li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Inventory protection alerts
+          </li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Advanced analytics &
+            reporting
+          </li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Competitor intelligence
+          </li>
+          <li><i class="bi bi-check2-circle"></i> Priority support</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-primary">Get Premium</a>
+      </div>
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">
+          <span class="price-currency">$</span>
+          <span class="price-amount" data-monthly="249" data-annual="199">249</span>
+          <span class="price-period">/mo</span>
         </div>
+        <p class="plan-desc">
+          Custom solutions for agencies and large brands with complex needs.
+        </p>
+        <ul class="plan-features">
+          <li><i class="bi bi-check2-circle"></i> Unlimited accounts</li>
+          <li><i class="bi bi-check2-circle"></i> Everything in Premium</li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Custom integrations & API
+          </li>
+          <li>
+            <i class="bi bi-check2-circle"></i> Dedicated success manager
+          </li>
+          <li><i class="bi bi-check2-circle"></i> Custom onboarding</li>
+          <li><i class="bi bi-check2-circle"></i> SLA guarantees</li>
+        </ul>
+        <a href="contact-us.html" class="btn-plan btn-plan-outline">Contact Sales</a>
       </div>
     </div>
   </section>
@@ -1213,7 +1487,7 @@
     <div class="footer-inner">
       <div class="footer-col brand-col">
         <a href="index.html" class="footer-logo-link">
-          <img src="assets/img/logo.svg" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
+          <img src="assets/img/logo.png" alt="AdvertiseIQ" class="footer-logo" id="footerLogo"
             onerror="this.style.display='none'" />
         </a>
         <p>
@@ -1265,6 +1539,56 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/globe.js"></script>
+  <script>
+    const cursor = document.querySelector('.cursor');
+    const colors = [
+      '#2f6fcc',
+      '#3b82f6',
+      '#60a5fa',
+      '#93c5fd',
+      '#bfdbfe'
+    ];
+    let lastBubble = 0;
+    document.addEventListener('mousemove', (e) => {
+
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+
+      const now = Date.now();
+      if (now - lastBubble < 100) return;
+      lastBubble = now;
+
+      const splash = document.createElement('div');
+      splash.className = 'splash';
+
+      splash.style.left = e.clientX + 'px';
+      splash.style.top = e.clientY + 'px';
+      splash.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 30 + Math.random() * 90;
+
+      splash.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+      splash.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+
+      document.body.appendChild(splash);
+
+      splash.addEventListener('animationend', () => splash.remove());
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+  <!-- GSAP for Scroll Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/landingpage.js"></script>
+
   <script>
     AOS.init({
       duration: 650,
