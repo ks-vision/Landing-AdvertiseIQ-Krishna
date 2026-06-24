@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "IBR-ec1e_svzXYQyX2luX"
+uri = "file://assets/img/ai-hero-dashboard.png"
+type = "image"
+title = "ai hero dashboard"
+
+[[generated]]
+id = "jcgDt6CTcOck7sxoinNqk"
+uri = "file://assets/img/ai-robot-analytics.png"
+type = "image"
+title = "ai robot analytics"
+
+[[generated]]
+id = "QcQi1NZ1feUjnDN0LSIVf"
+uri = "file://assets/img/ai-global-map.png"
+type = "image"
+title = "ai global map"
+
+[[generated]]
+id = "Vp_wPNGDzKMbUNxl3Wu4N"
+uri = "file://assets/img/ai-team-success.png"
+type = "image"
+title = "ai team success"
+
+[[generated]]
+id = "ANSS-sfj-4JT33NE_3tZ2"
+uri = "file://assets/img/ai-campaign-structure.png"
+type = "image"
+title = "ai campaign structure"
