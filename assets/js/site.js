@@ -67,30 +67,34 @@
   }
 
   /* ============================================================
-     SETTINGS FAB + DRAWER  (injected dynamically so it works
-     on every page without touching HTML files)
+     SETTINGS FAB + DRAWER
+     Injected dynamically — works on every page without HTML changes.
+     FAB is hidden for the first 200vh of scroll, then fades in.
      ============================================================ */
   function injectSettingsPanel() {
+    const currentChoice = localStorage.getItem('aiq-theme-choice') || 'system';
+
+    /* — FAB button — */
     const fab = document.createElement('button');
     fab.className = 'settings-fab';
     fab.id = 'settingsFab';
     fab.setAttribute('aria-label', 'Appearance settings');
-    fab.innerHTML = '<i class="bi bi-sliders spin-on-hover"></i>';
+    fab.innerHTML = '<i class="fa-solid fa-sliders spin-on-hover"></i>';
 
+    /* — Backdrop — */
     const backdrop = document.createElement('div');
     backdrop.className = 'settings-backdrop';
     backdrop.id = 'settingsBackdrop';
 
-    const currentChoice = localStorage.getItem('aiq-theme-choice') || 'system';
-
+    /* — Drawer — */
     const drawer = document.createElement('div');
     drawer.className = 'settings-drawer';
     drawer.id = 'settingsDrawer';
     drawer.innerHTML = `
       <div class="settings-drawer-header">
-        <h4><i class="bi bi-palette" style="margin-right:8px;color:var(--accent)"></i>Appearance</h4>
-        <button class="settings-close-btn" id="settingsCloseBtn" aria-label="Close settings">
-          <i class="bi bi-x-lg"></i>
+        <h4><i class="fa-solid fa-palette" style="margin-right:8px;color:var(--accent)"></i>Appearance</h4>
+        <button class="settings-close-btn" id="settingsCloseBtn" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
@@ -98,49 +102,44 @@
         <div class="settings-section-title">Theme Mode</div>
         <div class="theme-options">
           <button class="theme-opt${currentChoice === 'system' ? ' active' : ''}" data-theme-choice="system">
-            <div class="theme-opt-icon">💻</div>
+            <div class="theme-opt-icon"><i class="fa-solid fa-desktop"></i></div>
             <div>
               <div style="font-weight:700;font-size:.875rem;color:var(--text)">System</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:1px">Follows your OS setting</div>
+              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Follows your OS setting</div>
             </div>
-            <div class="theme-opt-check"><i class="bi bi-check2"></i></div>
+            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
           </button>
           <button class="theme-opt${currentChoice === 'dark' ? ' active' : ''}" data-theme-choice="dark">
-            <div class="theme-opt-icon">🌙</div>
+            <div class="theme-opt-icon"><i class="fa-solid fa-moon"></i></div>
             <div>
               <div style="font-weight:700;font-size:.875rem;color:var(--text)">Dark</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:1px">Easy on the eyes at night</div>
+              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Easy on the eyes at night</div>
             </div>
-            <div class="theme-opt-check"><i class="bi bi-check2"></i></div>
+            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
           </button>
           <button class="theme-opt${currentChoice === 'light' ? ' active' : ''}" data-theme-choice="light">
-            <div class="theme-opt-icon">☀️</div>
+            <div class="theme-opt-icon"><i class="fa-solid fa-sun"></i></div>
             <div>
               <div style="font-weight:700;font-size:.875rem;color:var(--text)">Light</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:1px">Crisp and clean look</div>
+              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Crisp and clean look</div>
             </div>
-            <div class="theme-opt-check"><i class="bi bi-check2"></i></div>
+            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
           </button>
         </div>
       </div>
 
       <div class="settings-info">
-        <i class="bi bi-info-circle" style="color:var(--accent)"></i>
-        &nbsp;Your preference is saved locally and applied across all pages automatically.
+        <i class="fa-solid fa-circle-info" style="color:var(--accent)"></i>
+        &nbsp;Your choice is saved and applied across all pages automatically.
       </div>`;
 
     document.body.appendChild(fab);
     document.body.appendChild(backdrop);
     document.body.appendChild(drawer);
 
-    function openSettings() {
-      drawer.classList.add('open');
-      backdrop.classList.add('open');
-    }
-    function closeSettings() {
-      drawer.classList.remove('open');
-      backdrop.classList.remove('open');
-    }
+    /* — Open / close helpers — */
+    function openSettings() { drawer.classList.add('open'); backdrop.classList.add('open'); }
+    function closeSettings() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
 
     fab.addEventListener('click', openSettings);
     backdrop.addEventListener('click', closeSettings);
@@ -150,6 +149,24 @@
     drawer.querySelectorAll('.theme-opt').forEach(btn => {
       btn.addEventListener('click', () => applyTheme(btn.dataset.themeChoice));
     });
+
+    /* — Scroll-based FAB reveal (hidden until 200vh scrolled) — */
+    const threshold = window.innerHeight * 2; // 200vh
+    const fadeRange = 180; // px over which to fade in
+
+    function updateFabVisibility() {
+      const scrollY = window.scrollY;
+      if (scrollY <= threshold) {
+        fab.classList.remove('fab-visible');
+      } else {
+        const progress = Math.min((scrollY - threshold) / fadeRange, 1);
+        fab.style.setProperty('--fab-progress', progress);
+        fab.classList.add('fab-visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateFabVisibility, { passive: true });
+    updateFabVisibility(); // ensure hidden on page load
   }
 
   injectSettingsPanel();
