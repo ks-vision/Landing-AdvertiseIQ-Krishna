@@ -45,6 +45,8 @@ let pointMaterial;
 let actualParticleCount = 0;
 let netMat;
 let netLines;
+let darkColorsBuffer = null;   // stored dark-mode vertex colors
+let lightColorsBuffer = null;  // stored light-mode vertex colors
 
 const globeGroup = new THREE.Group();
 globeGroup.position.x = 180;
@@ -90,13 +92,17 @@ function initGlobe(imgData, imgWidth, imgHeight) {
     const tempTargetPos = [];
     const tempPhases = [];
     const tempSizes = [];
-    const tempColors = [];
+    const tempColors = [];      // dark-mode vertex colors (built during loop)
+    const tempLightColors = []; // light-mode vertex colors (same count, flat near-black)
     const tempIsOcean = [];
 
-    const colorWhite     = new THREE.Color(IS_LIGHT ? 0x020617 : 0xffffff);
-    const colorLightBlue = new THREE.Color(IS_LIGHT ? 0x020617 : 0x44aaff);
-    const colorBlue      = new THREE.Color(IS_LIGHT ? 0x020617 : 0x0044ff);
-    const colorDeepBlue  = new THREE.Color(IS_LIGHT ? 0x020617 : 0x000033);
+    // Dark-mode palette (always computed so we can switch live)
+    const colorWhite     = new THREE.Color(0xffffff);
+    const colorLightBlue = new THREE.Color(0x44aaff);
+    const colorBlue      = new THREE.Color(0x0044ff);
+    const colorDeepBlue  = new THREE.Color(0x000033);
+    // Light-mode: all particles are near-black so they show on a white bg
+    const colorLightAll  = new THREE.Color(0x020617);
 
     for (let i = 0; i < maxParticles; i++) {
         const u = Math.random();
@@ -146,6 +152,8 @@ function initGlobe(imgData, imgWidth, imgHeight) {
                 mixColor.lerpColors(colorDeepBlue, colorBlue, Math.random()); // Deep space navy
             }
             tempColors.push(mixColor.r, mixColor.g, mixColor.b);
+            // Light-mode equivalent for this particle
+            tempLightColors.push(colorLightAll.r, colorLightAll.g, colorLightAll.b);
 
             if (isLand) {
                 tempSizes.push(Math.random() * 2.5 + 1.0);
@@ -223,15 +231,20 @@ function initGlobe(imgData, imgWidth, imgHeight) {
     const targetPositions = new Float32Array(tempTargetPos); // Keeping old target arrays to prevent errors
     const phases = new Float32Array(tempPhases);
     const sizes = new Float32Array(tempSizes);
-    const colors = new Float32Array(tempColors);
     const isOceanArr = new Float32Array(tempIsOcean);
+
+    // Store both color buffers so applyTheme() can swap them live
+    darkColorsBuffer  = new Float32Array(tempColors);
+    lightColorsBuffer = new Float32Array(tempLightColors);
+    // Use the right one for the current theme at init time
+    const colors = IS_LIGHT ? lightColorsBuffer : darkColorsBuffer;
 
     pointGeometry = new THREE.BufferGeometry();
     pointGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     pointGeometry.setAttribute('rocketPosition', new THREE.BufferAttribute(rocketPositions, 3));
     pointGeometry.setAttribute('rocketColorAttr', new THREE.BufferAttribute(rocketCustomColors, 3));
     pointGeometry.setAttribute('targetPosition', new THREE.BufferAttribute(targetPositions, 3));
-    pointGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    pointGeometry.setAttribute('color', new THREE.BufferAttribute(colors.slice(), 3)); // slice so the attr owns its copy
     pointGeometry.setAttribute('phase', new THREE.BufferAttribute(phases, 1));
     pointGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
     pointGeometry.setAttribute('isOcean', new THREE.BufferAttribute(isOceanArr, 1));
@@ -1139,3 +1152,37 @@ function initGSAP() {
     });
 
 }
+
+// ─────────────────────────────────────────────────────────────
+// LIVE THEME SWITCHING — update Three.js scene on data-theme change
+// ─────────────────────────────────────────────────────────────
+function applyTheme(isLight) {
+    // 1. Canvas background
+    if (isLight) {
+        renderer.setClearColor(0x000000, 0); // transparent (CSS bg shows through)
+    } else {
+        renderer.setClearColor(0x020205, 1);
+    }
+
+    // 2. Bloom strength
+    bloomPass.strength = isLight ? 0 : 2.4;
+
+    // 3. Atmospheric glow colour
+    if (glowMat && glowMat.uniforms) {
+        glowMat.uniforms.glowColor.value.set(isLight ? 0x1e3a8a : 0x000015);
+    }
+
+    // 4. Particle vertex colours — swap between stored buffers
+    if (pointGeometry && darkColorsBuffer && lightColorsBuffer) {
+        const colorAttr = pointGeometry.getAttribute('color');
+        const src = isLight ? lightColorsBuffer : darkColorsBuffer;
+        colorAttr.array.set(src);
+        colorAttr.needsUpdate = true;
+    }
+}
+
+// Watch for theme toggle and apply changes instantly — no script reload needed
+new MutationObserver(() => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    applyTheme(isLight);
+}).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
