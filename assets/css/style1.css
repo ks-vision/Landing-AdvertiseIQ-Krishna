@@ -2654,6 +2654,7 @@ body {
     background: rgba(0, 0, 0, 0.03);
     border-color: rgba(0, 0, 0, 0.06);
 }
+
 /* --- Hero Buttons (style1 context) --- */
 [data-theme="light"] .btn-secondary {
     color: #0f172a !important;
@@ -2707,9 +2708,4 @@ body {
 /* --- iso-node-label text --- */
 [data-theme="light"] .iso-node-label {
     color: #1e293b !important;
-}
-
-/* --- Globe carrier dot on canvas section --- */
-[data-theme="light"] #canvas-container {
-    opacity: 0.05 !important;
 }

@@ -4091,7 +4091,7 @@ select.form-control {
 /* Card stage */
 .sstack-card-stage {
   position: relative;
-  height: 500px;
+  height: 550px;
   perspective: 1200px;
 }
 
@@ -4718,7 +4718,7 @@ select.form-control {
 .flow-section {
   position: relative;
   padding: 80px 24px 96px;
-  background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
+  background: var(--bg-card);
   z-index: 1;
 }
 
@@ -5823,6 +5823,7 @@ button[type="submit"] {
 [data-theme="light"] .market-list {
   color: #475569;
 }
+
 /* ==========================================================================
    LIGHT MODE — REMAINING FIXES
    ========================================================================== */
