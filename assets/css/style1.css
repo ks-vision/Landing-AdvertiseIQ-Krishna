@@ -2377,7 +2377,7 @@ body {
 
 /* --- Aurora / Canvas Background --- */
 [data-theme="light"] #canvas-container {
-    opacity: 0.20;
+    opacity: 1;
 }
 
 /* --- AI Operations Section --- */
