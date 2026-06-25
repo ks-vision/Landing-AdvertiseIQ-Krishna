@@ -43,7 +43,7 @@
     if (icon) icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
     ['navLogo', 'footerLogo', 'loaderLogo'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.src = theme === 'dark' ? 'assets/img/logo-dark.svg' : 'assets/img/logo.svg';
+      if (el) el.src = theme === 'dark' ? 'assets/img/logo.png' : 'assets/img/logo.png';
     });
   }
 
@@ -178,7 +178,7 @@
     // Skip on touch devices
     if (window.matchMedia('(hover: none)').matches) return;
 
-    const dot  = document.createElement('div');
+    const dot = document.createElement('div');
     dot.className = 'cursor-dot';
     dot.id = 'cursorDot';
 
@@ -197,7 +197,7 @@
       mx = e.clientX;
       my = e.clientY;
       dot.style.left = mx + 'px';
-      dot.style.top  = my + 'px';
+      dot.style.top = my + 'px';
     });
 
     // Hover state on interactive elements
@@ -211,7 +211,7 @@
 
     // Click effect
     document.addEventListener('mousedown', () => ring.classList.add('cursor-click'));
-    document.addEventListener('mouseup',   () => ring.classList.remove('cursor-click'));
+    document.addEventListener('mouseup', () => ring.classList.remove('cursor-click'));
 
     // Cursor leaves/enters window
     document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
@@ -222,7 +222,7 @@
       rx += (mx - rx) * lerp;
       ry += (my - ry) * lerp;
       ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
+      ring.style.top = ry + 'px';
       requestAnimationFrame(animate);
     }
     animate();
@@ -263,7 +263,7 @@
     let w, h;
 
     function resize() {
-      w = canvas.width  = window.innerWidth;
+      w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
     }
     resize();
@@ -274,7 +274,7 @@
       { amp: 55, freq: 0.0018, speed: 0.008, yRatio: 0.38, alpha: 0.045 },
       { amp: 40, freq: 0.0025, speed: 0.012, yRatio: 0.52, alpha: 0.035 },
       { amp: 65, freq: 0.0014, speed: 0.006, yRatio: 0.65, alpha: 0.025 },
-      { amp: 30, freq: 0.003,  speed: 0.018, yRatio: 0.78, alpha: 0.020 }
+      { amp: 30, freq: 0.003, speed: 0.018, yRatio: 0.78, alpha: 0.020 }
     ];
 
     let t = 0;
@@ -307,28 +307,84 @@
   (function initTypewriter() {
     const el = document.getElementById('heroTypewriter');
     if (!el) return;
-    const words = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Results'];
-    let wi = 0, ci = 0, deleting = false, pauseTicks = 0;
 
-    function tick() {
-      const word = words[wi];
-      if (deleting) {
-        ci--;
-        el.textContent = word.slice(0, ci);
-        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
-        setTimeout(tick, 55);
-      } else {
-        ci++;
-        el.textContent = word.slice(0, ci);
-        if (ci === word.length) {
-          if (pauseTicks < 18) { pauseTicks++; setTimeout(tick, 100); }
-          else { pauseTicks = 0; deleting = true; setTimeout(tick, 55); }
+    const words = ['Precision', 'Intelligence', 'Automation', 'Efficiency', 'Growth'];
+    const POOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!%&';
+    const SCRAMBLE_MS = 38;   /* speed of each scramble frame          */
+    const REVEAL_MS = 52;   /* ms between each character being locked */
+    const HOLD_MS = 2400; /* pause after word is fully revealed     */
+
+    let wi = 0;
+    let timer = null;
+
+    function rndChar() {
+      return POOL[Math.floor(Math.random() * POOL.length)];
+    }
+
+    /* Build the span structure: one .tt-char span per character */
+    function buildSpans(word) {
+      el.innerHTML = '';
+      return Array.from(word).map(function (ch) {
+        var span = document.createElement('span');
+        span.className = 'tt-char';
+        span.textContent = rndChar();
+        el.appendChild(span);
+        return span;
+      });
+    }
+
+    function scrambleWord(word, onDone) {
+      var spans = buildSpans(word);
+      var locked = new Array(word.length).fill(false);
+      var current = 0;
+
+      /* Phase 1: scramble all chars while revealing left-to-right */
+      function scrambleTick() {
+        spans.forEach(function (s, i) {
+          if (!locked[i]) s.textContent = rndChar();
+        });
+
+        /* Lock the next char every REVEAL_MS */
+        if (current < word.length) {
+          locked[current] = true;
+          spans[current].textContent = word[current];
+          spans[current].classList.add('tt-locked');
+          current++;
+        }
+
+        if (current < word.length) {
+          timer = setTimeout(function () {
+            timer = setTimeout(scrambleTick, SCRAMBLE_MS);
+          }, current === 1 ? REVEAL_MS : REVEAL_MS);
         } else {
-          setTimeout(tick, 68);
+          /* All locked — hold then move to next word */
+          timer = setTimeout(onDone, HOLD_MS);
         }
       }
+
+      timer = setTimeout(scrambleTick, 60);
     }
-    setTimeout(tick, 800);
+
+    function cycle() {
+      var word = words[wi];
+      scrambleWord(word, function () {
+        /* Quick scramble-out before next word */
+        var spans = el.querySelectorAll('.tt-char');
+        var count = { v: 0 };
+        var total = spans.length * SCRAMBLE_MS * 2;
+        spans.forEach(function (s, i) {
+          setTimeout(function () {
+            s.classList.remove('tt-locked');
+          }, i * 18);
+        });
+        timer = setTimeout(function () {
+          wi = (wi + 1) % words.length;
+          cycle();
+        }, spans.length * 18 + 120);
+      });
+    }
+
+    timer = setTimeout(cycle, 700);
   })();
 
   /* ============================================================
@@ -336,31 +392,22 @@
      ============================================================ */
   (function initBillingTab() {
     document.querySelectorAll('.billing-tab-toggle').forEach(container => {
-      const tabs  = container.querySelectorAll('.bill-tab');
+      const tabs = container.querySelectorAll('.bill-tab');
       const indic = container.querySelector('.bill-tab-indicator');
       if (!tabs.length) return;
 
       function setIndicator(activeTab) {
         if (!indic) return;
-        const cr = container.getBoundingClientRect();
-        const tr = activeTab.getBoundingClientRect();
-        indic.style.width     = tr.width + 'px';
-        indic.style.transform = `translateX(${tr.left - cr.left - 5}px)`;
+        const containerRect = container.getBoundingClientRect();
+        const tabRect = activeTab.getBoundingClientRect();
+        indic.style.width = tabRect.width + 'px';
+        indic.style.transform = `translateX(${tabRect.left - containerRect.left - 5}px)`;
       }
 
+      // Init indicator on first active tab
+      const initialActive = container.querySelector('.bill-tab.active') || tabs[0];
       tabs[0].classList.add('active');
-      setTimeout(() => setIndicator(container.querySelector('.bill-tab.active') || tabs[0]), 50);
-
-      function animateCount(el, from, to, dur) {
-        const start = performance.now();
-        function step(now) {
-          const p = Math.min((now - start) / dur, 1);
-          const e = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(from + (to - from) * e);
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
+      setTimeout(() => setIndicator(initialActive), 50);
 
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -369,7 +416,17 @@
           setIndicator(tab);
           const isAnnual = tab.dataset.period === 'annual';
           document.querySelectorAll('.price-amount').forEach(el => {
-            animateCount(el, +el.textContent, isAnnual ? +el.dataset.annual : +el.dataset.monthly, 400);
+            const target = isAnnual ? +el.dataset.annual : +el.dataset.monthly;
+            animateCount(el, +el.textContent, target, 400);
+          });
+          // Update period label
+          const periodEls = document.querySelectorAll('.price-period');
+          periodEls.forEach(p => {
+            if (isAnnual) {
+              p.innerHTML = p.innerHTML.replace('/mo', '/mo <span style="font-size:.7rem;color:var(--success);">billed annually</span>');
+            } else {
+              p.textContent = p.textContent.replace('/mo billed annually', '').trim() === '' ? '/mo' : p.textContent.split('<')[0];
+            }
           });
         });
       });
@@ -379,6 +436,17 @@
         if (a) setIndicator(a);
       });
     });
+
+    function animateCount(el, from, to, duration) {
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(from + (to - from) * ease);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
   })();
 
   /* ── FAQ accordion ── */
@@ -401,6 +469,7 @@
         const cat = btn.dataset.cat;
         document.querySelectorAll('#featuresGrid .fp-card').forEach(card => {
           const matches = cat === 'all' || card.dataset.cat === cat;
+          card.setAttribute('data-hidden', !matches);
           card.style.display = matches ? '' : 'none';
         });
       });
@@ -487,7 +556,7 @@
       });
       window.addEventListener('mouseup', () => { isDragging = false; });
       track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend',   e => {
+      track.addEventListener('touchend', e => {
         const diff = e.changedTouches[0].clientX - startX;
         if (Math.abs(diff) > 40) goTo(diff < 0 ? currentIndex + 1 : currentIndex - 1);
       }, { passive: true });
@@ -503,7 +572,7 @@
     const section = document.getElementById('sstackSection');
     if (!section) return;
     const navItems = section.querySelectorAll('.sstack-nav-item');
-    const cards    = section.querySelectorAll('.sstack-card');
+    const cards = section.querySelectorAll('.sstack-card');
     if (!cards.length) return;
     const total = cards.length;
     let current = 0;
@@ -521,7 +590,7 @@
     }
 
     function onScroll() {
-      const rect    = section.getBoundingClientRect();
+      const rect = section.getBoundingClientRect();
       const scrolled = -rect.top;
       if (scrolled < 0 || scrolled > section.offsetHeight - window.innerHeight) return;
       const progress = scrolled / (section.offsetHeight - window.innerHeight);
@@ -531,12 +600,12 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     activate(0);
 
-    navItems.forEach((item, i) => {
-      item.addEventListener('click', () => {
-        const top = section.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
-      });
-    });
+    // navItems.forEach((item, i) => {
+    //   item.addEventListener('click', () => {
+    //     const top = section.getBoundingClientRect().top + window.scrollY;
+    //     window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
+    //   });
+    // });
   })();
 
   /* ============================================================
@@ -548,34 +617,34 @@
     const ctx = canvas.getContext('2d');
 
     function resize() {
-      canvas.width  = canvas.offsetWidth;
+      canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     }
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
     const hubs = [
-      { x:0.18,y:0.42,size:7 },{ x:0.13,y:0.52,size:4 },{ x:0.22,y:0.64,size:5 },
-      { x:0.47,y:0.30,size:6 },{ x:0.50,y:0.32,size:5 },{ x:0.49,y:0.36,size:4 },
-      { x:0.51,y:0.37,size:4 },{ x:0.48,y:0.35,size:4 },{ x:0.55,y:0.28,size:3 },
-      { x:0.56,y:0.26,size:3 },{ x:0.62,y:0.30,size:3 },{ x:0.65,y:0.38,size:4 },
-      { x:0.66,y:0.42,size:4 },{ x:0.68,y:0.44,size:6 },{ x:0.82,y:0.38,size:6 },
-      { x:0.80,y:0.42,size:5 },{ x:0.78,y:0.50,size:4 },{ x:0.86,y:0.72,size:5 }
+      { x: 0.18, y: 0.42, size: 7 }, { x: 0.13, y: 0.52, size: 4 }, { x: 0.22, y: 0.64, size: 5 },
+      { x: 0.47, y: 0.30, size: 6 }, { x: 0.50, y: 0.32, size: 5 }, { x: 0.49, y: 0.36, size: 4 },
+      { x: 0.51, y: 0.37, size: 4 }, { x: 0.48, y: 0.35, size: 4 }, { x: 0.55, y: 0.28, size: 3 },
+      { x: 0.56, y: 0.26, size: 3 }, { x: 0.62, y: 0.30, size: 3 }, { x: 0.65, y: 0.38, size: 4 },
+      { x: 0.66, y: 0.42, size: 4 }, { x: 0.68, y: 0.44, size: 6 }, { x: 0.82, y: 0.38, size: 6 },
+      { x: 0.80, y: 0.42, size: 5 }, { x: 0.78, y: 0.50, size: 4 }, { x: 0.86, y: 0.72, size: 5 }
     ];
 
     const dotMap = [
-      { y:0.20,segs:[[0.10,0.22],[0.44,0.56],[0.60,0.90]] },
-      { y:0.25,segs:[[0.09,0.24],[0.43,0.57],[0.58,0.92]] },
-      { y:0.30,segs:[[0.10,0.26],[0.42,0.58],[0.57,0.93]] },
-      { y:0.35,segs:[[0.12,0.25],[0.44,0.60],[0.57,0.90]] },
-      { y:0.40,segs:[[0.13,0.24],[0.45,0.62],[0.56,0.88]] },
-      { y:0.45,segs:[[0.14,0.23],[0.45,0.55],[0.60,0.72],[0.76,0.86]] },
-      { y:0.50,segs:[[0.15,0.22],[0.10,0.14],[0.58,0.68],[0.76,0.84]] },
-      { y:0.55,segs:[[0.16,0.20],[0.10,0.15],[0.55,0.64]] },
-      { y:0.60,segs:[[0.17,0.21],[0.12,0.14],[0.44,0.54]] },
-      { y:0.65,segs:[[0.18,0.24],[0.43,0.52],[0.84,0.90]] },
-      { y:0.70,segs:[[0.20,0.26],[0.44,0.50]] },
-      { y:0.75,segs:[[0.22,0.28],[0.44,0.48],[0.82,0.90]] }
+      { y: 0.20, segs: [[0.10, 0.22], [0.44, 0.56], [0.60, 0.90]] },
+      { y: 0.25, segs: [[0.09, 0.24], [0.43, 0.57], [0.58, 0.92]] },
+      { y: 0.30, segs: [[0.10, 0.26], [0.42, 0.58], [0.57, 0.93]] },
+      { y: 0.35, segs: [[0.12, 0.25], [0.44, 0.60], [0.57, 0.90]] },
+      { y: 0.40, segs: [[0.13, 0.24], [0.45, 0.62], [0.56, 0.88]] },
+      { y: 0.45, segs: [[0.14, 0.23], [0.45, 0.55], [0.60, 0.72], [0.76, 0.86]] },
+      { y: 0.50, segs: [[0.15, 0.22], [0.10, 0.14], [0.58, 0.68], [0.76, 0.84]] },
+      { y: 0.55, segs: [[0.16, 0.20], [0.10, 0.15], [0.55, 0.64]] },
+      { y: 0.60, segs: [[0.17, 0.21], [0.12, 0.14], [0.44, 0.54]] },
+      { y: 0.65, segs: [[0.18, 0.24], [0.43, 0.52], [0.84, 0.90]] },
+      { y: 0.70, segs: [[0.20, 0.26], [0.44, 0.50]] },
+      { y: 0.75, segs: [[0.22, 0.28], [0.44, 0.48], [0.82, 0.90]] }
     ];
 
     let pulse = 0;
@@ -587,7 +656,7 @@
       const isDark = html.getAttribute('data-theme') !== 'light';
       const dotAlpha = isDark ? 0.18 : 0.12;
       const hubColor = isDark ? '#3b82f6' : '#2563eb';
-      const spacing  = 14;
+      const spacing = 14;
       const cols = Math.ceil(W / spacing);
 
       dotMap.forEach(row => {
@@ -609,12 +678,12 @@
         hubs.forEach((h2, j) => {
           if (j <= i) return;
           if (Math.hypot(h1.x - h2.x, h1.y - h2.y) > 0.28) return;
-          const g = ctx.createLinearGradient(h1.x*W, h1.y*H, h2.x*W, h2.y*H);
+          const g = ctx.createLinearGradient(h1.x * W, h1.y * H, h2.x * W, h2.y * H);
           g.addColorStop(0, isDark ? 'rgba(59,130,246,0.35)' : 'rgba(37,99,235,0.25)');
           g.addColorStop(1, 'rgba(59,130,246,0)');
           ctx.beginPath();
-          ctx.moveTo(h1.x*W, h1.y*H);
-          ctx.lineTo(h2.x*W, h2.y*H);
+          ctx.moveTo(h1.x * W, h1.y * H);
+          ctx.lineTo(h2.x * W, h2.y * H);
           ctx.strokeStyle = g;
           ctx.lineWidth = 1;
           ctx.stroke();
@@ -622,7 +691,7 @@
       });
 
       hubs.forEach((hub, i) => {
-        const x = hub.x*W, y = hub.y*H;
+        const x = hub.x * W, y = hub.y * H;
         const pf = (Math.sin(pulse * 0.04 + i * 0.8) + 1) / 2;
         const grd = ctx.createRadialGradient(x, y, 0, x, y, hub.size * 3 + pf * 6);
         grd.addColorStop(0, isDark ? 'rgba(59,130,246,0.5)' : 'rgba(37,99,235,0.4)');
@@ -649,12 +718,12 @@
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const successMsg = document.getElementById('successMsg');
-      const errorMsg   = document.getElementById('errorMsg');
-      const submitBtn  = contactForm.querySelector('.form-submit');
+      const errorMsg = document.getElementById('errorMsg');
+      const submitBtn = contactForm.querySelector('.form-submit');
 
       if (successMsg) successMsg.style.display = 'none';
-      if (errorMsg)   errorMsg.style.display   = 'none';
-      if (submitBtn)  { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      if (errorMsg) errorMsg.style.display = 'none';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
       function showMsg(el, msg) { if (el) { el.innerHTML = msg; el.style.display = 'block'; } }
 
