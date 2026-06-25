@@ -3413,7 +3413,7 @@ select.form-control {
 }
 
 /* Title div (h4 + tag span) sits beside the icon */
-.fp-card-icon + div {
+.fp-card-icon+div {
   grid-column: 2;
   grid-row: 1;
   align-self: center;
@@ -4145,7 +4145,7 @@ select.form-control {
 /* Card stage */
 .sstack-card-stage {
   position: relative;
-  height: 550px;
+  height: 480px;
   perspective: 1200px;
 }
 
