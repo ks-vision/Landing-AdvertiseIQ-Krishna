@@ -2364,3 +2364,292 @@ body {
 .btn-enterprise:hover {
     background: #1e3a8a;
 }
+/* ==========================================================================
+   LIGHT MODE OVERRIDES
+   ========================================================================== */
+
+/* --- Body & Global --- */
+[data-theme="light"] body {
+    background: #f0f4ff;
+    color: #0f172a;
+}
+
+/* --- Aurora / Canvas Background --- */
+[data-theme="light"] #canvas-container {
+    opacity: 0.08;
+}
+
+/* --- AI Operations Section --- */
+[data-theme="light"] .ai-operations-section {
+    background: transparent;
+}
+
+[data-theme="light"] .am-operations-section {
+    background: transparent;
+}
+
+[data-theme="light"] .ai-header h2 {
+    background: linear-gradient(180deg, #0f172a 0%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="light"] .ai-header p {
+    color: #475569;
+}
+
+[data-theme="light"] .ai-cta {
+    color: #1e40af;
+    border-color: rgba(30, 64, 175, 0.4);
+}
+
+[data-theme="light"] .ai-cta:hover {
+    background: rgba(30, 64, 175, 0.08);
+    border-color: #1e40af;
+}
+
+/* --- SaaS Scroll Cards (isometric section) --- */
+[data-theme="light"] .saas-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .saas-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 30px 60px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .saas-card::before {
+    background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
+}
+
+[data-theme="light"] .saas-card-title {
+    color: #0f172a;
+}
+
+[data-theme="light"] .saas-card-body-text {
+    color: #475569 !important;
+}
+
+[data-theme="light"] .card-features li {
+    color: #334155;
+}
+
+[data-theme="light"] .card-features li i {
+    color: #2563eb;
+}
+
+/* --- Middle Section --- */
+[data-theme="light"] .middle-section {
+    background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
+}
+
+[data-theme="light"] .middle-content {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.07);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .middle-title {
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="light"] .middle-subtitle {
+    color: #475569;
+}
+
+/* --- Isometric Section --- */
+[data-theme="light"] .isometric-ai-section {
+    background: transparent;
+}
+
+[data-theme="light"] .iso-node-label {
+    color: #0f172a;
+}
+
+/* --- CC Cards (Command Center) --- */
+[data-theme="light"] .cc-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .cc-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="light"] .main-cc-card h2 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .main-cc-card p {
+    color: #475569;
+}
+
+[data-theme="light"] .cc-stat {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .cc-stat h3 {
+    color: #0f172a;
+}
+
+/* --- Brand Section --- */
+[data-theme="light"] .brand-right h2 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .brand-right p {
+    color: #475569;
+}
+
+[data-theme="light"] .value-text h4 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .value-text p {
+    color: #475569;
+}
+
+/* --- Method Section --- */
+[data-theme="light"] .method-col .lead-text {
+    color: #334155;
+}
+
+[data-theme="light"] .engagement-item h5 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .engagement-item p {
+    color: #475569;
+}
+
+[data-theme="light"] .engagement-list {
+    border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+/* --- Wizardly Section --- */
+[data-theme="light"] .wizardly-section {
+    color: #0f172a;
+}
+
+[data-theme="light"] .wizardly-left h2 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .wizardly-left p {
+    color: #475569;
+}
+
+[data-theme="light"] .wizardly-features li {
+    color: #334155;
+}
+
+[data-theme="light"] .btn-explore {
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+[data-theme="light"] .btn-explore:hover {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: #2563eb;
+}
+
+[data-theme="light"] .link-read {
+    color: #475569;
+}
+
+[data-theme="light"] .link-read:hover {
+    color: #0f172a;
+}
+
+/* --- Pricing Cards (style1 version) --- */
+[data-theme="light"] .pricing-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.10);
+}
+
+[data-theme="light"] .pricing-card.premium {
+    border-color: #2563eb;
+}
+
+[data-theme="light"] .pricing-card.enterprise {
+    border-color: #1d4ed8;
+}
+
+[data-theme="light"] .card-badge {
+    color: #0f172a;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .card-price {
+    color: #0f172a;
+}
+
+[data-theme="light"] .card-features-list li {
+    color: #475569;
+}
+
+[data-theme="light"] .card-features-list li i,
+[data-theme="light"] .card-features-list li span {
+    color: #475569;
+}
+
+[data-theme="light"] .btn-starter {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .btn-starter:hover {
+    background: #e2e8f0;
+}
+
+[data-theme="light"] .btn-premium,
+[data-theme="light"] .btn-enterprise {
+    background: #1d4ed8;
+    border-color: #1e40af;
+}
+
+/* --- UI Module (inside saas cards) --- */
+[data-theme="light"] .ui-module {
+    background: rgba(248, 250, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .ui-header {
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .ui-btn {
+    background: rgba(0, 0, 0, 0.04);
+    color: #475569;
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* --- Dropdowns / Table elements --- */
+[data-theme="light"] .dropdowns button {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #0f172a;
+}
+
+[data-theme="light"] .table-header {
+    color: #475569;
+    border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .table-row:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .metric-item {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
