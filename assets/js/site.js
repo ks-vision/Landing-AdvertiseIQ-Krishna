@@ -24,14 +24,8 @@
   function updateFabIcon(themeChoice) {
     const fab = document.getElementById('settingsFab');
     if (!fab) return;
-    
-    let iconClass = 'fa-solid fa-desktop';
-    if (themeChoice === 'dark') {
-      iconClass = 'fa-solid fa-moon';
-    } else if (themeChoice === 'light') {
-      iconClass = 'fa-solid fa-sun';
-    }
-    
+    const resolved = themeChoice === 'system' ? getSystemTheme() : themeChoice;
+    const iconClass = resolved === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     fab.innerHTML = `<i class="${iconClass}"></i>`;
   }
 
@@ -77,14 +71,13 @@
     });
   }
 
-  // Init theme on load
-  const savedChoice = localStorage.getItem('aiq-theme-choice') || 'system';
+  // Init theme on load — default to system preference, but only store 'dark' | 'light'
+  const savedChoice = localStorage.getItem('aiq-theme-choice') || getSystemTheme();
   applyTheme(savedChoice);
 
-  // Watch for system preference changes (when using "system" mode)
+  // Watch for system preference changes (only if user hasn't pinned a theme)
   window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
-    const choice = localStorage.getItem('aiq-theme-choice') || 'system';
-    if (choice === 'system') applyTheme('system');
+    if (!localStorage.getItem('aiq-theme-choice')) applyTheme(getSystemTheme());
   });
 
   // Legacy nav theme toggle (keep backward compat)
@@ -114,17 +107,10 @@
     // Initial icon state
     updateFabIcon(currentChoice);
 
-    // Click handler to cycle themes: System -> Dark -> Light -> System
+    // Click handler to toggle between Dark and Light only
     fab.addEventListener('click', () => {
-      const activeChoice = localStorage.getItem('aiq-theme-choice') || 'system';
-      let nextChoice = 'system';
-      if (activeChoice === 'system') {
-        nextChoice = 'dark';
-      } else if (activeChoice === 'dark') {
-        nextChoice = 'light';
-      } else if (activeChoice === 'light') {
-        nextChoice = 'system';
-      }
+      const current = document.documentElement.getAttribute('data-theme');
+      const nextChoice = current === 'light' ? 'dark' : 'light';
       applyTheme(nextChoice, true);
     });
   }
@@ -132,26 +118,32 @@
   injectSettingsPanel();
 
   /* ============================================================
-     CUSTOM CURSOR
+     CUSTOM CURSOR — diamond follower + glowing dot
      ============================================================ */
   function initCursor() {
-    // Skip on touch devices
     if (window.matchMedia('(hover: none)').matches) return;
 
     const dot = document.createElement('div');
     dot.className = 'cursor-dot';
     dot.id = 'cursorDot';
 
-    const ring = document.createElement('div');
-    ring.className = 'cursor-ring';
-    ring.id = 'cursorRing';
+    const diamond = document.createElement('div');
+    diamond.className = 'cursor-diamond';
+    diamond.id = 'cursorDiamond';
+
+    // Crosshair arms (4 lines)
+    ['top','right','bottom','left'].forEach(dir => {
+      const arm = document.createElement('span');
+      arm.className = 'cursor-arm cursor-arm-' + dir;
+      diamond.appendChild(arm);
+    });
 
     document.body.appendChild(dot);
-    document.body.appendChild(ring);
+    document.body.appendChild(diamond);
 
-    let mx = -100, my = -100; // mouse position
-    let rx = -100, ry = -100; // ring position (lerp'd)
-    const lerp = 0.12;
+    let mx = -200, my = -200;
+    let dx = -200, dy = -200;
+    const lerp = 0.11;
 
     document.addEventListener('mousemove', e => {
       mx = e.clientX;
@@ -160,29 +152,43 @@
       dot.style.top = my + 'px';
     });
 
-    // Hover state on interactive elements
     const interactiveSelector = 'a, button, [role="button"], input, textarea, select, label, .anti-gravity, .faq-question, .stack-card, .theme-opt, .sstack-nav-item';
     document.addEventListener('mouseover', e => {
-      if (e.target.closest(interactiveSelector)) ring.classList.add('cursor-hover');
+      if (e.target.closest(interactiveSelector)) {
+        diamond.classList.add('cursor-hover');
+        dot.classList.add('cursor-hover');
+      }
     });
     document.addEventListener('mouseout', e => {
-      if (e.target.closest(interactiveSelector)) ring.classList.remove('cursor-hover');
+      if (e.target.closest(interactiveSelector)) {
+        diamond.classList.remove('cursor-hover');
+        dot.classList.remove('cursor-hover');
+      }
     });
 
-    // Click effect
-    document.addEventListener('mousedown', () => ring.classList.add('cursor-click'));
-    document.addEventListener('mouseup', () => ring.classList.remove('cursor-click'));
+    document.addEventListener('mousedown', () => {
+      diamond.classList.add('cursor-click');
+      dot.classList.add('cursor-click');
+    });
+    document.addEventListener('mouseup', () => {
+      diamond.classList.remove('cursor-click');
+      dot.classList.remove('cursor-click');
+    });
 
-    // Cursor leaves/enters window
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity = '0';
+      diamond.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity = '1';
+      diamond.style.opacity = '1';
+    });
 
-    // Smooth ring follow via rAF
     function animate() {
-      rx += (mx - rx) * lerp;
-      ry += (my - ry) * lerp;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
+      dx += (mx - dx) * lerp;
+      dy += (my - dy) * lerp;
+      diamond.style.left = dx + 'px';
+      diamond.style.top = dy + 'px';
       requestAnimationFrame(animate);
     }
     animate();
@@ -504,6 +510,13 @@
       document.addEventListener('keydown', e => {
         if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
         else if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+      });
+      // Click on visible side cards to navigate to them
+      track.addEventListener('click', e => {
+        const card = e.target.closest('.stack-card');
+        if (!card) return;
+        if (card.classList.contains('prev')) goTo(currentIndex - 1);
+        else if (card.classList.contains('next')) goTo(currentIndex + 1);
       });
       let startX = 0, isDragging = false;
       track.addEventListener('mousedown', e => { startX = e.clientX; isDragging = true; });
