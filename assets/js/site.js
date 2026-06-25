@@ -45,6 +45,10 @@
       const el = document.getElementById(id);
       if (el) el.src = theme === 'dark' ? 'assets/img/logo.png' : 'assets/img/logo.png';
     });
+    ['loaderLogoGif'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.src = theme === 'dark' ? 'assets/img/logo_loader.gif' : 'assets/img/logo_loader_light.gif';
+    });
   }
 
   // Init theme on load

@@ -2364,19 +2364,20 @@ body {
 .btn-enterprise:hover {
     background: #1e3a8a;
 }
+
 /* ==========================================================================
    LIGHT MODE OVERRIDES
    ========================================================================== */
 
 /* --- Body & Global --- */
 [data-theme="light"] body {
-    background: #f0f4ff;
+    background: radial-gradient(circle, #bfdbfe 0%, #dbeafe 40%, transparent 70%);
     color: #0f172a;
 }
 
 /* --- Aurora / Canvas Background --- */
 [data-theme="light"] #canvas-container {
-    opacity: 0.08;
+    opacity: 0.20;
 }
 
 /* --- AI Operations Section --- */
