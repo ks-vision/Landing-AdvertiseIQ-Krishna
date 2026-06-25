@@ -1,4 +1,7 @@
 
+/* ── Theme flag — read once at load time, never reloaded ── */
+const IS_LIGHT = document.documentElement.getAttribute('data-theme') === 'light';
+
 const container = document.getElementById('canvas-container');
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x020205, 0.002);
@@ -13,7 +16,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x020205, 1);
+if (!IS_LIGHT) renderer.setClearColor(0x020205, 1);
 container.appendChild(renderer.domElement);
 
 // ----------------------------------------------------
@@ -23,7 +26,7 @@ const renderScene = new THREE.RenderPass(scene, camera);
 
 // Resolution, strength, radius, threshold
 const bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
-bloomPass.strength = 2.4; // Brighter glow for vivid colors
+bloomPass.strength = IS_LIGHT ? 0 : 2.4; // 0 in light mode (no bloom), 2.4 in dark
 bloomPass.radius = 0.45;
 bloomPass.threshold = 0.05; // Lower threshold allows deep blues to shine nicely
 
@@ -51,8 +54,7 @@ scene.add(globeGroup);
 const glowGeo = new THREE.PlaneGeometry(600, 600);
 const glowMat = new THREE.ShaderMaterial({
     uniforms: {
-        // Use a very dark, pure navy so it doesn't bloom into cyan
-        glowColor: { value: new THREE.Color(0x000015) },
+        glowColor: { value: new THREE.Color(IS_LIGHT ? 0x1e3a8a : 0x000015) },
         opacity: { value: 1.0 }
     },
     vertexShader: `
@@ -91,10 +93,10 @@ function initGlobe(imgData, imgWidth, imgHeight) {
     const tempColors = [];
     const tempIsOcean = [];
 
-    const colorWhite = new THREE.Color(0xffffff);
-    const colorLightBlue = new THREE.Color(0x44aaff); // Bright, shining blue
-    const colorBlue = new THREE.Color(0x0044ff); // Rich Blue
-    const colorDeepBlue = new THREE.Color(0x000033); // Dark Navy Blue
+    const colorWhite     = new THREE.Color(IS_LIGHT ? 0x020617 : 0xffffff);
+    const colorLightBlue = new THREE.Color(IS_LIGHT ? 0x020617 : 0x44aaff);
+    const colorBlue      = new THREE.Color(IS_LIGHT ? 0x020617 : 0x0044ff);
+    const colorDeepBlue  = new THREE.Color(IS_LIGHT ? 0x020617 : 0x000033);
 
     for (let i = 0; i < maxParticles; i++) {
         const u = Math.random();

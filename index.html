@@ -1549,20 +1549,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <script>
-    function loadThemeScript() {
-      const theme = document.documentElement.getAttribute('data-theme');
-      const oldScript = document.getElementById('theme-script');
-      if (oldScript) oldScript.remove();
-      const script = document.createElement('script');
-      script.id = 'theme-script';
-      script.src = theme === 'light'
-        ? 'assets/js/light-landingpage.js'
-        : 'assets/js/landingpage.js';
-      document.body.appendChild(script);
-    }
-    document.addEventListener('DOMContentLoaded', loadThemeScript);
-  </script>
+  <!-- Hero Three.js — single file, reads theme once at load, never reloads -->
+  <script src="assets/js/landingpage.js" defer></script>
 
   <script>
     AOS.init({
