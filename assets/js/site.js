@@ -539,16 +539,55 @@
   })();
 
   /* ============================================================
-     SCROLL STACK (Sticky Platform Reveal)
+     HOW IT WORKS — Staggered scroll-reveal per timeline step
+     ============================================================ */
+  (function initTimelineScroll() {
+    const items = document.querySelectorAll('.timeline-item');
+    const right = document.querySelector('.timeline-right');
+    if (!items.length) return;
+
+    const itemObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('tl-visible');
+          itemObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -20px 0px' });
+
+    items.forEach((item, i) => {
+      item.style.transitionDelay = (i * 0.14) + 's';
+      itemObs.observe(item);
+    });
+
+    // Animate connector line draw
+    if (right) {
+      const lineObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            right.classList.add('tl-ready');
+            lineObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      lineObs.observe(right);
+    }
+  })();
+
+  /* ============================================================
+     SCROLL STACK (Sticky Platform Reveal + Mobile Tab Switch)
      ============================================================ */
   (function initScrollStack() {
     const section = document.getElementById('sstackSection');
     if (!section) return;
     const navItems = section.querySelectorAll('.sstack-nav-item');
     const cards = section.querySelectorAll('.sstack-card');
+    const cardStage = section.querySelector('.sstack-card-stage');
     if (!cards.length) return;
     const total = cards.length;
     let current = 0;
+
+    function isMobile() { return window.innerWidth <= 768; }
 
     function activate(idx) {
       if (idx === current && cards[idx].classList.contains('scard-active')) return;
@@ -560,9 +599,15 @@
         else if (i === (idx + 2) % total) c.classList.add('scard-behind-2');
       });
       navItems.forEach((n, i) => n.classList.toggle('active', i === idx));
+      // Scroll active nav tab into view on mobile
+      if (isMobile() && navItems[idx]) {
+        navItems[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
 
+    // Desktop: scroll-based
     function onScroll() {
+      if (isMobile()) return;
       const rect = section.getBoundingClientRect();
       const scrolled = -rect.top;
       if (scrolled < 0 || scrolled > section.offsetHeight - window.innerHeight) return;
@@ -570,15 +615,37 @@
       activate(Math.min(Math.floor(progress * total), total - 1));
     }
 
+    // Nav item click — desktop scrolls to position, mobile switches directly
+    navItems.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        if (isMobile()) {
+          activate(i);
+        } else {
+          const top = section.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Mobile: touch swipe on card stage
+    if (cardStage) {
+      let tx = 0, ty = 0;
+      cardStage.addEventListener('touchstart', e => {
+        tx = e.touches[0].clientX;
+        ty = e.touches[0].clientY;
+      }, { passive: true });
+      cardStage.addEventListener('touchend', e => {
+        if (!isMobile()) return;
+        const dx = e.changedTouches[0].clientX - tx;
+        const dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+          activate(dx < 0 ? Math.min(current + 1, total - 1) : Math.max(current - 1, 0));
+        }
+      }, { passive: true });
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true });
     activate(0);
-
-    // navItems.forEach((item, i) => {
-    //   item.addEventListener('click', () => {
-    //     const top = section.getBoundingClientRect().top + window.scrollY;
-    //     window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
-    //   });
-    // });
   })();
 
   /* ============================================================

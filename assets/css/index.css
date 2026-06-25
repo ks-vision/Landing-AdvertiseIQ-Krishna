@@ -1536,6 +1536,13 @@ img {
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, var(--accent), transparent);
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.timeline-right.tl-ready::before {
+  transform: scaleY(1);
 }
 
 .timeline-item {
@@ -1544,6 +1551,14 @@ img {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.timeline-item.tl-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .timeline-item.last {
@@ -4473,22 +4488,6 @@ select.form-control {
    SCROLL STACK RESPONSIVE
    ========================================================================== */
 @media (max-width: 900px) {
-  .sstack-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .sstack-sticky {
-    height: auto;
-    position: relative;
-    top: 0;
-    padding: 48px 0;
-  }
-
-  .sstack-card-stage {
-    height: 420px;
-  }
-
   .worldmap-inner {
     grid-template-columns: 1fr;
   }
@@ -4498,13 +4497,113 @@ select.form-control {
   }
 }
 
-@media (max-width: 600px) {
-  .sstack-left-panel h3 {
-    font-size: 1.6rem;
+/* ── Platform section — mobile tab layout ── */
+@media (max-width: 768px) {
+  /* Kill the tall scroll space */
+  .sstack-track {
+    height: auto !important;
+  }
+
+  .sstack-sticky {
+    position: relative !important;
+    height: auto !important;
+    top: auto !important;
+    padding: 0 16px 48px;
+    overflow: visible;
+  }
+
+  .sstack-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Horizontal scrolling tab bar */
+  .sstack-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 4px;
+  }
+  .sstack-nav::-webkit-scrollbar { display: none; }
+
+  .sstack-nav-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  /* "View All" button stays below tabs */
+  .sstack-left-panel > a {
+    display: none;
+  }
+
+  /* Card stage: fixed height, cards slide in */
+  .sstack-card-stage {
+    height: auto;
+    min-height: 440px;
+    perspective: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
   }
 
   .sstack-card {
-    padding: 24px;
+    position: absolute !important;
+    inset: 0 !important;
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+    filter: none !important;
+    transition: transform 0.42s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.35s ease !important;
+    animation: none !important;
+    padding: 28px 22px !important;
+    border-radius: 20px !important;
+    pointer-events: none;
+  }
+
+  .sstack-card.scard-active {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    animation: none !important;
+    pointer-events: auto;
+    z-index: 3;
+    border-color: rgba(59, 130, 246, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12), 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+
+  .sstack-card.scard-behind-1,
+  .sstack-card.scard-behind-2 {
+    transform: translateX(-60px) !important;
+    opacity: 0 !important;
+    filter: none !important;
+    z-index: 1;
+  }
+
+  /* Swipe hint dots */
+  .sstack-card-stage::after {
+    content: '← swipe →';
+    display: block;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sstack-card {
+    padding: 22px 18px !important;
   }
 
   .sstack-card h4 {
