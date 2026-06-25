@@ -1174,8 +1174,11 @@ img {
 .feature-card-body {
   padding: 28px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  column-gap: 14px;
+  row-gap: 0;
 }
 
 .feature-icon {
@@ -1186,8 +1189,11 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
-  margin-bottom: 18px;
+  margin-bottom: 0;
   flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
 }
 
 .feature-icon.purple {
@@ -1231,14 +1237,31 @@ img {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 10px;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
 }
 
 .feature-card p {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin: 0 0 20px;
+  margin: 14px 0 20px;
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.feature-card .feature-list {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+.feature-card .feature-metric {
+  grid-column: 1 / 3;
+  grid-row: 4;
+  align-self: end;
+  margin-top: 20px;
 }
 
 .feature-list {
@@ -3358,9 +3381,11 @@ select.form-control {
   padding: 24px;
   backdrop-filter: blur(16px);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 12px;
+  row-gap: 14px;
+  align-content: start;
 }
 
 .fp-card:hover {
@@ -3382,6 +3407,16 @@ select.form-control {
   justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+
+/* Title div (h4 + tag span) sits beside the icon */
+.fp-card-icon + div {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
 }
 
 .fp-card h4 {
@@ -3389,7 +3424,7 @@ select.form-control {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
-  margin: 0;
+  margin: 0 0 4px;
 }
 
 .fp-card p {
@@ -3397,7 +3432,8 @@ select.form-control {
   color: var(--text-muted);
   line-height: 1.65;
   margin: 0;
-  flex: 1;
+  grid-column: 1 / 3;
+  grid-row: 2;
 }
 
 .fp-card-tag {
@@ -3498,6 +3534,11 @@ select.form-control {
   backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  column-gap: 20px;
+  row-gap: 16px;
+  align-content: start;
 }
 
 .highlight-card.accent-card {
@@ -3510,14 +3551,24 @@ select.form-control {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--text);
-  margin: 16px 0 12px;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
 }
 
 .highlight-card p {
   color: var(--text-muted);
   line-height: 1.7;
   font-size: 0.95rem;
-  margin: 0 0 24px;
+  margin: 0;
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.highlight-card .check-list {
+  grid-column: 1 / 3;
+  grid-row: 3;
 }
 
 .highlight-big-icon {
@@ -3528,6 +3579,9 @@ select.form-control {
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
 }
 
 .check-list {
@@ -4102,9 +4156,12 @@ select.form-control {
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  column-gap: 20px;
+  row-gap: 16px;
+  align-content: start;
   backdrop-filter: blur(24px);
   box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.5);
   transition: all 0.55s cubic-bezier(0.23, 1, 0.32, 1);
@@ -4144,6 +4201,8 @@ select.form-control {
   letter-spacing: 2px;
   color: var(--text-muted);
   text-transform: uppercase;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
 .sstack-card .sc-icon {
@@ -4155,6 +4214,9 @@ select.form-control {
   justify-content: center;
   font-size: 1.8rem;
   flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
 }
 
 .sstack-card h4 {
@@ -4164,6 +4226,9 @@ select.form-control {
   letter-spacing: -0.5px;
   color: var(--text);
   margin: 0;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
 }
 
 .sstack-card .sc-desc {
@@ -4171,11 +4236,15 @@ select.form-control {
   color: var(--text-muted);
   line-height: 1.75;
   max-width: 460px;
+  grid-column: 1 / 3;
+  grid-row: 3;
 }
 
 .sc-pills {
   display: flex;
   flex-wrap: wrap;
+  grid-column: 1 / 3;
+  grid-row: 4;
   gap: 8px;
   margin-top: 4px;
 }
@@ -4205,6 +4274,8 @@ select.form-control {
   margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid var(--border);
+  grid-column: 1 / 3;
+  grid-row: 5;
 }
 
 .sc-metric-val {
