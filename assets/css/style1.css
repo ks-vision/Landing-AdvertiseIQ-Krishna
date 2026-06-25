@@ -2654,3 +2654,62 @@ body {
     background: rgba(0, 0, 0, 0.03);
     border-color: rgba(0, 0, 0, 0.06);
 }
+/* --- Hero Buttons (style1 context) --- */
+[data-theme="light"] .btn-secondary {
+    color: #0f172a !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
+    background: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(37, 99, 235, 0.4) !important;
+    color: #0f172a !important;
+}
+
+/* --- Hero semi-header text --- */
+[data-theme="light"] .hero-semi-header {
+    color: #475569 !important;
+}
+
+/* --- Content paragraph text --- */
+[data-theme="light"] .content p {
+    color: #475569 !important;
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .content h1 {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+/* --- Stats section --- */
+[data-theme="light"] .stats-section {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+/* --- AI card (index page feature cards) --- */
+[data-theme="light"] .ai-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07) !important;
+}
+
+[data-theme="light"] .ai-card h3 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .ai-card p {
+    color: #475569 !important;
+}
+
+/* --- iso-node-label text --- */
+[data-theme="light"] .iso-node-label {
+    color: #1e293b !important;
+}
+
+/* --- Globe carrier dot on canvas section --- */
+[data-theme="light"] #canvas-container {
+    opacity: 0.05 !important;
+}

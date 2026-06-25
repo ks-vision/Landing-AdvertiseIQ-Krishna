@@ -5567,10 +5567,21 @@ button[type="submit"] {
   color: #64748b;
 }
 
-/* Timeline */
+/* Timeline (How It Works) — keep gradient so white number span stays readable */
 [data-theme="light"] .timeline-marker {
-  background: #fff;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
   border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 4px #f0f4ff, 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="light"] .timeline-marker span {
+  color: #fff;
+}
+
+[data-theme="light"] .timeline-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="light"] .tl-card {
@@ -5811,4 +5822,165 @@ button[type="submit"] {
 
 [data-theme="light"] .market-list {
   color: #475569;
+}
+/* ==========================================================================
+   LIGHT MODE — REMAINING FIXES
+   ========================================================================== */
+
+/* btn-secondary: give it a proper visible background/border in light mode */
+[data-theme="light"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #0f172a;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.4);
+  color: #0f172a;
+}
+
+/* Final CTA "Talk to Sales" btn-secondary — stronger on the light card */
+[data-theme="light"] .final-cta-card .btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .final-cta-card .btn-secondary:hover {
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
+}
+
+/* Stats section — clean white card look in light mode */
+[data-theme="light"] .stats-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+/* Marquee section — light background */
+[data-theme="light"] .marquee-section {
+  background: #f8faff;
+  border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .marquee-item {
+  color: #334155;
+  opacity: 0.5;
+}
+
+[data-theme="light"] .marquee-label {
+  color: #64748b;
+}
+
+/* globe orbit rings — reduce visibility in light mode */
+[data-theme="light"] .globe-orbit-ring {
+  border-color: rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .globe-orbit-ring.ring1 {
+  border-color: rgba(37, 99, 235, 0.1);
+}
+
+[data-theme="light"] .globe-orbit-ring.ring2 {
+  border-color: rgba(124, 58, 237, 0.06);
+}
+
+[data-theme="light"] .globe-orbit-ring.ring3 {
+  border-color: rgba(6, 182, 212, 0.05);
+}
+
+/* About page stats numbers */
+[data-theme="light"] .about-stat .value {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Testimonials */
+[data-theme="light"] .testimonial-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .testimonial-text {
+  color: #334155;
+}
+
+[data-theme="light"] .testimonial-author-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .testimonial-author-title {
+  color: #64748b;
+}
+
+/* Pricing page */
+[data-theme="light"] .pricing-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .pricing-card.featured {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="light"] .plan-price {
+  color: #0f172a;
+}
+
+[data-theme="light"] .plan-feature {
+  color: #475569;
+}
+
+/* Features page cards */
+[data-theme="light"] .feature-card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .feature-card h3 {
+  color: #0f172a;
+}
+
+[data-theme="light"] .feature-card p {
+  color: #475569;
+}
+
+/* Contact page info items */
+[data-theme="light"] .contact-info-item {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .contact-info-label {
+  color: #64748b;
+}
+
+[data-theme="light"] .contact-info-value {
+  color: #0f172a;
+}
+
+/* Nav mobile menu */
+[data-theme="light"] .nav-mobile {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .nav-mobile a {
+  color: #0f172a;
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Settings drawer */
+[data-theme="light"] .settings-drawer {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .settings-title {
+  color: #0f172a;
 }

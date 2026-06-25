@@ -380,6 +380,86 @@
       opacity: 1;
       transform: translateX(0);
     }
+
+    /* ---- Light mode overrides ---- */
+    [data-theme="light"] .tl-dot {
+      background: rgba(248, 250, 255, 0.95);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    [data-theme="light"] .tl-dot i {
+      color: #64748b;
+    }
+
+    [data-theme="light"] .tl-dot.active {
+      background: rgba(37, 99, 235, 0.09);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.06), 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    [data-theme="light"] .tl-dot.active i {
+      color: #2563eb;
+    }
+
+    [data-theme="light"] .tl-dot.active::before {
+      border-color: rgba(37, 99, 235, 0.35);
+    }
+
+    [data-theme="light"] .tl-row:hover .tl-dot {
+      border-color: rgba(37, 99, 235, 0.6);
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08), 0 0 24px rgba(37, 99, 235, 0.2);
+    }
+
+    [data-theme="light"] .tl-row:hover .tl-dot i {
+      color: #2563eb;
+    }
+
+    [data-theme="light"] .tl-row:hover .tl-year {
+      color: #2563eb;
+    }
+
+    [data-theme="light"] .tl-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(37, 99, 235, 0.12);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .tl-card:hover {
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.08);
+    }
+
+    [data-theme="light"] .tl-card h4 {
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .tl-card p {
+      color: #475569;
+    }
+
+    [data-theme="light"] .badge-blue {
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+      border-color: rgba(37, 99, 235, 0.25);
+    }
+
+    [data-theme="light"] .badge-amber {
+      background: rgba(234, 179, 8, 0.1);
+      color: #b45309;
+      border-color: rgba(234, 179, 8, 0.2);
+    }
+
+    [data-theme="light"] .badge-green {
+      background: rgba(22, 163, 74, 0.1);
+      color: #15803d;
+      border-color: rgba(22, 163, 74, 0.2);
+    }
+
+    [data-theme="light"] .badge-purple {
+      background: rgba(124, 58, 237, 0.1);
+      color: #7c3aed;
+      border-color: rgba(124, 58, 237, 0.2);
+    }
   </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>

@@ -746,3 +746,44 @@ img {
     justify-content: center;
   }
 }
+/* ==========================================================================
+   LIGHT MODE — ADDITIONAL FIXES (ppc-sales.css)
+   ========================================================================== */
+
+[data-theme="light"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #0f172a;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: #fff;
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+[data-theme="light"] .wavy-bg-canvas {
+  opacity: 0.06 !important;
+}
+
+/* PPC feature cards */
+[data-theme="light"] .feature-card,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .testimonial-block {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .feature-card h3 {
+  color: #0f172a;
+}
+
+[data-theme="light"] .feature-card p,
+[data-theme="light"] .stat-card p,
+[data-theme="light"] .testimonial-block p {
+  color: #475569;
+}
+
+[data-theme="light"] .stat-card .num {
+  color: #0f172a;
+}
