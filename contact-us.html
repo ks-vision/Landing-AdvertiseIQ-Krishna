@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="assets/css/index.css">
-  <script src="https://www.google.com/recaptcha/api.js?render=6LfzFEgsAAAAAPaNZetpq1UVZeb1CscjstB2Gb6l"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://www.google.com/recaptcha/api.js?render=6Ldw1zMtAAAAAEGFNXA2RlTWqdifRUbdyaIp67ny"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
@@ -273,6 +273,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute(
+        '6Ldw1zMtAAAAAEGFNXA2RlTWqdifRUbdyaIp67ny',
+        { action: 'contact' }
+      ).then(function (token) {
+        document.getElementById('g-recaptcha-response').value = token;
+      });
+    });
+  </script>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/site.js"></script>

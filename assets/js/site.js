@@ -21,21 +21,47 @@
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
 
-  function applyTheme(themeChoice) {
+  function updateFabIcon(themeChoice) {
+    const fab = document.getElementById('settingsFab');
+    if (!fab) return;
+    
+    let iconClass = 'fa-solid fa-desktop';
+    if (themeChoice === 'dark') {
+      iconClass = 'fa-solid fa-moon';
+    } else if (themeChoice === 'light') {
+      iconClass = 'fa-solid fa-sun';
+    }
+    
+    fab.innerHTML = `<i class="${iconClass}"></i>`;
+  }
+
+  function applyTheme(themeChoice, useTransition = false) {
     // themeChoice: 'system' | 'dark' | 'light'
     const resolved = themeChoice === 'system' ? getSystemTheme() : themeChoice;
-    html.setAttribute('data-theme', resolved);
-    localStorage.setItem('aiq-theme-choice', themeChoice);
-    applyThemeAssets(resolved);
 
-    // Keep settings panel options in sync
-    document.querySelectorAll('.theme-opt').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.themeChoice === themeChoice);
-    });
+    const executeChange = () => {
+      html.setAttribute('data-theme', resolved);
+      localStorage.setItem('aiq-theme-choice', themeChoice);
+      applyThemeAssets(resolved);
 
-    // Keep nav theme icon in sync
-    const icon = document.getElementById('themeIcon');
-    if (icon) icon.className = resolved === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+      // Keep settings panel options in sync
+      document.querySelectorAll('.theme-opt').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.themeChoice === themeChoice);
+      });
+
+      // Keep nav theme icon in sync
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.className = resolved === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+
+      // Keep FAB icon in sync
+      updateFabIcon(themeChoice);
+    };
+
+    if (useTransition && document.startViewTransition) {
+      document.startViewTransition(executeChange);
+    } else {
+      executeChange();
+    }
   }
 
   function applyThemeAssets(theme) {
@@ -66,14 +92,13 @@
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const current = html.getAttribute('data-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      applyTheme(current === 'dark' ? 'light' : 'dark', true);
     });
   }
 
   /* ============================================================
-     SETTINGS FAB + DRAWER
+     THEME TOGGLE FAB
      Injected dynamically — works on every page without HTML changes.
-     FAB is hidden for the first 200vh of scroll, then fades in.
      ============================================================ */
   function injectSettingsPanel() {
     const currentChoice = localStorage.getItem('aiq-theme-choice') || 'system';
@@ -82,95 +107,26 @@
     const fab = document.createElement('button');
     fab.className = 'settings-fab';
     fab.id = 'settingsFab';
-    fab.setAttribute('aria-label', 'Appearance settings');
-    fab.innerHTML = '<i class="fa-solid fa-sliders spin-on-hover"></i>';
-
-    /* — Backdrop — */
-    const backdrop = document.createElement('div');
-    backdrop.className = 'settings-backdrop';
-    backdrop.id = 'settingsBackdrop';
-
-    /* — Drawer — */
-    const drawer = document.createElement('div');
-    drawer.className = 'settings-drawer';
-    drawer.id = 'settingsDrawer';
-    drawer.innerHTML = `
-      <div class="settings-drawer-header">
-        <h4><i class="fa-solid fa-palette" style="margin-right:8px;color:var(--accent)"></i>Appearance</h4>
-        <button class="settings-close-btn" id="settingsCloseBtn" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="settings-section">
-        <div class="settings-section-title">Theme Mode</div>
-        <div class="theme-options">
-          <button class="theme-opt${currentChoice === 'system' ? ' active' : ''}" data-theme-choice="system">
-            <div class="theme-opt-icon"><i class="fa-solid fa-desktop"></i></div>
-            <div>
-              <div style="font-weight:700;font-size:.875rem;color:var(--text)">System</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Follows your OS setting</div>
-            </div>
-            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
-          </button>
-          <button class="theme-opt${currentChoice === 'dark' ? ' active' : ''}" data-theme-choice="dark">
-            <div class="theme-opt-icon"><i class="fa-solid fa-moon"></i></div>
-            <div>
-              <div style="font-weight:700;font-size:.875rem;color:var(--text)">Dark</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Easy on the eyes at night</div>
-            </div>
-            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
-          </button>
-          <button class="theme-opt${currentChoice === 'light' ? ' active' : ''}" data-theme-choice="light">
-            <div class="theme-opt-icon"><i class="fa-solid fa-sun"></i></div>
-            <div>
-              <div style="font-weight:700;font-size:.875rem;color:var(--text)">Light</div>
-              <div style="font-size:.75rem;color:var(--text-muted);margin-top:2px">Crisp and clean look</div>
-            </div>
-            <div class="theme-opt-check"><i class="fa-solid fa-check"></i></div>
-          </button>
-        </div>
-      </div>
-
-      <div class="settings-info">
-        <i class="fa-solid fa-circle-info" style="color:var(--accent)"></i>
-        &nbsp;Your choice is saved and applied across all pages automatically.
-      </div>`;
+    fab.setAttribute('aria-label', 'Toggle theme mode');
 
     document.body.appendChild(fab);
-    document.body.appendChild(backdrop);
-    document.body.appendChild(drawer);
 
-    /* — Open / close helpers — */
-    function openSettings() { drawer.classList.add('open'); backdrop.classList.add('open'); }
-    function closeSettings() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
+    // Initial icon state
+    updateFabIcon(currentChoice);
 
-    fab.addEventListener('click', openSettings);
-    backdrop.addEventListener('click', closeSettings);
-    document.getElementById('settingsCloseBtn').addEventListener('click', closeSettings);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSettings(); });
-
-    drawer.querySelectorAll('.theme-opt').forEach(btn => {
-      btn.addEventListener('click', () => applyTheme(btn.dataset.themeChoice));
-    });
-
-    /* — Scroll-based FAB reveal (hidden until 200vh scrolled) — */
-    const threshold = window.innerHeight * 2; // 200vh
-    const fadeRange = 180; // px over which to fade in
-
-    function updateFabVisibility() {
-      const scrollY = window.scrollY;
-      if (scrollY <= threshold) {
-        fab.classList.remove('fab-visible');
-      } else {
-        const progress = Math.min((scrollY - threshold) / fadeRange, 1);
-        fab.style.setProperty('--fab-progress', progress);
-        fab.classList.add('fab-visible');
+    // Click handler to cycle themes: System -> Dark -> Light -> System
+    fab.addEventListener('click', () => {
+      const activeChoice = localStorage.getItem('aiq-theme-choice') || 'system';
+      let nextChoice = 'system';
+      if (activeChoice === 'system') {
+        nextChoice = 'dark';
+      } else if (activeChoice === 'dark') {
+        nextChoice = 'light';
+      } else if (activeChoice === 'light') {
+        nextChoice = 'system';
       }
-    }
-
-    window.addEventListener('scroll', updateFabVisibility, { passive: true });
-    updateFabVisibility(); // ensure hidden on page load
+      applyTheme(nextChoice, true);
+    });
   }
 
   injectSettingsPanel();
@@ -752,7 +708,7 @@
 
       if (typeof grecaptcha !== 'undefined') {
         grecaptcha.ready(() => {
-          grecaptcha.execute('6LfzFEgsAAAAAPaNZetpq1UVZeb1CscjstB2Gb6l', { action: 'contact' })
+          grecaptcha.execute('6Ldw1zMtAAAAAEGFNXA2RlTWqdifRUbdyaIp67ny', { action: 'contact' })
             .then(sendForm).catch(() => sendForm(null));
         });
       } else {
