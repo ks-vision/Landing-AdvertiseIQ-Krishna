@@ -132,7 +132,7 @@
     diamond.id = 'cursorDiamond';
 
     // Crosshair arms (4 lines)
-    ['top','right','bottom','left'].forEach(dir => {
+    ['top', 'right', 'bottom', 'left'].forEach(dir => {
       const arm = document.createElement('span');
       arm.className = 'cursor-arm cursor-arm-' + dir;
       diamond.appendChild(arm);
@@ -616,16 +616,16 @@
     }
 
     // Nav item click — desktop scrolls to position, mobile switches directly
-    navItems.forEach((item, i) => {
-      item.addEventListener('click', () => {
-        if (isMobile()) {
-          activate(i);
-        } else {
-          const top = section.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
-        }
-      });
-    });
+    // navItems.forEach((item, i) => {
+    //   item.addEventListener('click', () => {
+    //     if (isMobile()) {
+    //       activate(i);
+    //     } else {
+    //       const top = section.getBoundingClientRect().top + window.scrollY;
+    //       window.scrollTo({ top: top + (i / total) * (section.offsetHeight - window.innerHeight), behavior: 'smooth' });
+    //     }
+    //   });
+    // });
 
     // Mobile: touch swipe on card stage
     if (cardStage) {
