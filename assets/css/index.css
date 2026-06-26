@@ -98,6 +98,7 @@ img {
 
 /* ── UTILITY ── */
 .gradient-text {
+  line-height: 1.30 !important;
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3669,22 +3670,29 @@ select.form-control {
 }
 
 @keyframes tlMarkerPulse {
-  0%, 100% { box-shadow: 0 0 0 4px #f0f4ff, 0 0 0 8px rgba(37,99,235,0.1), 0 0 20px rgba(37,99,235,0.3); }
-  50%       { box-shadow: 0 0 0 4px #f0f4ff, 0 0 0 10px rgba(37,99,235,0.18), 0 0 32px rgba(37,99,235,0.5); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px #f0f4ff, 0 0 0 8px rgba(37, 99, 235, 0.1), 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 0 4px #f0f4ff, 0 0 0 10px rgba(37, 99, 235, 0.18), 0 0 32px rgba(37, 99, 235, 0.5);
+  }
 }
 
 [data-theme="light"] .timeline-card {
   border-left: 3px solid transparent;
   background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, #2563eb, #7c3aed) border-box;
+    linear-gradient(135deg, #2563eb, #7c3aed) border-box;
   border-left-color: transparent;
-  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 1px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 [data-theme="light"] .timeline-card:hover {
   transform: translateX(4px);
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.14), 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="light"] .timeline-card h4 {
@@ -4481,6 +4489,7 @@ select.form-control {
 
 /* ── Platform section — mobile tab layout ── */
 @media (max-width: 768px) {
+
   /* Kill the tall scroll space */
   .sstack-track {
     height: auto !important;
@@ -4509,7 +4518,10 @@ select.form-control {
     -webkit-overflow-scrolling: touch;
     margin-bottom: 4px;
   }
-  .sstack-nav::-webkit-scrollbar { display: none; }
+
+  .sstack-nav::-webkit-scrollbar {
+    display: none;
+  }
 
   .sstack-nav-item {
     flex-shrink: 0;
@@ -4521,7 +4533,7 @@ select.form-control {
   }
 
   /* "View All" button stays below tabs */
-  .sstack-left-panel > a {
+  .sstack-left-panel>a {
     display: none;
   }
 
@@ -4542,7 +4554,7 @@ select.form-control {
     opacity: 0 !important;
     filter: none !important;
     transition: transform 0.42s cubic-bezier(0.23, 1, 0.32, 1),
-                opacity 0.35s ease !important;
+      opacity 0.35s ease !important;
     animation: none !important;
     padding: 28px 22px !important;
     border-radius: 20px !important;
@@ -4556,7 +4568,7 @@ select.form-control {
     pointer-events: auto;
     z-index: 3;
     border-color: rgba(59, 130, 246, 0.2) !important;
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12), 0 2px 8px rgba(0,0,0,0.06) !important;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06) !important;
   }
 
   .sstack-card.scard-behind-1,
@@ -4624,6 +4636,7 @@ select.form-control {
 }
 
 .tt-char {
+  line-height: 0.9 !important;
   display: inline-block;
   color: inherit;
   transition: color 0.12s ease;
@@ -5264,8 +5277,8 @@ button[type="submit"] {
   position: absolute;
   background: rgba(59, 130, 246, 0.7);
   transition: width 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-              height 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-              opacity 0.35s;
+    height 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.35s;
   border-radius: 2px;
   opacity: 0;
 }
@@ -5286,10 +5299,25 @@ button[type="submit"] {
   transform: translateY(-50%);
 }
 
-.cursor-arm-top    { bottom: 100%; margin-bottom: 3px; }
-.cursor-arm-bottom { top: 100%; margin-top: 3px; }
-.cursor-arm-left   { right: 100%; margin-right: 3px; }
-.cursor-arm-right  { left: 100%; margin-left: 3px; }
+.cursor-arm-top {
+  bottom: 100%;
+  margin-bottom: 3px;
+}
+
+.cursor-arm-bottom {
+  top: 100%;
+  margin-top: 3px;
+}
+
+.cursor-arm-left {
+  right: 100%;
+  margin-right: 3px;
+}
+
+.cursor-arm-right {
+  left: 100%;
+  margin-left: 3px;
+}
 
 .cursor-diamond.cursor-hover {
   width: 42px;
@@ -6278,6 +6306,7 @@ button[type="submit"] {
   from {
     clip-path: circle(0% at 0% 0%);
   }
+
   to {
     clip-path: circle(150% at 0% 0%);
   }
