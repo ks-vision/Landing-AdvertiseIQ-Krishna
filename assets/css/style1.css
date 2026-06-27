@@ -158,9 +158,10 @@ body {
 }
 
 .am-operations-section {
-    padding: 20em 0px;
+    padding: 72px 24px;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .am-content-wrapper {

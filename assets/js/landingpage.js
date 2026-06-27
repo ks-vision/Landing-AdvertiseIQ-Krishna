@@ -355,23 +355,23 @@ function initGlobe(imgData, imgWidth, imgHeight) {
                 float pAlpha = 0.0;
                 float pSize  = size;
 
-                // ── Light-mode compensation (no bloom → boost alpha & size) ──
-                float lightSizeBoost = 1.0 + isLightMode * 1.2;
+                // ── Light-mode: medium density — between sparse and overwhelming ──
+                float lightSizeBoost = 1.0 + isLightMode * 0.7; // moderate size increase
 
                 if (isOcean > 0.5) {
                     if (borderFactor > 0.5) {
                         float borderIntensity = smoothstep(0.5, 1.0, borderFactor);
                         pAlpha = (0.6 + 0.4 * sin(time * 2.0 + phase)) * borderIntensity;
-                        // Force border particles visible in light mode
-                        pAlpha = max(pAlpha, isLightMode * 0.85);
+                        // Light mode: clear border ring
+                        pAlpha = max(pAlpha, isLightMode * 0.62);
                         vColor = color * (1.0 + borderIntensity * 1.5);
                         pSize  = size * (1.0 + borderIntensity * 1.5) * lightSizeBoost;
                     } else {
-                        // In light mode show ALL ocean particles, not just 25%
-                        if (mod(phase, 1.0) < 0.25 || isLightMode > 0.5) {
+                        // Light mode: show ~65% of ocean particles (dark=25%, light=65%)
+                        if (mod(phase, 1.0) < 0.25 || (isLightMode > 0.5 && mod(phase, 1.0) < 0.65)) {
                             pAlpha = mix(
-                                abs(0.5 * sin(time * 1.0 + phase)),
-                                0.7 + 0.3 * abs(sin(time * 1.0 + phase)),
+                                abs(0.5 * sin(time * 1.0 + phase)),         // dark: subtle twinkle
+                                0.50 + 0.20 * abs(sin(time * 1.0 + phase)),  // light: comfortably visible
                                 isLightMode
                             );
                             vColor = color * 2.2;
@@ -379,18 +379,17 @@ function initGlobe(imgData, imgWidth, imgHeight) {
                         }
                     }
                 } else {
-                    // Land particles
+                    // Land particles — solid medium alpha in light mode
                     pAlpha = mix(
-                        0.7 + 0.5 * sin(time * 1.5 + phase),
-                        0.85 + 0.15 * sin(time * 1.5 + phase),
+                        0.7 + 0.5 * sin(time * 1.5 + phase),          // dark
+                        0.65 + 0.25 * sin(time * 1.5 + phase),         // light: good visibility
                         isLightMode
                     );
                     if (borderFactor > 0.4) {
                         float borderIntensity = smoothstep(0.4, 1.0, borderFactor);
                         vColor = color * (1.0 + borderIntensity * 1.2);
                     } else {
-                        // Don't over-brighten in light mode (no bloom to save it)
-                        vColor *= mix(2.8, 1.0, isLightMode);
+                        vColor *= mix(2.8, 1.5, isLightMode);
                     }
                     pSize = size * lightSizeBoost;
                 }
