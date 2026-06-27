@@ -97,12 +97,12 @@ function initGlobe(imgData, imgWidth, imgHeight) {
     const tempIsOcean = [];
 
     // Dark-mode palette (always computed so we can switch live)
-    const colorWhite     = new THREE.Color(0xffffff);
+    const colorWhite = new THREE.Color(0xffffff);
     const colorLightBlue = new THREE.Color(0x44aaff);
-    const colorBlue      = new THREE.Color(0x0044ff);
-    const colorDeepBlue  = new THREE.Color(0x000033);
+    const colorBlue = new THREE.Color(0x0044ff);
+    const colorDeepBlue = new THREE.Color(0x000033);
     // Light-mode: all particles are near-black so they show on a white bg
-    const colorLightAll  = new THREE.Color(0x020617);
+    const colorLightAll = new THREE.Color(0x020617);
 
     for (let i = 0; i < maxParticles; i++) {
         const u = Math.random();
@@ -234,7 +234,7 @@ function initGlobe(imgData, imgWidth, imgHeight) {
     const isOceanArr = new Float32Array(tempIsOcean);
 
     // Store both color buffers so applyTheme() can swap them live
-    darkColorsBuffer  = new Float32Array(tempColors);
+    darkColorsBuffer = new Float32Array(tempColors);
     lightColorsBuffer = new Float32Array(tempLightColors);
     // Use the right one for the current theme at init time
     const colors = IS_LIGHT ? lightColorsBuffer : darkColorsBuffer;
@@ -610,8 +610,8 @@ function createRing(r, tiltX, tiltY, tiltZ, speed) {
 
 const rings = [];
 rings.push(createRing(radius + 40, 0.2, 0.4, 0.1, 0.002));
-rings.push(createRing(radius + 90, -0.4, 0.2, -0.2, -0.0015));
-rings.push(createRing(radius + 150, 0.3, -0.5, 0.4, 0.001));
+rings.push(createRing(radius + 45, -0.4, 0.2, -0.2, -0.0015));
+rings.push(createRing(radius + 55, 0.3, -0.5, 0.4, 0.001));
 
 // ----------------------------------------------------
 // GLOWING OCEAN FLOOR (Wavy particle grid)

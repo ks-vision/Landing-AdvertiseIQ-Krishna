@@ -389,9 +389,11 @@
           const periodEls = document.querySelectorAll('.price-period');
           periodEls.forEach(p => {
             if (isAnnual) {
-              p.innerHTML = p.innerHTML.replace('/mo', '/mo <span style="font-size:.7rem;color:var(--success);">billed annually</span>');
+              if (!p.innerHTML.includes('billed annually')) {
+                p.innerHTML = '/mo <span style="font-size:.7rem;color:var(--success);">billed annually</span>';
+              }
             } else {
-              p.textContent = p.textContent.replace('/mo billed annually', '').trim() === '' ? '/mo' : p.textContent.split('<')[0];
+              p.innerHTML = '/mo';
             }
           });
         });

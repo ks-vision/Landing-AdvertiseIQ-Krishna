@@ -244,271 +244,91 @@
     </div>
   </section>
 
-  <section class="isometric-ai-section">
-    <div class="iso-sticky-container">
-      <div class="iso-scene">
-        <div class="iso-wrapper">
-          <!-- Glow Base -->
-          <div class="iso-glow-base"></div>
+  <!-- ===== NEW BENTO FEATURES ===== -->
+  <section class="new-bento-section">
+    <div class="section-wrapper">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">SIX POWERFUL MODULES</div>
+        <h2>Working together to turn cold outreach into a warm, data-backed conversation.</h2>
+      </div>
 
-          <!-- Rings -->
-          <div class="iso-rings">
-            <div class="iso-ring ring-1"></div>
-            <div class="iso-ring ring-2"></div>
-            <div class="iso-ring ring-4"></div>
-            <div class="iso-ring ring-3"></div>
-          </div>
-
-          <!-- Connection Lines (SVG) -->
-          <!-- Connection Lines (SVG) -->
-          <svg class="iso-svg-lines" viewBox="0 0 800 800">
-            <defs>
-              <filter id="isoGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-            <g fill="none" stroke="#00d2ff" stroke-width="2" filter="url(#isoGlow)">
-              <!-- Math coordinates for lines starting from R=100 to orbit R=280 -->
-              <path class="iso-line" id="path-top" d="M 400 300 L 400 120" /> <!-- Top -->
-              <path class="iso-line" id="path-tr" d="M 487 350 L 642 260" /> <!-- Top Right -->
-              <path class="iso-line" id="path-br" d="M 487 450 L 642 540" /> <!-- Bottom Right -->
-              <path class="iso-line" id="path-bot" d="M 400 500 L 400 680" /> <!-- Bottom -->
-              <path class="iso-line" id="path-bl" d="M 313 450 L 158 540" /> <!-- Bottom Left -->
-              <path class="iso-line" id="path-tl" d="M 313 350 L 158 260" /> <!-- Top Left -->
-            </g>
-
-            <g fill="#00d2ff" filter="url(#isoGlow)">
-              <circle r="6">
-                <animateMotion dur="2.5s" repeatCount="indefinite">
-                  <mpath href="#path-top" />
-                </animateMotion>
-              </circle>
-              <circle r="6">
-                <animateMotion dur="2.5s" begin="0.5s" repeatCount="indefinite">
-                  <mpath href="#path-tr" />
-                </animateMotion>
-              </circle>
-              <circle r="6">
-                <animateMotion dur="2.5s" begin="1.0s" repeatCount="indefinite">
-                  <mpath href="#path-br" />
-                </animateMotion>
-              </circle>
-              <circle r="6">
-                <animateMotion dur="2.5s" begin="1.5s" repeatCount="indefinite">
-                  <mpath href="#path-bot" />
-                </animateMotion>
-              </circle>
-              <circle r="6">
-                <animateMotion dur="2.5s" begin="2.0s" repeatCount="indefinite">
-                  <mpath href="#path-bl" />
-                </animateMotion>
-              </circle>
-              <circle r="6">
-                <animateMotion dur="2.5s" begin="0.2s" repeatCount="indefinite">
-                  <mpath href="#path-tl" />
-                </animateMotion>
-              </circle>
-            </g>
-          </svg>
-
-          <!-- Satellite Nodes -->
-          <div class="iso-nodes">
-            <!-- Top (Bids) -->
-            <div class="iso-node n-top" style="--clr: #a855f7;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-bar-chart-fill"></i></div>
-              <div class="iso-node-label Recommendations">Recommendations</div>
-            </div>
-            <!-- Top Right (Inventory) -->
-            <div class="iso-node n-tr" style="--clr: #10b981;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-box-seam"></i></div>
-              <div class="iso-node-label">History</div>
-            </div>
-            <!-- Bottom Right (Placements) -->
-            <div class="iso-node n-br" style="--clr: #c084fc;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-bullseye"></i></div>
-              <div class="iso-node-label">Ads</div>
-            </div>
-            <!-- Bottom (Analytics) -->
-            <div class="iso-node n-bot" style="--clr: #3b82f6;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-pie-chart-fill"></i></div>
-              <div class="iso-node-label">Rules</div>
-            </div>
-            <!-- Bottom Left (Budgets) -->
-            <div class="iso-node n-bl" style="--clr: #0ea5e9;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-currency-dollar"></i></div>
-              <div class="iso-node-label">Day Parting</div>
-            </div>
-            <!-- Top Left (Keywords) -->
-            <div class="iso-node n-tl" style="--clr: #f59e0b;">
-              <div class="iso-node-base"></div>
-              <div class="iso-node-cap"></div>
-              <div class="iso-node-icon"><i class="bi bi-search"></i></div>
-              <div class="iso-node-label">Search</div>
+      <div class="modern-bento-grid">
+        <!-- Card 1 -->
+        <div class="modern-bento-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="bento-icon"><i class="bi bi-map"></i></div>
+          <h3>Local Business Scraper</h3>
+          <p>Search Google Maps by industry & location. Filter by rating, review count, and website status. Get
+            qualified leads in seconds.</p>
+          <div class="bento-viz">
+            <div class="bento-anim-filter">
+              <div class="b-line w-full"></div>
+              <div class="b-line w-3-4"></div>
+              <div class="b-line w-1-2"></div>
             </div>
           </div>
+        </div>
 
-          <!-- Central 3D Core -->
-          <div class="iso-core">
-            <div class="iso-core-base-rings">
-              <div class="cb-ring r1"></div>
-              <div class="cb-ring r2"></div>
+        <!-- Card 2 -->
+        <div class="modern-bento-card card-span-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="bento-icon"><i class="bi bi-lightning-charge"></i></div>
+          <h3>Smart Campaign Builder</h3>
+          <p>Create multi-step sequences with visual rules. Trigger follow-ups dynamically based on opens, replies, or
+            links clicked.</p>
+          <div class="bento-viz">
+            <div class="bento-anim-flow">
+              <div class="b-node"></div>
+              <div class="b-arrow">→</div>
+              <div class="b-node active"></div>
+              <div class="b-arrow">→</div>
+              <div class="b-node"></div>
             </div>
-            <div class="iso-cube">
-              <div class="c-text">Feature</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="modern-bento-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="bento-icon"><i class="bi bi-paperclip"></i></div>
+          <h3>Connector-Powered Reports</h3>
+          <p>Attach live audits directly. Prospects receive customized audit reports instead of a generic pitch.</p>
+          <div class="bento-viz">
+            <div class="bento-anim-chart">
+              <div class="b-bar h-1"></div>
+              <div class="b-bar h-2"></div>
+              <div class="b-bar h-3"></div>
+              <div class="b-bar h-4"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="modern-bento-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="bento-icon"><i class="bi bi-envelope"></i></div>
+          <h3>Template Group System</h3>
+          <p>Build email templates with dynamic variables. One template instantly personalises into thousands of unique
+            pitches.</p>
+          <div class="bento-viz">
+            <div class="bento-anim-text">
+              <span class="b-var">{first_name}</span>
+              <span class="b-text">, check this out!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="modern-bento-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="bento-icon"><i class="bi bi-bar-chart-line"></i></div>
+          <h3>Exclusions & Analytics</h3>
+          <p>Automatically exclude replied/bounced leads. Monitor open rates and clicks in real-time on your progress
+            board.</p>
+          <div class="bento-viz">
+            <div class="bento-anim-progress">
+              <div class="b-circle">
+                <div class="b-inner">85%</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="saas-right">
-      <div class="saas-card-wrapper" id="card-bids">
-        <div class="saas-card" style="z-index: 1;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              Recommendations
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Track campaign performance with actionable recommendations tailored to your advertising goals.
-            Identify opportunities to improve visibility, optimize spend, and drive better results through
-            data-backed suggestions.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Improve advertising efficiency</li>
-            <li><i class="bi bi-check2-circle"></i> Uncover growth opportunities</li>
-            <li><i class="bi bi-check2-circle"></i> Reduce wasted spend</li>
-            <li><i class="bi bi-check2-circle"></i> Simplify campaign management</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Card 2: Keyword Intelligence -->
-
-      <div class="saas-card-wrapper" id="card-inventory">
-        <div class="saas-card" style="z-index: 2;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              History Management
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Maintain full visibility into every account activity. Access a detailed history of user actions,
-            campaign changes, automation events, and optimization activities to ensure transparency and
-            control.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Track all account activities</li>
-            <li><i class="bi bi-check2-circle"></i> Monitor automation actions in real time</li>
-            <li><i class="bi bi-check2-circle"></i> Review campaign and rule changes</li>
-            <li><i class="bi bi-check2-circle"></i> Audit user access and activity</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Card 5: Budget Automation -->
-
-      <div class="saas-card-wrapper" id="card-placements">
-        <div class="saas-card" style="z-index: 3;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              Product Ads
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Track the performance of all product advertisements in one place. See which ads are running for
-            each product and monitor key metrics including clicks, impressions, sales, spend, ACOS, and ROAS
-            to make informed advertising decisions.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Track all product ads</li>
-            <li><i class="bi bi-check2-circle"></i> Monitor clicks, impressions, sales, spend</li>
-            <li><i class="bi bi-check2-circle"></i> Real-time performance monitoring</li>
-            <li><i class="bi bi-check2-circle"></i> Simplified campaign analysis</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Card 4: Inventory Monitoring -->
-
-      <div class="saas-card-wrapper" id="card-analytics">
-        <div class="saas-card" style="z-index: 4;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              Search Terms
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Transform search term data into actionable insights. Analyze customer search behavior, evaluate
-            query-level performance, and identify opportunities to improve visibility, increase conversions,
-            and maximize advertising efficiency.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Detailed search term analytics</li>
-            <li><i class="bi bi-check2-circle"></i> Query-level performance analysis</li>
-            <li><i class="bi bi-check2-circle"></i> Customer behavior insights</li>
-            <li><i class="bi bi-check2-circle"></i> Conversion optimization opportunities</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="saas-card-wrapper" id="card-budgets">
-        <div class="saas-card" style="z-index: 5;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              Day Parting
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Control bids based on hourly performance insights. Schedule bid adjustments using percentage or
-            multiplier rules to capture more sales during peak hours and improve advertising efficiency.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Hourly bid scheduling</li>
-            <li><i class="bi bi-check2-circle"></i> Percentage and multiplier adjustments</li>
-            <li><i class="bi bi-check2-circle"></i> Peak-hour optimization</li>
-            <li><i class="bi bi-check2-circle"></i> Performance-based automation</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Card 6: Analytics Dashboard -->
-
-      <div class="saas-card-wrapper" id="card-keywords" style="margin-bottom: 0;">
-        <div class="saas-card" style="z-index: 6;">
-          <div class="saas-card-header">
-            <div class="saas-card-title">
-              Rules
-            </div>
-          </div>
-          <div class="saas-card-body-text" style="padding: 20px 24px 0 24px; font-size: 0.95rem; line-height: 1.6;">
-            Define custom automation rules and let the platform take action based on campaign performance.
-            Automatically manage bids, budgets, campaigns, ad groups, targets, and search terms using your
-            preferred conditions.
-          </div>
-          <ul class="card-features" style="margin: 20px 0 24px 0;">
-            <li><i class="bi bi-check2-circle"></i> Create custom rules based on performance metrics</li>
-            <li><i class="bi bi-check2-circle"></i> Automatically adjust bids and budgets</li>
-            <li><i class="bi bi-check2-circle"></i> Enable or disable campaigns and ad groups</li>
-            <li><i class="bi bi-check2-circle"></i> Activate or pause targets and search terms</li>
-            <li><i class="bi bi-check2-circle"></i> Reduce manual optimization efforts</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Card 3: Placement Optimization -->
-
     </div>
   </section>
 
@@ -531,9 +351,7 @@
         <a href="contact-us.html">Contact</a>
       </div>
       <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-        </button>
+        <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-login">Log In</a>
         <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
         <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
           <i class="bi bi-list"></i>
@@ -546,7 +364,8 @@
       <a href="pricing.html">Pricing</a>
       <a href="about-us.html">About</a>
       <a href="contact-us.html">Contact</a>
-      <a href="contact-us.html" class="btn-nav-primary" style="text-align: center">Start Free Trial</a>
+      <a href="contact-us.html" class="btn-nav-primary" style="text-align: center; margin-top: 16px;">Start Free
+        Trial</a>
     </div>
   </nav>
 
@@ -846,231 +665,7 @@
     </div>
   </section>
 
-  <!-- ===== SCROLL STACK (PLATFORM DEEP DIVE) ===== -->
-  <section class="sstack-outer" id="sstackSection">
-    <div class="sstack-header section-wrapper" data-aos="fade-up">
-      <div class="section-tag">THE PLATFORM</div>
-      <h2>
-        One Platform.<br />Every <span class="gradient-text">Advantage</span>.
-      </h2>
-      <p>
-        Scroll through each pillar of AdvertiseIQ and see exactly how the
-        system works for your Amazon business.
-      </p>
-    </div>
 
-    <!-- Tall scroll track (5 panels × 100vh) -->
-    <div class="sstack-track" style="height: 500vh">
-      <div class="sstack-sticky">
-        <div class="sstack-grid">
-          <!-- Left nav panel -->
-          <div class="sstack-left-panel">
-            <div class="sstack-nav" id="sstackNav">
-              <div class="sstack-nav-item active" data-idx="0">
-                <span class="sni-dot"></span> Campaign Automation
-              </div>
-              <div class="sstack-nav-item" data-idx="1">
-                <span class="sni-dot"></span> Bid Optimization
-              </div>
-              <div class="sstack-nav-item" data-idx="2">
-                <span class="sni-dot"></span> Keyword Intelligence
-              </div>
-              <div class="sstack-nav-item" data-idx="3">
-                <span class="sni-dot"></span> Inventory Protection
-              </div>
-              <div class="sstack-nav-item" data-idx="4">
-                <span class="sni-dot"></span> Analytics & Reporting
-              </div>
-            </div>
-            <a href="features.html" class="btn-secondary" style="
-                  margin-top: 32px;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 8px;
-                  font-size: 0.875rem;
-                ">
-              View All Features <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Right card stage -->
-          <div class="sstack-card-stage">
-            <!-- Card 0: Campaign Automation -->
-            <div class="sstack-card scard-active">
-              <div class="sc-num">01 / 05</div>
-              <div class="sc-icon ic-purple">
-                <i class="bi bi-lightning-charge-fill"></i>
-              </div>
-              <h4>Campaign Automation</h4>
-              <p class="sc-desc">
-                AI manages bids, budgets, placements, and rules 24/7 —
-                adjusting in real-time so you always stay profitable without
-                lifting a finger.
-              </p>
-              <div class="sc-pills">
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Smart Bid Rules
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Budget Automation
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Dayparting
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Campaign Scheduling
-                </div>
-              </div>
-              <div class="sc-metric-row">
-                <div class="sc-metric-val">+32%</div>
-                <div class="sc-metric-lbl">
-                  Average ROAS<br />improvement in 30 days
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 1: Bid Optimization -->
-            <div class="sstack-card scard-behind-1">
-              <div class="sc-num">02 / 05</div>
-              <div class="sc-icon ic-blue"><i class="bi bi-robot"></i></div>
-              <h4>Bid Optimization</h4>
-              <p class="sc-desc">
-                Our AI bidding engine adjusts your keyword and product bids in
-                real-time based on conversion data, competition, and your
-                target ACOS goals.
-              </p>
-              <div class="sc-pills">
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Real-Time Bidding
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Target ACOS
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Placement Boosts
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> AI Decision Engine
-                </div>
-              </div>
-              <div class="sc-metric-row">
-                <div class="sc-metric-val">-21%</div>
-                <div class="sc-metric-lbl">
-                  ACOS reduction<br />within first 2 weeks
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Keyword Intelligence -->
-            <div class="sstack-card scard-behind-2">
-              <div class="sc-num">03 / 05</div>
-              <div class="sc-icon ic-orange">
-                <i class="bi bi-search"></i>
-              </div>
-              <h4>Keyword Intelligence</h4>
-              <p class="sc-desc">
-                Discover hidden search terms, harvest converting keywords,
-                identify wasted spend, and uncover competitor keyword gaps
-                automatically.
-              </p>
-              <div class="sc-pills">
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Keyword Mining
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Competitor Discovery
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Negative Keyword
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Rank Tracking
-                </div>
-              </div>
-              <div class="sc-metric-row">
-                <div class="sc-metric-val">-41%</div>
-                <div class="sc-metric-lbl">
-                  Wasted ad spend<br />eliminated on average
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Inventory Protection -->
-            <div class="sstack-card">
-              <div class="sc-num">04 / 05</div>
-              <div class="sc-icon ic-green">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h4>Inventory Protection</h4>
-              <p class="sc-desc">
-                AdvertiseIQ monitors your FBA and FBM stock levels and
-                automatically pauses ads before you run out — protecting your
-                organic rank and budget.
-              </p>
-              <div class="sc-pills">
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Low Stock Alerts
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Auto-Pause Ads
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> FBA + FBM Monitor
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Stock Forecasting
-                </div>
-              </div>
-              <div class="sc-metric-row">
-                <div class="sc-metric-val">-28%</div>
-                <div class="sc-metric-lbl">
-                  Stockout rate<br />reduction across brands
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4: Analytics -->
-            <div class="sstack-card">
-              <div class="sc-num">05 / 05</div>
-              <div class="sc-icon ic-cyan">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <h4>Analytics & Reporting</h4>
-              <p class="sc-desc">
-                A unified dashboard gives you real-time visibility into every
-                metric — ROAS, ACOS, sales velocity, ad spend, and
-                profitability — all in one place.
-              </p>
-              <div class="sc-pills">
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Real-Time Dashboard
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Profit Analytics
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Custom Reports
-                </div>
-                <div class="sc-pill">
-                  <i class="bi bi-check2-circle"></i> Multi-Market View
-                </div>
-              </div>
-              <div class="sc-metric-row">
-                <div class="sc-metric-val">3.2x</div>
-                <div class="sc-metric-lbl">
-                  Average ROAS<br />across all clients
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /sstack-card-stage -->
-        </div>
-        <!-- /sstack-grid -->
-      </div>
-      <!-- /sstack-sticky -->
-    </div>
-    <!-- /sstack-track -->
-  </section>
 
   <!-- ===== FEATURE SHOWCASE SLIDER ===== -->
   <section class="showcase-section">
@@ -1210,7 +805,7 @@
 
   <!-- ===== PRICING ===== -->
   <section class="pricing-section" id="pricing">
-    <div class="section-header" data-aos="fade-up">
+    <div class="section-header" style="margin-bottom: 0px;" data-aos="fade-up">
       <div class="section-tag">PRICING</div>
       <h2>The Right Plan for <span class="gradient-text">You</span></h2>
       <p>Transparent pricing with no hidden fees. Scale as you grow.</p>
@@ -1310,68 +905,104 @@
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
+  <!-- ===== ANIMATED TESTIMONIALS ===== -->
   <section class="testimonials-section">
     <div class="section-wrapper">
       <div class="section-header" data-aos="fade-up">
-        <div class="section-tag">CUSTOMER STORIES</div>
-        <h2>Loved by Amazon<br />Advertisers</h2>
-        <p>
-          See what brands across every category are saying about AdvertiseIQ.
-        </p>
+        <div class="section-tag"
+          style="background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 20px; padding: 6px 16px; display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">
+          REAL FEEDBACK FROM CLIENTS</div>
+        <h2 style="font-size: 3.5rem; margin-top: 20px; line-height: 1.1;">People Are<br /><span
+            class="gradient-text">Actually Closing</span>
+        </h2>
+        <p style="margin-top: 20px; color: var(--text-muted); font-size: 1.1rem;">Don't take our word for it. Here's
+          what agencies and freelancers are saying after using AdvertiseIQ.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="0">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
-              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>
-            "AdvertiseIQ cut our ACOS by 38% in the first month. The AI bid
-            automation is genuinely impressive — it adjusts to data I couldn't
-            monitor manually."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar av-blue">JS</div>
-            <div>
-              <div class="author-name">James S.</div>
-              <div class="author-role">Head of eCommerce, NovaBrand</div>
+
+      <div class="testimonials-marquee-wrapper" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonials-marquee">
+          <!-- Marquee Track 1 -->
+          <div class="marquee-track track-left">
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"We closed 3 new SEO clients in the first week. The fact that every email had an actual
+                personalised audit report attached was the game-changer."</p>
+              <div class="author">
+                <div class="avatar" style="background: #4f46e5;">PK</div>
+                <div class="author-info">
+                  <div class="name">Prakash Kudale</div>
+                  <div class="title">Founder - DigitalEdge Agency</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="100">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
-              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>
-            "We manage 12 brands through AdvertiseIQ. The competitor keyword
-            discovery alone saved us 20 hours a month and uncovered
-            opportunities we'd completely missed."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar av-purple">AK</div>
-            <div>
-              <div class="author-name">Alicia K.</div>
-              <div class="author-role">Amazon Agency Director</div>
+
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"As a solo consultant, I used to spend 3 hours researching one lead. This finds them,
+                audits them, and helps me pitch them - in under 10 minutes."</p>
+              <div class="author">
+                <div class="avatar" style="background: #059669;">RL</div>
+                <div class="author-info">
+                  <div class="name">Richa Lathiya</div>
+                  <div class="title">Freelance SEO Consultant</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card anti-gravity" data-aos="fade-up" data-aos-delay="200">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i
-              class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>
-            "The inventory protection feature is a game-changer. Our ads
-            automatically pause before we run out, saving us thousands in
-            wasted ad spend on stockouts."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar av-green">MR</div>
-            <div>
-              <div class="author-name">Marcus R.</div>
-              <div class="author-role">Founder, PureGoods Co.</div>
+
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"We switched from manual search to just one tool, half the cost, twice the results."</p>
+              <div class="author">
+                <div class="avatar" style="background: #e11d48;">NK</div>
+                <div class="author-info">
+                  <div class="name">Nishant Kakadiya</div>
+                  <div class="title">Sales Head - GrowthStack</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"We closed 3 new SEO clients in the first week. The fact that every email had an actual
+                personalised audit report attached was the game-changer."</p>
+              <div class="author">
+                <div class="avatar" style="background: #4f46e5;">PK</div>
+                <div class="author-info">
+                  <div class="name">Prakash Kudale</div>
+                  <div class="title">Founder - DigitalEdge Agency</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"As a solo consultant, I used to spend 3 hours researching one lead. This finds them,
+                audits them, and helps me pitch them - in under 10 minutes."</p>
+              <div class="author">
+                <div class="avatar" style="background: #059669;">RL</div>
+                <div class="author-info">
+                  <div class="name">Richa Lathiya</div>
+                  <div class="title">Freelance SEO Consultant</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="quote">"We switched from manual search to just one tool, half the cost, twice the results."</p>
+              <div class="author">
+                <div class="avatar" style="background: #e11d48;">NK</div>
+                <div class="author-info">
+                  <div class="name">Nishant Kakadiya</div>
+                  <div class="title">Sales Head - GrowthStack</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
