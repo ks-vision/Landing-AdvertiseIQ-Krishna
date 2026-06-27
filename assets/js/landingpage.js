@@ -609,9 +609,9 @@ function createRing(r, tiltX, tiltY, tiltZ, speed) {
 }
 
 const rings = [];
-rings.push(createRing(radius + 40, 0.2, 0.4, 0.1, 0.002));
-rings.push(createRing(radius + 45, -0.4, 0.2, -0.2, -0.0015));
-rings.push(createRing(radius + 55, 0.3, -0.5, 0.4, 0.001));
+// rings.push(createRing(radius + 40, 0.2, 0.4, 0.1, 0.002));
+// rings.push(createRing(radius + 45, -0.4, 0.2, -0.2, -0.0015));
+// rings.push(createRing(radius + 55, 0.3, -0.5, 0.4, 0.001));
 
 // ----------------------------------------------------
 // GLOWING OCEAN FLOOR (Wavy particle grid)

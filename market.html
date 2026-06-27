@@ -11,7 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <style>
         .page-hero {
             padding: 160px 24px 80px;
@@ -410,18 +412,17 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-                    onerror="this.style.display='none'">
+                    onerror="this.style.display='none'" />
             </a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="about-us.html">About</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme">
-                    <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-login">Log In</a>
                 <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
                 <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
                     <i class="bi bi-list"></i>
@@ -432,18 +433,21 @@
             <a href="index.html">Home</a>
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
+            <a href="about-us.html">About</a>
             <a href="contact-us.html">Contact</a>
-            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align: center; margin-top: 16px;">Start Free Trial</a>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="page-hero">
-        <div class="section-tag">CASE STUDIES</div>
-        <h1>Real Brands,<br><span class="gradient-text">Real Results</span></h1>
-        <p>See how Amazon brands across every category use AdvertiseIQ to cut ACOS, scale revenue, and reclaim their
+        <div class="section-tag" data-aos="fade-up">CASE STUDIES</div>
+        <h1 data-aos="fade-up" data-aos-delay="100">Real Brands,<br><span class="gradient-text">Real Results</span></h1>
+        <p data-aos="fade-up" data-aos-delay="200">See how Amazon brands across every category use AdvertiseIQ to cut
+            ACOS, scale revenue, and reclaim their
             time.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" data-aos="fade-up"
+            data-aos-delay="300">
             <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
             <a href="contact-us.html" class="btn-secondary">Talk to Sales</a>
         </div>
@@ -452,22 +456,22 @@
     <!-- STATS BAR -->
     <section class="stats-section">
         <div class="stats-wrapper">
-            <div class="stat-item">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
                 <div class="stat-number">$2.8B+</div>
                 <div class="stat-label">Ad Spend Managed</div>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="stat-number">500+</div>
                 <div class="stat-label">Active Brands</div>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-number">3.2x</div>
                 <div class="stat-label">Average ROAS</div>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-number">47%</div>
                 <div class="stat-label">ACOS Reduction</div>
             </div>
@@ -477,11 +481,11 @@
     <!-- FEATURED CASE STUDY -->
     <section style="background:var(--bg-2);">
         <div class="section-wrapper">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">FEATURED STORY</div>
                 <h2>Spotlight Case Study</h2>
             </div>
-            <div class="featured-case">
+            <div class="featured-case" data-aos="zoom-in">
                 <div>
                     <div class="fc-label">Featured Case Study</div>
                     <div class="fc-company">NovaBrand</div>
@@ -520,7 +524,7 @@
             <!-- CASE STUDIES GRID -->
             <div class="cases-grid">
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-agency">Agency</span>
                         <div class="case-company">Apex Marketplace Agency</div>
@@ -549,7 +553,7 @@
                     </div>
                 </div>
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-brand">Home Goods</span>
                         <div class="case-company">SkyHigh Brands</div>
@@ -578,7 +582,7 @@
                     </div>
                 </div>
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-beauty">Beauty</span>
                         <div class="case-company">LumiSkin</div>
@@ -607,7 +611,7 @@
                     </div>
                 </div>
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-health">Health & Wellness</span>
                         <div class="case-company">VitaCore Labs</div>
@@ -636,7 +640,7 @@
                     </div>
                 </div>
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-sports">Sports & Outdoors</span>
                         <div class="case-company">TrailPeak Gear</div>
@@ -665,7 +669,7 @@
                     </div>
                 </div>
 
-                <div class="case-card">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="case-card-header">
                         <span class="case-industry-tag tag-ecom">Electronics</span>
                         <div class="case-company">TechEdge Devices</div>
@@ -697,12 +701,12 @@
             </div>
 
             <!-- TESTIMONIALS -->
-            <div class="section-header" style="margin-bottom:32px;">
+            <div class="section-header" style="margin-bottom:32px;" data-aos="fade-up">
                 <div class="section-tag">TESTIMONIALS</div>
                 <h2>What Our Customers Say</h2>
             </div>
             <div class="testi-row">
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
@@ -716,7 +720,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
@@ -730,7 +734,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
@@ -751,7 +755,7 @@
     <!-- CTA -->
     <section class="final-cta-section">
         <div class="section-wrapper">
-            <div class="final-cta-card">
+            <div class="final-cta-card" data-aos="zoom-in">
                 <div class="cta-glow"></div>
                 <div class="section-tag">YOUR STORY NEXT</div>
                 <h2>Ready to Write Your<br>Success Story?</h2>
@@ -829,13 +833,15 @@
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
         updateLoaderLogo(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('aiq-theme', next);
-            setIcon(next);
-            updateLoaderLogo(next);
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('aiq-theme', next);
+                setIcon(next);
+                updateLoaderLogo(next);
+            });
+        }
         function setIcon(theme) {
             themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
             const navLogo = document.getElementById('navLogo');
@@ -894,7 +900,11 @@
             splash.addEventListener('animationend', () => splash.remove());
         });
     </script>
-  <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, offset: 50 });
+    </script>
 </body>
 
 </html>

@@ -805,4 +805,37 @@
     el.addEventListener('mouseleave', () => el.classList.remove('hovered'));
   });
 
+  /* ── Drag to scroll for testimonials marquee ── */
+  const testimonialsMarquee = document.querySelector('.testimonials-marquee');
+  if (testimonialsMarquee) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    testimonialsMarquee.addEventListener('mousedown', (e) => {
+      isDown = true;
+      testimonialsMarquee.classList.add('active');
+      startX = e.pageX - testimonialsMarquee.offsetLeft;
+      scrollLeft = testimonialsMarquee.scrollLeft;
+    });
+
+    testimonialsMarquee.addEventListener('mouseleave', () => {
+      isDown = false;
+      testimonialsMarquee.classList.remove('active');
+    });
+
+    testimonialsMarquee.addEventListener('mouseup', () => {
+      isDown = false;
+      testimonialsMarquee.classList.remove('active');
+    });
+
+    testimonialsMarquee.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - testimonialsMarquee.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll fast
+      testimonialsMarquee.scrollLeft = scrollLeft - walk;
+    });
+  }
+
 })();

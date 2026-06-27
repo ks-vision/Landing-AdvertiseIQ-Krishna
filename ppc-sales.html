@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 	<link rel="stylesheet" href="./assets/css/ppc-sales.css" />
 	<link rel="stylesheet" href="./assets/css/index.css" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
 		<div class="nav-inner">
 			<a href="index.html" class="nav-logo">
 				<img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-					onerror="this.style.display='none'">
+					onerror="this.style.display='none'" />
 			</a>
 			<div class="nav-links">
 				<a href="index.html">Home</a>
@@ -49,11 +50,11 @@
 				<a href="contact-us.html">Contact</a>
 			</div>
 			<div class="nav-actions">
-				<button class="theme-toggle" aria-label="Toggle theme">
-					<a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-				</button>
+				<a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-login">Log In</a>
 				<a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
-				<button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="bi bi-list"></i></button>
+				<button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+					<i class="bi bi-list"></i>
+				</button>
 			</div>
 		</div>
 		<div class="nav-mobile" id="navMobile">
@@ -62,14 +63,14 @@
 			<a href="pricing.html">Pricing</a>
 			<a href="about-us.html">About</a>
 			<a href="contact-us.html">Contact</a>
-			<a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+			<a href="contact-us.html" class="btn-nav-primary" style="text-align: center; margin-top: 16px;">Start Free Trial</a>
 		</div>
 	</nav>
 
 	<!-- ===== HERO ===== -->
 	<section class="ppc-hero">
 		<div class="ppc-hero-inner">
-			<div>
+			<div data-aos="fade-up" data-aos-delay="0">
 				<div class="section-tag">PPC AUTOMATION</div>
 				<h1>Dominate Amazon PPC with <span class="gradient-text">AdvertiseIQ</span></h1>
 				<p class="sub">Drive explosive growth with cutting-edge PPC automation. Seamlessly create, automate, and
@@ -77,7 +78,7 @@
 					discovery, and data-driven insights all in one platform.</p>
 				<a href="contact-us.html" class="btn-primary">Request a Demo <i class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="hero-img">
+			<div class="hero-img" data-aos="fade-up" data-aos-delay="100">
 				<img src="./assets/img/ppc-sec1.png" alt="PPC Dashboard"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-graph-up-arrow\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>PPC Dashboard Preview</div>'">
 			</div>
@@ -86,27 +87,27 @@
 
 	<!-- ===== 3-STEP FEATURES ===== -->
 	<section class="section-wrapper" style="padding-top:20px;">
-		<div class="section-header">
+		<div class="section-header" data-aos="fade-up">
 			<div class="section-tag">HOW IT WORKS</div>
 			<h2>Supercharge Your Amazon Ads</h2>
 			<p>Streamline your PPC campaigns and unlock a higher ROAS effortlessly.</p>
 		</div>
 		<div class="step-grid">
-			<div class="step-card">
+			<div class="step-card" data-aos="fade-up" data-aos-delay="0">
 				<div class="step-num">01</div>
 				<div class="icon-box"><i class="bi bi-bar-chart-line"></i></div>
 				<h4>Performance Analysis</h4>
 				<p>Track and analyze your Amazon Sponsored Ads performance over any period. Discover winning strategies
 					that boost your campaign results.</p>
 			</div>
-			<div class="step-card">
+			<div class="step-card" data-aos="fade-up" data-aos-delay="100">
 				<div class="step-num">02</div>
 				<div class="icon-box"><i class="bi bi-coin"></i></div>
 				<h4>Optimize for Profit</h4>
 				<p>Make precise bids at the perfect moment. Target the most converting keywords to achieve your desired
 					ACOS and maximize profitability.</p>
 			</div>
-			<div class="step-card">
+			<div class="step-card" data-aos="fade-up" data-aos-delay="200">
 				<div class="step-num">03</div>
 				<div class="icon-box"><i class="bi bi-trophy"></i></div>
 				<h4>Dominate Management</h4>
@@ -118,7 +119,7 @@
 
 	<!-- ===== TESTIMONIAL ===== -->
 	<section class="section-wrapper section-alt">
-		<div class="testimonial-block">
+		<div class="testimonial-block" data-aos="zoom-in">
 			<div class="quote">“AdvertiseIQ's All-in-One Platform provides everything you need to scale your e-commerce
 				business. From advertising to analytics, it's all in one place. Get started today or request a demo to
 				discover the power of Perpetua.”</div>
@@ -135,7 +136,7 @@
 	<!-- ===== KEYWORD MANAGEMENT ===== -->
 	<section class="section-wrapper">
 		<div class="content-grid">
-			<div class="text-content">
+			<div class="text-content" data-aos="fade-right">
 				<div class="section-tag">KEYWORD AUTOMATION</div>
 				<h2>Amazon PPC Management &amp; <span class="gradient-text">Automation</span></h2>
 				<p>Automate and streamline your Amazon PPC keyword management with our Keyword Harvesting Tool. Choose
@@ -144,7 +145,7 @@
 				<a href="#" class="btn-primary" style="padding:12px 24px; font-size:0.9rem;">Explore Tool <i
 						class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="img-wrap">
+			<div class="img-wrap" data-aos="fade-left">
 				<img src="./assets/img/ppc_sec3.png" alt="Keyword Management"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-keyboard\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>Keyword Tool Preview</div>'">
 			</div>
@@ -154,7 +155,7 @@
 	<!-- ===== BID AUTOMATION ===== -->
 	<section class="section-wrapper section-alt">
 		<div class="content-grid reverse">
-			<div class="text-content">
+			<div class="text-content" data-aos="fade-left">
 				<div class="section-tag">BID AUTOMATION</div>
 				<h2>Keyword Bidding with <span class="gradient-text">Automation</span></h2>
 				<p>Optimize your Amazon advertising by automating keyword bidding. Utilize AdvertiseIQ's ad engine to
@@ -163,7 +164,7 @@
 				<a href="#" class="btn-primary" style="padding:12px 24px; font-size:0.9rem;">Learn More <i
 						class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="img-wrap">
+			<div class="img-wrap" data-aos="fade-right">
 				<img src="./assets/img/ppc-sec4.png" alt="Bid Automation"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-sliders2\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>Bid Automation Preview</div>'">
 			</div>
@@ -173,7 +174,7 @@
 	<!-- ===== OPTIMIZATION ===== -->
 	<section class="section-wrapper">
 		<div class="content-grid">
-			<div class="text-content">
+			<div class="text-content" data-aos="fade-right">
 				<div class="section-tag">SHARE OF VOICE</div>
 				<h2>Amazon <span class="gradient-text">Optimization</span></h2>
 				<p>Achieve a dominant Share of Voice on Amazon by effortlessly monitoring and evaluating your Share of
@@ -182,7 +183,7 @@
 				<a href="#" class="btn-primary" style="padding:12px 24px; font-size:0.9rem;">Optimize Now <i
 						class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="img-wrap">
+			<div class="img-wrap" data-aos="fade-left">
 				<img src="./assets/img/ppc-sec5.png" alt="Optimization"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-graph-up\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>Optimization Preview</div>'">
 			</div>
@@ -192,7 +193,7 @@
 	<!-- ===== PERFORMANCE ===== -->
 	<section class="section-wrapper section-alt">
 		<div class="content-grid reverse">
-			<div class="text-content">
+			<div class="text-content" data-aos="fade-left">
 				<div class="section-tag">PERFORMANCE</div>
 				<h2>Maximize Your Amazon PPC <span class="gradient-text">Performance</span></h2>
 				<p>Take charge of your advertising success with powerful tracking and analysis tools. AdvertiseIQ offers
@@ -201,7 +202,7 @@
 				<a href="#" class="btn-primary" style="padding:12px 24px; font-size:0.9rem;">View Reports <i
 						class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="img-wrap">
+			<div class="img-wrap" data-aos="fade-right">
 				<img src="./assets/img/ppc-sec7.png" alt="Performance"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-speedometer2\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>Performance Preview</div>'">
 			</div>
@@ -211,7 +212,7 @@
 	<!-- ===== BENCHMARKER ===== -->
 	<section class="section-wrapper">
 		<div class="content-grid">
-			<div class="text-content">
+			<div class="text-content" data-aos="fade-right">
 				<div class="section-tag">BENCHMARKER</div>
 				<h2>Unleash Success with <span class="gradient-text">Benchmarker</span></h2>
 				<p>Master Amazon PPC with our exclusive report, and earn generous commissions as an affiliate. Best of
@@ -220,7 +221,7 @@
 				<a href="contact-us.html" class="btn-primary" style="padding:12px 24px; font-size:0.9rem;">Request a
 					Demo <i class="bi bi-arrow-right"></i></a>
 			</div>
-			<div class="img-wrap">
+			<div class="img-wrap" data-aos="fade-left">
 				<img src="./assets/img/dashboard-img.png" alt="Benchmarker"
 					onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-muted)\'><i class=\'bi bi-award\' style=\'font-size:3rem;display:block;margin-bottom:12px;\'></i>Benchmarker Preview</div>'">
 			</div>
@@ -229,7 +230,7 @@
 
 	<!-- ===== FINAL CTA ===== -->
 	<section class="section-wrapper">
-		<div class="final-cta-card">
+		<div class="final-cta-card" data-aos="zoom-in">
 			<div class="cta-glow"></div>
 			<div class="section-tag">GET STARTED</div>
 			<h2>Attention E-commerce Entrepreneurs!</h2>
@@ -306,13 +307,15 @@
 		html.setAttribute('data-theme', savedTheme);
 		setIcon(savedTheme);
 		updateLoaderLogo(savedTheme);
-		themeToggle.addEventListener('click', () => {
-			const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-			html.setAttribute('data-theme', next);
-			localStorage.setItem('aiq-theme', next);
-			setIcon(next);
-			updateLoaderLogo(next);
-		});
+		if (themeToggle) {
+			themeToggle.addEventListener('click', () => {
+				const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+				html.setAttribute('data-theme', next);
+				localStorage.setItem('aiq-theme', next);
+				setIcon(next);
+				updateLoaderLogo(next);
+			});
+		}
 		function setIcon(theme) {
 			themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
 			const navLogo = document.getElementById('navLogo');
@@ -379,6 +382,10 @@
 		});
 	</script>
 	<script src="assets/js/site.js" defer></script>
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+		AOS.init({ once: true, duration: 800, offset: 50 });
+	</script>
 </body>
 
 </html>

@@ -145,18 +145,17 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <img src="assets/img/logo.png" alt="AdvertiseIQ" class="logo-img" id="navLogo"
-                    onerror="this.style.display='none'">
+                    onerror="this.style.display='none'" />
             </a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="about-us.html">About</a>
                 <a href="contact-us.html">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme">
-                    <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-secondary">Log In</a>
-                </button>
+                <a target="_blank" href="https://app.advertiseiq.co" class="btn-nav-login">Log In</a>
                 <a href="contact-us.html" class="btn-nav-primary">Start Free Trial</a>
                 <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
                     <i class="bi bi-list"></i>
@@ -167,8 +166,9 @@
             <a href="index.html">Home</a>
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
+            <a href="about-us.html">About</a>
             <a href="contact-us.html">Contact</a>
-            <a href="contact-us.html" class="btn-nav-primary" style="text-align:center;">Start Free Trial</a>
+            <a href="contact-us.html" class="btn-nav-primary" style="text-align: center; margin-top: 16px;">Start Free Trial</a>
         </div>
     </nav>
 
@@ -346,13 +346,15 @@
         html.setAttribute('data-theme', savedTheme);
         setIcon(savedTheme);
         updateLoaderLogo(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('aiq-theme', next);
-            setIcon(next);
-            updateLoaderLogo(next);
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('aiq-theme', next);
+                setIcon(next);
+                updateLoaderLogo(next);
+            });
+        }
         function setIcon(theme) {
             themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
             const navLogo = document.getElementById('navLogo');
