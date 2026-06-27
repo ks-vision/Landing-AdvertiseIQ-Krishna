@@ -110,13 +110,13 @@ img {
 .section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 72px 24px;
+  padding: 48px 24px;
 }
 
 .section-wrapper-wide {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 72px 40px;
+  padding: 48px 40px;
 }
 
 .section-header {
@@ -3995,7 +3995,7 @@ select.form-control {
   cursor: pointer;
   transition: color 0.25s;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
   position: relative;
   z-index: 1;
@@ -7451,7 +7451,7 @@ button[type="submit"] {
    ========================================================================== */
 .testimonials-section {
   background: var(--bg-secondary);
-  padding: 72px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
 
