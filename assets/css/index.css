@@ -6403,6 +6403,31 @@ button[type="submit"] {
   box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Theme Image Switching */
+.theme-img-dark {
+  display: block !important;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.theme-img-light {
+  display: none !important;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+[data-theme="light"] .theme-img-dark {
+  display: none !important;
+}
+
+[data-theme="light"] .theme-img-light {
+  display: block !important;
+}
+
 .toolkit-img {
   width: 100%;
   height: auto;
