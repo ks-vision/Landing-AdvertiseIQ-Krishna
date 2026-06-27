@@ -6618,15 +6618,11 @@ button[type="submit"] {
 }
 
 .ftab-panel {
-  display: none;
+  display: flex;
   padding: 40px;
   flex-direction: column;
   gap: 28px;
   animation: ftabFadeIn 0.35s ease;
-}
-
-.ftab-panel.active {
-  display: flex;
 }
 
 @keyframes ftabFadeIn {
@@ -7292,6 +7288,149 @@ button[type="submit"] {
 
   .dp-hour {
     height: 36px;
+  }
+}
+
+/* ── Interactive Horizontal Accordion ── */
+.ftab-accordion-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 550px;
+  gap: 12px;
+  position: relative;
+}
+
+.accordion-item {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s, border-color 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion-item:hover {
+  border-color: var(--border-hover);
+}
+
+.accordion-item.active {
+  flex: 5;
+  cursor: default;
+  border-width: 2px;
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.accordion-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30px;
+  gap: 20px;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.accordion-item.active .accordion-header {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.acc-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.accordion-content {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease 0.1s;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.accordion-item.active .accordion-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-tab-nav {
+  display: none;
+}
+
+/* ── Mobile Layout ── */
+@media (max-width: 1024px) {
+  .ftab-accordion-wrap {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+
+  .mobile-tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .mtab-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background 0.3s;
+  }
+
+  .mtab-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .mtab-btn.active {
+    background: rgba(59, 130, 246, 0.15);
+  }
+
+  .accordion-item {
+    flex: none !important;
+    display: none;
+    width: 100%;
+  }
+
+  .accordion-item.active {
+    display: block;
+    min-height: 400px;
+  }
+
+  .accordion-header {
+    display: none;
+  }
+
+  .accordion-content {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
   }
 }
 
