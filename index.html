@@ -846,23 +846,212 @@
     </div>
   </section>
 
-  <!-- ===== AI PLATFORM (FULL TOOLKIT) ===== -->
-  <section class="toolkit-section">
-    <div class="section-wrapper toolkit-split">
-      <div class="toolkit-content" data-aos="fade-right">
+  <!-- ===== AI PLATFORM (NEURAL COMMAND CENTER) ===== -->
+  <section class="toolkit-section ai-engine-section" id="ai-engine">
+    <div class="section-wrapper">
+
+      <!-- Section Header -->
+      <div class="section-header" data-aos="fade-up">
         <div class="section-tag"><i class="bi bi-robot"></i> AI-POWERED ENGINE</div>
-        <h2>A Platform That<br /><span class="gradient-text">Thinks While You Sleep</span></h2>
-        <p>AdvertiseIQ's AI engine runs 24/7 in the background — analyzing trends, adjusting bids, pausing waste, and
-          seizing opportunity the moment it appears. Zero manual work required.</p>
-        <div class="toolkit-actions">
-          <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
-          <a href="pricing.html" class="btn-secondary outline">See Plans</a>
-        </div>
+        <h2>A Platform That <span class="gradient-text">Thinks While You Sleep</span></h2>
+        <p>AdvertiseIQ's neural AI core runs 24/7 — processing thousands of signals per hour to optimize every campaign automatically.</p>
       </div>
-      <div class="toolkit-image-wrapper" data-aos="fade-left" data-aos-delay="100">
-        <img src="assets/img/AI Generated Amazon Ads Platform.png" alt="Amazon Ads Platform Toolkit"
-          class="toolkit-img" />
-      </div>
+
+      <!-- Main showcase grid -->
+      <div class="ai-engine-showcase">
+
+        <!-- LEFT: Neural Orb Visualization -->
+        <div class="ai-engine-visual" data-aos="fade-right">
+
+          <!-- Status bar -->
+          <div class="ai-status-bar">
+            <span class="ai-status-dot"></span>
+            <span class="ai-status-text">Engine Active &mdash; Processing 2,847 signals/hr</span>
+            <span class="ai-uptime">99.97% uptime</span>
+          </div>
+
+          <!-- Orb + Nodes container -->
+          <div class="ai-orb-container">
+
+            <!-- SVG connection lines (behind everything) -->
+            <svg class="ai-conn-svg" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.2"/>
+                </linearGradient>
+                <filter id="glow-filter">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Lines: center=220,220; nodes on radius ~150 -->
+              <!-- Node 1 top: 220,70 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="220" y2="70" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <!-- Node 2 top-right: 350,145 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="350" y2="145" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <!-- Node 3 bottom-right: 350,295 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="350" y2="295" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <!-- Node 4 bottom: 220,370 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="220" y2="370" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <!-- Node 5 bottom-left: 90,295 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="90" y2="295" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <!-- Node 6 top-left: 90,145 -->
+              <line class="ai-svg-line" x1="220" y1="220" x2="90" y2="145" stroke="url(#lg1)" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+              <!-- Data packets flowing center → nodes -->
+              <circle r="4" fill="#60a5fa" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="1.8s" repeatCount="indefinite" path="M220,220 L220,70"/>
+              </circle>
+              <circle r="4" fill="#a855f7" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="2.1s" repeatCount="indefinite" begin="0.35s" path="M220,220 L350,145"/>
+              </circle>
+              <circle r="4" fill="#10b981" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="1.9s" repeatCount="indefinite" begin="0.7s" path="M220,220 L350,295"/>
+              </circle>
+              <circle r="4" fill="#f97316" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.05s" path="M220,220 L220,370"/>
+              </circle>
+              <circle r="4" fill="#06b6d4" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="2.0s" repeatCount="indefinite" begin="1.4s" path="M220,220 L90,295"/>
+              </circle>
+              <circle r="4" fill="#f59e0b" filter="url(#glow-filter)" opacity="0.9">
+                <animateMotion dur="1.7s" repeatCount="indefinite" begin="1.75s" path="M220,220 L90,145"/>
+              </circle>
+
+              <!-- Return packets nodes → center -->
+              <circle r="3" fill="#3b82f6" opacity="0.5">
+                <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.9s" path="M220,70 L220,220"/>
+              </circle>
+              <circle r="3" fill="#8b5cf6" opacity="0.5">
+                <animateMotion dur="2.6s" repeatCount="indefinite" begin="1.3s" path="M350,145 L220,220"/>
+              </circle>
+              <circle r="3" fill="#059669" opacity="0.5">
+                <animateMotion dur="2.3s" repeatCount="indefinite" begin="1.7s" path="M350,295 L220,220"/>
+              </circle>
+            </svg>
+
+            <!-- Central AI Core Orb -->
+            <div class="ai-core-wrap">
+              <div class="ai-core-pulse pulse-3"></div>
+              <div class="ai-core-pulse pulse-2"></div>
+              <div class="ai-core-pulse pulse-1"></div>
+              <div class="ai-core-orb">
+                <div class="ai-core-inner">
+                  <i class="bi bi-cpu-fill"></i>
+                  <span>AI CORE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Satellite Nodes -->
+            <div class="ai-node ai-node-1" style="--clr:#60a5fa;--glow:rgba(96,165,250,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div class="ai-node-lbl">Bid Engine</div>
+            </div>
+            <div class="ai-node ai-node-2" style="--clr:#a855f7;--glow:rgba(168,85,247,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-search"></i></div>
+              <div class="ai-node-lbl">Keywords</div>
+            </div>
+            <div class="ai-node ai-node-3" style="--clr:#10b981;--glow:rgba(16,185,129,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-shield-fill-check"></i></div>
+              <div class="ai-node-lbl">Inventory</div>
+            </div>
+            <div class="ai-node ai-node-4" style="--clr:#f97316;--glow:rgba(249,115,22,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-clock-fill"></i></div>
+              <div class="ai-node-lbl">Dayparting</div>
+            </div>
+            <div class="ai-node ai-node-5" style="--clr:#06b6d4;--glow:rgba(6,182,212,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-pie-chart-fill"></i></div>
+              <div class="ai-node-lbl">Budget</div>
+            </div>
+            <div class="ai-node ai-node-6" style="--clr:#f59e0b;--glow:rgba(245,158,11,0.35)">
+              <div class="ai-node-icon"><i class="bi bi-graph-up-arrow"></i></div>
+              <div class="ai-node-lbl">Analytics</div>
+            </div>
+
+          </div><!-- /.ai-orb-container -->
+
+          <!-- Live Metric Chips -->
+          <div class="ai-live-chips">
+            <div class="ai-chip ai-chip-blue">
+              <div class="ai-chip-val" id="chipRoas">3.9x</div>
+              <div class="ai-chip-lbl">Live ROAS</div>
+            </div>
+            <div class="ai-chip ai-chip-green">
+              <div class="ai-chip-val" id="chipAcos">8.2%</div>
+              <div class="ai-chip-lbl">ACoS</div>
+            </div>
+            <div class="ai-chip ai-chip-purple">
+              <div class="ai-chip-val" id="chipBids">1,247</div>
+              <div class="ai-chip-lbl">Bids Today</div>
+            </div>
+            <div class="ai-chip ai-chip-amber">
+              <div class="ai-chip-val" id="chipSaved">$4.8K</div>
+              <div class="ai-chip-lbl">Waste Saved</div>
+            </div>
+          </div>
+
+        </div><!-- /.ai-engine-visual -->
+
+        <!-- RIGHT: Features + Console -->
+        <div class="ai-engine-content" data-aos="fade-left" data-aos-delay="100">
+
+          <!-- Feature list -->
+          <div class="ai-feat-list">
+            <div class="ai-feat-item">
+              <div class="ai-feat-icon" style="background:rgba(96,165,250,0.12);color:#60a5fa;border-color:rgba(96,165,250,0.25)"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div class="ai-feat-body">
+                <div class="ai-feat-title">Real-Time Bid Optimization</div>
+                <div class="ai-feat-desc">Adjusts bids every 15 minutes based on live ROAS and conversion velocity signals.</div>
+              </div>
+            </div>
+            <div class="ai-feat-item">
+              <div class="ai-feat-icon" style="background:rgba(168,85,247,0.12);color:#a855f7;border-color:rgba(168,85,247,0.25)"><i class="bi bi-search"></i></div>
+              <div class="ai-feat-body">
+                <div class="ai-feat-title">Autonomous Keyword Harvesting</div>
+                <div class="ai-feat-desc">Winners promoted to exact match, bleeders negated — zero manual effort required.</div>
+              </div>
+            </div>
+            <div class="ai-feat-item">
+              <div class="ai-feat-icon" style="background:rgba(16,185,129,0.12);color:#10b981;border-color:rgba(16,185,129,0.25)"><i class="bi bi-shield-fill-check"></i></div>
+              <div class="ai-feat-body">
+                <div class="ai-feat-title">Inventory-Aware Campaign Guard</div>
+                <div class="ai-feat-desc">Campaigns auto-pause on stock drops and resume the moment inventory is replenished.</div>
+              </div>
+            </div>
+            <div class="ai-feat-item">
+              <div class="ai-feat-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b;border-color:rgba(245,158,11,0.25)"><i class="bi bi-clock-fill"></i></div>
+              <div class="ai-feat-body">
+                <div class="ai-feat-title">Dynamic Dayparting & Placement</div>
+                <div class="ai-feat-desc">Bids boosted at peak hours, pulled back overnight — every dollar spent when buyers are ready.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live AI Console -->
+          <div class="ai-console-card">
+            <div class="ai-console-header">
+              <div class="ai-console-dots">
+                <span class="acd red"></span><span class="acd yellow"></span><span class="acd green"></span>
+              </div>
+              <div class="ai-console-title">AdvertiseIQ AI &mdash; Live Decision Log</div>
+              <div class="ai-console-live"><span class="ai-live-dot"></span>LIVE</div>
+            </div>
+            <div class="ai-console-body" id="aiConsoleFeed">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="ai-engine-ctas">
+            <a href="contact-us.html" class="btn-primary">Start Free Trial <i class="bi bi-arrow-right"></i></a>
+            <a href="pricing.html" class="btn-secondary outline">See Plans</a>
+          </div>
+
+        </div><!-- /.ai-engine-content -->
+
+      </div><!-- /.ai-engine-showcase -->
+
     </div>
   </section>
 
@@ -1465,6 +1654,103 @@
 
   <!-- Hero Three.js — single file, reads theme once at load, never reloads -->
   <script src="assets/js/landingpage.js" defer></script>
+
+  <!-- ===== AI ENGINE CONSOLE & METRIC ANIMATIONS ===== -->
+  <script>
+  (function () {
+    /* ── AI Decision Log Lines ── */
+    const logs = [
+      { badge: 'bid',    msg: 'Bid raised <span class="hi">+18%</span> — "wireless earbuds" ROAS hit <span class="ok">4.2×</span>' },
+      { badge: 'kw',     msg: '"noise cancelling headset" promoted to <span class="ok">Exact Match</span>' },
+      { badge: 'inv',    msg: 'Stock warning: Sport Earbuds V2 at <span class="warn">12 units</span> — campaign paused' },
+      { badge: 'bid',    msg: 'Bid lowered <span class="hi">−12%</span> on "cheap earphones" — ACoS <span class="warn">62%</span>' },
+      { badge: 'day',    msg: 'Peak window detected <span class="ok">10am–1pm</span> — bids boosted +25%' },
+      { badge: 'kw',     msg: '"premium sound earbuds" negated: <span class="warn">0 conversions</span> in 30 days' },
+      { badge: 'budget', msg: 'Budget redistributed from Campaign B → <span class="ok">Campaign A</span> (+ROAS)' },
+      { badge: 'bid',    msg: '"best gym earbuds" bid optimised to <span class="hi">$1.24</span> CPC' },
+      { badge: 'inv',    msg: 'Wireless Charger Pro restocked — campaign <span class="ok">resumed</span>' },
+      { badge: 'profit', msg: 'TACOS dropped to <span class="ok">4.1%</span> — 7-day rolling average improving' },
+      { badge: 'day',    msg: 'Off-peak window <span class="warn">11pm–5am</span> — bids reduced −50%' },
+      { badge: 'kw',     msg: '"USB-C headphones" harvested: <span class="ok">3.8×</span> ROAS, added to Exact Match' },
+      { badge: 'alert',  msg: 'ACoS spike on "earbuds under $20" — paused pending review' },
+      { badge: 'budget', msg: 'Daily budget pacing on track — <span class="ok">62%</span> spent at midday' },
+      { badge: 'bid',    msg: 'Competitor detected — bid escalated +8% on "premium earphones"' },
+      { badge: 'profit', msg: 'Net margin: <span class="ok">38.4%</span> this week — up from 31.2% last week' },
+      { badge: 'kw',     msg: '"true wireless earbuds" CTR <span class="ok">4.7%</span> — scaling budget by 20%' },
+      { badge: 'inv',    msg: 'FBA stock sync complete — <span class="ok">4 SKUs</span> updated' },
+    ];
+
+    const feed = document.getElementById('aiConsoleFeed');
+    if (!feed) return;
+
+    let idx = 0;
+    const maxLines = 6;
+
+    function getTimestamp() {
+      const now = new Date();
+      return `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+    }
+
+    function addLog() {
+      const entry = logs[idx % logs.length];
+      idx++;
+
+      const line = document.createElement('div');
+      line.className = 'ai-log-line';
+      line.innerHTML = `
+        <span class="ai-log-ts">${getTimestamp()}</span>
+        <span class="ai-log-badge ${entry.badge}">${entry.badge.toUpperCase()}</span>
+        <span class="ai-log-msg">${entry.msg}</span>
+      `;
+
+      // Limit lines
+      const lines = feed.querySelectorAll('.ai-log-line');
+      if (lines.length >= maxLines) {
+        // Fade out and remove oldest
+        lines[0].style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        lines[0].style.opacity = '0';
+        lines[0].style.transform = 'translateY(-6px)';
+        setTimeout(() => lines[0].remove(), 300);
+      }
+
+      feed.appendChild(line);
+    }
+
+    // Seed 4 initial lines
+    for (let i = 0; i < 4; i++) addLog();
+
+    // Add a new line every 2.2 seconds
+    setInterval(addLog, 2200);
+
+    /* ── Metric chip live flicker ── */
+    const roasVals    = ['3.7x','3.8x','3.9x','4.0x','4.1x','3.9x','4.2x'];
+    const acosVals    = ['8.2%','8.0%','7.9%','8.4%','8.1%','7.7%'];
+    const bidsVals    = ['1,247','1,263','1,291','1,318','1,302','1,347'];
+    const savedVals   = ['$4.8K','$4.9K','$5.0K','$5.1K','$5.2K','$4.8K'];
+
+    function tickChip(el, vals) {
+      if (!el) return;
+      const newVal = vals[Math.floor(Math.random() * vals.length)];
+      el.style.transition = 'opacity 0.25s ease';
+      el.style.opacity = '0.3';
+      setTimeout(() => {
+        el.textContent = newVal;
+        el.style.opacity = '1';
+      }, 260);
+    }
+
+    setInterval(() => {
+      tickChip(document.getElementById('chipRoas'),  roasVals);
+      tickChip(document.getElementById('chipAcos'),  acosVals);
+    }, 3500);
+
+    setInterval(() => {
+      tickChip(document.getElementById('chipBids'),  bidsVals);
+      tickChip(document.getElementById('chipSaved'), savedVals);
+    }, 4800);
+
+  })();
+  </script>
 
   <script>
     const cursor = document.querySelector('.cursor');
