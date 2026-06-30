@@ -1718,11 +1718,14 @@
         // Limit lines
         const lines = feed.querySelectorAll('.ai-log-line');
         if (lines.length >= maxLines) {
-          // Fade out and remove oldest
-          lines[0].style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          lines[0].style.opacity = '0';
-          lines[0].style.transform = 'translateY(-6px)';
-          setTimeout(() => lines[0].remove(), 300);
+          const oldLine = lines[0];
+          const h = oldLine.offsetHeight;
+          // Fade out and slide up smoothly (include gap of 6px in margin collapse)
+          oldLine.style.transition = 'opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease';
+          oldLine.style.opacity = '0';
+          oldLine.style.transform = 'translateY(-10px)';
+          oldLine.style.marginTop = `-${h + 6}px`;
+          setTimeout(() => oldLine.remove(), 300);
         }
 
         feed.appendChild(line);

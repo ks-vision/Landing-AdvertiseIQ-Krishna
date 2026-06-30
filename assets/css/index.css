@@ -6843,7 +6843,32 @@ button[type="submit"] {
 }
 
 [data-theme="light"] .ai-console-card {
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .ai-console-header {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .ai-console-title {
+  color: rgba(15, 23, 42, 0.7);
+}
+
+[data-theme="light"] .ai-console-live {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #059669;
+}
+
+[data-theme="light"] .ai-log-ts {
+  color: rgba(15, 23, 42, 0.5);
+}
+
+[data-theme="light"] .ai-log-msg {
+  color: rgba(15, 23, 42, 0.85);
 }
 
 .ai-console-header {
@@ -6912,7 +6937,7 @@ button[type="submit"] {
 .ai-console-body {
   padding: 14px 16px;
   min-height: 160px;
-  max-height: 190px;
+  max-height: 180px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
